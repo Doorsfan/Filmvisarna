@@ -12,8 +12,8 @@
     "actors": ["Daniel Radcliffe", "Rupert Grint", "Richard Harris"],
     "description": "<p>Harry Potter växer upp hos sin elaka moster, morbror och kusin, ovetande om vem han egentligen är. På sin elvaårsdag träffar han halvjätten Hagrid som avslöjar att han är son till två mäktiga magiker som blev mördade av den onde Lord Voldemort.</p>",
     "images": [
-      "/images/movie_posters/harry_potter1",
-      "/images/movie_posters/harry_potter2"
+      "./images/movie_posters/harry_potter1.jpg",
+      "./images/movie_posters/harry_potter2.jpg"
     ],
     "youtubeTrailers": ["VyHV0BRtdxo"],
     "reviews": [
