@@ -11,7 +11,10 @@
     "director": "Chris Columbus",
     "actors": ["Daniel Radcliffe", "Rupert Grint", "Richard Harris"],
     "description": "<p>Harry Potter växer upp hos sin elaka moster, morbror och kusin, ovetande om vem han egentligen är. På sin elvaårsdag träffar han halvjätten Hagrid som avslöjar att han är son till två mäktiga magiker som blev mördade av den onde Lord Voldemort.</p>",
-    "images": ["call-me-poster1.jpg", "call-me-poster2.jpg"],
+    "images": [
+      "/images/movie_posters/harry_potter1",
+      "/images/movie_posters/harry_potter2"
+    ],
     "youtubeTrailers": ["VyHV0BRtdxo"],
     "reviews": [
       {
@@ -36,11 +39,9 @@
   },
   {
     "title": "Gudfadern",
-    "productionCountries": [
-      "USA"
-    ],
-    "productionYear": "1972",
-    "length": "175",
+    "productionCountries": ["USA"],
+    "productionYear": 1972,
+    "length": 175,
     "genre": ["Drama", "Crime"],
     "distributor": "Paramount Pictures",
     "language": "engelska",
@@ -58,12 +59,8 @@
       "Diane Keaton"
     ],
     "description": "<p>An organized crime dynasty's aging patriarch transfers control of his clandestine empire to his reluctant son.</p>",
-    "images": [
-      "./images/movie_posters/the_godfather.jpg"
-    ],
-    "youtubeTrailers": [
-      "sY1S34973zA"
-    ],
+    "images": ["./images/movie_posters/the_godfather.jpg"],
+    "youtubeTrailers": ["sY1S34973zA"],
     "reviews": [
       {
         "source": "Sydsvenskan",
