@@ -1,40 +1,5 @@
 [
   {
-    "title": "Harry Potter and the Sorcerer's Stone",
-    "productionCountries": ["USA"],
-    "productionYear": 2001,
-    "length": 152,
-    "genre": ["Äventyr", "Familjefilm"],
-    "distributor": "Warner Brothers",
-    "language": "Engelska",
-    "subtitles": "Svenska",
-    "director": "Chris Columbus",
-    "actors": ["Daniel Radcliffe", "Rupert Grint", "Richard Harris"],
-    "description": "<p>Harry Potter växer upp hos sin elaka moster, morbror och kusin, ovetande om vem han egentligen är. På sin elvaårsdag träffar han halvjätten Hagrid som avslöjar att han är son till två mäktiga magiker som blev mördade av den onde Lord Voldemort.</p>",
-    "images": ["call-me-poster1.jpg", "call-me-poster2.jpg"],
-    "youtubeTrailers": ["VyHV0BRtdxo"],
-    "reviews": [
-      {
-        "source": "Sydsvenskan",
-        "quote": "en film för generationer",
-        "stars": 4,
-        "max": 5
-      },
-      {
-        "source": "Svenska Dagbladet",
-        "quote": "vi har bevittnat ett mästerverk",
-        "stars": 5,
-        "max": 5
-      },
-      {
-        "source": "DN",
-        "quote": "Vingardiumleviosa",
-        "stars": 4,
-        "max": 5
-      }
-    ]
-  },
-  {
     "title": "Gudfadern",
     "productionCountries": [
       "USA"
