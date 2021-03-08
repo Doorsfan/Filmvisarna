@@ -1,34 +1,34 @@
 [
   {
-    "title": "Call me by your name",
-    "productionCountries": ["Italien", "USA"],
-    "productionYear": 2017,
-    "length": 132,
-    "genre": "Drama",
-    "distributor": "UIP",
-    "language": "engelska",
-    "subtitles": "svenska",
-    "director": "Luca Guadagnino",
-    "actors": ["Armie Hammer", "Timothée Chalamet", "Michael Stuhlbarg"],
-    "description": "<p>Filmen utspelas i norra Italien sommaren 1983. En ung amerikansk-italienare blir förälskad i en amerikansk student som kommer för att studera och bo hos hans familj.</p><p>Tillsammans upplever de en oförglömlig sommar - full av musik, mat och kärlek - som för evigt kommer att förändra dem.</p>",
+    "title": "Harry Potter and the Sorcerer's Stone",
+    "productionCountries": ["USA"],
+    "productionYear": 2001,
+    "length": 152,
+    "genre": ["Äventyr", "Familjefilm"],
+    "distributor": "Warner Brothers",
+    "language": "Engelska",
+    "subtitles": "Svenska",
+    "director": "Chris Columbus",
+    "actors": ["Daniel Radcliffe", "Rupert Grint", "Richard Harris"],
+    "description": "<p>Harry Potter växer upp hos sin elaka moster, morbror och kusin, ovetande om vem han egentligen är. På sin elvaårsdag träffar han halvjätten Hagrid som avslöjar att han är son till två mäktiga magiker som blev mördade av den onde Lord Voldemort.</p>",
     "images": ["call-me-poster1.jpg", "call-me-poster2.jpg"],
-    "youtubeTrailers": ["Z9AYPxH5NTM"],
+    "youtubeTrailers": ["VyHV0BRtdxo"],
     "reviews": [
       {
         "source": "Sydsvenskan",
-        "quote": "ett drama berättat med stor ömhet",
+        "quote": "en film för generationer",
         "stars": 4,
         "max": 5
       },
       {
         "source": "Svenska Dagbladet",
-        "quote": "en film att förälska sig i",
+        "quote": "vi har bevittnat ett mästerverk",
         "stars": 5,
         "max": 5
       },
       {
         "source": "DN",
-        "quote": "en het romans i åttiotalskostym",
+        "quote": "Vingardiumleviosa",
         "stars": 4,
         "max": 5
       }
