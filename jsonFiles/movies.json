@@ -1,8 +1,7 @@
-[ {
+[
+  {
     "title": "Relic",
-    "productionCountries": [
-      "Australia"
-    ],
+    "productionCountries": ["Australia"],
     "productionYear": "2020",
     "length": "90",
     "genre": ["Drama", "Horror", "Mystery"],
@@ -18,12 +17,8 @@
       "Chris Bunton"
     ],
     "description": "<p>A daughter, mother and grandmother are haunted by a manifestation of dementia that consumes their family's home.</p>",
-    "images": [
-      "./images/movie_posters/relic.jpg"
-    ],
-    "youtubeTrailers": [
-      "https://www.youtube.com/watch?v=XWhZDQkq0bw"
-    ],
+    "images": ["./images/movie_posters/relic.jpg"],
+    "youtubeTrailers": ["https://www.youtube.com/watch?v=XWhZDQkq0bw"],
     "reviews": [
       {
         "source": "Ginza",
@@ -77,60 +72,47 @@
       },
       {
         "source": "DN",
-        "quote": "Vingardiumleviosa",
+        "quote": "Wingardiumleviosa, nu flyger vi",
         "stars": 4,
         "max": 5
       }
     ]
   },
- {
-"title": "Patersson",
-"productionCountries": [
-"Frankrike",
-"Tyskland",
-"USA"
-],
-"productionYear": 2016,
-"length": 118,  
-"genre": "Spelfilm",
-"distributor": "Scanbox",
-"language": "engelska",
-"subtitles": "svenska",
-"director": "Jim Jarmusch",
-"actors": [
-"Adam Driver",
-"Golshifteh Farahani",
-"Barry Shabaka Henley"
-],
-"description":  "<p>Paterson är en amerikansk-fransk-tysk dramafilm från 2016, skriven och regisserad av Jim Jarmusch. Den utspelar sig i staden Paterson. Adam Driver spelar huvudrollen som en poesiskrivande bussförare vid namn Paterson och Golshifteh Farahani spelar Laura, hans fantasifulla hustru. Huvudpersonens dikter i filmen är allihop författade av poeten Ron Padgett, fyra stycken ur hans tidigare produktion och tre skrivna direkt för filmen, medan filmtiteln är en tydlig hänvisning till poeten William Carlos Williams och hans diktverk Paterson.</p>"
-"images": [
-"call-me-poster1.jpg",
-"call-me-poster2.jpg"
-],
-"youtubeTrailers": [
-"m8pGJBgiiDU"
-],
-"reviews": [
-{
-"source": "Kulturnyheterna",
-"quote": "”lyfter vardagens futtighet och tristess till poesi”",
-"stars": 4,
-"max": 5
-},
-{
-"source": "Svenska Dagbladet",
-"quote": "”regissören närmar sig nivån för fornstora dagar”",
-"stars": 5,
-"max": 5
-},
-{
-"source": "DN",
-"quote": "”Jim Jarmusch, den lakoniska humorns specialist”",
-"stars": 4,
-"max": 5
-}
-]
-},
+  {
+    "title": "Patersson",
+    "productionCountries": ["Frankrike", "Tyskland", "USA"],
+    "productionYear": 2016,
+    "length": 118,
+    "genre": "Spelfilm",
+    "distributor": "Scanbox",
+    "language": "engelska",
+    "subtitles": "svenska",
+    "director": "Jim Jarmusch",
+    "actors": ["Adam Driver", "Golshifteh Farahani", "Barry Shabaka Henley"],
+    "description": "<p>Paterson är en amerikansk-fransk-tysk dramafilm från 2016, skriven och regisserad av Jim Jarmusch. Den utspelar sig i staden Paterson. Adam Driver spelar huvudrollen som en poesiskrivande bussförare vid namn Paterson och Golshifteh Farahani spelar Laura, hans fantasifulla hustru. Huvudpersonens dikter i filmen är allihop författade av poeten Ron Padgett, fyra stycken ur hans tidigare produktion och tre skrivna direkt för filmen, medan filmtiteln är en tydlig hänvisning till poeten William Carlos Williams och hans diktverk Paterson.</p>",
+    "images": ["call-me-poster1.jpg", "call-me-poster2.jpg"],
+    "youtubeTrailers": ["m8pGJBgiiDU"],
+    "reviews": [
+      {
+        "source": "Kulturnyheterna",
+        "quote": "”lyfter vardagens futtighet och tristess till poesi”",
+        "stars": 4,
+        "max": 5
+      },
+      {
+        "source": "Svenska Dagbladet",
+        "quote": "”regissören närmar sig nivån för fornstora dagar”",
+        "stars": 5,
+        "max": 5
+      },
+      {
+        "source": "DN",
+        "quote": "”Jim Jarmusch, den lakoniska humorns specialist”",
+        "stars": 4,
+        "max": 5
+      }
+    ]
+  },
   {
     "title": "Gudfadern",
     "productionCountries": ["USA"],
