@@ -1,4 +1,50 @@
-[
+[ {
+    "title": "Relic",
+    "productionCountries": [
+      "Australia"
+    ],
+    "productionYear": "2020",
+    "length": "90",
+    "genre": ["Drama", "Horror", "Mystery"],
+    "distributor": "Paramount Pictures",
+    "language": "engelska",
+    "subtitles": "svenska",
+    "director": "Natalie Erika James",
+    "actors": [
+      "Robyn Nevin",
+      "Emily Mortimer",
+      "Bella Heathcote",
+      "Steve Rodgers",
+      "Chris Bunton"
+    ],
+    "description": "<p>A daughter, mother and grandmother are haunted by a manifestation of dementia that consumes their family's home.</p>",
+    "images": [
+      "./images/movie_posters/relic.jpg"
+    ],
+    "youtubeTrailers": [
+      "https://www.youtube.com/watch?v=XWhZDQkq0bw"
+    ],
+    "reviews": [
+      {
+        "source": "Ginza",
+        "quote": "Skräck som bäst!",
+        "stars": 4,
+        "max": 5
+      },
+      {
+        "source": "Svenska Dagbladet",
+        "quote": "Skrämd till max! Måste ses!",
+        "stars": 5,
+        "max": 5
+      },
+      {
+        "source": "DN",
+        "quote": "Dålig och oinspirerande dravel",
+        "stars": 1,
+        "max": 5
+      }
+    ]
+  },
   {
     "title": "Harry Potter and the Sorcerer's Stone",
     "productionCountries": ["USA"],
