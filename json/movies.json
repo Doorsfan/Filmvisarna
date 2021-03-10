@@ -1,0 +1,237 @@
+[
+  {
+    "title": "Relic",
+    "productionCountries": ["Australia"],
+    "productionYear": "2020",
+    "length": "90",
+    "genre": ["Drama", "Horror", "Mystery"],
+    "distributor": "Paramount Pictures",
+    "language": "engelska",
+    "subtitles": "svenska",
+    "director": "Natalie Erika James",
+    "actors": [
+      "Robyn Nevin",
+      "Emily Mortimer",
+      "Bella Heathcote",
+      "Steve Rodgers",
+      "Chris Bunton"
+    ],
+    "description": "<p>A daughter, mother and grandmother are haunted by a manifestation of dementia that consumes their family's home.</p>",
+    "images": ["./images/movie_posters/relic.jpg"],
+    "youtubeTrailers": ["https://www.youtube.com/watch?v=XWhZDQkq0bw"],
+    "reviews": [
+      {
+        "source": "Ginza",
+        "quote": "Skräck som bäst!",
+        "stars": 4,
+        "max": 5
+      },
+      {
+        "source": "Svenska Dagbladet",
+        "quote": "Skrämd till max! Måste ses!",
+        "stars": 5,
+        "max": 5
+      },
+      {
+        "source": "DN",
+        "quote": "Dålig och oinspirerande dravel",
+        "stars": 1,
+        "max": 5
+      }
+    ]
+  },
+  {
+    "title": "Harry Potter and the Sorcerer's Stone",
+    "productionCountries": ["USA"],
+    "productionYear": 2001,
+    "length": 152,
+    "genre": ["Äventyr", "Familjefilm"],
+    "distributor": "Warner Brothers",
+    "language": "Engelska",
+    "subtitles": "Svenska",
+    "director": "Chris Columbus",
+    "actors": ["Daniel Radcliffe", "Rupert Grint", "Richard Harris"],
+    "description": "<p>Harry Potter växer upp hos sin elaka moster, morbror och kusin, ovetande om vem han egentligen är. På sin elvaårsdag träffar han halvjätten Hagrid som avslöjar att han är son till två mäktiga magiker som blev mördade av den onde Lord Voldemort.</p>",
+    "images": [
+      "./images/movie_posters/harry_potter1.jpg",
+      "./images/movie_posters/harry_potter2.jpg"
+    ],
+    "youtubeTrailers": ["VyHV0BRtdxo"],
+    "reviews": [
+      {
+        "source": "Sydsvenskan",
+        "quote": "en film för generationer",
+        "stars": 4,
+        "max": 5
+      },
+      {
+        "source": "Svenska Dagbladet",
+        "quote": "vi har bevittnat ett mästerverk",
+        "stars": 5,
+        "max": 5
+      },
+      {
+        "source": "DN",
+        "quote": "Wingardiumleviosa, nu flyger vi",
+        "stars": 4,
+        "max": 5
+      }
+    ]
+  },
+  {
+    "title": "Patersson",
+    "productionCountries": ["Frankrike", "Tyskland", "USA"],
+    "productionYear": 2016,
+    "length": 118,
+    "genre": "Spelfilm",
+    "distributor": "Scanbox",
+    "language": "engelska",
+    "subtitles": "svenska",
+    "director": "Jim Jarmusch",
+    "actors": ["Adam Driver", "Golshifteh Farahani", "Barry Shabaka Henley"],
+    "description": "<p>Paterson är en amerikansk-fransk-tysk dramafilm från 2016, skriven och regisserad av Jim Jarmusch. Den utspelar sig i staden Paterson. Adam Driver spelar huvudrollen som en poesiskrivande bussförare vid namn Paterson och Golshifteh Farahani spelar Laura, hans fantasifulla hustru. Huvudpersonens dikter i filmen är allihop författade av poeten Ron Padgett, fyra stycken ur hans tidigare produktion och tre skrivna direkt för filmen, medan filmtiteln är en tydlig hänvisning till poeten William Carlos Williams och hans diktverk Paterson.</p>",
+    "images": ["call-me-poster1.jpg", "call-me-poster2.jpg"],
+    "youtubeTrailers": ["m8pGJBgiiDU"],
+    "reviews": [
+      {
+        "source": "Kulturnyheterna",
+        "quote": "”lyfter vardagens futtighet och tristess till poesi”",
+        "stars": 4,
+        "max": 5
+      },
+      {
+        "source": "Svenska Dagbladet",
+        "quote": "”regissören närmar sig nivån för fornstora dagar”",
+        "stars": 5,
+        "max": 5
+      },
+      {
+        "source": "DN",
+        "quote": "”Jim Jarmusch, den lakoniska humorns specialist”",
+        "stars": 4,
+        "max": 5
+      }
+    ]
+  },
+  {
+    "title": "Gudfadern",
+    "productionCountries": ["USA"],
+    "productionYear": 1972,
+    "length": 175,
+    "genre": ["Drama", "Crime"],
+    "distributor": "Paramount Pictures",
+    "language": "engelska",
+    "subtitles": "svenska",
+    "director": "Francis Ford Coppola",
+    "actors": [
+      "Marlon Brando",
+      "Al Pacino",
+      "James Caan",
+      "Richard Castellano",
+      "Robert Duvall",
+      "Sterling Hayden",
+      "John Marley",
+      "Richard Conte",
+      "Diane Keaton"
+    ],
+    "description": "<p>An organized crime dynasty's aging patriarch transfers control of his clandestine empire to his reluctant son.</p>",
+    "images": ["./images/movie_posters/the_godfather.jpg"],
+    "youtubeTrailers": ["sY1S34973zA"],
+    "reviews": [
+      {
+        "source": "Sydsvenskan",
+        "quote": "En rysande insikt i Mafia världens mörka undersida",
+        "stars": 4,
+        "max": 5
+      },
+      {
+        "source": "Svenska Dagbladet",
+        "quote": "Bär ett starkt meddelande om Patriarkins ihållande effekt på samhället",
+        "stars": 5,
+        "max": 5
+      },
+      {
+        "source": "DN",
+        "quote": "En äkta kultklassiker som förvarats genom tiden",
+        "stars": 4,
+        "max": 5
+      }
+    ]
+  },
+  {
+    "title": "Min onkel",
+    "productionCountries": ["Frankrike", "Italien"],
+    "productionYear": 1958,
+    "length": 116,
+    "genre": "Komedi",
+    "distributor": "Artfilm AB",
+    "language": "Franska",
+    "subtitles": "Svenska",
+    "director": "Jacques Tati",
+    "actors": ["Jacques Tati", "Jean-Pierre Zola", "Adrienne Servantie"],
+    "description": "<p>Herr och fru Arpel är de modernaste av människor. Deras hem styrs på samma sätt som herr Arpel styr sin plastfabrik — metodiskt och med exakta rutiner. En dröm för vissa, men en mardröm för sonen Gérard.</p><p>Han flyr den stela, steriliserade världen in i famnen på sin onkel, monsieur Hulot. Men så kommer föräldrarna på dem. Hulot måste stoppas! I deras värld äger han det farligaste vapnet av allt. Ett hjärta.</p><p>Min onkel var Tatis första färgfilm och största framgång; Vid Filmfestivalen i Cannes 1958 tilldelades den Prix de Jury och 1959 vann den en Oscar för bästa icke-engelsspråkiga film.",
+    "images": [
+      "./images/movie_posters/min_onkel_1.jpg",
+      "./images/movie_posters/min_onkel_2.jpg"
+    ],
+    "youtubeTrailers": ["vqVpQ6S0BDA"],
+    "reviews": [
+      {
+        "source": "CineVue",
+        "quote": "Tati's wholehearted rejection of unnecessary dialogue shifts emphasis onto the man himself, and the brilliant performance he delivers.",
+        "stars": 4,
+        "max": 5
+      },
+      {
+        "source": "Time Out",
+        "quote": "Unforgettably funny, wonderfully observed, and always technically brilliant.",
+        "stars": 5,
+        "max": 5
+      },
+      {
+        "source": "Rotten Tomatoes",
+        "quote": "Jacques Tati's most accessible film is a paean to gentle values and observing the small details of life.",
+        "stars": 4,
+        "max": 5
+      }
+    ]
+  },
+  {
+    "title": "Nyckeln till frihet",
+    "productionCountries": ["USA"],
+    "productionYear": 1994,
+    "length": 142,
+    "genre": "Drama",
+    "distributor": "Castle Rock Entertainment",
+    "language": "engelska",
+    "subtitles": "svenska",
+    "director": "Frank Darabont",
+    "actors": ["Tim Robbins", "Morgan Freeman", "Bob Gunton"],
+    "description": "<p>Andy Dufresne döms 1946, mot sitt nekande, till livstids fängelse för mord på sin fru och hennes älskare. Han sänds till Shawshank State Prison, som styrs av den despotiske fängelsedirektören Norton. I fängelset blir Andy god vän med Red, som redan suttit inne i 20 år, och som gör goda förtjänster på att smuggla in varor i fängelset.</p>",
+    "images": [
+      "nyckeln-till-frihet-poster1.jpg",
+      "nyckeln-till-frihet-poster2.jpg"
+    ],
+    "youtubeTrailers": ["6hB3S9bIaco"],
+    "reviews": [
+      {
+        "source": "Moviezine.se",
+        "quote": "En av världens bästa filmer",
+        "stars": 5,
+        "max": 5
+      },
+      {
+        "source": "Svenska Dagbladet",
+        "quote": "Suveränt drama om en människas öde",
+        "stars": 4,
+        "max": 5
+      },
+      {
+        "source": "Rotten Tomatoes",
+        "quote": "A magnificently hopeful, inspiring work of art.",
+        "stars": 5,
+        "max": 5
+      }
+    ]
+  }
+]
