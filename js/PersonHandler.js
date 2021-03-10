@@ -4,14 +4,13 @@ export default class PersonHandler {
   //the server instance - that we append eventListeners to - such as changes to modifications
   //of Json files
   constructor(app) {
-    
     this.changeListener = app.changeListener; //Assign a "change" listener to be used for JSON files, so when
     //JSON is changed, the app will be aware of this change - removing the need to restart the server or re-read the JSON
-    
+
     this.addEventHandlers(); //A function that attaches evenhandlers to JSON files - basically, this is the function
     //that is responsible for handling what to do based on changes in the JSON files OR adding event handlers for the
     //HTML elements - such as clicking, changing in a navbar, writing in a text field, etc.
-    
+
     this.read(); //This is an async function that fetches data from a JSON file - in this case, we treat it
     //as a chain of events - with Start the PersonHandler Object -> Read from a JSON file -> Render the data
     //So, if you want to read from OUR OWN Json files, like Movies, Bookings, etc. - You make a similar structure
@@ -25,7 +24,7 @@ export default class PersonHandler {
     // ID SELECTOR - #myDiv (In HTML <div id="myDiv"></div>)
     // CLASS SELECTOR - .myDiv (In HTML <div class="myDiv"></div>)
     // The CLASS SELECTOR applies to ALL classes of the HTML structure - so .add-person, would find
-    // ALL elements with the class="add-person" tag. 
+    // ALL elements with the class="add-person" tag.
     //
     //DO NOTE - HTML can have several classes to them, and you can specify a more specific class
     //notation with jquery - such as:
@@ -55,6 +54,7 @@ export default class PersonHandler {
   }
 
   render() {
+    /*
     // Render the list of persons to the DOM
     // (Note: You don't have to re-render the whole DOM
     // but we do it here since this is a small test app)
@@ -68,6 +68,7 @@ export default class PersonHandler {
     $('body').append(`
       <button class="add-person">Add person</button> 
     `);
+    */
   }
 
   async addPerson() {
@@ -81,5 +82,4 @@ export default class PersonHandler {
     console.log('Saved');
     console.table(this.persons);
   }
-
 }
