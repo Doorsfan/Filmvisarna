@@ -1,13 +1,11 @@
-# Filmvisarna
-This is the first group project we have, where we are tasked to build a form of Online Cinema.
-In this project, we are a grand total of 6 members - And we will be employing agile work tactics.
+Filmvisarna
+This is the first group project we have, where we are tasked to build a form of Online Cinema. In this project, we are a grand total of 6 members - And we will be employing agile work tactics.
 
 We will be aiming to achieve the higher grade (VG).
 
 The baseline of the User Stories is:
 
-# USER STORIES
-
+USER STORIES
 As a user (logged in or not) - i want to be able to view information about movies that i can view in the Cinema.
 
 As a user (logged in or not) - i want to know when a Movie is going to be shown.
@@ -38,8 +36,7 @@ Normal: 85kr
 
 Senior: 75kr
 
-# Higher Grade requirement
-
+Higher Grade requirement
 Have all of the base requirements, and at least 4 of the following requirements/User stories:
 
 Have the site be a Single Page Application.
