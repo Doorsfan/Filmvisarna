@@ -1,21 +1,54 @@
-### What is this? 
-This small skeleton/scaffold does the following:
-1) Adds the methods JSON._load(file) and JSON._save(file,data) to the built-in JSON object.
-2) Adds a change listener for listening to file changes. This can be used for hot reloads but also to detect when json files changes (bookings etc).
-3) Shows you good programming practices for how to write object oriented code in JavaScript by dividing your program into classes.
-4) Has a small example of reading and writing to JSON files as well as listening to when they change in the *js/PersonHandler.js* file
+Filmvisarna
+This is the first group project we have, where we are tasked to build a form of Online Cinema. In this project, we are a grand total of 6 members - And we will be employing agile work tactics.
 
-### How to use
-1) Install Node.js,  https://nodejs.org/en/, preferably current version.
-2) Run **npm install** in the terminal (in VSC - Visual Studio Code) ONCE! This will create the folder **node_modules**. You can reach the Terminal by choosing Terminal in the main menu!
-3) Run **node index** in the terminal in (VSC) to start your project
-4) To stop the server, press *Ctrl+C* (or close the VSC window)
+We will be aiming to achieve the higher grade (VG).
 
-### How to use in your Git project
-1) Make sure that you have *.gitignore*-file with node_modules included on a separate line.
-Copy the files and the file structure (but not the node_modules folder) to the root folder of your git project. Push and commit!
+The baseline of the User Stories is:
 
-##### Please Note: 
-When you start to work on writing a booking system or something similar: Be smart about how you divide your json into different files. For example: You could store personal account settings in separate json files named after the username... (If a file does not exist it will be created when using JSON._save). And you code store bookings for a certain event in a file with the name of the event (may constructed by place + time?). If you are smart about this you will have much less json to load for ONE specific user!
+USER STORIES
+As a user (logged in or not) - i want to be able to view information about movies that i can view in the Cinema.
 
-*Also note:* Not for production but for learning and prototyping frontend applications without having to deal with backend and databases!
+As a user (logged in or not) - i want to know when a Movie is going to be shown.
+
+As a user (logged in or not) - i want to be able to book tickets for a upcoming Movie
+
+As the Systemowner, i wish to see a prototype with at least 5 movies, distributed across 3 daily showcasings under a 4 week period across 2 Movie Saloons.
+
+As a user (logged in or not) - i want to be able to see available seats in a Saloon for a specific Movie show
+
+As a user (logged in or not), i wish to be able to go to a Details page for a specific movie
+
+As a user (logged in or not), i wish to be able to book seats for a movie show
+
+As a user (logged in or not), i should not be able to book seats that are already taken
+
+As a user (logged in or not), i wish to get a confirmation of a booking, containing selected seat numbers, chosen movie and date/time
+
+As the Systemowner, i wish that all bookings are saved
+
+As a user (logged in) i wish to be able to see my bookings and booking history (by logging in or saved locally in the computer via localStorage)
+
+As a user (logged in or not), i wish to be able to book tickets with different prices:
+
+Child: 65kr
+
+Normal: 85kr
+
+Senior: 75kr
+
+Higher Grade requirement
+Have all of the base requirements, and at least 4 of the following requirements/User stories:
+
+Have the site be a Single Page Application.
+
+The site should be responsively designed (manage to showcase with different devices/size of Displays)
+
+As a user (logged in or not), i wish to be able to filter Movie showcasings based on Dates
+
+As a user (logged in or not), i wish to be able to filter movies based on Age categorization
+
+As a user (logged in or not), i wish to be able to view trailers of Movies.
+
+As a user (logged in or not), i wish to be able to see bookings of Seats for a show occurring live.
+
+As a user (logged in), i wish to be able to cancel a upcoming booking
