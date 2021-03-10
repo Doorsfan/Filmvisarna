@@ -1,0 +1,1 @@
+//This is just an empty example JS file that you can remove/modify
