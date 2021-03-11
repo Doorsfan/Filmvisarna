@@ -1,17 +1,16 @@
-fetchmoviesInfo();
+export default class MoviePage {
+  async fetchmoviesInfo() {
+    let movies;
+    await $.getJSON('/json/movies.json', (data) => {
+      movies = data;
+    });
+    renderMovies(movies);
+  }
 
-async function fetchmoviesInfo() {
-  let movies;
-  await $.getJSON('/json/movies.json', (data) => {
-    movies = data;
-  });
-  renderMovies(movies);
-}
-
-function renderMovies(data) {
-  $('body').append('<div class="movie-container"></div>');
-  data.forEach((data) => {
-    let html = $(/*html*/ `
+  renderMovies(data) {
+    $('body').append('<div class="movie-container"></div>');
+    data.forEach((data) => {
+      let html = $(/*html*/ `
         <section class="movie-info">
           <div class="movie-poster">
             <img src="${data.images[0]}" style="height: 100px">
@@ -25,6 +24,9 @@ function renderMovies(data) {
           </div><hr>
         </section>
   `);
-    $('.movie-container').append(html);
-  });
+      $('.movie-container').append(html);
+    });
+  }
 }
+
+fetchmoviesInfo();
