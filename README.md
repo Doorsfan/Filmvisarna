@@ -1,4 +1,4 @@
-Filmvisarna
+#Filmvisarna
 This is the first group project we have, where we are tasked to build a form of Online Cinema. In this project, we are a grand total of 6 members - And we will be employing agile work tactics.
 
 We will be aiming to achieve the higher grade (VG).
