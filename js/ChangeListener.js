@@ -26,7 +26,7 @@ export default class ChangeListener {
     });
     // Note: 
     // You SHOULD NOT reload the page for json files
-    // that can be changed using JSON._save
+    // that can be change usin JSON._save
     // For now: Do not reload on any json file changes
     if (filePath.slice(-5) === '.json') {
       return;

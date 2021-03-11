@@ -1,18 +1,17 @@
-import ChangeListener from './ChangeListener.js';
-import PersonHandler from './PersonHandler.js';
-import header from '../scripts/header.js';
+import Header from './components/Header.js';
+import loginForm from './components/loginForm.js';
+import Router from './router.js';
 
 export default class App {
+
   constructor() {
-    // Only create ONE change listener for the whole application
-    this.changeListener = new ChangeListener();
-    // Send the App instance (this) to the personHandler
-    // which lets it reach the changeListener
-    this.personHandler = new PersonHandler(this);
-    this.render();
+    // render partials
+
+    // header renders now
+    $('header').html(new Header().render());
+    // main renders in its router, on instanciation
+    this.router = new Router('main');
+
   }
 
-  render() {
-    $('body').append(header);
-  }
 }
