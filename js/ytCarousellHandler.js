@@ -8,7 +8,6 @@ async function fetchYoutubeRef() {
   renderTrailer(movie);
 }
 
-// needed for debugging
 function renderTrailer(data) {
   //variable to use
   let html = $(`<div class="video-slider"></div>`);
@@ -25,7 +24,6 @@ function renderTrailer(data) {
   <div class="slide-arrow right"></div>
   `);
 
-  //only needed to render for debugging
   $('body').prepend(html);
 }
 $(document).ready(function () {
@@ -65,9 +63,8 @@ $(document).ready(function () {
 function onYouTubeIframeAPIReady() {
   $('.slide').each(function (index, slide) {
     // Get the `.video` element inside each `.slide`
-    var iframe = $(slide).find('.video')[0];
+    let iframe = $(slide).find('.video')[0];
     // Create a new YT.Player from the iFrame, and store it on the `.slide` DOM object
     slide.video = new YT.Player(iframe);
   });
 }
-// $('body').on('click', '.right', nextSlide);
