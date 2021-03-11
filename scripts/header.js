@@ -7,4 +7,6 @@ let header = $(/*html*/ `
     </nav>
   </header>`);
 
+test;
+
 export default header;
