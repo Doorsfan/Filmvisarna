@@ -1,16 +1,23 @@
 export default class MoviePage {
+  constructor() {
+    console.log('Creating instance');
+    this.fetchmoviesInfo();
+  }
+
   async fetchmoviesInfo() {
     let movies;
     await $.getJSON('/json/movies.json', (data) => {
       movies = data;
     });
-    renderMovies(movies);
+    console.log(movies);
   }
 
-  renderMovies(data) {
+  render() {
+    let html;
+    console.log('rendering');
     $('body').append('<div class="movie-container"></div>');
-    data.forEach((data) => {
-      let html = $(/*html*/ `
+    movies.forEach((data) => {
+      html += $(/*html*/ `
         <section class="movie-info">
           <div class="movie-poster">
             <img src="${data.images[0]}" style="height: 100px">
@@ -24,9 +31,7 @@ export default class MoviePage {
           </div><hr>
         </section>
   `);
-      $('.movie-container').append(html);
+      return html;
     });
   }
 }
-
-fetchmoviesInfo();

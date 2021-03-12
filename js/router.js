@@ -15,6 +15,7 @@ const frontPage = new FrontPage();
 const page1 = new Page1();
 const peoplePage = new PeoplePage(changeListener);
 const LoginPage = new loginPage();
+const moviePage = new MoviePage();
 
 export default class Router {
   constructor(selector, changeListener) {
@@ -50,5 +51,9 @@ export default class Router {
 
   default() {
     return LoginPage.render();
+  }
+
+  MoviePage() {
+    return moviePage.render();
   }
 }
