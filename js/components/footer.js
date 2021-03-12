@@ -1,3 +1,4 @@
+
 export default class Footer {
   render() {
     let footer = $(/*html*/ `
