@@ -1,5 +1,4 @@
 import Header from './components/Header.js';
-import loginForm from './components/loginForm.js';
 import Router from './router.js';
 
 export default class App {
