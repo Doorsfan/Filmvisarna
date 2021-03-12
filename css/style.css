@@ -1,12 +1,22 @@
-@import './components/header.css';
+@import url(/css/components/youtube-carousell.css);
+@import url(/css/components/header.css);
 
-*,
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 *:before,
 *:after {
   box-sizing: border-box;
 }
 
-* {
-  margin: 0;
-  font-size: 62.5%;
+html {
+}
+body {
 }

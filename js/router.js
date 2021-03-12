@@ -3,7 +3,7 @@ import ChangeListener from './ChangeListener.js';
 const changeListener = new ChangeListener();
 
 // imported pages
-import FrontPage from './pages/FrontPage.js';
+import StartPage from './pages/startPage.js';
 import Page1 from './pages/Page1.js';
 import Page2 from './pages/Page2.js';
 import PeoplePage from './pages/PeoplePage.js';
@@ -11,7 +11,7 @@ import loginPage from './pages/loginPage.js';
 import MoviePage from './pages/MoviePage.js';
 
 // instanciate to reuse instances of pages
-const frontPage = new FrontPage();
+const startPage = new StartPage();
 const page1 = new Page1();
 const peoplePage = new PeoplePage(changeListener);
 const LoginPage = new loginPage();
@@ -49,9 +49,11 @@ export default class Router {
     return peoplePage.render();
   }
 
-  default() {}
+  default() {
+    return startPage.render();
+  }
 
   MoviePage() {
     return moviePage.render();
-  }
+  
 }
