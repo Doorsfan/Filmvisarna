@@ -90,7 +90,7 @@
     "director": "Jim Jarmusch",
     "actors": ["Adam Driver", "Golshifteh Farahani", "Barry Shabaka Henley"],
     "description": "<p>Paterson är en amerikansk-fransk-tysk dramafilm från 2016, skriven och regisserad av Jim Jarmusch. Den utspelar sig i staden Paterson. Adam Driver spelar huvudrollen som en poesiskrivande bussförare vid namn Paterson och Golshifteh Farahani spelar Laura, hans fantasifulla hustru. Huvudpersonens dikter i filmen är allihop författade av poeten Ron Padgett, fyra stycken ur hans tidigare produktion och tre skrivna direkt för filmen, medan filmtiteln är en tydlig hänvisning till poeten William Carlos Williams och hans diktverk Paterson.</p>",
-    "images": ["call-me-poster1.jpg", "call-me-poster2.jpg"],
+    "images": ["/images/movie_posters/paterson.jfif"],
     "youtubeTrailers": ["m8pGJBgiiDU"],
     "reviews": [
       {
@@ -209,8 +209,8 @@
     "actors": ["Tim Robbins", "Morgan Freeman", "Bob Gunton"],
     "description": "<p>Andy Dufresne döms 1946, mot sitt nekande, till livstids fängelse för mord på sin fru och hennes älskare. Han sänds till Shawshank State Prison, som styrs av den despotiske fängelsedirektören Norton. I fängelset blir Andy god vän med Red, som redan suttit inne i 20 år, och som gör goda förtjänster på att smuggla in varor i fängelset.</p>",
     "images": [
-      "nyckeln-till-frihet-poster1.jpg",
-      "nyckeln-till-frihet-poster2.jpg"
+      "/images/movie_posters/nyckeln_till_frihet_poster1.jpg",
+      "/images/movie_posters/nyckeln_till_frihet_poster2.jpg"
     ],
     "youtubeTrailers": ["6hB3S9bIaco"],
     "reviews": [
