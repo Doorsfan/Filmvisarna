@@ -1,9 +1,6 @@
 import loginForm from '../components/loginForm.js';
-export default class loginPage {
-
-  constructor() {
-    
-  }
+export default class LoginPage {
+  constructor() {}
   render() {
     return `
     <form class="loginPage login_form" action="validate_user.js" method="get">
@@ -17,5 +14,6 @@ export default class loginPage {
         <button class="loginPage submit_button" type="submit">Login</button>
       </div>
     </form>`;
+    return html;
   }
 }
