@@ -6,14 +6,12 @@ export default class MoviePage {
   }
 
   async render() {
-    $('.main').html('');
     if (!this.movies) {
       await this.read();
     }
-    let html = $('<div class="movie-container">');
+    let html = '<div class="movie-container">';
     this.movies.forEach((data) => {
-      html.append(/*html*/ `
-        <section class="movie-info">
+      html += /*html*/ `<section class="movie-info">
           <div class="movie-poster">
             <a href="#"><img src="${data.images[0]}" style="height: 100px"></a>
           </div>
@@ -24,10 +22,10 @@ export default class MoviePage {
             <h4>Speltid:</h4> <p>${data.length + ' minuter'}</p>
             <h4>Handling:</h4> ${data.description}
           </div><hr>
-        </section>
-  `);
+        </section>`;
     });
-    html.append('</div>');
-    return $('.main').append(html);
+
+    html += '</div>';
+    return html;
   }
 }
