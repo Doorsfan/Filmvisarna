@@ -3,19 +3,16 @@ import ChangeListener from './ChangeListener.js';
 const changeListener = new ChangeListener();
 
 // imported pages
-import StartPage from './pages/startPage.js';
-import Page1 from './pages/Page1.js';
-import Page2 from './pages/Page2.js';
-import PeoplePage from './pages/PeoplePage.js';
-import loginPage from './pages/loginPage.js';
+import StartPage from './pages/StartPage.js';
+import LoginPage from './pages/LoginPage.js';
 import MoviePage from './pages/MoviePage.js';
+// import PeoplePage from './pages/PeoplePage.js';
 
 // instanciate to reuse instances of pages
 const startPage = new StartPage();
-const page1 = new Page1();
-const peoplePage = new PeoplePage(changeListener);
-const LoginPage = new loginPage();
+const loginPage = new LoginPage();
 const moviePage = new MoviePage();
+// const peoplePage = new PeoplePage(changeListener);
 
 export default class Router {
   constructor(selector, changeListener) {
@@ -36,21 +33,12 @@ export default class Router {
   ////////////////
   // Our pages (the method names matches the hashes with any slashes - removed)
 
-  page1() {
-    return page1.render();
-  }
-
-  page2() {
-    // if we want a new instance every time we visit a page we instanciate here instead
-    return new Page2().render();
-  }
-
-  peoplepage() {
-    return peoplePage.render();
-  }
-
   default() {
     return startPage.render();
+  }
+
+  loginPage() {
+    return loginPage.render();
   }
 
   MoviePage() {

@@ -5,8 +5,7 @@ export default class App {
   constructor() {
     // render partials
 
-    // header renders now
-    $('body').html(new Header().render());
+    $('body').prepend(new Header().render());
 
     // main renders in its router, on instanciation
     this.router = new Router('main');

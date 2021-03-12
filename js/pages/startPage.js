@@ -14,6 +14,6 @@ export default class StartPage {
     }
 
     //append the body, this is where we change where!
-    return $('body').append(this.yt.render(this.movies));
+    return $('.main').append(this.yt.render(this.movies));
   }
 }
