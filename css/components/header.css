@@ -1,0 +1,45 @@
+header {
+  height: 3rem;
+  width: 100vw;
+  background-color: #bebdbf;
+}
+
+.header-nav {
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+  padding: 0 1rem 0 1rem;
+}
+
+.hamburger-icon {
+  height: 100%;
+}
+
+.hamburger-icon:hover,
+.hamburger-icon:active {
+  background-color: #eeeeee;
+  cursor: pointer;
+}
+
+.home-button {
+  text-decoration: none;
+  color: white;
+  height: 100%;
+  padding-top: 0.1em;
+  margin-left: 3em;
+  font-size: 2rem;
+}
+
+.user-icon {
+  display: block;
+  position: relative;
+  right: 0;
+  height: 100%;
+  margin-left: auto;
+}
+
+.user-icon:hover,
+.user-icon:active {
+  background-color: #eeeeee;
+  cursor: pointer;
+}
