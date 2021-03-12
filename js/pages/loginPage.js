@@ -2,7 +2,7 @@ import loginForm from '../components/loginForm.js';
 export default class LoginPage {
   constructor() {}
   render() {
-    return `
+    let html = /*html*/ `
     <form action="validate_user.js" method="get">
       <div class="container">
         <label for="email">Username</label>
@@ -14,5 +14,6 @@ export default class LoginPage {
         <button class="submit_button" type="submit">Login</button>
       </div>
     </form>`;
+    return html;
   }
 }

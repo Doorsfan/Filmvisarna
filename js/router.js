@@ -25,9 +25,14 @@ export default class Router {
     this.setCurrentPage(selector);
   }
 
-  setCurrentPage(selector) {
+  async setCurrentPage(selector) {
     let name = window.location.hash.replace('-', '').replace('#', '');
-    $(selector).html(this[name || 'default']());
+    if (!this[name]) {
+      name = 'default';
+    }
+    let result = await this[name]();
+    $(selector).html('');
+    $(selector).append(result);
   }
 
   ////////////////
