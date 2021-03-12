@@ -1,8 +1,6 @@
-@import "./header.css";
-@import "./footer.css";
-
 @import "./components/header.css";
 @import "./components/sidebar.css";
+@import "./components/footer.css";
 @import url(/css/components/youtube-carousell.css);
 @import url(/css/components/header.css);
 
