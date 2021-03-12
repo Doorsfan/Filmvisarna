@@ -1,0 +1,28 @@
+/*
+Primär Färg:
+  #BEBDBF;
+Primär Färg - Variation:
+  #E1E0E2;
+Sekundär Färg:
+  #FFFFFF;
+Sekundär Färg - Variation:
+  #EEEEEE;
+Extra Färger: 
+  #434244;
+  #626163;
+*/
+
+footer {
+  display: flex;
+  flex-direction: row;
+  padding: 0 1rem 0 1rem;
+  width: 100vw;
+  background-color: #bebdbf;
+}
+
+h2 {
+  color: white;
+}
+h3 {
+  color: #eeeeee;
+}
