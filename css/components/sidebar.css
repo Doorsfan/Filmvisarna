@@ -1,0 +1,66 @@
+.sidebar-container {
+  height: calc(100% - 3rem);
+  border: 1px solid #e1e0e2;
+  width: 20rem;
+  background: #bebdbf;
+  position: absolute;
+  left: -20rem;
+}
+
+.sidebar-show {
+  animation: sidebar-appear 0.2s ease-in-out;
+  left: 0rem;
+}
+
+@keyframes sidebar-appear {
+  0% {
+    left: -20rem;
+  }
+  100% {
+    left: 0rem;
+  }
+}
+
+.sidebar-close {
+  animation: sidebar-disappear 0.2s ease-in-out;
+}
+
+@keyframes sidebar-disappear {
+  0% {
+    left: 0rem;
+  }
+  100% {
+    left: -20rem;
+    display: block;
+  }
+}
+
+.sidebar-container nav {
+  height: 100%;
+  width: 100%;
+  padding-top: 3rem;
+}
+
+nav .navlist {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.navlist-item {
+  padding: 1rem 0;
+}
+
+.navlist a {
+  height: 100%;
+  margin-left: 3em;
+  text-decoration: none;
+  font-size: 2rem;
+  color: white;
+}
+
+.navlist-item a:hover,
+.navlist-item a:active {
+  color: black;
+}
