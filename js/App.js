@@ -8,6 +8,7 @@ export default class App {
 
     // header renders now
     $('body').html(new Header().render());
+    $('body').append(new loginForm().render());
 
     // main renders in its router, on instanciation
     this.router = new Router('main');
