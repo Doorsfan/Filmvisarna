@@ -6,6 +6,7 @@ export default class MoviePage {
   }
 
   async render() {
+    $('.main').html('');
     if (!this.movies) {
       await this.read();
     }
@@ -27,6 +28,6 @@ export default class MoviePage {
   `);
     });
     html.append('</div>');
-    return $('body').append(html);
+    return $('.main').append(html);
   }
 }

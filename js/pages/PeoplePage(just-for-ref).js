@@ -1,5 +1,4 @@
 export default class PeoplePage {
-
   constructor(changeListener) {
     this.changeListener = changeListener;
     this.addEventHandlers();
@@ -21,25 +20,25 @@ export default class PeoplePage {
   }
 
   // custom method for rerendering without route change
-  reRender(){
-      this.read();
-     $('main').html(this.render());
+  reRender() {
+    this.read();
+    $('main').html(this.render());
   }
 
   // standard method for rendering, called from the router
   render() {
-    if(this.persons){
-        // Render the list of persons
-        return `
+    if (this.persons) {
+      // Render the list of persons
+      return `
             <h1>Persons</h1>
-            ${this.persons.map(person => `<h2>${person.name}</h2>`).join('')}
+            ${this.persons.map((person) => `<h2>${person.name}</h2>`).join('')}
             <button class="add-person">Add person</button>
         `;
-    }else{
-        // custom solution for when this page is loaded on browser refresh
-        setTimeout(()=>{
-            this.reRender()
-        },0)
+    } else {
+      // custom solution for when this page is loaded on browser refresh
+      setTimeout(() => {
+        this.reRender();
+      }, 0);
     }
   }
 
@@ -52,5 +51,4 @@ export default class PeoplePage {
     console.log('Saved');
     console.table(this.persons);
   }
-
 }
