@@ -12,8 +12,6 @@ export default class StartPage {
     if (!this.movies) {
       await this.read();
     }
-
-    //append the body, this is where we change where!
-    return $('.main').append(this.yt.render(this.movies));
+    return this.yt.render(this.movies);
   }
 }
