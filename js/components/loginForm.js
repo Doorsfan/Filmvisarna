@@ -4,7 +4,8 @@ export default class loginForm {
     return /*html*/ `
     <form class="loginPage login_form" action="validate_user.js" method="get">
       <div class="loginPage formContainer">
-        <label class="loginPage emailLabel" for="email">Username</label>
+        <div class="loginPage loginTitle">Login</div>
+        <label class="loginPage emailLabel" for="email">E-mail</label>
         <input class="loginPage emailInput" type="text" placeholder="Write your E-mail here.." name="email" required>
         <div class="loginPage firstSeperator"></div>
         <label class="loginPage passwordLabel" for="password">Password</label>
