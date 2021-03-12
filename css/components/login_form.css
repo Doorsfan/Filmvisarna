@@ -1,9 +1,5 @@
 .loginPage.formContainer{
-  position:absolute;
-  top:30%;
-  transform: translateY(-30%);
-  left:50%;
-  transform: translateX(-50%);
+  margin: 8vh 0 8vh 0;
   font-size: 23px;
   max-width:450px;
   max-height:max-content;
