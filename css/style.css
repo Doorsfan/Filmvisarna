@@ -3,6 +3,7 @@
 @import './components/sidebar.css';
 @import url(/css/components/youtube-carousell.css);
 @import url(/css/components/header.css);
+@import './components/login_form.css';
 
 * {
   -webkit-box-sizing: border-box;
