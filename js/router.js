@@ -49,9 +49,7 @@ export default class Router {
     return peoplePage.render();
   }
 
-  default() {
-    return moviePage.render();
-  }
+  default() {}
 
   MoviePage() {
     return moviePage.render();
