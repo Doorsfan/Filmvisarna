@@ -55,5 +55,5 @@ export default class Router {
 
   MoviePage() {
     return moviePage.render();
-  
+  }
 }
