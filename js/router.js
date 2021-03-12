@@ -50,7 +50,7 @@ export default class Router {
   }
 
   default() {
-    return LoginPage.render();
+    return moviePage.render();
   }
 
   MoviePage() {

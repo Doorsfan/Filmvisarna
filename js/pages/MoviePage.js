@@ -1,23 +1,24 @@
 export default class MoviePage {
   constructor() {
-    console.log('Creating instance');
-    this.fetchmoviesInfo();
+    console.log('Creating movie page');
   }
 
-  async fetchmoviesInfo() {
-    let movies;
-    await $.getJSON('/json/movies.json', (data) => {
-      movies = data;
-    });
-    console.log(movies);
+  async read() {
+    this.movies = await $.getJSON('/json/movies.json');
+    console.log(this.movies);
   }
 
-  render() {
-    let html;
+  async render() {
     console.log('rendering');
-    $('body').append('<div class="movie-container"></div>');
-    movies.forEach((data) => {
-      html += $(/*html*/ `
+    if (!this.movies) {
+      await this.read();
+    }
+    let html = $('<div class="movie-container">');
+
+    // $('body').append('<div class="movie-container"></div>');
+    console.log(this.movies);
+    this.movies.forEach((data) => {
+      html.append(/*html*/ `
         <section class="movie-info">
           <div class="movie-poster">
             <img src="${data.images[0]}" style="height: 100px">
@@ -31,7 +32,11 @@ export default class MoviePage {
           </div><hr>
         </section>
   `);
-      return html;
     });
+    html.append('</div>');
+    console.log(html);
+
+    //
+    return $('body').append(html);
   }
 }
