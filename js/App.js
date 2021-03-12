@@ -3,7 +3,6 @@ import loginForm from './components/loginForm.js';
 import Router from './router.js';
 
 export default class App {
-
   constructor() {
     // render partials
 
@@ -11,7 +10,5 @@ export default class App {
     $('header').html(new Header().render());
     // main renders in its router, on instanciation
     this.router = new Router('main');
-
   }
-
 }
