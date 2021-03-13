@@ -4,7 +4,7 @@
     "productionCountries": ["Australia"],
     "productionYear": "2020",
     "length": "90",
-    "genre": ["Drama", "Horror", "Mystery"],
+    "genre": ["Drama", " Skräck", " Mysterium"],
     "distributor": "Paramount Pictures",
     "language": "engelska",
     "subtitles": "svenska",
@@ -16,7 +16,7 @@
       "Steve Rodgers",
       "Chris Bunton"
     ],
-    "description": "<p>A daughter, mother and grandmother are haunted by a manifestation of dementia that consumes their family's home.</p>",
+    "description": "<p>Den sinnesförvirrade änkan Edna rapporteras försvunnen från sitt förfallna hem. Hennes dotter och barnbarn beger sig till huset för att ta reda på vad som hänt. När Edna plötsligt dyker upp igen är hon sig inte lik. Men än värre – hon är inte ensam.</p>",
     "images": ["./images/movie_posters/relic.jpg"],
     "youtubeTrailers": ["XWhZDQkq0bw"],
     "reviews": [
@@ -45,7 +45,7 @@
     "productionCountries": ["USA"],
     "productionYear": 2001,
     "length": 152,
-    "genre": ["Äventyr", "Familjefilm"],
+    "genre": ["Äventyr", " Familjefilm"],
     "distributor": "Warner Brothers",
     "language": "Engelska",
     "subtitles": "Svenska",
@@ -79,17 +79,17 @@
     ]
   },
   {
-    "title": "Patersson",
+    "title": "Paterson",
     "productionCountries": ["Frankrike", "Tyskland", "USA"],
     "productionYear": 2016,
     "length": 118,
-    "genre": "Spelfilm",
+    "genre": ["Komedi", " Drama", " Romans"],
     "distributor": "Scanbox",
     "language": "engelska",
     "subtitles": "svenska",
     "director": "Jim Jarmusch",
     "actors": ["Adam Driver", "Golshifteh Farahani", "Barry Shabaka Henley"],
-    "description": "<p>Paterson är en amerikansk-fransk-tysk dramafilm från 2016, skriven och regisserad av Jim Jarmusch. Den utspelar sig i staden Paterson. Adam Driver spelar huvudrollen som en poesiskrivande bussförare vid namn Paterson och Golshifteh Farahani spelar Laura, hans fantasifulla hustru. Huvudpersonens dikter i filmen är allihop författade av poeten Ron Padgett, fyra stycken ur hans tidigare produktion och tre skrivna direkt för filmen, medan filmtiteln är en tydlig hänvisning till poeten William Carlos Williams och hans diktverk Paterson.</p>",
+    "description": "<p>Paterson är busschaufför i staden Paterson, New Jersey. Varje dag kör han sin dagliga rutt under vilken han observerar staden när den flimrar förbi genom vindrutan och lyssnar samtidigt på fragment av passagerarnas konversationer, han skriver poesi i en anteckningsbok, han går ut med sin tjejs egensinniga engelska bulldogg Marvin, han stannar till vid samma bar och dricker exakt en öl innan han går hem till sin fru Laura.</p>",
     "images": ["/images/movie_posters/paterson.jfif"],
     "youtubeTrailers": ["m8pGJBgiiDU"],
     "reviews": [
@@ -118,7 +118,7 @@
     "productionCountries": ["USA"],
     "productionYear": 1972,
     "length": 175,
-    "genre": ["Drama", "Crime"],
+    "genre": ["Drama", " Brott"],
     "distributor": "Paramount Pictures",
     "language": "engelska",
     "subtitles": "svenska",
@@ -134,7 +134,7 @@
       "Richard Conte",
       "Diane Keaton"
     ],
-    "description": "<p>An organized crime dynasty's aging patriarch transfers control of his clandestine empire to his reluctant son.</p>",
+    "description": "<p>Maffialedaren Don Vito Corleone styr sitt mäktiga imperium med ett brutalt system av tjänster och gentjänster. När han dör måste någon av sönerna ta över: advokaten Tom, playboyen Sonny, lojale Fredo - eller Michael, den yngste och minst villige.</p>",
     "images": ["./images/movie_posters/the_godfather.jpg"],
     "youtubeTrailers": ["sY1S34973zA"],
     "reviews": [
@@ -169,7 +169,7 @@
     "subtitles": "Svenska",
     "director": "Jacques Tati",
     "actors": ["Jacques Tati", "Jean-Pierre Zola", "Adrienne Servantie"],
-    "description": "<p>Herr och fru Arpel är de modernaste av människor. Deras hem styrs på samma sätt som herr Arpel styr sin plastfabrik — metodiskt och med exakta rutiner. En dröm för vissa, men en mardröm för sonen Gérard.</p><p>Han flyr den stela, steriliserade världen in i famnen på sin onkel, monsieur Hulot. Men så kommer föräldrarna på dem. Hulot måste stoppas! I deras värld äger han det farligaste vapnet av allt. Ett hjärta.</p><p>Min onkel var Tatis första färgfilm och största framgång; Vid Filmfestivalen i Cannes 1958 tilldelades den Prix de Jury och 1959 vann den en Oscar för bästa icke-engelsspråkiga film.",
+    "description": "<p>Herr och fru Arpel är de modernaste av människor. Deras hem styrs på samma sätt som herr Arpel styr sin plastfabrik — metodiskt och med exakta rutiner. En dröm för vissa, men en mardröm för sonen Gérard.</p><p>Han flyr den stela, steriliserade världen in i famnen på sin onkel, monsieur Hulot. Men så kommer föräldrarna på dem. Hulot måste stoppas! I deras värld äger han det farligaste vapnet av allt. Ett hjärta.</p>",
     "images": [
       "./images/movie_posters/min_onkel_1.jpg",
       "./images/movie_posters/min_onkel_2.jpg"
