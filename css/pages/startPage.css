@@ -6,6 +6,7 @@
   justify-content: space-around;
   align-items: center;
   color: black;
+  justify-content: center;
 }
 
 .sidebar-container {
@@ -13,10 +14,18 @@
 }
 
 .poster-container {
-  padding: 5rem;
+  padding: 2rem;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr;
+  justify-content: space-around;
+}
+
+.movie-poster {
+  display: flex;
+  align-self: center;
+  justify-content: center;
+  align-items: center;
 }
 
 .movie-poster img {
