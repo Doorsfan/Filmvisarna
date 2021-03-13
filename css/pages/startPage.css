@@ -1,6 +1,6 @@
 @import '../components/videoSlider.css';
 
-main {
+.big-div {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
