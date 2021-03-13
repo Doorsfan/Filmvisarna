@@ -13,7 +13,7 @@ import AboutPage from './pages/aboutPage.js';
 const startPage = new StartPage();
 const loginPage = new LoginPage();
 const moviePage = new MoviePage();
-const aboutPage = new AboutPage();
+
 // const peoplePage = new PeoplePage(changeListener);
 
 export default class Router {
@@ -29,10 +29,16 @@ export default class Router {
 
   async setCurrentPage(selector) {
     let name = window.location.hash.replace('-', '').replace('#', '');
-    if (!this[name]) {
+    let result;
+    if (name.includes('aboutPage')) {
+      let movieName = name.substr(9, name.length - 1);
+      result = await this.aboutPage(movieName);
+    } else if (!this[name]) {
       name = 'default';
+      result = await this[name]();
+    } else {
+      result = await this[name]();
     }
-    let result = await this[name]();
     $(selector).html('');
     $(selector).append(result);
   }
@@ -52,7 +58,7 @@ export default class Router {
     return moviePage.render();
   }
 
-  aboutPage() {
-    return aboutPage.render();
+  aboutPage(movieTitle) {
+    return new AboutPage(movieTitle).render();
   }
 }
