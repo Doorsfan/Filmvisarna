@@ -14,6 +14,22 @@ export default class StartPage {
     if (!this.movies) {
       await this.read();
     }
-    return this.yt.render(this.movies);
+    let bigDiv = $(/*html*/ `<div class="big-container">`);
+    let html = $('<div class="poster-container"></div>');
+    this.movies.forEach((data) => {
+      html.append(/*html*/ `
+          <div class="movie-poster ${data.id}">
+            <a href="#"><img src="${data.images[0]}"></a>
+          </div>
+        `);
+    });
+
+    //ugly code
+    let ytSlider = this.yt.render(this.movies);
+    console.log(html);
+    let startP = ytSlider.add(html);
+    console.log(ytSlider);
+
+    return bigDiv.append(startP);
   }
 }
