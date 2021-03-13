@@ -1,7 +1,9 @@
 import ytSlider from '../components/ytCarousellHandler.js';
 
 export default class StartPage {
-  yt = new ytSlider();
+  constructor() {
+    this.yt = new ytSlider();
+  }
 
   async read() {
     this.movies = await $.getJSON('/json/movies.json');
