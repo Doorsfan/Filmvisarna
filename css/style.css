@@ -4,7 +4,10 @@
 @import url(/css/components/header.css);
 @import './components/login_form.css';
 @import './pages/MoviePage.css';
+@import './components/footer.css';
 
+@import './components/login_form.css';
+@import './pages/startPage.css';
 * {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
