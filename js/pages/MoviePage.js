@@ -12,15 +12,13 @@ export default class MoviePage {
     let html = '<div class="movie-container">';
     this.movies.forEach((data) => {
       html += /*html*/ `<section class="movie-info">
-          <div class="movie-poster">
-            <a href="#"><img src="${data.images[0]}" style="height: 100px"></a>
-          </div>
+          <figure class="movie-poster">
+              <a href="#"><img src="${data.images[0]}" alt=""></a>
+          </figure>
           <div class="movie-text">
-            <h3 class="title-name">${data.title}
-            </h3>
+            <h2 class="title-name"><p>${data.title}</p></h2>
             <h4>Genre:</h4> <p>${data.genre}</p>
             <h4>Speltid:</h4> <p>${data.length + ' minuter'}</p>
-            <h4>Handling:</h4> ${data.description}
           </div><hr>
         </section>`;
     });

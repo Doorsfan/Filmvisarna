@@ -15,7 +15,7 @@ export default class Sidebar {
               <a href='/nyheter'>Nyheter</a>
             </li>
             <li class="navlist-item">
-              <a href='/filmer'>Filmer</a>
+              <a href='#MoviePage'>Filmer</a>
             </li>
           </ul>
         </nav>
