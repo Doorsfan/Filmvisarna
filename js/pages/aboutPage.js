@@ -1,9 +1,9 @@
 export default class AboutPage {
   constructor(movieTitle) {
     this.movieTitle = movieTitle;
-    this.movie;
   }
 
+  //Ask alex if its confusing
   async read() {
     this.movies = await $.getJSON('/json/movies.json');
     await Promise.all(
@@ -32,7 +32,9 @@ export default class AboutPage {
       <p>Director: ${this.movie.director}</p>
       ${this.movie.description}
     </div>
-    <div class="movie-posters"></div>
+    <div class="movie-posters">
+    <a href="#aboutPage${this.movie.id}"><img src="${this.movie.images[0]}" height="100px"></a>
+    </div>
     `);
     return html;
   }

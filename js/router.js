@@ -26,7 +26,7 @@ export default class Router {
     // but also render it right now, based on the current hash or default page
     this.setCurrentPage(selector);
   }
-
+  //Ask alex if its confusing
   async setCurrentPage(selector) {
     let name = window.location.hash.replace('-', '').replace('#', '');
     let result;
