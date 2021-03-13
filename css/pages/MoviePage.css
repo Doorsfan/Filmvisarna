@@ -38,6 +38,14 @@
 .movie-container p {
   color: black;
 }
+.movie-container .genre h4,
+.movie-container .genre p {
+  display: inline-block;
+}
+.movie-container .runtime h4,
+.movie-container .runtime p {
+  display: inline-block;
+}
 /*
 Primär Färg:
   #BEBDBF;
