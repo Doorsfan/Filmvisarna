@@ -3,6 +3,23 @@
 main {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
+  color: black;
+}
+
+.sidebar-container {
+  z-index: 100;
+}
+
+.poster-container {
+  padding: 5rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+}
+
+.movie-poster img {
+  width: 200px;
+  height: 200px;
 }
