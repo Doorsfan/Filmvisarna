@@ -6,12 +6,14 @@ const changeListener = new ChangeListener();
 import StartPage from './pages/StartPage.js';
 import LoginPage from './pages/LoginPage.js';
 import MoviePage from './pages/MoviePage.js';
+import AboutPage from './pages/aboutPage.js';
 // import PeoplePage from './pages/PeoplePage.js';
 
 // instanciate to reuse instances of pages
 const startPage = new StartPage();
 const loginPage = new LoginPage();
 const moviePage = new MoviePage();
+const aboutPage = new AboutPage();
 // const peoplePage = new PeoplePage(changeListener);
 
 export default class Router {
@@ -48,5 +50,9 @@ export default class Router {
 
   MoviePage() {
     return moviePage.render();
+  }
+
+  aboutPage() {
+    return aboutPage.render();
   }
 }
