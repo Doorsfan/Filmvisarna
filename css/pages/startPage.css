@@ -21,14 +21,14 @@
   justify-content: space-around;
 }
 
-.movie-poster {
+.start-poster {
   display: flex;
   align-self: center;
   justify-content: center;
   align-items: center;
 }
 
-.movie-poster img {
+.start-poster img {
   width: 200px;
   height: 200px;
 }
