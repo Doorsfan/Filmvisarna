@@ -12,18 +12,22 @@ export default class StartPage {
     if (!this.movies) {
       await this.read();
     }
-
-    this.html = $('<div class="poster-container"></div>');
+    let bigDiv = $(/*html*/ `<div class="big-container">`);
+    let html = $('<div class="poster-container"></div>');
     this.movies.forEach((data) => {
-      this.html.append(/*html*/ `
+      html.append(/*html*/ `
           <div class="movie-poster ${data.id}">
             <a href="#"><img src="${data.images[0]}"></a>
           </div>
         `);
     });
-    this.fis = this.yt.render(this.movies);
-    console.log(this.fis.after(this.html));
 
-    return this.fis.add(this.html);
+    //ugly code
+    let ytSlider = this.yt.render(this.movies);
+    console.log(html);
+    let startP = ytSlider.add(html);
+    console.log(ytSlider);
+
+    return bigDiv.append(startP);
   }
 }
