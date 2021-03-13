@@ -20,7 +20,7 @@ export default class StartPage {
     this.movies.forEach((data) => {
       html.append(/*html*/ `
           <div class="start-poster ${data.id}">
-            <a href="#"><img src="${data.images[0]}"></a>
+            <a href="#aboutPage${data.id}"><img src="${data.images[0]}"></a>
           </div>
         `);
     });

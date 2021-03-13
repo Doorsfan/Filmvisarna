@@ -5,7 +5,7 @@ export default class Sidebar {
         <nav>
           <ul class="navlist">
             <li class="navlist-item">
-              <a href='/login'>Login</a>
+              <a href='#loginPage'>Login</a>
             </li>
             <hr />
             <li class="navlist-item">
@@ -15,7 +15,7 @@ export default class Sidebar {
               <a href='/nyheter'>Nyheter</a>
             </li>
             <li class="navlist-item">
-              <a href='/filmer'>Filmer</a>
+              <a href='#MoviePage'>Filmer</a>
             </li>
           </ul>
         </nav>
