@@ -1,10 +1,9 @@
-@import "./components/header.css";
-@import "./components/sidebar.css";
-@import "./components/footer.css";
-@import url(/css/components/youtube-carousell.css);
-@import url(/css/components/header.css);
-@import './components/login_form.css';
+@import './components/header.css';
+@import './components/sidebar.css';
+@import './components/footer.css';
 
+@import './components/login_form.css';
+@import './pages/startPage.css';
 * {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;

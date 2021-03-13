@@ -8,7 +8,7 @@ export default class StartPage {
   }
 
   async render() {
-    console.log('rendering start page');
+    console.log('rendering StartPage');
     if (!this.movies) {
       await this.read();
     }

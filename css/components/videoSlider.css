@@ -1,16 +1,19 @@
 .video-slider {
-  width: 600px;
-  height: 320px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 720px;
+  height: 430px;
   background: #444;
   position: relative;
   overflow: hidden;
 }
 .slide {
   position: absolute;
-  top: 0;
+  /* top: 0; */
   left: 100%;
-  width: 600px;
-  height: 320px;
+  width: 720px;
+  height: 430px;
+
   text-align: center;
   overflow: hidden;
 }
@@ -54,7 +57,23 @@
 }
 
 iframe {
-  width: 600px;
-  height: 320px;
+  width: 720px;
+  height: 430px;
   border: 0;
+}
+
+@media screen and (max-width: 720px) {
+  iframe {
+    width: 520px;
+    height: 230px;
+  }
+
+  .video-slider {
+    width: 520px;
+    height: 230px;
+  }
+  .slide {
+    width: 520px;
+    height: 230px;
+  }
 }
