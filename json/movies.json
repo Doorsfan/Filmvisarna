@@ -1,5 +1,6 @@
 [
   {
+    "id": "relic",
     "title": "Relic",
     "productionCountries": ["Australia"],
     "productionYear": "2020",
@@ -41,6 +42,7 @@
     ]
   },
   {
+    "id": "harry",
     "title": "Harry Potter and the Sorcerer's Stone",
     "productionCountries": ["USA"],
     "productionYear": 2001,
@@ -79,6 +81,7 @@
     ]
   },
   {
+    "id": "patersson",
     "title": "Patersson",
     "productionCountries": ["Frankrike", "Tyskland", "USA"],
     "productionYear": 2016,
@@ -114,6 +117,7 @@
     ]
   },
   {
+    "id": "gudfadern",
     "title": "Gudfadern",
     "productionCountries": ["USA"],
     "productionYear": 1972,
@@ -159,6 +163,7 @@
     ]
   },
   {
+    "id": "onkel",
     "title": "Min onkel",
     "productionCountries": ["Frankrike", "Italien"],
     "productionYear": 1958,
@@ -197,6 +202,7 @@
     ]
   },
   {
+    "id": "nyckeln",
     "title": "Nyckeln till frihet",
     "productionCountries": ["USA"],
     "productionYear": 1994,
