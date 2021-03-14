@@ -13,9 +13,7 @@ export default class MoviePage {
     this.movies.forEach((data) => {
       html += /*html*/ `<section class="movie-info">
           <div class="movie-poster">
-            <a href="#aboutPage${data.id}"><img src="${
-        data.images[0]
-      }" style="height: 100px"></a>
+            <a href="#aboutPage${data.id}"><img src="${data.images[0]}"></a>
           </div>
           <div class="movie-text">
             <h2 class="title-name"><p>${data.title}</p></h2>
@@ -25,7 +23,9 @@ export default class MoviePage {
             <div class="runtime"><h4>Speltid:&nbsp;</h4> <p>${
               data.length + ' minuter'
             }</p></div>
-            <h4>Handling:&nbsp;</h4> ${data.description}
+            <div class="story"><h4>Handling:&nbsp;</h4> ${
+              data.description
+            }</div>
           </div>
         </section>`;
     });

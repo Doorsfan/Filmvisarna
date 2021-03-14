@@ -4,6 +4,7 @@
   background-color: #e1e0e2;
   padding: 5rem 0;
   font-size: calc(0.55em + 1vmin);
+  align-items: center;
 }
 .movie-container .movie-info {
   display: flex;
@@ -26,12 +27,24 @@
   border-radius: 0.2em;
 }
 .movie-container .movie-text {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   margin-left: 2em;
   margin-bottom: 1em;
 }
 .movie-container .title-name {
+  position: absolute;
+  top: 0px;
   margin-bottom: 0.5em;
 }
+@media screen and (max-width: 399px) {
+  .movie-container .story {
+    display: none;
+  }
+}
+
 .movie-container h4 {
   margin: 0.2em 0;
 }
