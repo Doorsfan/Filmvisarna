@@ -1,6 +1,8 @@
+import DisplaySpecificShow from '../components/DisplayNextShow.js';
+
 export default class AboutPage {
-  constructor(movieTitle) {
-    this.movieTitle = movieTitle;
+  constructor(movieID) {
+    this.movieID = movieID;
   }
 
   //Ask alex if its confusing
@@ -8,12 +10,13 @@ export default class AboutPage {
     this.movies = await $.getJSON('/json/movies.json');
     await Promise.all(
       this.movies.map(async (data) => {
-        if (data.id === this.movieTitle) {
+        if (data.id === this.movieID) {
           this.movie = await data;
           return;
         }
       })
     );
+    this.displayShow = await new DisplaySpecificShow(this.movieID).render();
   }
 
   createPage() {
@@ -35,15 +38,15 @@ export default class AboutPage {
     <div class="movie-posters">
     <a href="#aboutPage${this.movie.id}"><img src="${this.movie.images[0]}" height="100px"></a>
     </div>
+    
     `);
-    return html;
+    return html.append();
   }
 
   async render() {
     if (!this.movies) {
       await this.read();
     }
-
-    return this.createPage();
+    return this.createPage().append(this.displayShow);
   }
 }
