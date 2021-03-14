@@ -40,7 +40,7 @@ export default class AboutPage {
     </div>
     
     `);
-    return html.append();
+    return html;
   }
 
   async render() {

@@ -2,6 +2,7 @@ export default class DisplaySpecificShow {
   constructor(movieID) {
     this.movieID = movieID;
     this.eventhandeler();
+    this.read();
   }
 
   async read() {
@@ -37,10 +38,20 @@ export default class DisplaySpecificShow {
     html.append(saloon);
     return html;
   }
+  async render() {
+    if (!this.movieSchedule) {
+      await this.read();
+    }
+    return this.createSelect();
+  }
 
-  createSaloonDisplay(date) {
-    console.log(this.filteredShow);
-    let time = this.filteredShow.forEach((show) => {
+  async createSaloonDisplay() {
+    //make it in jquery
+    let e = document.getElementById('select-date');
+    let date = e.options[e.selectedIndex].text;
+
+    let time;
+    this.filteredShow.forEach((show) => {
       if (show.date === date) {
         time = show.time;
         return;
@@ -53,17 +64,7 @@ export default class DisplaySpecificShow {
       `);
   }
 
-  async render() {
-    if (!this.movieSchedule) {
-      await this.read();
-    }
-    return this.createSelect();
-  }
-
   eventhandeler() {
-    $('main').on('change', '#select-date', function () {
-      console.log($(this).val());
-      createSaloonDisplay($(this).val());
-    });
+    $('main').on('change', '#select-date', () => this.createSaloonDisplay());
   }
 }
