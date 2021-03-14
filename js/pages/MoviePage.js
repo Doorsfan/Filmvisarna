@@ -9,7 +9,7 @@ export default class MoviePage {
     if (!this.movies) {
       await this.read();
     }
-    let html = '<div class="movie-container">';
+    let html = '<div class="movie-container"><h1>Våra filmer</h1>';
     this.movies.forEach((data) => {
       html += /*html*/ `<section class="movie-info">
           <div class="movie-poster">

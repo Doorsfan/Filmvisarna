@@ -29,7 +29,7 @@ export default class AboutPage {
       <p>Produktions år: ${this.movie.productionYear}</p>
       <p>Språk: ${this.movie.language}</p>
       <p>Skådespelare: ${this.movie.actors}</p>
-      <p>Director: ${this.movie.director}</p>
+      <p>Regissör: ${this.movie.director}</p>
       ${this.movie.description}
     </div>
     <div class="movie-posters">
