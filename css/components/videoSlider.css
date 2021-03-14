@@ -2,7 +2,7 @@
   margin-top: 0.8rem;
   margin-left: auto;
   margin-right: auto;
-  width: 90%;
+  width: 100%;
   height: 430px;
   background: #444;
   position: relative;
@@ -64,17 +64,17 @@
 }
 
 @media screen and (max-width: 720px) {
-  iframe {
+  /* iframe {
     width: 520px;
     height: 230px;
-  }
+  } */
 
-  .video-slider {
-    width: 520px;
+  /* .video-slider {
+    width: 90%;
     height: 230px;
-  }
+  } */
   .slide {
-    width: 520px;
-    height: 230px;
+    width: 100%;
+    height: 100%;
   }
 }
