@@ -32,7 +32,7 @@ export default class Header {
       <nav class="header-nav">
         <img class="hamburger-icon" src="../images/hamburger_icon.png" alt="home"/>
         
-        <a class="home-button" href="/">Filmvisarna</a>
+        <a class="home-button" href="#startPage">Filmvisarna</a>
         <img class="user-icon" src="../images/user.png" alt="home"/>
       </nav>
     </header>`);

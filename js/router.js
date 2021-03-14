@@ -6,12 +6,14 @@ const changeListener = new ChangeListener();
 import StartPage from './pages/StartPage.js';
 import LoginPage from './pages/LoginPage.js';
 import MoviePage from './pages/MoviePage.js';
+import AboutPage from './pages/aboutPage.js';
 // import PeoplePage from './pages/PeoplePage.js';
 
 // instanciate to reuse instances of pages
 const startPage = new StartPage();
 const loginPage = new LoginPage();
 const moviePage = new MoviePage();
+
 // const peoplePage = new PeoplePage(changeListener);
 
 export default class Router {
@@ -24,13 +26,19 @@ export default class Router {
     // but also render it right now, based on the current hash or default page
     this.setCurrentPage(selector);
   }
-
+  //Ask alex if its confusing
   async setCurrentPage(selector) {
     let name = window.location.hash.replace('-', '').replace('#', '');
-    if (!this[name]) {
+    let result;
+    if (name.includes('aboutPage')) {
+      let movieName = name.substr(9, name.length - 1);
+      result = await this.aboutPage(movieName);
+    } else if (!this[name]) {
       name = 'default';
+      result = await this[name]();
+    } else {
+      result = await this[name]();
     }
-    let result = await this[name]();
     $(selector).html('');
     $(selector).append(result);
   }
@@ -48,5 +56,9 @@ export default class Router {
 
   MoviePage() {
     return moviePage.render();
+  }
+
+  aboutPage(movieTitle) {
+    return new AboutPage(movieTitle).render();
   }
 }
