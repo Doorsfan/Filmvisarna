@@ -2,15 +2,16 @@ export default class loginForm {
   
   render() {
     return /*html*/ `
-    <form action="validate_user.js" method="get">
-      <div class="container">
-        <label for="email">Username</label>
-        <input type="text" placeholder="Write your E-mail here.." name="email" required>
-        <div class="separator"></div>
-        <label for="password">Password</label>
-        <input type="password" placeholder="Write your password here.." name="password" required>
-        <div class="separator"></div>
-        <button class="submit_button" type="submit">Login</button>
+    <form class="loginPage login_form" action="validate_user.js" method="get">
+      <div class="loginPage formContainer">
+        <img class="loginPage myImage" src="/images/movie_posters/relic.jpg">
+        <input class="loginPage emailInput" type="text" placeholder="E-postadress" name="email" required>
+        <div class="loginPage firstSeperator"></div>
+        <input class="loginPage passwordInput" type="password" placeholder="Lösenord" name="password" required>
+        <div class="loginPage secondSeperator"></div>
+        <button class="loginPage log_in_button" type="submit">Logga in</button>
+        <div class="loginPage ellerText">ELLER</div>
+        <button class="loginPage cancel_button">Avbryt</button>
       </div>
     </form>`;
   }

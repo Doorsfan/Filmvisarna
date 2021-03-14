@@ -1,0 +1,65 @@
+.loginPage.formContainer{
+  margin: 8vh 0 8vh 0;
+  font-size: 23px;
+  max-width:450px;
+  max-height:max-content;
+  display:flex;
+  flex-wrap:wrap;
+  margin-left:auto;
+  margin-right:auto;
+  border:solid 5px black;
+  padding:130px;
+}
+.loginPage.emailLabel{
+  padding-left:15px;
+}
+.loginPage.passwordLabel,.loginPage.emailLabel{
+  margin-right: 5px;
+  padding-top:3px;
+}
+.loginPage.emailInput{
+  margin-bottom:5px;
+  width: 250px; 
+}
+
+.loginPage.passwordInput{
+  width: 350px;
+}
+
+.loginPage.loginPage.log_in_button{
+  margin-top:40px;
+  width: 400px;
+  color:white;
+  background-color:#F54D4D;
+  border: solid 1px black;
+  height: 23px;
+}
+
+.loginPage.emailInput{
+  margin-bottom:10px;
+}
+
+
+
+.loginPage.myImage{
+  width:180px;
+  height: 120px;
+  margin-bottom: 10px;
+  padding-right: 10px;
+  margin-left:10px;
+}
+
+.loginPage.ellerText{
+  width: 400px;
+  text-align:center;
+  padding-top: 5px;
+  font-weight:bold;
+}
+
+.loginPage.cancel_button{
+  width:400px;
+  text-align:center;
+  background-color:white;
+  color: #F54D4D;
+  border: solid 1px black;
+}

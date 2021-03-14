@@ -1,9 +1,9 @@
-@import "./components/header.css";
-@import "./components/sidebar.css";
-@import "./components/footer.css";
-@import url(/css/components/youtube-carousell.css);
-@import url(/css/components/header.css);
+@import './components/header.css';
+@import './components/sidebar.css';
+@import './components/footer.css';
 
+@import './components/login_form.css';
+@import './pages/startPage.css';
 * {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -22,4 +22,11 @@
 html {
 }
 body {
+  background: rgb(225, 224, 226);
+  background: radial-gradient(
+    circle,
+    rgba(225, 224, 226, 1) 3%,
+    rgb(158, 157, 159) 67%
+  );
+  overflow-x: hidden;
 }

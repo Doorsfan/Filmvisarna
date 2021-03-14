@@ -13,7 +13,9 @@ export default class MoviePage {
     this.movies.forEach((data) => {
       html += /*html*/ `<section class="movie-info">
           <div class="movie-poster">
-            <a href="#"><img src="${data.images[0]}" style="height: 100px"></a>
+            <a href="#aboutPage${data.id}"><img src="${
+        data.images[0]
+      }" style="height: 100px"></a>
           </div>
           <div class="movie-text">
             <h3 class="title-name">${data.title}
