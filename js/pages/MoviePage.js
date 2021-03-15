@@ -65,6 +65,16 @@ $('body').on('change', '#category-filter', () => {
       $('#category-filter').val(),
       $('#age-filter').val()
     );
+  } else if (
+    $('#category-filter').val() === 'default' &&
+    $('#age-filter').val() !== 'default'
+  ) {
+    new filterMovies().renderByAge($('#age-filter').val());
+  } else if (
+    $('#category-filter').val() == 'default' &&
+    $('#age-filter').val() === 'default'
+  ) {
+    new filterMovies().renderByDefault();
   } else {
     new filterMovies().renderByCategory($('#category-filter').val());
   }
@@ -79,6 +89,16 @@ $('body').on('change', '#age-filter', () => {
       $('#category-filter').val(),
       $('#age-filter').val()
     );
+  } else if (
+    $('#age-filter').val() === 'default' &&
+    $('#category-filter').val() !== 'default'
+  ) {
+    new filterMovies().renderByCategory($('#category-filter').val());
+  } else if (
+    $('#category-filter').val() == 'default' &&
+    $('#age-filter').val() === 'default'
+  ) {
+    new filterMovies().renderByDefault();
   } else {
     new filterMovies().renderByAge($('#age-filter').val());
   }
