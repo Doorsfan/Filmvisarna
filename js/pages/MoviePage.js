@@ -10,9 +10,7 @@ export default class MoviePage {
   // Martin eller Mikael fixar till det movies.json - stämmer av när vi känner att det ska göras
   // Martin OCH Mikael gör logiken för change listener till Dropdown meny tillsamans
 
-  async render() {
-    console.log("I was called upon again");
-    
+  async render() {    
     //Implement default case handling in terms of Category - so like,
     // if !($('myCategoryDropdown').length == 0 && $('myAgeDropdown').length == 0) {
     //   return new filterMovies().renderByAgeAndCategory($('myCategoryDropdown'),$('myAgeDropdown'));
@@ -28,7 +26,8 @@ export default class MoviePage {
       await this.read();
     }
     let html = /*html*/ `<div class="movie-container"><h1>Våra filmer</h1><div class="movie-filter">
-    <select id="category-filter"><option>Genre</option>
+    <select id="category-filter">
+    <option value="default">Genre</option>
     <option value="Drama">Drama</option>
     <option value="Brott">Brott</option>
     <option value="Komedi">Komedi</option>
@@ -38,10 +37,11 @@ export default class MoviePage {
     <option value="Skräck">Skräck</option>
     <option value="Mysterium">Mysterium</option>
     </select>
-    <select id="age-filter"><option>Åldersgrupp</option>
-    <option value="">-7</option>
-    <option value="">7+</option>
-    <option value="">15+</option>
+    <select id="age-filter">
+    <option value="default">Åldersgrupp</option>
+    <option value="6">6</option>
+    <option value="14">14</option>
+    <option value="18">18</option>
     </select>
     </div>
     <div class="movies-mainBox">`;
@@ -72,9 +72,24 @@ export default class MoviePage {
 }
 
 $('body').on('change', '#category-filter', () => {
-  let myString = $('#category-filter').val();
-  new filterMovies().renderByCategory(myString);
+  if ($('#category-filter').val() !== "default" && $('#age-filter').val() !== "default") {
+    new filterMovies().renderByAgeAndCategory($('#category-filter').val(), $('#age-filter').val());
+  }
+  else {
+    new filterMovies().renderByCategory($('#category-filter').val());  
+  }
+  
 });
+
+$('body').on('change', '#age-filter', () => {
+  if ($('#category-filter').val() !== 'default' && $('#age-filter').val() !== 'default') {
+    new filterMovies().renderByAgeAndCategory($('#category-filter').val(), $('#age-filter').val());
+  }
+  else {
+    new filterMovies().renderByAge($('#age-filter').val());
+    
+  }
+})
 
 async function renderByCategory(category) {
   let html = '<div class="movie-container">';
