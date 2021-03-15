@@ -127,17 +127,7 @@
     "language": "Engelska",
     "subtitles": "svenska",
     "director": "Francis Ford Coppola",
-    "actors": [
-      "Marlon Brando",
-      "Al Pacino",
-      "James Caan",
-      "Richard Castellano",
-      "Robert Duvall",
-      "Sterling Hayden",
-      "John Marley",
-      "Richard Conte",
-      "Diane Keaton"
-    ],
+    "actors": ["Marlon Brando", "Al Pacino", "James Caan"],
     "description": "<p>Maffialedaren Don Vito Corleone styr sitt mäktiga imperium med ett brutalt system av tjänster och gentjänster. När han dör måste någon av sönerna ta över: advokaten Tom, playboyen Sonny, lojale Fredo - eller Michael, den yngste och minst villige.</p>",
     "images": ["./images/movie_posters/the_godfather.jpg"],
     "youtubeTrailers": ["sY1S34973zA"],

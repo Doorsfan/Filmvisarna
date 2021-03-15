@@ -32,15 +32,14 @@ export default class DisplaySpecificShow {
     let text = $(/*html*/ `<h1 class="aboutPage-text">Boka Biljett</h1>`);
 
     let nextShow = $(/*html*/ `
-    <div id="display-saloon">
-    <p>Tid: _____</p>
-    <p>Salong: _____</p>
+    <div class="display-saloon">
+    <div class="saloon">Salong: ${this.filteredShow[0].auditorium}</div>
+    <div class="time">Tid:    ${this.filteredShow[0].time}</div>
+    <button class="aboutPage-btn" type="button">Boka</button>
     </div>
     `);
 
-    let btn = $(
-      /*html*/ `<button class="aboutPage-btn" type="button">Boka</button>`
-    );
+    let btn = $();
     html.append(text);
     html.append(select);
     html.append(nextShow);
@@ -72,14 +71,14 @@ export default class DisplaySpecificShow {
     if (!time || !saloon) {
       $('#display-saloon').html('');
       $('#display-saloon').append(/*html*/ `
-        <p>Tid: _____</p>
-        <p>Salong: _____</p>
+      <div class="saloon">Salong: </div>
+      <div class="time">Tid: </div>
       `);
     } else {
       $('#display-saloon').html('');
       $('#display-saloon').append(/*html*/ `
-        <p>Tid: ${time}</p>
-        <p>Salong: ${saloon}</p>
+      <div class="saloon">Salong: ${saloon}</div>
+      <div class="time">Tid:    ${time}</div>
       `);
     }
   }
