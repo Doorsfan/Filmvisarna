@@ -12,6 +12,9 @@
 .movie-container p {
   color: black;
 }
+.movie-container .movie-filter {
+  align-self: flex-end;
+}
 
 .movie-container .movie-info {
   display: flex;
