@@ -4,7 +4,11 @@ export default class MoviePage {
   async read() {
     this.movies = await $.getJSON('/json/movies.json');
   }
-
+  // Mikael bygger HTMLen som ska returnas enligt MoviePage strukturens HTML i Render
+  // Martin skapar Två dropdown menyer - en för Ålder och en för Kategori
+  // Martin eller Mikael fixar det - stämmer av när vi känner att det ska göras
+  // Martin OCH Mikael gör logiken för change listener till Dropdown meny tillsamans
+  
   async render() {
     if (!this.movies) {
       await this.read();
