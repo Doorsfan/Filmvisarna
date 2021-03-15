@@ -42,6 +42,7 @@ export default class AboutPage {
     <a href="#aboutPage${this.movie.id}"><img src="${this.movie.images[0]}"></a>
     <a href="#aboutPage${this.movie.id}"><img src="${this.movie.images[0]}"></a>
     <a href="#aboutPage${this.movie.id}"><img src="${this.movie.images[0]}"></a>
+    <a href="#aboutPage${this.movie.id}"><img src="${this.movie.images[0]}"></a>
     </div>
     
     `);

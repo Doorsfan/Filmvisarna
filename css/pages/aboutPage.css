@@ -1,50 +1,60 @@
 .about-container {
-  padding: 1rem 0 1rem 0;
-  width: 100%;
-  height: inherit;
-
+  margin: auto;
+  max-width: 60rem;
+  max-height: 91vh;
   display: grid;
-  grid-template-columns: 1fr 56% 20% 20% 1fr;
-
-  grid-template-rows: 50% 20% 20%;
+  grid-gap: 5px;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 2fr 2fr 1fr 2fr 2fr;
   grid-template-areas:
-    'v v v v v'
-    '. a a c .'
-    '. e e c .';
+    'v v v'
+    'v v v'
+    'v v v'
+    'a a c'
+    'e e c';
 }
 
 .trailer {
   grid-area: v;
+  width: 100%;
 }
 
 .about-text {
-  margin-top: 2rem;
-
   grid-area: a;
   overflow: hidden;
 }
 
 .movie-posters {
-  margin-top: 2rem;
+  display: flex;
+  flex-direction: row;
 
+  justify-content: space-between;
   grid-area: e;
 }
 
 .movie-posters img {
   transition: 0.2s ease;
-  width: 165px;
-  height: 230px;
-  overflow: hidden;
+  width: 135px;
+  height: 189px;
 }
 
 .book-show {
-  margin-top: 2rem;
+  z-index: 10;
   border: 2px solid black;
   height: 100%;
   display: flex;
   flex-direction: column;
   grid-area: c;
   background-color: #e1e0e2;
+}
+
+.aboutPage-btn {
+  width: 5rem;
+  height: 2rem;
+}
+
+.about-container p {
+  color: black;
 }
 
 .trailer iframe {
@@ -54,4 +64,15 @@
 
 .movie-posters img:hover {
   transform: scale(1.05);
+}
+
+@media screen and (max-width: 840px) {
+  .movie-posters a:nth-last-child(1) {
+    display: none;
+  }
+}
+@media screen and (max-width: 630px) {
+  .movie-posters a:first-child {
+    display: none;
+  }
 }
