@@ -10,17 +10,22 @@ export default class filterMovies {
       // Searched at 14 - Should show 4,6,14
       if (movieAge <= wantedAge) {
         html += /*html*/ `<section class="movie-info">
-              <div class="movie-poster">
-                <a href="#aboutPage${data.id}"><img src="${data.images[0]}"></a>
-              </div>
-              <div class="movie-text">
-                <h3 class="title-name">${data.title}
-                </h3>
-                <h4>Genre:</h4> <p>${data.genre}</p>
-                <h4>Speltid:</h4> <p>${data.length + ' minuter'}</p>
-                <h4>Handling:</h4> ${data.description}
-              </div>
-            </section>`;
+          <div class="movie-poster">
+            <a href="#aboutPage${data.id}"><img src="${data.images[0]}"></a>
+          </div>
+          <div class="movie-text">
+            <h2 class="title-name"><p>${data.title}</p></h2>
+            <div class="genre"><h4>Genre:&nbsp;</h4> <p>${
+              data.genre
+            } &emsp;</p></div>
+            <div class="runtime"><h4>Speltid:&nbsp;</h4> <p>${
+              data.length + ' minuter'
+            }</p></div>
+            <div class="story"><h4>Handling:&nbsp;</h4> ${
+              data.description
+            }</div>
+          </div>
+        </section>`;
       }
     }
     console.log(html);
@@ -42,35 +47,43 @@ export default class filterMovies {
           if (genre == category && movieAge <= wantedAge) {
             // 'Drama', 'Crime'
             html += /*html*/ `<section class="movie-info">
-                <div class="movie-poster">
-                  <a href="#aboutPage${data.id}"><img src="${
-              data.images[0]
-            }"></a>
-                </div>
-                <div class="movie-text">
-                  <h3 class="title-name">${data.title}
-                  </h3>
-                  <h4>Genre:</h4> <p>${data.genre}</p>
-                  <h4>Speltid:</h4> <p>${data.length + ' minuter'}</p>
-                  <h4>Handling:</h4> ${data.description}
-                </div>
-              </section>`;
+          <div class="movie-poster">
+            <a href="#aboutPage${data.id}"><img src="${data.images[0]}"></a>
+          </div>
+          <div class="movie-text">
+            <h2 class="title-name"><p>${data.title}</p></h2>
+            <div class="genre"><h4>Genre:&nbsp;</h4> <p>${
+              data.genre
+            } &emsp;</p></div>
+            <div class="runtime"><h4>Speltid:&nbsp;</h4> <p>${
+              data.length + ' minuter'
+            }</p></div>
+            <div class="story"><h4>Handling:&nbsp;</h4> ${
+              data.description
+            }</div>
+          </div>
+        </section>`;
           }
         });
       } else {
         if (data.genre == category && movieAge <= wantedAge) {
           html += /*html*/ `<section class="movie-info">
-              <div class="movie-poster">
-                <a href="#aboutPage${data.id}"><img src="${data.images[0]}"></a>
-              </div>
-              <div class="movie-text">
-                <h3 class="title-name">${data.title}
-                </h3>
-                <h4>Genre:</h4> <p>${data.genre}</p>
-                <h4>Speltid:</h4> <p>${data.length + ' minuter'}</p>
-                <h4>Handling:</h4> ${data.description}
-              </div>
-            </section>`;
+          <div class="movie-poster">
+            <a href="#aboutPage${data.id}"><img src="${data.images[0]}"></a>
+          </div>
+          <div class="movie-text">
+            <h2 class="title-name"><p>${data.title}</p></h2>
+            <div class="genre"><h4>Genre:&nbsp;</h4> <p>${
+              data.genre
+            } &emsp;</p></div>
+            <div class="runtime"><h4>Speltid:&nbsp;</h4> <p>${
+              data.length + ' minuter'
+            }</p></div>
+            <div class="story"><h4>Handling:&nbsp;</h4> ${
+              data.description
+            }</div>
+          </div>
+        </section>`;
         }
       }
     }
@@ -90,35 +103,43 @@ export default class filterMovies {
           if (genre === category) {
             // 'Drama', 'Crime'
             html += /*html*/ `<section class="movie-info">
-                <div class="movie-poster">
-                  <a href="#aboutPage${data.id}"><img src="${
-              data.images[0]
-            }"></a>
-                </div>
-                <div class="movie-text">
-                  <h3 class="title-name">${data.title}
-                  </h3>
-                  <h4>Genre:</h4> <p>${data.genre}</p>
-                  <h4>Speltid:</h4> <p>${data.length + ' minuter'}</p>
-                  <h4>Handling:</h4> ${data.description}
-                </div>
-              </section>`;
+          <div class="movie-poster">
+            <a href="#aboutPage${data.id}"><img src="${data.images[0]}"></a>
+          </div>
+          <div class="movie-text">
+            <h2 class="title-name"><p>${data.title}</p></h2>
+            <div class="genre"><h4>Genre:&nbsp;</h4> <p>${
+              data.genre
+            } &emsp;</p></div>
+            <div class="runtime"><h4>Speltid:&nbsp;</h4> <p>${
+              data.length + ' minuter'
+            }</p></div>
+            <div class="story"><h4>Handling:&nbsp;</h4> ${
+              data.description
+            }</div>
+          </div>
+        </section>`;
           }
         });
       } else {
         if (data.genre == category) {
           html += /*html*/ `<section class="movie-info">
-              <div class="movie-poster">
-                <a href="#aboutPage${data.id}"><img src="${data.images[0]}"></a>
-              </div>
-              <div class="movie-text">
-                <h3 class="title-name">${data.title}
-                </h3>
-                <h4>Genre:</h4> <p>${data.genre}</p>
-                <h4>Speltid:</h4> <p>${data.length + ' minuter'}</p>
-                <h4>Handling:</h4> ${data.description}
-              </div>
-            </section>`;
+          <div class="movie-poster">
+            <a href="#aboutPage${data.id}"><img src="${data.images[0]}"></a>
+          </div>
+          <div class="movie-text">
+            <h2 class="title-name"><p>${data.title}</p></h2>
+            <div class="genre"><h4>Genre:&nbsp;</h4> <p>${
+              data.genre
+            } &emsp;</p></div>
+            <div class="runtime"><h4>Speltid:&nbsp;</h4> <p>${
+              data.length + ' minuter'
+            }</p></div>
+            <div class="story"><h4>Handling:&nbsp;</h4> ${
+              data.description
+            }</div>
+          </div>
+        </section>`;
         }
       }
       //end of for loop
