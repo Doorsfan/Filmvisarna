@@ -10,14 +10,14 @@ export default class MoviePage {
       await this.read();
     }
     let html = /*html*/ `<div class="movie-container"><h1>Våra filmer</h1><div class="movie-filter">
-    <select class="category-filter"><option>Kategori</option>
+    <select class="category-filter"><option>Genre</option>
     <option>drama</option>
     <option>brott</option>
     <option>komedi</option>
     </select>
     <select class="age-filter"><option>Åldersgrupp</option>
     <option>-7</option>
-    <option>7-15</option>
+    <option>7+</option>
     <option>15+</option>
     </select>
     </div>`;
