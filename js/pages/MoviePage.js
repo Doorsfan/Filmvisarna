@@ -11,24 +11,24 @@ export default class MoviePage {
   // Martin OCH Mikael gör logiken för change listener till Dropdown meny tillsamans
 
   async render() {
-    //Implement default case handling in terms of Category - so like, 
+    //Implement default case handling in terms of Category - so like,
     // if !($('myHypotheticalDropdown') == '') {
     //   return new filterMovies().render($('myHypotheticalDropdown'));
     // }
-    
+
     if (!this.movies) {
       await this.read();
     }
     let html = /*html*/ `<div class="movie-container"><h1>Våra filmer</h1><div class="movie-filter">
-    <select class="category-filter"><option>Genre</option>
-    <option>drama</option>
-    <option>brott</option>
-    <option>komedi</option>
+    <select id="#category-filter"><option>Genre</option>
+    <option value="drama">drama</option>
+    <option value="">brott</option>
+    <option value="">komedi</option>
     </select>
-    <select class="age-filter"><option>Åldersgrupp</option>
-    <option>-7</option>
-    <option>7+</option>
-    <option>15+</option>
+    <select id="#age-filter"><option>Åldersgrupp</option>
+    <option value="">-7</option>
+    <option value="">7+</option>
+    <option value="">15+</option>
     </select>
     </div>`;
 
