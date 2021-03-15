@@ -9,22 +9,27 @@ export default class StartPage {
     this.movies = await $.getJSON('/json/movies.json');
   }
 
-  //ugly code
   async render() {
     let currentSlide = 0;
-    console.log('rendering StartPage');
+
     if (!this.movies) {
       await this.read();
     }
-    let bigDiv = $(/*html*/ `<div class="big-container"></div>`);
+    let startPage = $(/*html*/ `<div class="big-container"></div>`);
+    startPage.append(`<div class="startpage-infobar"><p>Välkommen! <br> Filmvisarnas Biografer håller för tillfället öppet, trots nuvarande coronapandemi.</p></div>
+      <div class="startpage-coverphoto"></div>
+       <div class="startpage-skew"></div>
+       <h1 class="h1-aktuellt">AKTUELLT</h1>
+      `);
     let html1 = $(
       /*html*/
-      `<div class="startpage-coverphoto"></div>
+      `<div class="startpage-infobar"><p>Välkommen! <br> Filmvisarnas Biografer håller för tillfället öppet, trots nuvarande coronapandemi.</p></div>
+      <div class="startpage-coverphoto"></div>
        <div class="startpage-skew"></div>
        <h1 class="h1-aktuellt">AKTUELLT</h1>
       `
     );
-    bigDiv.append(html1);
+    // startPage.append(html1);
 
     let html3 = $('<div class="poster-container"></div>');
     this.movies.forEach((data) => {
@@ -47,15 +52,14 @@ export default class StartPage {
         </div>
       </div>
     `);
-    bigDiv.append(html5);
+    startPage.append(html5);
 
-    //let startP = sliderContainer.add(html);
     let html2 = $(
       `<h2 style="font-size: 3rem; text-align: center; margin-bottom: 2rem;">VÅRA FILMER</h2>`
     );
-    bigDiv.append(html2);
+    startPage.append(html2);
 
-    bigDiv.append(html3);
+    startPage.append(html3);
 
     let html4 = $(/*html*/ `
     <h2 style="text-align: center; font-size: 3rem; margin-top: 15rem;margin-bottom: 2rem;">BÄST I BETYG</h2>
@@ -70,14 +74,14 @@ export default class StartPage {
     </div>
     `);
 
-    bigDiv.append(html4);
+    startPage.append(html4);
 
     let ytSlider = this.yt.render(this.movies);
     let sliderContainer = $(
       /*html*/ `<div class="video-container"><h3>FILMTRAILERS</h3></div>`
     );
     sliderContainer.append(ytSlider);
-    bigDiv.append(sliderContainer);
+    startPage.append(sliderContainer);
 
     $('main').load('load', showSlides);
 
@@ -97,48 +101,6 @@ export default class StartPage {
       setTimeout(showSlides, 2000);
     }
 
-    return bigDiv;
+    return startPage;
   }
 }
-
-// for (i = 0; i < slides.length; i++) {
-//       slides[i].style.display = 'none';
-//     }
-//     slideIndex++;
-//     if (slideIndex > slides.length) {
-//       slideIndex = 1;
-//     }
-//     slides[slideIndex - 1].style.display = 'block';
-//     setTimeout(showSlides, 2000); // Change image every 2 seconds
-//   }
-// let html5 = $(
-//   /*html*/
-//   `
-//  <h3 class="startpage-saloonheading">Spelas idag</h3>
-//   <div class="startpage-saloons">
-//     <div class="startpage-saloon">
-//       <h3>Savannen</h3>
-//       <div class="saloon-container">
-
-//       </div>
-//     </div>
-//     <div class="startpage-saloon"><h3>Lilla Paris</h3></div>
-//   </div>
-//   `
-// );
-
-// this.movieSchedule.map((item) => {
-//   let savannen = [];
-//   let lillaParis = [];
-
-//   if (
-//     item.auditorium === 'Savannen' &&
-//     item.date === new Date().toLocaleDateString()
-//   ) {
-//     console.log(item.date);
-//     console.log(new Date().toLocaleDateString());
-//   }
-// });
-
-// console.log('FILMSCHEMA');
-// console.log(this.movieSchedule);

@@ -11,6 +11,7 @@
 
 .big-container {
   overflow: hidden;
+  position: relative;
 }
 
 .h1-aktuellt {
@@ -21,7 +22,31 @@
   border-bottom: 15px solid black;
 }
 
+.startpage-infobar {
+  margin: 0 auto;
+  text-align: center;
+  border: 3px solid whitesmoke;
+  width: 40rem;
+  background: black;
+  color: white;
+  position: absolute;
+  z-index: 3;
+  left: 33%;
+  top: 6%;
+}
 
+.startpage-infobar:hover, .startpage-infobar:active {
+  border: 3px solid black;
+  background: white;
+  color: black;
+}
+
+.startpage-infobar p {
+  color: inherit;
+  font-size: 2rem;
+  padding: 2rem;
+  line-height: 3rem;
+}
 
 .sidebar-container {
   z-index: 100;
@@ -32,8 +57,8 @@
   margin: 0 auto;
   margin-bottom: 10rem;
   margin-top: 10rem;
-    
   border-top: 10px solid black;
+  border-bottom: 10px solid black;
 }
 
 .video-container h3 {
@@ -117,8 +142,6 @@
   margin-right: 2rem;
 }
 
-.toplist-listitem
-
 .toplist-listitem:last-of-type {
   margin-right: 0;
 }
@@ -180,16 +203,12 @@
 .slide-aside {
   position:absolute;
   text-align: center;
-  /* margin-top: 1rem; */
-  /* right: -30rem;
-  top: -30rem; */
   margin-left: 2rem;
   margin-top: 5rem;
   padding-top: 3em;
   height: 400px;
   width: 500px;
   border-radius: 10px;
-  
   display: inline-block;
   background-color: beige;
 }
