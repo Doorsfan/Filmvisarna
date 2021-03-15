@@ -44,7 +44,7 @@ export default class MoviePage {
     <option value="18">18</option>
     </select>
     </div>
-    <div class="movies-mainBox">`;
+    <div class="movies-main-box">`;
 
     this.movies.forEach((data) => {
       html += /*html*/ `<section class="movie-info">

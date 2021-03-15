@@ -25,8 +25,8 @@ export default class filterMovies {
     }
     console.log(html);
     //html += '</div>';
-    $('.movies-mainBox').html('');
-    $('.movies-mainBox').append(html);
+    $('.movies-main-box').html('');
+    $('.movies-main-box').append(html);
   }
 
   async renderByAgeAndCategory(category, age) {
@@ -75,8 +75,8 @@ export default class filterMovies {
       }
     }
     //html += '</div>';
-    $('.movies-mainBox').html('');
-    $('.movies-mainBox').append(html);
+    $('.movies-main-box').html('');
+    $('.movies-main-box').append(html);
   }
 
   async renderByCategory(category) {
@@ -124,7 +124,7 @@ export default class filterMovies {
       //end of for loop
     }
     //html += '</div>';
-    $('.movies-mainBox').html('');
-    $('.movies-mainBox').append(html);
+    $('.movies-main-box').html('');
+    $('.movies-main-box').append(html);
   }
 }
