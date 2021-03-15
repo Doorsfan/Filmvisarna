@@ -1,7 +1,7 @@
 .about-container {
   padding: 1rem 0 1rem 0;
   width: 100%;
-  height: 100%;
+  height: inherit;
 
   display: grid;
   grid-template-columns: 1fr 56% 20% 20% 1fr;
@@ -34,14 +34,13 @@
   transition: 0.2s ease;
   width: 165px;
   height: 230px;
+  overflow: hidden;
 }
 
 .book-show {
   margin-top: 2rem;
   border: 2px solid black;
   height: 100%;
-  /* justify-self: right;
-  width: 50%; */
   display: flex;
   flex-direction: column;
   grid-area: c;
