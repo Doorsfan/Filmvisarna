@@ -15,33 +15,26 @@ export default class StartPage {
     if (!this.movies) {
       await this.read();
     }
+
     let startPage = $(/*html*/ `<div class="big-container"></div>`);
-    startPage.append(`<div class="startpage-infobar"><p>Välkommen! <br> Filmvisarnas Biografer håller för tillfället öppet, trots nuvarande coronapandemi.</p></div>
+    startPage.append(/*html*/ `<div class="startpage-infobar"><p>Välkommen! <br> Filmvisarnas Biografer håller för tillfället öppet, trots nuvarande coronapandemi.</p></div>
       <div class="startpage-coverphoto"></div>
        <div class="startpage-skew"></div>
        <h1 class="h1-aktuellt">AKTUELLT</h1>
       `);
-    let html1 = $(
-      /*html*/
-      `<div class="startpage-infobar"><p>Välkommen! <br> Filmvisarnas Biografer håller för tillfället öppet, trots nuvarande coronapandemi.</p></div>
-      <div class="startpage-coverphoto"></div>
-       <div class="startpage-skew"></div>
-       <h1 class="h1-aktuellt">AKTUELLT</h1>
-      `
-    );
-    // startPage.append(html1);
 
-    let html3 = $('<div class="poster-container"></div>');
+    let posterContainer = $('<div class="poster-container"></div>');
+
     this.movies.forEach((data) => {
       console.log(data);
-      html3.append(/*html*/ `
+      posterContainer.append(/*html*/ `
           <div class="start-poster ${data.id}">
             <a href="#aboutPage${data.id}"><img src="${data.images[0]}"></a>
           </div>
         `);
     });
 
-    let html5 = $(/*html*/ `
+    startPage.append(/*html*/ `
       <div class="slideshow-container">
         <div class="slideshow-slide"><a href="#aboutPagenyckeln"><img src="/images/movie_posters/nyckeln_till_frihet_poster1.jpg" alt="nyckeln till frihet" /><aside class="slide-aside"><p>NYCKELN TILL FRIHET</p><h3>SPELAS NU</h3><p>"En av världens bästa filmer"<br> - Moviezine.se</p></aside></a></div>
         <div class="slideshow-slide"><a href="#aboutPagerelic"><img src="/images/movie_posters/relic.jpg" alt="relic" /><aside class="slide-aside"><p>RELIC</p><h3>SPELAS NU</h3><p>"Skräck som bäst!"<br> - Ginza</p></aside></a></div>
@@ -52,19 +45,15 @@ export default class StartPage {
         </div>
       </div>
     `);
-    startPage.append(html5);
 
-    let html2 = $(
-      `<h2 style="font-size: 3rem; text-align: center; margin-bottom: 2rem;">VÅRA FILMER</h2>`
-    );
-    startPage.append(html2);
+    startPage.append(`<h2 class="ourmovies-title">VÅRA FILMER</h2>`);
 
-    startPage.append(html3);
+    startPage.append(posterContainer);
 
-    let html4 = $(/*html*/ `
-    <h2 style="text-align: center; font-size: 3rem; margin-top: 15rem;margin-bottom: 2rem;">BÄST I BETYG</h2>
+    startPage.append(/*html*/ `
+    <h2 class="bestmovies-title">BÄST I BETYG</h2>
     <div class="bestof-container">
-      <ul style="display: flex; justify-content: center;">
+      <ul>
         <li class="toplist-listitem"><a href="#aboutPagenyckeln"><span class="bestof-span">1.</span><img class="bestof-img" src="/images/movie_posters/nyckeln_till_frihet_poster1.jpg"/></a></li> 
         <li class="toplist-listitem"><a href="#aboutPagerelic"><span class="bestof-span">2.</span><img class="bestof-img" src="/images/movie_posters/relic.jpg"/></a></li>
         <li class="toplist-listitem"><a href="#aboutPagepatersson"><span class="bestof-span">3.</span><img class="bestof-img" src="/images/movie_posters/paterson.jfif"/></a></li>
@@ -74,12 +63,11 @@ export default class StartPage {
     </div>
     `);
 
-    startPage.append(html4);
-
-    let ytSlider = this.yt.render(this.movies);
     let sliderContainer = $(
       /*html*/ `<div class="video-container"><h3>FILMTRAILERS</h3></div>`
     );
+    let ytSlider = this.yt.render(this.movies);
+
     sliderContainer.append(ytSlider);
     startPage.append(sliderContainer);
 

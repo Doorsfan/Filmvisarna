@@ -101,6 +101,13 @@
   background: #bebdbf;
 }
 
+
+.ourmovies-title {
+  font-size: 3rem; 
+  text-align: center; 
+  margin-bottom: 2rem;
+}
+
 .poster-container {
   width: 100%;
   margin: 0 auto;
@@ -117,11 +124,13 @@
   justify-content: center;
   align-items: center;
   transition: transform 0.1s;
+  padding: 0 1rem;
 }
 
 .start-poster:hover,
 .start-poster:active {
   transform: scale(1.2);
+   opacity: 0.7;
 }
 
 .start-poster img {
@@ -129,11 +138,23 @@
   height: 300px;
 }
 
+.bestmovies-title {
+  text-align: center; 
+  font-size: 3rem; 
+  margin-top: 15rem;
+  margin-bottom: 2rem;
+}
+
 .bestof-container {
   border-bottom: 15px solid black;
   border-top: 10px solid black;
   border-bottom: 10px solid black;
   padding: 2rem;
+}
+
+.bestof-container ul {
+   display: flex; 
+   justify-content: center;
 }
 
 .toplist-listitem {
@@ -166,6 +187,7 @@
 
 .bestof-img:hover, .bestof-img:active {
   transform: scale(1.2);
+  
 }
 
 .slideshow-container{
@@ -194,10 +216,11 @@
 
 .slideshow-slide img {
   height: 600px;
+  transition: transform 0.2s, border 0.2s;
 }
 
 .slideshow-slide img:hover, .slideshow-slide img:active {
-  transform: scale(1.2)
+  opacity: 0.5;
 }
 
 .slide-aside {
