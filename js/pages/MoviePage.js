@@ -10,7 +10,7 @@ export default class MoviePage {
   // Martin eller Mikael fixar till det movies.json - stämmer av när vi känner att det ska göras
   // Martin OCH Mikael gör logiken för change listener till Dropdown meny tillsamans
 
-  async render() {    
+  async render() {
     //Implement default case handling in terms of Category - so like,
     // if !($('myCategoryDropdown').length == 0 && $('myAgeDropdown').length == 0) {
     //   return new filterMovies().renderByAgeAndCategory($('myCategoryDropdown'),$('myAgeDropdown'));
@@ -32,7 +32,7 @@ export default class MoviePage {
     <option value="Brott">Brott</option>
     <option value="Komedi">Komedi</option>
     <option value="Romans">Romans</option>
-    <option value="Ädventyr">Ädventyr</option>
+    <option value="Äventyr">Äventyr</option>
     <option value="Familjefilm">Familjefilm</option>
     <option value="Skräck">Skräck</option>
     <option value="Mysterium">Mysterium</option>
@@ -72,73 +72,29 @@ export default class MoviePage {
 }
 
 $('body').on('change', '#category-filter', () => {
-  if ($('#category-filter').val() !== "default" && $('#age-filter').val() !== "default") {
-    new filterMovies().renderByAgeAndCategory($('#category-filter').val(), $('#age-filter').val());
+  if (
+    $('#category-filter').val() !== 'default' &&
+    $('#age-filter').val() !== 'default'
+  ) {
+    new filterMovies().renderByAgeAndCategory(
+      $('#category-filter').val(),
+      $('#age-filter').val()
+    );
+  } else {
+    new filterMovies().renderByCategory($('#category-filter').val());
   }
-  else {
-    new filterMovies().renderByCategory($('#category-filter').val());  
-  }
-  
 });
 
 $('body').on('change', '#age-filter', () => {
-  if ($('#category-filter').val() !== 'default' && $('#age-filter').val() !== 'default') {
-    new filterMovies().renderByAgeAndCategory($('#category-filter').val(), $('#age-filter').val());
-  }
-  else {
+  if (
+    $('#category-filter').val() !== 'default' &&
+    $('#age-filter').val() !== 'default'
+  ) {
+    new filterMovies().renderByAgeAndCategory(
+      $('#category-filter').val(),
+      $('#age-filter').val()
+    );
+  } else {
     new filterMovies().renderByAge($('#age-filter').val());
-    
   }
-})
-
-async function renderByCategory(category) {
-  let html = '<div class="movie-container">';
-  let myMovies = await $.getJSON('/json/movies.json'); //Is run in the background, is not waited for
-  for (const myFile of myMovies) {
-    //for of loop to Force Synchronized iteration in Asynch Context
-    myMovies.forEach((data) => {
-      if (Array.isArray(data.genre)) {
-        data.genre.forEach((genre) => {
-          //Genre: ['Drama', 'Crime']
-          if (genre == category) {
-            // 'Drama', 'Crime'
-            html += /*html*/ `<section class="movie-info">
-              <div class="movie-poster">
-                <a href="#aboutPage${data.id}"><img src="${
-              data.images[0]
-            }" style="height: 100px"></a>
-              </div>
-              <div class="movie-text">
-                <h3 class="title-name">${data.title}
-                </h3>
-                <h4>Genre:</h4> <p>${data.genre}</p>
-                <h4>Speltid:</h4> <p>${data.length + ' minuter'}</p>
-                <h4>Handling:</h4> ${data.description}
-              </div><hr>
-            </section>`;
-          }
-        });
-      } else {
-        if (data.genre == category) {
-          html += /*html*/ `<section class="movie-info">
-            <div class="movie-poster">
-              <a href="#aboutPage${data.id}"><img src="${
-            data.images[0]
-          }" style="height: 100px"></a>
-            </div>
-            <div class="movie-text">
-              <h3 class="title-name">${data.title}
-              </h3>
-              <h4>Genre:</h4> <p>${data.genre}</p>
-              <h4>Speltid:</h4> <p>${data.length + ' minuter'}</p>
-              <h4>Handling:</h4> ${data.description}
-            </div><hr>
-          </section>`;
-        }
-      }
-    });
-  }
-  html += '</div>';
-  console.log('i was run');
-  return html;
-}
+});

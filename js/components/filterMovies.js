@@ -1,19 +1,17 @@
 export default class filterMovies {
   async renderByAge(age) {
-    let html = '<div class="movie-container">';
+    let html = ''; // = '<div class="movie-container">';
     this.myMovies = await $.getJSON('/json/movies.json'); //Is run in the background, is not waited for
     for (const data of this.myMovies) {
       //for of loop to Force Synchronized iteration in Asynch Context
 
-        let movieAge = parseInt(data.ageRating);
-        let wantedAge = parseInt(age);
-        // Searched at 14 - Should show 4,6,14
-        if (movieAge <= wantedAge) {
-          html += /*html*/ `<section class="movie-info">
+      let movieAge = parseInt(data.ageRating);
+      let wantedAge = parseInt(age);
+      // Searched at 14 - Should show 4,6,14
+      if (movieAge <= wantedAge) {
+        html += /*html*/ `<section class="movie-info">
               <div class="movie-poster">
-                <a href="#aboutPage${data.id}"><img src="${
-            data.images[0]
-          }" style="height: 100px"></a>
+                <a href="#aboutPage${data.id}"><img src="${data.images[0]}"></a>
               </div>
               <div class="movie-text">
                 <h3 class="title-name">${data.title}
@@ -21,17 +19,18 @@ export default class filterMovies {
                 <h4>Genre:</h4> <p>${data.genre}</p>
                 <h4>Speltid:</h4> <p>${data.length + ' minuter'}</p>
                 <h4>Handling:</h4> ${data.description}
-              </div><hr>
+              </div>
             </section>`;
-        }
+      }
     }
-    html += '</div>';
+    console.log(html);
+    //html += '</div>';
     $('.movies-mainBox').html('');
     $('.movies-mainBox').append(html);
   }
 
-  async renderByAgeAndCategory(category,age) {
-    let html = '<div class="movie-container">';
+  async renderByAgeAndCategory(category, age) {
+    let html = ''; //'<div class="movie-container">';
     this.myMovies = await $.getJSON('/json/movies.json'); //Is run in the background, is not waited for
     for (const data of this.myMovies) {
       //for of loop to Force Synchronized iteration in Asynch Context
@@ -44,8 +43,9 @@ export default class filterMovies {
             // 'Drama', 'Crime'
             html += /*html*/ `<section class="movie-info">
                 <div class="movie-poster">
-                  <a href="#aboutPage${data.id}"><img src="${data.images[0]
-              }" style="height: 100px"></a>
+                  <a href="#aboutPage${data.id}"><img src="${
+              data.images[0]
+            }"></a>
                 </div>
                 <div class="movie-text">
                   <h3 class="title-name">${data.title}
@@ -53,17 +53,15 @@ export default class filterMovies {
                   <h4>Genre:</h4> <p>${data.genre}</p>
                   <h4>Speltid:</h4> <p>${data.length + ' minuter'}</p>
                   <h4>Handling:</h4> ${data.description}
-                </div><hr>
+                </div>
               </section>`;
           }
         });
-      }
-      else {
+      } else {
         if (data.genre == category && movieAge <= wantedAge) {
           html += /*html*/ `<section class="movie-info">
               <div class="movie-poster">
-                <a href="#aboutPage${data.id}"><img src="${data.images[0]
-            }" style="height: 100px"></a>
+                <a href="#aboutPage${data.id}"><img src="${data.images[0]}"></a>
               </div>
               <div class="movie-text">
                 <h3 class="title-name">${data.title}
@@ -71,18 +69,18 @@ export default class filterMovies {
                 <h4>Genre:</h4> <p>${data.genre}</p>
                 <h4>Speltid:</h4> <p>${data.length + ' minuter'}</p>
                 <h4>Handling:</h4> ${data.description}
-              </div><hr>
+              </div>
             </section>`;
         }
       }
     }
-    html += '</div>';
+    //html += '</div>';
     $('.movies-mainBox').html('');
     $('.movies-mainBox').append(html);
   }
 
   async renderByCategory(category) {
-    let html = '<div class="movie-container">';
+    let html = ''; //'<div class="movie-container">';
     this.myMovies = await $.getJSON('/json/movies.json'); //Is run in the background, is not waited for
     for (const data of this.myMovies) {
       //for of loop to Force Synchronized iteration in Asynch Context
@@ -95,7 +93,7 @@ export default class filterMovies {
                 <div class="movie-poster">
                   <a href="#aboutPage${data.id}"><img src="${
               data.images[0]
-            }" style="height: 100px"></a>
+            }"></a>
                 </div>
                 <div class="movie-text">
                   <h3 class="title-name">${data.title}
@@ -103,7 +101,7 @@ export default class filterMovies {
                   <h4>Genre:</h4> <p>${data.genre}</p>
                   <h4>Speltid:</h4> <p>${data.length + ' minuter'}</p>
                   <h4>Handling:</h4> ${data.description}
-                </div><hr>
+                </div>
               </section>`;
           }
         });
@@ -111,9 +109,7 @@ export default class filterMovies {
         if (data.genre == category) {
           html += /*html*/ `<section class="movie-info">
               <div class="movie-poster">
-                <a href="#aboutPage${data.id}"><img src="${
-            data.images[0]
-          }" style="height: 100px"></a>
+                <a href="#aboutPage${data.id}"><img src="${data.images[0]}"></a>
               </div>
               <div class="movie-text">
                 <h3 class="title-name">${data.title}
@@ -121,13 +117,13 @@ export default class filterMovies {
                 <h4>Genre:</h4> <p>${data.genre}</p>
                 <h4>Speltid:</h4> <p>${data.length + ' minuter'}</p>
                 <h4>Handling:</h4> ${data.description}
-              </div><hr>
+              </div>
             </section>`;
         }
       }
       //end of for loop
     }
-    html += '</div>';
+    //html += '</div>';
     $('.movies-mainBox').html('');
     $('.movies-mainBox').append(html);
   }
