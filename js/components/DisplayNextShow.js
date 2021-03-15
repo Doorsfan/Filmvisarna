@@ -29,13 +29,23 @@ export default class DisplaySpecificShow {
       );
     });
 
-    let saloon = $(/*html*/ `
+    let text = $(/*html*/ `<h1 class="aboutPage-text">Boka Biljett</h1>`);
+
+    let nextShow = $(/*html*/ `
     <div id="display-saloon">
     <p>Tid: _____</p>
+    <p>Salong: _____</p>
     </div>
     `);
+
+    let btn = $(
+      /*html*/ `<button class="aboutPage-btn" type="button">Boka</button>`
+    );
+    html.append(text);
     html.append(select);
-    html.append(saloon);
+    html.append(nextShow);
+    html.append(btn);
+
     return html;
   }
   async render() {
@@ -51,17 +61,27 @@ export default class DisplaySpecificShow {
     let date = e.options[e.selectedIndex].text;
 
     let time;
+    let saloon;
     this.filteredShow.forEach((show) => {
       if (show.date === date) {
         time = show.time;
+        saloon = show.auditorium;
         return;
       }
     });
-
-    $('#display-saloon').html('');
-    $('#display-saloon').append(/*html*/ `
-        <p>Tid: ${time}</p>
+    if (!time || !saloon) {
+      $('#display-saloon').html('');
+      $('#display-saloon').append(/*html*/ `
+        <p>Tid: _____</p>
+        <p>Salong: _____</p>
       `);
+    } else {
+      $('#display-saloon').html('');
+      $('#display-saloon').append(/*html*/ `
+        <p>Tid: ${time}</p>
+        <p>Salong: ${saloon}</p>
+      `);
+    }
   }
 
   eventhandeler() {
