@@ -12,8 +12,14 @@ export default class MoviePage {
 
   async render() {
     //Implement default case handling in terms of Category - so like,
-    // if !($('myHypotheticalDropdown') == '') {
-    //   return new filterMovies().render($('myHypotheticalDropdown'));
+    // if !($('myCategoryDropdown').length == 0 && $('myAgeDropdown').length == 0) {
+    //   return new filterMovies().renderByAgeAndCategory($('myCategoryDropdown'),$('myAgeDropdown'));
+    // }
+    // else if !($('myCategoryDropdown').length == 0){
+    //   return new filterMovies().renderByCategory($('myCategoryDropdown'));
+    // }
+    // else if !($('myAgeDropdown').length == 0){
+    //   return new filterMovies().renderByAge($('myAgeDropdown'));
     // }
 
     if (!this.movies) {
