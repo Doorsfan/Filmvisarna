@@ -6,9 +6,9 @@ export default class MoviePage {
   }
   // Mikael bygger HTMLen som ska returnas enligt MoviePage strukturens HTML i Render
   // Martin skapar Två dropdown menyer - en för Ålder och en för Kategori
-  // Martin eller Mikael fixar det - stämmer av när vi känner att det ska göras
+  // Martin eller Mikael fixar till det movies.json - stämmer av när vi känner att det ska göras
   // Martin OCH Mikael gör logiken för change listener till Dropdown meny tillsamans
-  
+
   async render() {
     if (!this.movies) {
       await this.read();
