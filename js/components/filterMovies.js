@@ -5,7 +5,7 @@ export default class filterMovies {
   async render(category) {
     let html = '<div class="movie-container">';
     this.myMovies = await $.getJSON('/json/movies.json'); //Is run in the background, is not waited for
-    for (const myFile of this.myMovies) {
+    for (const myFile of this.myMovies) { //for of loop to Force Synchronized iteration in Asynch Context
       this.myMovies.forEach((data) => {
         if (Array.isArray(data.genre)) {
           data.genre.forEach((genre) => { //Genre: ['Drama', 'Crime']
