@@ -10,6 +10,7 @@
     "language": "engelska",
     "subtitles": "svenska",
     "director": "Natalie Erika James",
+    "ageRating": "18",
     "actors": [
       "Robyn Nevin",
       "Emily Mortimer",
@@ -52,6 +53,7 @@
     "language": "Engelska",
     "subtitles": "Svenska",
     "director": "Chris Columbus",
+    "ageRating": "6",
     "actors": ["Daniel Radcliffe", "Rupert Grint", "Richard Harris"],
     "description": "<p>Harry Potter växer upp hos sin elaka moster, morbror och kusin, ovetande om vem han egentligen är. På sin elvaårsdag träffar han halvjätten Hagrid som avslöjar att han är son till två mäktiga magiker som blev mördade av den onde Lord Voldemort.</p>",
     "images": [
@@ -91,6 +93,7 @@
     "language": "engelska",
     "subtitles": "svenska",
     "director": "Jim Jarmusch",
+    "ageRating": "14",
     "actors": ["Adam Driver", "Golshifteh Farahani", "Barry Shabaka Henley"],
     "description": "<p>Paterson är en amerikansk-fransk-tysk dramafilm från 2016, skriven och regisserad av Jim Jarmusch. Den utspelar sig i staden Paterson. Adam Driver spelar huvudrollen som en poesiskrivande bussförare vid namn Paterson och Golshifteh Farahani spelar Laura, hans fantasifulla hustru. Huvudpersonens dikter i filmen är allihop författade av poeten Ron Padgett, fyra stycken ur hans tidigare produktion och tre skrivna direkt för filmen, medan filmtiteln är en tydlig hänvisning till poeten William Carlos Williams och hans diktverk Paterson.</p>",
     "images": ["/images/movie_posters/paterson.jfif"],
@@ -127,6 +130,7 @@
     "language": "engelska",
     "subtitles": "svenska",
     "director": "Francis Ford Coppola",
+    "ageRating": "14",
     "actors": [
       "Marlon Brando",
       "Al Pacino",
@@ -173,6 +177,7 @@
     "language": "Franska",
     "subtitles": "Svenska",
     "director": "Jacques Tati",
+    "ageRating": "6",
     "actors": ["Jacques Tati", "Jean-Pierre Zola", "Adrienne Servantie"],
     "description": "<p>Herr och fru Arpel är de modernaste av människor. Deras hem styrs på samma sätt som herr Arpel styr sin plastfabrik — metodiskt och med exakta rutiner. En dröm för vissa, men en mardröm för sonen Gérard.</p><p>Han flyr den stela, steriliserade världen in i famnen på sin onkel, monsieur Hulot. Men så kommer föräldrarna på dem. Hulot måste stoppas! I deras värld äger han det farligaste vapnet av allt. Ett hjärta.</p><p>Min onkel var Tatis första färgfilm och största framgång; Vid Filmfestivalen i Cannes 1958 tilldelades den Prix de Jury och 1959 vann den en Oscar för bästa icke-engelsspråkiga film.",
     "images": [
@@ -212,6 +217,7 @@
     "language": "engelska",
     "subtitles": "svenska",
     "director": "Frank Darabont",
+    "ageRating": "14",
     "actors": ["Tim Robbins", "Morgan Freeman", "Bob Gunton"],
     "description": "<p>Andy Dufresne döms 1946, mot sitt nekande, till livstids fängelse för mord på sin fru och hennes älskare. Han sänds till Shawshank State Prison, som styrs av den despotiske fängelsedirektören Norton. I fängelset blir Andy god vän med Red, som redan suttit inne i 20 år, och som gör goda förtjänster på att smuggla in varor i fängelset.</p>",
     "images": [

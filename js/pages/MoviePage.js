@@ -11,11 +11,17 @@ export default class MoviePage {
   // Martin OCH Mikael gör logiken för change listener till Dropdown meny tillsamans
 
   async render() {
-    //Implement default case handling in terms of Category - so like, 
-    // if !($('myHypotheticalDropdown') == '') {
-    //   return new filterMovies().render($('myHypotheticalDropdown'));
+    //Implement default case handling in terms of Category - so like,
+    // if !($('myCategoryDropdown').length == 0 && $('myAgeDropdown').length == 0) {
+    //   return new filterMovies().renderByAgeAndCategory($('myCategoryDropdown'),$('myAgeDropdown'));
     // }
-    
+    // else if !($('myCategoryDropdown').length == 0){
+    //   return new filterMovies().renderByCategory($('myCategoryDropdown'));
+    // }
+    // else if !($('myAgeDropdown').length == 0){
+    //   return new filterMovies().renderByAge($('myAgeDropdown'));
+    // }
+
     if (!this.movies) {
       await this.read();
     }
