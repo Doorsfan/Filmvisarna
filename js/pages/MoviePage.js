@@ -11,6 +11,8 @@ export default class MoviePage {
   // Martin OCH Mikael gör logiken för change listener till Dropdown meny tillsamans
 
   async render() {
+    console.log("I was called upon again");
+    
     //Implement default case handling in terms of Category - so like,
     // if !($('myCategoryDropdown').length == 0 && $('myAgeDropdown').length == 0) {
     //   return new filterMovies().renderByAgeAndCategory($('myCategoryDropdown'),$('myAgeDropdown'));
@@ -26,17 +28,23 @@ export default class MoviePage {
       await this.read();
     }
     let html = /*html*/ `<div class="movie-container"><h1>Våra filmer</h1><div class="movie-filter">
-    <select id="#category-filter"><option>Genre</option>
-    <option value="drama">drama</option>
-    <option value="">brott</option>
-    <option value="">komedi</option>
+    <select id="category-filter"><option>Genre</option>
+    <option value="Drama">Drama</option>
+    <option value="Brott">Brott</option>
+    <option value="Komedi">Komedi</option>
+    <option value="Romans">Romans</option>
+    <option value="Ädventyr">Ädventyr</option>
+    <option value="Familjefilm">Familjefilm</option>
+    <option value="Skräck">Skräck</option>
+    <option value="Mysterium">Mysterium</option>
     </select>
-    <select id="#age-filter"><option>Åldersgrupp</option>
+    <select id="age-filter"><option>Åldersgrupp</option>
     <option value="">-7</option>
     <option value="">7+</option>
     <option value="">15+</option>
     </select>
-    </div>`;
+    </div>
+    <div class="movies-mainBox">`;
 
     this.movies.forEach((data) => {
       html += /*html*/ `<section class="movie-info">
@@ -58,7 +66,64 @@ export default class MoviePage {
         </section>`;
     });
 
-    html += '</div>';
+    html += '</div></div>';
     return html;
   }
+}
+
+$('body').on('change', '#category-filter', () => {
+  let myString = $('#category-filter').val();
+  new filterMovies().renderByCategory(myString);
+});
+
+async function renderByCategory(category) {
+  let html = '<div class="movie-container">';
+  let myMovies = await $.getJSON('/json/movies.json'); //Is run in the background, is not waited for
+  for (const myFile of myMovies) {
+    //for of loop to Force Synchronized iteration in Asynch Context
+    myMovies.forEach((data) => {
+      if (Array.isArray(data.genre)) {
+        data.genre.forEach((genre) => {
+          //Genre: ['Drama', 'Crime']
+          if (genre == category) {
+            // 'Drama', 'Crime'
+            html += /*html*/ `<section class="movie-info">
+              <div class="movie-poster">
+                <a href="#aboutPage${data.id}"><img src="${
+              data.images[0]
+            }" style="height: 100px"></a>
+              </div>
+              <div class="movie-text">
+                <h3 class="title-name">${data.title}
+                </h3>
+                <h4>Genre:</h4> <p>${data.genre}</p>
+                <h4>Speltid:</h4> <p>${data.length + ' minuter'}</p>
+                <h4>Handling:</h4> ${data.description}
+              </div><hr>
+            </section>`;
+          }
+        });
+      } else {
+        if (data.genre == category) {
+          html += /*html*/ `<section class="movie-info">
+            <div class="movie-poster">
+              <a href="#aboutPage${data.id}"><img src="${
+            data.images[0]
+          }" style="height: 100px"></a>
+            </div>
+            <div class="movie-text">
+              <h3 class="title-name">${data.title}
+              </h3>
+              <h4>Genre:</h4> <p>${data.genre}</p>
+              <h4>Speltid:</h4> <p>${data.length + ' minuter'}</p>
+              <h4>Handling:</h4> ${data.description}
+            </div><hr>
+          </section>`;
+        }
+      }
+    });
+  }
+  html += '</div>';
+  console.log('i was run');
+  return html;
 }
