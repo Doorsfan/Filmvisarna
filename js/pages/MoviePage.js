@@ -1,11 +1,21 @@
+import filterMovies from '../components/filterMovies.js';
 export default class MoviePage {
   constructor() {}
 
   async read() {
     this.movies = await $.getJSON('/json/movies.json');
   }
+  // Mikael bygger HTMLen som ska returnas enligt MoviePage strukturens HTML i Render
+  // Martin skapar Två dropdown menyer - en för Ålder och en för Kategori
+  // Martin eller Mikael fixar till det movies.json - stämmer av när vi känner att det ska göras
+  // Martin OCH Mikael gör logiken för change listener till Dropdown meny tillsamans
 
   async render() {
+    //Implement default case handling in terms of Category - so like, 
+    // if !($('myHypotheticalDropdown') == '') {
+    //   return new filterMovies().render($('myHypotheticalDropdown'));
+    // }
+    
     if (!this.movies) {
       await this.read();
     }
