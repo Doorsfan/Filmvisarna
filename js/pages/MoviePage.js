@@ -1,3 +1,4 @@
+import filterMovies from '../components/filterMovies.js';
 export default class MoviePage {
   constructor() {}
 
@@ -10,6 +11,11 @@ export default class MoviePage {
   // Martin OCH Mikael gör logiken för change listener till Dropdown meny tillsamans
 
   async render() {
+    //Implement default case handling in terms of Category - so like, 
+    // if !($('myHypotheticalDropdown') == '') {
+    //   return new filterMovies().render($('myHypotheticalDropdown'));
+    // }
+    
     if (!this.movies) {
       await this.read();
     }
