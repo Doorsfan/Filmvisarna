@@ -9,17 +9,12 @@ export default class StartPage {
     this.movies = await $.getJSON('/json/movies.json');
   }
 
-  async readSchedule() {
-    this.movieSchedule = await $.getJSON('/json/movieSchedule.json');
-  }
-
   //ugly code
   async render() {
     let currentSlide = 0;
     console.log('rendering StartPage');
-    if (!this.movies && !this.movieschedule) {
+    if (!this.movies) {
       await this.read();
-      await this.readSchedule();
     }
     let bigDiv = $(/*html*/ `<div class="big-container"></div>`);
     let html1 = $(
@@ -27,25 +22,13 @@ export default class StartPage {
       `<div class="startpage-coverphoto"></div>
        <div class="startpage-skew"></div>
        <h1 class="h1-aktuellt">AKTUELLT</h1>
-       <hr class="startpage-divider"/>`
+      `
     );
     bigDiv.append(html1);
 
-    let ytSlider = this.yt.render(this.movies);
-    let sliderContainer = $(/*html*/ `<div class="video-container"></div>`);
-    sliderContainer.append(ytSlider);
-    bigDiv.append(sliderContainer);
-
-    //let startP = sliderContainer.add(html);
-    let html2 = $(
-      `<h2 style="font-size: 5rem; text-align: center;">Våra Filmer</h2>`
-    );
-    bigDiv.append(html2);
-
-    // let movieInfo = [];
     let html3 = $('<div class="poster-container"></div>');
     this.movies.forEach((data) => {
-      // movieInfo.push(data);
+      console.log(data);
       html3.append(/*html*/ `
           <div class="start-poster ${data.id}">
             <a href="#aboutPage${data.id}"><img src="${data.images[0]}"></a>
@@ -53,10 +36,29 @@ export default class StartPage {
         `);
     });
 
+    let html5 = $(/*html*/ `
+      <div class="slideshow-container">
+        <div class="slideshow-slide"><a href="#aboutPagenyckeln"><img src="/images/movie_posters/nyckeln_till_frihet_poster1.jpg" alt="nyckeln till frihet" /><aside class="slide-aside"><p>NYCKELN TILL FRIHET</p><h3>SPELAS NU</h3><p>"En av världens bästa filmer"<br> - Moviezine.se</p></aside></a></div>
+        <div class="slideshow-slide"><a href="#aboutPagerelic"><img src="/images/movie_posters/relic.jpg" alt="relic" /><aside class="slide-aside"><p>RELIC</p><h3>SPELAS NU</h3><p>"Skräck som bäst!"<br> - Ginza</p></aside></a></div>
+        <div class="slideshow-slide"><a href="#aboutPagepatersson"><img src="/images/movie_posters/paterson.jfif" alt="paterson" /><aside class="slide-aside"><p>PATERSON</p><h3>SPELAS NU</h3><p>”Jim Jarmusch,<br> den lakoniska humorns specialist”<br> - DN</p></aside></a></div>
+        <div class="slideshow-slide"><a href="#aboutPageharry"><img src="/images/movie_posters/harry_potter1.jpg" alt="harry potter" /><aside class="slide-aside"><p>HARRY POTTER</p><h3>SPELAS NU</h3><p>"En film för generationer!"<br> - Sydsvenskan</p></aside></a></div>
+        <div class="slideshow-slide"><a href="#aboutPagegudfadern"><img src="/images/movie_posters/the_godfather.jpg" alt="godfather" /><aside class="slide-aside"><p>THE GODFATHER</p><h3>SPELAS NU</h3><p>"En äkta klassiker som förvarats genom tiden"<br> - DN </p></aside></a></div>
+        <div class="slideshow-slide"><a href="#aboutPageonkel"><img src="/images/movie_posters/min_onkel_1.jpg" alt="onkel" /><aside class="slide-aside"><p>MON ONCLE</p><h3>SPELAS NU</h3><p>"Unforgettably funny, <br>wonderfully observed, <br>and always technically brilliant."<br>- Time Out</p></aside></a></div>
+        </div>
+      </div>
+    `);
+    bigDiv.append(html5);
+
+    //let startP = sliderContainer.add(html);
+    let html2 = $(
+      `<h2 style="font-size: 3rem; text-align: center; margin-bottom: 2rem;">VÅRA FILMER</h2>`
+    );
+    bigDiv.append(html2);
+
     bigDiv.append(html3);
 
     let html4 = $(/*html*/ `
-    <h2 style="text-align: center; font-size: 5rem; margin-top: 15rem;">Bäst i Betyg</h2>
+    <h2 style="text-align: center; font-size: 3rem; margin-top: 15rem;margin-bottom: 2rem;">BÄST I BETYG</h2>
     <div class="bestof-container">
       <ul style="display: flex; justify-content: center;">
         <li class="toplist-listitem"><a href="#aboutPagenyckeln"><span class="bestof-span">1.</span><img class="bestof-img" src="/images/movie_posters/nyckeln_till_frihet_poster1.jpg"/></a></li> 
@@ -70,18 +72,12 @@ export default class StartPage {
 
     bigDiv.append(html4);
 
-    let html5 = $(/*html*/ `
-      <div class="slideshow-container">
-        <div class="slideshow-slide"><img src="/images/movie_posters/nyckeln_till_frihet_poster1.jpg" alt="nyckeln till frihet" /></div>
-        <div class="slideshow-slide"><img src="/images/movie_posters/relic.jpg" alt="relic" /></div>
-        <div class="slideshow-slide"><img src="/images/movie_posters/paterson.jfif" alt="paterson" /></div>
-        <div class="slideshow-slide"><img src="/images/movie_posters/harry_potter1.jpg" alt="harry potter" /></div>
-        <div class="slideshow-slide"><img src="/images/movie_posters/the_godfather.jpg" alt="godfather" /></div>
-        <div class="slideshow-slide"><img src="/images/movie_posters/min_onkel_1.jpg" alt="onkel" /></div>
-        </div>
-      </div>
-    `);
-    bigDiv.append(html5);
+    let ytSlider = this.yt.render(this.movies);
+    let sliderContainer = $(
+      /*html*/ `<div class="video-container"><h3>FILMTRAILERS</h3></div>`
+    );
+    sliderContainer.append(ytSlider);
+    bigDiv.append(sliderContainer);
 
     $('main').load('load', showSlides);
 
