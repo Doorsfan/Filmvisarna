@@ -1,0 +1,58 @@
+.about-container {
+  padding: 1rem 0 1rem 0;
+  width: 100%;
+  height: 100%;
+
+  display: grid;
+  grid-template-columns: 1fr 56% 20% 20% 1fr;
+
+  grid-template-rows: 50% 20% 20%;
+  grid-template-areas:
+    'v v v v v'
+    '. a a c .'
+    '. e e c .';
+}
+
+.trailer {
+  grid-area: v;
+}
+
+.about-text {
+  margin-top: 2rem;
+
+  grid-area: a;
+  overflow: hidden;
+}
+
+.movie-posters {
+  margin-top: 2rem;
+
+  grid-area: e;
+}
+
+.movie-posters img {
+  transition: 0.2s ease;
+  width: 165px;
+  height: 230px;
+}
+
+.book-show {
+  margin-top: 2rem;
+  border: 2px solid black;
+  height: 100%;
+  /* justify-self: right;
+  width: 50%; */
+  display: flex;
+  flex-direction: column;
+  grid-area: c;
+  background-color: #e1e0e2;
+}
+
+.trailer iframe {
+  width: 100%;
+  height: 100%;
+}
+
+.movie-posters img:hover {
+  transform: scale(1.05);
+}

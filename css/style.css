@@ -1,12 +1,9 @@
 @import './components/header.css';
 @import './components/sidebar.css';
-@import './components/videoSlider.css';
-@import './components/header.css';
+@import './components/footer.css';
 @import './components/login_form.css';
 @import './pages/MoviePage.css';
-@import './components/footer.css';
-
-@import './components/login_form.css';
+@import './pages/aboutPage.css';
 @import './pages/startPage.css';
 * {
   -webkit-box-sizing: border-box;
