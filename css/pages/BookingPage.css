@@ -1,0 +1,13 @@
+.bookingpage-container  {
+  height: 100vh;
+  width: 100vw;
+  background-color: turquoise;
+
+}
+
+.bookingpage-cover  {
+  height: 10vh;
+  width: 60vw;
+  background-color: teal;
+
+}
