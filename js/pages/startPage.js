@@ -1,5 +1,4 @@
 import ytSlider from '../components/ytCarousellHandler.js';
-import ReadWrite from '../components/readAndWriteUser.js';
 
 export default class StartPage {
   constructor() {
