@@ -23,9 +23,9 @@ export default class AboutPage {
     // make a function inside of the readAndWrite class's loadUser function - where you call
     // a different method with the result from the callback.
     //
-    // const readAndWrite = new readAndWriteUser();
-    // await readAndWrite.saveUser("example.user@gmail.com", { password: "mypassword" });
-    // readAndWrite.loadUser("example.user@gmail.com");
+    const readAndWrite = new readAndWriteUser();
+    await readAndWrite.saveUser("example.user@someEmail.se", { password: "anPassword" });
+    readAndWrite.loadUser("example.user@someEmail.se");
     
   }
 
