@@ -23,10 +23,11 @@ export default class AboutPage {
     //
     // const readAndWrite = new readAndWriteUser();
     // await readAndWrite.saveUser("example.user@someEmail.se", { password: "anPassword" });
-    // let myUser = await readAndWrite.loadUser("example.user@someEmail.se"); 
+    // let myUser = await readAndWrite.loadUser("example.user@someEmail.se");
+    // console.log(myUser.password);
     // To get the user PW - use myUser.password
 
-    
+
   }
 
   createPage() {
