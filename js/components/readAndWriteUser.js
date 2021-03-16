@@ -1,4 +1,4 @@
-export default class Footer {
+export default class readAndWriteUser {
   readUser(username) {
     
   }
