@@ -1,3 +1,4 @@
+import filterMovies from '../components/filterMovies.js';
 export default class MoviePage {
   constructor() {}
 
@@ -9,7 +10,27 @@ export default class MoviePage {
     if (!this.movies) {
       await this.read();
     }
-    let html = '<div class="movie-container"><h1>Våra filmer</h1>';
+    let html = /*html*/ `<div class="movie-container"><h1>Våra filmer</h1><div class="movie-filter">
+    <select id="category-filter">
+    <option value="default">Genre</option>
+    <option value="Drama">Drama</option>
+    <option value="Brott">Brott</option>
+    <option value="Komedi">Komedi</option>
+    <option value="Romans">Romans</option>
+    <option value="Äventyr">Äventyr</option>
+    <option value="Familjefilm">Familjefilm</option>
+    <option value="Skräck">Skräck</option>
+    <option value="Mysterium">Mysterium</option>
+    </select>
+    <select id="age-filter">
+    <option value="default">Åldersgrupp</option>
+    <option value="6">6</option>
+    <option value="14">14</option>
+    <option value="18">18</option>
+    </select>
+    </div>
+    <div class="movies-main-box">`;
+
     this.movies.forEach((data) => {
       html += /*html*/ `<section class="movie-info">
           <div class="movie-poster">
@@ -30,7 +51,55 @@ export default class MoviePage {
         </section>`;
     });
 
-    html += '</div>';
+    html += '</div></div>';
     return html;
   }
 }
+
+$('body').on('change', '#category-filter', () => {
+  if (
+    $('#category-filter').val() !== 'default' &&
+    $('#age-filter').val() !== 'default'
+  ) {
+    new filterMovies().renderByAgeAndCategory(
+      $('#category-filter').val(),
+      $('#age-filter').val()
+    );
+  } else if (
+    $('#category-filter').val() === 'default' &&
+    $('#age-filter').val() !== 'default'
+  ) {
+    new filterMovies().renderByAge($('#age-filter').val());
+  } else if (
+    $('#category-filter').val() == 'default' &&
+    $('#age-filter').val() === 'default'
+  ) {
+    new filterMovies().renderByDefault();
+  } else {
+    new filterMovies().renderByCategory($('#category-filter').val());
+  }
+});
+
+$('body').on('change', '#age-filter', () => {
+  if (
+    $('#category-filter').val() !== 'default' &&
+    $('#age-filter').val() !== 'default'
+  ) {
+    new filterMovies().renderByAgeAndCategory(
+      $('#category-filter').val(),
+      $('#age-filter').val()
+    );
+  } else if (
+    $('#age-filter').val() === 'default' &&
+    $('#category-filter').val() !== 'default'
+  ) {
+    new filterMovies().renderByCategory($('#category-filter').val());
+  } else if (
+    $('#category-filter').val() == 'default' &&
+    $('#age-filter').val() === 'default'
+  ) {
+    new filterMovies().renderByDefault();
+  } else {
+    new filterMovies().renderByAge($('#age-filter').val());
+  }
+});

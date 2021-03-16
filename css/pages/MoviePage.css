@@ -12,7 +12,16 @@
 .movie-container p {
   color: black;
 }
-
+.movie-container .movie-filter {
+  align-self: center;
+  margin-bottom: 0.5em;
+}
+.movie-container #category-filter {
+  background-color: #bebdbf;
+}
+.movie-container #age-filter {
+  background-color: #bebdbf;
+}
 .movie-container .movie-info {
   display: flex;
   flex-wrap: wrap;
