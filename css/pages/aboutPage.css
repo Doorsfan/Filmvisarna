@@ -65,7 +65,13 @@
   color: black;
 }
 
-.aboutPage-text {
+.aboutPage-Text {
+}
+
+#display-saloon,
+.aboutPage-btn,
+#select-date {
+  /* align-self: flex-end; */
 }
 .trailer iframe {
   width: 100%;
