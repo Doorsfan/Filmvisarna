@@ -19,13 +19,13 @@ export default class AboutPage {
     );
     this.displayShow = await new DisplaySpecificShow(this.movieID).render();
 
-    // Example of how to save a user and load a user - To use the PW of the user, you need to
-    // make a function inside of the readAndWrite class's loadUser function - where you call
-    // a different method with the result from the callback.
+    // Example of how to save and load users
     //
-    const readAndWrite = new readAndWriteUser();
-    await readAndWrite.saveUser("example.user@someEmail.se", { password: "anPassword" });
-    readAndWrite.loadUser("example.user@someEmail.se");
+    // const readAndWrite = new readAndWriteUser();
+    // await readAndWrite.saveUser("example.user@someEmail.se", { password: "anPassword" });
+    // let myUser = await readAndWrite.loadUser("example.user@someEmail.se"); 
+    // To get the user PW - use myUser.password
+
     
   }
 
