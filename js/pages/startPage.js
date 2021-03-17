@@ -26,7 +26,6 @@ export default class StartPage {
     let posterContainer = $('<div class="poster-container"></div>');
 
     this.movies.forEach((data) => {
-      console.log(data);
       posterContainer.append(/*html*/ `
           <div class="start-poster ${data.id}">
             <a href="#aboutPage${data.id}"><img src="${data.images[0]}"></a>
