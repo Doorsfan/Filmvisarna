@@ -20,6 +20,10 @@ export default class ChangeListener {
   }
 
   fileChange(filePath) {
+    // Ignoring changes in .git directory
+    if (filePath.includes('.git')) {
+      return;
+    }
     // Loop through registered events and call them on file match
     this.events.forEach(({ file, func }) => {
       filePath.includes(file) && func()

@@ -5,20 +5,25 @@
 *   Daniels task: US 2) Rendera boka-film-page mha jquery
 */
 
-export default class BookingPage {
-
+export default class BookingPage
+{
   render() {
     let html = $(/*html*/`  
     <div class = "bookingpage-container">
     <div class = "bookingpage-cover"></div>
+    <h1>Visningar</h1>
+    <div class = "bookingpage-show">
+    <button>Boka biljett</button></div>
     </div> `)
     return html
   }
 
-  async read() {
+  async readShowsFromJson() {
     this.shows = await $.getJSON('movieSchedule.json');
-    this.movies = await $.getJSON('movies.json')
-    
+    this.movies = await $.getJSON('movies.json');
+
+
   }
+
   
 }
