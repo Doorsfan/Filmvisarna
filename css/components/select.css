@@ -1,9 +1,3 @@
-:root {
-  --select-border: #ffffff;
-  --select-focus: #626163;
-  --select-arrow: var(--select-border);
-}
-
 select {
   padding: 0 3px 0 3px;
   background: #bebdbf;
