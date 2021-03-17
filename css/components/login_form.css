@@ -63,3 +63,14 @@
   color: #F54D4D;
   border: solid 1px black;
 }
+
+.loginPage.newAccountLink{
+  font-size:18px;
+  margin-left:auto;
+  margin-right:auto;
+  margin-top:4px;
+}
+
+.loginPage.newAccountLink:visited{
+  color: blue;
+}
