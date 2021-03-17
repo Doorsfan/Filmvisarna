@@ -16,14 +16,6 @@ Extra Färger:
   padding: 1rem 2rem;
   }
 
-.bookingpage-container h1 {
-  color: #FFFFFF;
-  font-weight: 700;
-  font-size:  2rem;
-  align-self: center;
-  padding-bottom: 1rem;
-  }
-
 .bookingpage-cover  {
   height: 30vh;
   background-color: #86b9b6;
@@ -32,13 +24,15 @@ Extra Färger:
   background-position: center;
   margin-top: 1rem;
   margin-bottom: 1rem;
+  border-radius: 3px;
   }
 
 .bookingpage-show {
   background-color: #E1E0E2;
   padding: 1rem;
   position: relative;
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
+  border-radius: 3px;
   }
 
 .bookingpage-show:after {
@@ -51,6 +45,7 @@ Extra Färger:
   float: left;
   margin-right: 1rem;
   width: 20vw;
+  border-radius: 3px;
   }
 
 .bookingpage-show button {
@@ -65,19 +60,38 @@ Extra Färger:
   text-decoration: none;
   justify-content: center;
   position: absolute;
-  right: 20px;
-  bottom: 20px;
+  right: 1rem;
+  bottom: 1rem;
   }
 
 .bookingpage-show h2  {
   color: #434244;
-    }
+  margin-bottom: 1rem;
+  }
 
 .bookingpage-show h3  {
   color: #434244;
   font-weight: 700;
   font-size: 1rem;
   }
+
 .bookingpage-show p {
   color: black;
+  margin-bottom: 1rem;
   } 
+
+.datePickerLabel  {
+  display: block;
+  margin-bottom: 1rem;
+  font-weight: bold;
+  font-size: 1.5rem;
+  color: #FFFFFF;
+}
+
+.datePicker {
+  display: inline-block;
+  margin-left: 1rem;
+  color: #626163;
+  border-radius: 3px;
+  border-color: #E1E0E2;
+}
