@@ -26,7 +26,7 @@ export default class BookingPage  {
       <img src=${movie.images[0]}>
       <h2>${show.film}</h2>
       <p>${movie.genre} | ${movie.length} minuter</p>
-      <h3>${show.time} | ${show.auditorium}</h3>
+      <h3>${show.date} | ${show.time} | ${show.auditorium}</h3>
       <button>Boka biljett</button>
       </div>
       `;
