@@ -1,14 +1,52 @@
 [
   {
-    "id": "kalle",
+    "id": "Kalle Kula",
     "auditorium": "Lilla Paris",
     "film": "Relic",
-    "date": "2021-03-22",
+    "date": "2021-02-22",
     "time": "18.00",
-    "seat": [
-      13,
-      14
-    ],
-    "price": 300
+    "seat": [13, 14],
+    "price": 300,
+    "bookingNumber": "dasda3"
+  },
+  {
+    "id": "Kalle Kula",
+    "auditorium": "Lilla Paris",
+    "film": "Bamse",
+    "date": "2021-04-22",
+    "time": "18.00",
+    "seat": [10, 14],
+    "price": 600,
+    "bookingNumber": "gfd6gfd"
+  },
+  {
+    "id": "Kalle Kula",
+    "auditorium": "Lilla Paris",
+    "film": "Bamse",
+    "date": "2021-04-22",
+    "time": "18.00",
+    "seat": [10, 14],
+    "price": 600,
+    "bookingNumber": "gfsd6gfd"
+  },
+  {
+    "id": "Kalle Kula",
+    "auditorium": "Lilla Paris",
+    "film": "Disney",
+    "date": "2021-01-22",
+    "time": "18.00",
+    "seat": [10, 14],
+    "price": 600,
+    "bookingNumber": "gfd2gfd"
+  },
+  {
+    "id": "Kalle Kula",
+    "auditorium": "Lilla Paris",
+    "film": "Pippi",
+    "date": "2021-04-22",
+    "time": "18.00",
+    "seat": [10, 14],
+    "price": 600,
+    "bookingNumber": "gfd1gfd"
   }
 ]
