@@ -20,15 +20,16 @@ export default class ChangeListener {
   }
 
   fileChange(filePath) {
-    // Ignoring changes in .git directory
+    // Ignore changes in .git folder
+    // (caused by git auto fetching)
     if (filePath.includes('.git')) {
       return;
     }
     // Loop through registered events and call them on file match
     this.events.forEach(({ file, func }) => {
-      filePath.includes(file) && func()
+      filePath.includes(file) && func();
     });
-    // Note: 
+    // Note:
     // You SHOULD NOT reload the page for json files
     // that can be change usin JSON._save
     // For now: Do not reload on any json file changes

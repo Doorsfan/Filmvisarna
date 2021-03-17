@@ -1,6 +1,8 @@
+import DisplaySpecificShow from '../components/DisplayNextShow.js';
+
 export default class AboutPage {
-  constructor(movieTitle) {
-    this.movieTitle = movieTitle;
+  constructor(movieID) {
+    this.movieID = movieID;
   }
 
   //Ask alex if its confusing
@@ -8,15 +10,17 @@ export default class AboutPage {
     this.movies = await $.getJSON('/json/movies.json');
     await Promise.all(
       this.movies.map(async (data) => {
-        if (data.id === this.movieTitle) {
+        if (data.id === this.movieID) {
           this.movie = await data;
           return;
         }
       })
     );
+    this.displayShow = await new DisplaySpecificShow(this.movieID).render();
   }
 
   createPage() {
+    let length = this.timeConvert(this.movie.length);
     let html = $(/*html*/ `<div class ="about-container"></div>`);
     html.append(/*html*/ `
     <div class="trailer">
@@ -26,24 +30,38 @@ export default class AboutPage {
     <div class="about-text">
       <p>Titel: ${this.movie.title}</p>
       <p>Genre: ${this.movie.genre}</p>
-      <p>Produktions år: ${this.movie.productionYear}</p>
+      <p>Land: ${this.movie.productionCountries}</p>
+      <p>Produktionsår: ${this.movie.productionYear}</p>
       <p>Språk: ${this.movie.language}</p>
       <p>Skådespelare: ${this.movie.actors}</p>
-      <p>Director: ${this.movie.director}</p>
-      ${this.movie.description}
+      <p>Regissör: ${this.movie.director}</p>
+      <p>Längd: ${length}</p>
+      
     </div>
     <div class="movie-posters">
-    <a href="#aboutPage${this.movie.id}"><img src="${this.movie.images[0]}" height="100px"></a>
+    <a href="#aboutPage${this.movie.id}"><img src="${this.movie.images[0]}"></a>
+    <a href="#aboutPage${this.movie.id}"><img src="${this.movie.images[0]}"></a>
+    <a href="#aboutPage${this.movie.id}"><img src="${this.movie.images[0]}"></a>
+    <a href="#aboutPage${this.movie.id}"><img src="${this.movie.images[0]}"></a>
     </div>
+    
     `);
     return html;
+  }
+
+  timeConvert(n) {
+    let num = n;
+    let hours = num / 60;
+    let rhours = Math.floor(hours);
+    let minutes = (hours - rhours) * 60;
+    let rminutes = Math.round(minutes);
+    return `${rhours}tim ${rminutes}min`;
   }
 
   async render() {
     if (!this.movies) {
       await this.read();
     }
-
-    return this.createPage();
+    return this.createPage().append(this.displayShow);
   }
 }
