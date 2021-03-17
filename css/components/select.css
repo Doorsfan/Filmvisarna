@@ -1,0 +1,28 @@
+:root {
+  --select-border: #ffffff;
+  --select-focus: #626163;
+  --select-arrow: var(--select-border);
+}
+
+select {
+  padding: 0 3px 0 3px;
+  background: #bebdbf;
+  border: 1px solid #9f9f9f;
+  cursor: pointer;
+  border-radius: 4px;
+
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url('data:image/svg+xml;utf8, <svg xmlns="http://www.w3.org/2000/svg" width="100" height="50"><polygon points="0,0 100,0 50,50" style="fill:%23626163;"/></svg>');
+  background-position: right 5px top 50%;
+  background-repeat: no-repeat;
+  background-size: 0.8rem;
+  padding-right: 1rem;
+}
+
+select:focus,
+select:hover {
+  outline: none;
+  border: 1px solid #626163;
+}

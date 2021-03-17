@@ -20,7 +20,7 @@ export default class DisplaySpecificShow {
   createSelect() {
     let html = $(/*html*/ `<div class="book-show"></div>`);
     let select = $(
-      /*html*/ `<select id="select-date"><option>Välj datum</option></select>`
+      /*html*/ `<select class="select" id="select-date"><option disabled selected>Välj datum</option></select>`
     );
 
     this.filteredShow.forEach((show) => {
@@ -29,12 +29,12 @@ export default class DisplaySpecificShow {
       );
     });
 
-    let text = $(/*html*/ `<h1 class="aboutPage-text">Boka Biljett</h1>`);
+    let text = $(/*html*/ `<div class="aboutPage-text">Boka Biljett</div>`);
 
     let nextShow = $(/*html*/ `
     <div id="display-saloon">
-    <p>Tid: _____</p>
-    <p>Salong: _____</p>
+    <p>Salong:</p>
+    <p>Tid:</p>
     </div>
     `);
 
@@ -72,14 +72,14 @@ export default class DisplaySpecificShow {
     if (!time || !saloon) {
       $('#display-saloon').html('');
       $('#display-saloon').append(/*html*/ `
-        <p>Tid: _____</p>
-        <p>Salong: _____</p>
+      <p>Salong:</p>
+        <p>Tid:</p>
       `);
     } else {
       $('#display-saloon').html('');
       $('#display-saloon').append(/*html*/ `
+      <p>Salong ${saloon}</p>
         <p>Tid: ${time}</p>
-        <p>Salong: ${saloon}</p>
       `);
     }
   }
