@@ -1,0 +1,14 @@
+[
+  {
+    "id": "kalle",
+    "auditorium": "Lilla Paris",
+    "film": "Relic",
+    "date": "2021-03-22",
+    "time": "18.00",
+    "seat": [
+      13,
+      14
+    ],
+    "price": 300
+  }
+]
