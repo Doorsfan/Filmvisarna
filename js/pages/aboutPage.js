@@ -1,5 +1,4 @@
 import DisplaySpecificShow from '../components/DisplayNextShow.js';
-import readAndWriteUser from '../components/readAndWriteUser.js';
 
 export default class AboutPage {
   constructor(movieID) {
@@ -18,19 +17,10 @@ export default class AboutPage {
       })
     );
     this.displayShow = await new DisplaySpecificShow(this.movieID).render();
-
-    // Example of how to save and load users
-    //
-    // const readAndWrite = new readAndWriteUser();
-    // await readAndWrite.saveUser("example.user@someEmail.se", { password: "anPassword" });
-    // let myUser = await readAndWrite.loadUser("example.user@someEmail.se");
-    // console.log(myUser.password);
-    // To get the user PW - use myUser.password
-
-
   }
 
   createPage() {
+    let length = this.timeConvert(this.movie.length);
     let html = $(/*html*/ `<div class ="about-container"></div>`);
     html.append(/*html*/ `
     <div class="trailer">
@@ -40,18 +30,32 @@ export default class AboutPage {
     <div class="about-text">
       <p>Titel: ${this.movie.title}</p>
       <p>Genre: ${this.movie.genre}</p>
-      <p>Produktions år: ${this.movie.productionYear}</p>
+      <p>Land: ${this.movie.productionCountries}</p>
+      <p>Produktionsår: ${this.movie.productionYear}</p>
       <p>Språk: ${this.movie.language}</p>
       <p>Skådespelare: ${this.movie.actors}</p>
       <p>Regissör: ${this.movie.director}</p>
-      ${this.movie.description}
+      <p>Längd: ${length}</p>
+      
     </div>
     <div class="movie-posters">
-    <a href="#aboutPage${this.movie.id}"><img src="${this.movie.images[0]}" height="100px"></a>
+    <a href="#aboutPage${this.movie.id}"><img src="${this.movie.images[0]}"></a>
+    <a href="#aboutPage${this.movie.id}"><img src="${this.movie.images[0]}"></a>
+    <a href="#aboutPage${this.movie.id}"><img src="${this.movie.images[0]}"></a>
+    <a href="#aboutPage${this.movie.id}"><img src="${this.movie.images[0]}"></a>
     </div>
     
     `);
     return html;
+  }
+
+  timeConvert(n) {
+    let num = n;
+    let hours = num / 60;
+    let rhours = Math.floor(hours);
+    let minutes = (hours - rhours) * 60;
+    let rminutes = Math.round(minutes);
+    return `${rhours}tim ${rminutes}min`;
   }
 
   async render() {

@@ -1,0 +1,126 @@
+.about-container {
+  margin: auto;
+  max-width: 60rem;
+  max-height: 91vh;
+  display: grid;
+  grid-gap: 5px;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 2fr 2fr 1fr 2fr 2fr;
+  grid-template-areas:
+    'v v v'
+    'v v v'
+    'v v v'
+    'a a c'
+    'e e c';
+}
+
+.trailer {
+  grid-area: v;
+  width: 100%;
+}
+
+.about-text {
+  /* margin-left: 10px; */
+  grid-area: a;
+  overflow: hidden;
+  margin-right: 10px;
+  font-size: 0.9rem;
+}
+
+.movie-posters {
+  /* margin-left: 10px; */
+  margin-right: 10px;
+  display: flex;
+  flex-direction: row;
+
+  justify-content: space-between;
+  grid-area: e;
+}
+
+.movie-posters img {
+  transition: 0.2s ease;
+  width: 135px;
+  height: 189px;
+}
+
+.book-show {
+  padding: 10px;
+  z-index: 10;
+  border: 2px solid black;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 2fr 2fr;
+  grid-template-areas:
+    'h h h'
+    't t t'
+    '. . .'
+    'y . o'
+    '. . .';
+
+  grid-area: c;
+  background-color: #e1e0e2;
+}
+
+.aboutPage-btn {
+  grid-area: o;
+  width: 5rem;
+  height: 2rem;
+  align-self: flex-end;
+}
+
+.about-container p {
+  color: black;
+}
+
+.aboutPage-text {
+  grid-area: h;
+  width: 100%;
+  font-size: 2rem;
+  text-align: center;
+}
+#select-date {
+  align-self: center;
+  justify-self: center;
+  grid-area: t;
+  width: 95%;
+  height: 2rem;
+}
+#display-saloon {
+  padding-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  grid-area: y;
+}
+.trailer iframe {
+  width: 100%;
+  height: 100%;
+}
+
+.movie-posters img:hover {
+  transform: scale(1.05);
+}
+
+@media screen and (max-width: 840px) {
+  .movie-posters a:nth-last-child(1) {
+    display: none;
+  }
+}
+@media screen and (max-width: 630px) {
+  .movie-posters a:first-child {
+    display: none;
+  }
+
+  .movie-posters {
+    justify-content: space-around;
+  }
+}
+
+/* EV ANVÄNDA SENARE */
+
+/* .display-saloon {
+  display: flex;
+  flex-direction: row;
+  color: red;
+} */
