@@ -1,4 +1,5 @@
 import DisplaySpecificShow from '../components/DisplayNextShow.js';
+import readAndWriteUser from '../components/readAndWriteUser.js';
 
 export default class AboutPage {
   constructor(movieID) {
@@ -17,6 +18,16 @@ export default class AboutPage {
       })
     );
     this.displayShow = await new DisplaySpecificShow(this.movieID).render();
+
+    // Example of how to save and load users
+    //
+    // const readAndWrite = new readAndWriteUser();
+    // await readAndWrite.saveUser("example.user@someEmail.se", { password: "anPassword" });
+    // let myUser = await readAndWrite.loadUser("example.user@someEmail.se");
+    // console.log(myUser.password);
+    // To get the user PW - use myUser.password
+
+
   }
 
   createPage() {
