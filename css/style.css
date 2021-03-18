@@ -25,6 +25,9 @@
 html {
 }
 body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
   background: #bebdbf;
   overflow-x: hidden;
   /* background: radial-gradient(
@@ -33,12 +36,6 @@ body {
     rgb(158, 157, 159) 67%
   ); */
   
-}
-
-body {
-  display: flex;
-  min-height: 100vh;
-  flex-direction: column;
 }
 
 main {
