@@ -1,7 +1,7 @@
 export default class DisplaySpecificShow {
   constructor(movieID) {
     this.movieID = movieID;
-    this.eventhandeler();
+    this.eventHandler();
     this.read();
   }
 
@@ -33,8 +33,8 @@ export default class DisplaySpecificShow {
 
     let nextShow = $(/*html*/ `
     <div id="display-saloon">
-    <p>Salong:</p>
-    <p>Tid:</p>
+      <p>Salong:</p>
+      <p>Tid:</p>
     </div>
     `);
 
@@ -55,11 +55,8 @@ export default class DisplaySpecificShow {
     return this.createSelect();
   }
 
-  async createSaloonDisplay() {
-    //make it in jquery
-    let e = document.getElementById('select-date');
-    let date = e.options[e.selectedIndex].text;
-
+  async createSaloonDisplay(value) {
+    let date = value.target.value;
     let time;
     let saloon;
     this.filteredShow.forEach((show) => {
@@ -69,22 +66,16 @@ export default class DisplaySpecificShow {
         return;
       }
     });
-    if (!time || !saloon) {
-      $('#display-saloon').html('');
-      $('#display-saloon').append(/*html*/ `
-      <p>Salong:</p>
-        <p>Tid:</p>
-      `);
-    } else {
-      $('#display-saloon').html('');
-      $('#display-saloon').append(/*html*/ `
-      <p>Salong ${saloon}</p>
+
+    $('#display-saloon').html(/*html*/ `
+        <p>Salong ${saloon}</p>
         <p>Tid: ${time}</p>
       `);
-    }
   }
 
-  eventhandeler() {
-    $('main').on('change', '#select-date', () => this.createSaloonDisplay());
+  eventHandler() {
+    $('main').on('change', '#select-date', (event) =>
+      this.createSaloonDisplay(event)
+    );
   }
 }

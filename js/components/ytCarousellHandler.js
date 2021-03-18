@@ -1,53 +1,72 @@
 // Additionnal code for the slider
 
 export default class ytSlider {
+  constructor() {
+    this.eventHandler();
+    this.pos = 0;
+  }
+
+  eventHandler() {
+    $('main').on('click', '.slide-arrow', (event) => {
+      event.target.className.includes('left')
+        ? this.previousSlide()
+        : this.nextSlide();
+    });
+  }
   render(data) {
     let html = $(/*html*/ `<div class="video-slider">`);
 
     data.forEach((movie) => {
       html.append(/*html*/ `
     <div class="slide">
-      <iframe class="video" src="https://www.youtube.com/embed/${movie.youtubeTrailers[0]}?ecver=2&enablejsapi=1" frameBorder="0"></iframe>
+      <iframe class="video" src="https://www.youtube.com/embed/${movie.youtubeTrailers[0]}?ecver=2&enablejsapi=1" frameBorder="0" allowfullscreen></iframe>
       </div>
   `);
     });
     html.append(/*html*/ `
-  <div class="slide-arrow left"></div>
-  <div class="slide-arrow right"></div>
-  </div>
+      <div class="slide-arrow left"></div>
+      <div class="slide-arrow right"></div>
+      </div>
   `);
 
     return html;
   }
-}
-let slides, numOfSlides;
-let pos = 0;
 
-$('body').on('click', '.left', function (e) {
-  slides = $('.slide');
-  this.numOfSlides = slides.length;
-  // onYouTubeIframeAPIReady(slides);
-  // stopCurrentVideo(slides);
-  previousSlide(slides);
-});
+  previousSlide() {
+    let slides = $('.slide');
+    let numOfSlides = slides.length;
 
-$('body').on('click', '.right', function (e) {
-  slides = $('.slide');
-  numOfSlides = slides.length;
-  // onYouTubeIframeAPIReady(slides);
-  // stopCurrentVideo(slides);
-  nextSlide(slides);
-});
+    slides[this.pos]
+      .load()
+      .removeAttr('controls')
+      .siblings('.overlay-content')
+      .show()
+      .find('.play-button')
+      .show();
+    slides.video.stopVideo();
+    slides.eq(this.pos).animate({ left: '100%' }, 500);
+    // "loop"
+    this.pos = this.pos == 0 ? numOfSlides - 1 : --this.pos;
+    slides.eq(this.pos).css({ left: '-100%' }).animate({ left: 0 }, 500);
+  }
+  nextSlide() {
+    let slides = $('.slide');
+    let numOfSlides = slides.length;
 
-function previousSlide() {
-  slides.eq(pos).animate({ left: '100%' }, 500);
-  // "loop"
-  pos = pos == 0 ? numOfSlides - 1 : --pos;
-  slides.eq(pos).css({ left: '-100%' }).animate({ left: 0 }, 500);
-}
-function nextSlide(slides) {
-  slides.eq(pos).animate({ left: '-100%' }, 500);
-  // "loop"
-  pos = pos >= numOfSlides - 1 ? 0 : ++pos;
-  slides.eq(pos).css({ left: '100%' }).animate({ left: 0 }, 500);
+    slides[this.pos].video.stopVideo();
+    slides.eq(this.pos).animate({ left: '-100%' }, 500);
+    // "loop"
+    this.pos = this.pos >= numOfSlides - 1 ? 0 : ++this.pos;
+    slides.eq(this.pos).css({ left: '100%' }).animate({ left: 0 }, 500);
+  }
+
+  // onYouTubeIframeAPIReady() {
+  //   $('.slide').each(function (index, slide) {
+  //     // Get the `.video` element inside each `.slide`
+  //     console.log(slide);
+  //     var iframe = $(slide).find('.video')[0];
+  //     // Create a new YT.Player from the iFrame, and store it on the `.slide` DOM object
+  //     slide.video = new YT.Player(iframe);
+  //   });
+  // }
 }
