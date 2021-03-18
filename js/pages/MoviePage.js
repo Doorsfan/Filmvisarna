@@ -11,9 +11,15 @@ export default class MoviePage {
     if (!this.movies) {
       await this.read();
     }
-    let html = /*html*/ `<div class="movie-container"><h1>Våra filmer</h1><div class="movie-filter">
-    <select id="category-filter">
+    let html = /*html*/ `<div class="movie-container"><h1>Våra filmer</h1><div class="movie-filter">`;
+
+    let allGenres = [];
+
+    this.listingAllGenres(allGenres);
+
+    html += /*html*/ `<select id="category-filter">
     <option value="default">Genre</option>
+    
     <option value="Drama">Drama</option>
     <option value="Brott">Brott</option>
     <option value="Komedi">Komedi</option>
@@ -33,8 +39,6 @@ export default class MoviePage {
     <div class="movies-main-box">`;
 
     this.movies.forEach((data) => {
-      // if data.genre is an array then save it to a string
-      // for loop ta bort från sista.
       let genreString = '';
 
       if (Array.isArray(data.genre)) {
@@ -48,7 +52,6 @@ export default class MoviePage {
       } else {
         genreString = data.genre;
       }
-      console.log(genreString);
       html += /*html*/ `<section class="movie-info">
           <div class="movie-poster">
             <a href="#aboutPage${data.id}"><img src="${data.images[0]}"></a>
@@ -68,6 +71,25 @@ export default class MoviePage {
 
     html += '</div></div>';
     return html;
+  }
+
+  listingAllGenres(allGenres) {
+    this.movies.forEach((movie) => {
+      if (Array.isArray(movie.genre)) {
+        movie.genre.forEach((data) => {
+          if (allGenres.includes(data)) {
+          } else {
+            allGenres.push(data);
+          }
+        });
+      } else {
+        if (allGenres.includes(movie.genre)) {
+        } else {
+          allGenres.push(movie.genre);
+        }
+      }
+    });
+    console.log(allGenres);
   }
 
   eventHandler() {
