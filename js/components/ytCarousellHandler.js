@@ -7,7 +7,7 @@ export default class ytSlider {
   }
 
   eventHandler() {
-    $('main').on('click', '.slide-arrow', (event) => {
+    $('main').on('click', '.slide-arrow', () => {
       event.target.className.includes('left')
         ? this.previousSlide()
         : this.nextSlide();
@@ -35,15 +35,6 @@ export default class ytSlider {
   previousSlide() {
     let slides = $('.slide');
     let numOfSlides = slides.length;
-
-    slides[this.pos]
-      .load()
-      .removeAttr('controls')
-      .siblings('.overlay-content')
-      .show()
-      .find('.play-button')
-      .show();
-    slides.video.stopVideo();
     slides.eq(this.pos).animate({ left: '100%' }, 500);
     // "loop"
     this.pos = this.pos == 0 ? numOfSlides - 1 : --this.pos;
@@ -52,21 +43,9 @@ export default class ytSlider {
   nextSlide() {
     let slides = $('.slide');
     let numOfSlides = slides.length;
-
-    slides[this.pos].video.stopVideo();
     slides.eq(this.pos).animate({ left: '-100%' }, 500);
     // "loop"
     this.pos = this.pos >= numOfSlides - 1 ? 0 : ++this.pos;
     slides.eq(this.pos).css({ left: '100%' }).animate({ left: 0 }, 500);
   }
-
-  // onYouTubeIframeAPIReady() {
-  //   $('.slide').each(function (index, slide) {
-  //     // Get the `.video` element inside each `.slide`
-  //     console.log(slide);
-  //     var iframe = $(slide).find('.video')[0];
-  //     // Create a new YT.Player from the iFrame, and store it on the `.slide` DOM object
-  //     slide.video = new YT.Player(iframe);
-  //   });
-  // }
 }

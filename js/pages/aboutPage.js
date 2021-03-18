@@ -5,7 +5,6 @@ export default class AboutPage {
     this.movieID = movieID;
   }
 
-  //Ask alex if its confusing
   async read() {
     this.movies = await $.getJSON('/json/movies.json');
     await Promise.all(

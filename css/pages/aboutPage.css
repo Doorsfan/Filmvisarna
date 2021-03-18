@@ -14,13 +14,36 @@
     'e e c';
 }
 
+.select {
+  padding: 0 3px 0 3px;
+  background: #bebdbf;
+  border: 1px solid #9f9f9f;
+  cursor: pointer;
+  border-radius: 4px;
+
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url('data:image/svg+xml;utf8, <svg xmlns="http://www.w3.org/2000/svg" width="100" height="50"><polygon points="0,0 100,0 50,50" style="fill:%23626163;"/></svg>');
+  background-position: right 5px top 50%;
+  background-repeat: no-repeat;
+  background-size: 0.8rem;
+  padding-right: 1rem;
+}
+
+.select:focus,
+.select:hover {
+  outline: none;
+  border: 1px solid #626163;
+}
+
 .trailer {
   grid-area: v;
   width: 100%;
 }
 
 .about-text {
-  /* margin-left: 10px; */
+  margin: 5px;
   grid-area: a;
   overflow: hidden;
   margin-right: 10px;
@@ -44,13 +67,14 @@
 }
 
 .book-show {
+  margin-right: 5px;
   padding: 10px;
   z-index: 10;
-  border: 2px solid black;
+
   height: 100%;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr 2fr 2fr;
+  grid-template-rows: 1fr 1fr 1fr 2fr;
   grid-template-areas:
     'h h h'
     't t t'
@@ -106,8 +130,26 @@
   .movie-posters a:nth-last-child(1) {
     display: none;
   }
+  .movie-posters {
+    justify-content: space-around;
+  }
 }
 @media screen and (max-width: 630px) {
+  .about-container {
+    margin: auto;
+    max-width: 60rem;
+    max-height: 91vh;
+    display: grid;
+    grid-gap: 5px;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 2fr 2fr 1fr 2fr 2fr;
+    grid-template-areas:
+      'v v v'
+      'v v v'
+      '. . .'
+      'a a a'
+      'e c c';
+  }
   .movie-posters a:first-child {
     display: none;
   }
