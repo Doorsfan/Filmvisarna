@@ -13,7 +13,7 @@ export default class LoginPage {
          <button class="loginPage log_in_button" type="submit">Logga in</button>
          <div class="loginPage ellerText">ELLER</div>
          <button class="loginPage cancel_button">Avbryt</button>
-         <a class="loginPage newAccountLink" href="#register">Registrera Nytt Konto</a>
+         <a class="loginPage newAccountLink" href="#registerPage">Registrera Nytt Konto</a>
        </div>
      </form>`;
   }
