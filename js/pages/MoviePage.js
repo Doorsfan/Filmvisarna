@@ -11,23 +11,19 @@ export default class MoviePage {
     if (!this.movies) {
       await this.read();
     }
-    let html = /*html*/ `<div class="movie-container"><h1>Våra filmer</h1><div class="movie-filter">`;
+    let html = /*html*/ `<div class="movie-container"><h1>Våra filmer</h1><div class="movie-filter">
+    <select id="category-filter">
+    <option value="default">Genre</option>`;
 
     let allGenres = [];
 
     this.listingAllGenres(allGenres);
 
-    html += /*html*/ `<select id="category-filter">
-    <option value="default">Genre</option>
-    
-    <option value="Drama">Drama</option>
-    <option value="Brott">Brott</option>
-    <option value="Komedi">Komedi</option>
-    <option value="Romans">Romans</option>
-    <option value="Äventyr">Äventyr</option>
-    <option value="Familjefilm">Familjefilm</option>
-    <option value="Skräck">Skräck</option>
-    <option value="Mysterium">Mysterium</option>
+    allGenres.forEach((genre) => {
+      html += /*html*/ ` <option value="${genre}">${genre}</option> `;
+    });
+
+    html += /*html*/ `
     </select>
     <select id="age-filter">
     <option value="default">Åldersgrupp</option>
