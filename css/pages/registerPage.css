@@ -2,9 +2,17 @@
   margin: 28vh 0 5vh 0;
 }
 
+@media (max-width: 280px){
+  .registerPage.formContainer{
+    display:block;
+    padding-left:100px;
+  }
+}
+
 .registerPage.registerTitle{
   text-align:center;
-  width:100vw;
+  display:block;
+  font-size: 5vw;
 }
 
 .registerPage.emailInput, .registerPage.passwordInput, .registerPage.secondPasswordInput{
