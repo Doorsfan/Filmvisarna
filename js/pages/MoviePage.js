@@ -33,14 +33,30 @@ export default class MoviePage {
     <div class="movies-main-box">`;
 
     this.movies.forEach((data) => {
+      // if data.genre is an array then save it to a string
+      // for loop ta bort från sista.
+      let genreString = '';
+
+      if (Array.isArray(data.genre)) {
+        for (let i = 0; i < data.genre.length; i++) {
+          if (i === data.genre.length - 1) {
+            genreString += data.genre[i];
+          } else {
+            genreString += data.genre[i] + ', ';
+          }
+        }
+      } else {
+        genreString = data.genre;
+      }
+      console.log(genreString);
       html += /*html*/ `<section class="movie-info">
           <div class="movie-poster">
             <a href="#aboutPage${data.id}"><img src="${data.images[0]}"></a>
           </div>
           <div class="movie-text">
             <h2 class="title-name"><p>${data.title}</p></h2>
-            <div class="genre"><h4>Genre:&nbsp;</h4> <p>${data.genre}</p></div>
-            <div class="runtime"><h4>Speltid:&nbsp;</h4> <p>${
+            <div class="genre"><h4>Genre: </h4> <p>${genreString}</p></div>
+            <div class="runtime"><h4>Speltid: </h4> <p>${
               data.length + ' minuter'
             }</p></div>
             <div class="story"><h4>Handling:&nbsp;</h4> ${
