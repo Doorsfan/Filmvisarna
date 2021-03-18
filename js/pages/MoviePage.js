@@ -10,6 +10,7 @@ export default class MoviePage {
   async render() {
     let allGenres = [];
     let ageRating = [];
+    let sortedAgeRating = [];
 
     if (!this.movies) {
       await this.read();
@@ -29,12 +30,12 @@ export default class MoviePage {
     <select id="age-filter">
     <option value="default">Åldersgrupp</option>`;
 
-    this.listingAllAgeRatings(ageRating);
+    sortedAgeRating = this.listingAllAgeRatings(ageRating);
 
+    sortedAgeRating.forEach((age) => {
+      html += /*html*/ `<option value="${age}">${age}</option>`;
+    });
     html += /*html*/ `
-    <option value="6">6</option>
-    <option value="14">14</option>
-    <option value="18">18</option>
     </select>
     </div>
     <div class="movies-main-box">`;
@@ -81,12 +82,10 @@ export default class MoviePage {
         ageRating.push(movie.ageRating);
       }
     });
-    ageRating = ageRating.slice().sort((a, b) => a - b);
-    console.log(ageRating);
+    let sortedAgeRating = ageRating.slice().sort((a, b) => a - b);
+    return sortedAgeRating;
   }
-  /*a.sort(function(a,b){ 
-  return a - b;
-});*/
+
   listingAllGenres(allGenres) {
     this.movies.forEach((movie) => {
       if (Array.isArray(movie.genre)) {
@@ -103,7 +102,6 @@ export default class MoviePage {
         }
       }
     });
-    console.log(allGenres);
   }
 
   eventHandler() {
