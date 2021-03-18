@@ -8,14 +8,15 @@ export default class MoviePage {
     this.movies = await $.getJSON('/json/movies.json');
   }
   async render() {
+    let allGenres = [];
+    let ageRating = [];
+
     if (!this.movies) {
       await this.read();
     }
     let html = /*html*/ `<div class="movie-container"><h1>Våra filmer</h1><div class="movie-filter">
     <select id="category-filter">
     <option value="default">Genre</option>`;
-
-    let allGenres = [];
 
     this.listingAllGenres(allGenres);
 
@@ -26,7 +27,11 @@ export default class MoviePage {
     html += /*html*/ `
     </select>
     <select id="age-filter">
-    <option value="default">Åldersgrupp</option>
+    <option value="default">Åldersgrupp</option>`;
+
+    this.listingAllAgeRatings(ageRating);
+
+    html += /*html*/ `
     <option value="6">6</option>
     <option value="14">14</option>
     <option value="18">18</option>
@@ -69,6 +74,19 @@ export default class MoviePage {
     return html;
   }
 
+  listingAllAgeRatings(ageRating) {
+    this.movies.forEach((movie) => {
+      if (ageRating.includes(movie.ageRating)) {
+      } else {
+        ageRating.push(movie.ageRating);
+      }
+    });
+    ageRating = ageRating.slice().sort((a, b) => a - b);
+    console.log(ageRating);
+  }
+  /*a.sort(function(a,b){ 
+  return a - b;
+});*/
   listingAllGenres(allGenres) {
     this.movies.forEach((movie) => {
       if (Array.isArray(movie.genre)) {
