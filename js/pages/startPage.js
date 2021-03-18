@@ -35,7 +35,16 @@ export default class StartPage {
 
     startPage.append(/*html*/ `
       <div class="slideshow-container">
-        <div class="slideshow-slide"><a href="#aboutPagenyckeln"><img src="/images/movie_posters/nyckeln_till_frihet_poster1.jpg" alt="nyckeln till frihet" /><aside class="slide-aside"><p>NYCKELN TILL FRIHET</p><h3>SPELAS NU</h3><p>"En av världens bästa filmer"<br> - Moviezine.se</p></aside></a></div>
+        <div class="slideshow-slide">
+          <a href="#aboutPagenyckeln">
+            <img src="/images/movie_posters/nyckeln_till_frihet_poster1.jpg" alt="nyckeln till frihet" />
+            <aside class="slide-aside">
+              <p>NYCKELN TILL FRIHET</p>
+              <h3>SPELAS NU</h3>
+              <p>"En av världens bästa filmer"<br> - Moviezine.se</p>
+            </aside>
+          </a>
+        </div>
         <div class="slideshow-slide"><a href="#aboutPagerelic"><img src="/images/movie_posters/relic.jpg" alt="relic" /><aside class="slide-aside"><p>RELIC</p><h3>SPELAS NU</h3><p>"Skräck som bäst!"<br> - Ginza</p></aside></a></div>
         <div class="slideshow-slide"><a href="#aboutPagepatersson"><img src="/images/movie_posters/paterson.jfif" alt="paterson" /><aside class="slide-aside"><p>PATERSON</p><h3>SPELAS NU</h3><p>”Jim Jarmusch,<br> den lakoniska humorns specialist”<br> - DN</p></aside></a></div>
         <div class="slideshow-slide"><a href="#aboutPageharry"><img src="/images/movie_posters/harry_potter1.jpg" alt="harry potter" /><aside class="slide-aside"><p>HARRY POTTER</p><h3>SPELAS NU</h3><p>"En film för generationer!"<br> - Sydsvenskan</p></aside></a></div>
@@ -79,13 +88,13 @@ export default class StartPage {
         slides[i].style.display = 'none';
       }
 
-      slides[currentSlide].style.display = 'block';
+      slides[currentSlide].style.display = 'flex';
       if (currentSlide != slides.length - 1) {
         currentSlide++;
       } else {
         currentSlide = 0;
       }
-      setTimeout(showSlides, 2000);
+      setTimeout(showSlides, 4000);
     }
 
     return startPage;
