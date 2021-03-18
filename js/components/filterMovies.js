@@ -8,8 +8,14 @@ export default class filterMovies {
     }
     let html = '';
     let filteredMovies = [];
+    let movieAge = '';
     this.movies.forEach((movie) => {
-      let movieAge = parseInt(movie.ageRating);
+      if (isNaN(parseFloat(movie.ageRating))) {
+        movieAge = movie.ageRating;
+      } else {
+        movieAge = parseInt(movie.ageRating);
+      }
+      console.log(movieAge);
       if (
         (movieAge <= age && movie.genre.includes(category)) ||
         (movieAge <= age && category === 'default') ||
