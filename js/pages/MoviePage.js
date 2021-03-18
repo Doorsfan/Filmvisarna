@@ -34,7 +34,7 @@ export default class MoviePage {
     this.movies.forEach((data) => {
       html += /*html*/ `<section class="movie-info">
           <div class="movie-poster">
-            <a href="#aboutPage${data.id}"><img src="${data.images[0]}"></a>
+            <a href="#aboutPage/${data.id}"><img src="${data.images[0]}"></a>
           </div>
           <div class="movie-text">
             <h2 class="title-name"><p>${data.title}</p></h2>
