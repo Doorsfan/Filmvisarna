@@ -1,18 +1,18 @@
 .registerPage.formContainer{
-  margin: 28vh 0 5vh 0;
+  margin: 28vh 0vw 0vh 2em;
 }
 
-@media (max-width: 280px){
+@media screen and (max-width: 280px){
   .registerPage.formContainer{
-    display:block;
-    padding-left:100px;
+    position:absolute;
+    left:25%;
   }
 }
 
 .registerPage.registerTitle{
   text-align:center;
   display:block;
-  font-size: 5vw;
+  font-size:1.25em;
 }
 
 .registerPage.emailInput, .registerPage.passwordInput, .registerPage.secondPasswordInput{
