@@ -19,17 +19,19 @@ export default class MoviePage {
     <select id="category-filter">
     <option value="default">Genre</option>`;
 
-    html = this.addingGenresToHtml(allGenres, html);
+    this.gettingGenresFromJson(allGenres);
+
+    allGenres.forEach((genre) => {
+      html += /*html*/ ` <option value="${genre}">${genre}</option> `;
+    });
 
     html += /*html*/ `
     </select>
     <select id="age-filter">
     <option value="default">Åldersgrupp</option>`;
 
-    sortedAgeRating = this.addingAndSortingAgeRating(
-      ageRating,
-      sortedAgeRating
-    );
+    this.gettingAgeRatingFromJson(ageRating);
+    sortedAgeRating = ageRating.slice().sort((a, b) => a - b);
 
     sortedAgeRating.forEach((age) => {
       html += /*html*/ `<option value="${age}">${age}</option>`;
@@ -83,7 +85,7 @@ export default class MoviePage {
     $('.movies-main-box').append(html);
   }
 
-  addingGenresToHtml(allGenres, html) {
+  gettingGenresFromJson(allGenres) {
     this.movies.forEach((movie) => {
       if (Array.isArray(movie.genre)) {
         movie.genre.forEach((data) => {
@@ -99,22 +101,16 @@ export default class MoviePage {
         }
       }
     });
-
-    allGenres.forEach((genre) => {
-      html += /*html*/ ` <option value="${genre}">${genre}</option> `;
-    });
-    return html;
   }
 
-  addingAndSortingAgeRating(ageRating, sortedAgeRating) {
+  gettingAgeRatingFromJson(ageRating) {
     this.movies.forEach((movie) => {
       if (ageRating.includes(movie.ageRating)) {
+        //do nothing
       } else {
         ageRating.push(movie.ageRating);
       }
     });
-    sortedAgeRating = ageRating.slice().sort((a, b) => a - b);
-    return sortedAgeRating;
   }
 
   addingMovieInfoToHtml(data, html) {
