@@ -1,5 +1,5 @@
 .registerPage.formContainer{
-  margin: 28vh 0vw 0vh 2em;
+  margin: 28vh 0vw 10vh 2em;
 }
 
 @media screen and (max-width: 280px){
