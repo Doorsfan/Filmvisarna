@@ -73,7 +73,7 @@ export default class MoviePage {
   }
 
   addingCategorySelectorToHtml() {
-    return `
+    return /*html*/ `
     <div class="movie-container"><h1>Våra filmer</h1><div class="movie-filter">
     <select id="category-filter">
     <option value="default">Genre</option>`;

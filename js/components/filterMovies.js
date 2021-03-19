@@ -24,7 +24,6 @@ export default class filterMovies {
         filteredMovies.push(movie);
       }
     });
-
     filteredMovies.forEach((data) => {
       let genreString = '';
       genreString = this.removingUnwantedLastComma(data, genreString);
