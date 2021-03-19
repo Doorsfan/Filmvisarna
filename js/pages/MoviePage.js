@@ -1,6 +1,7 @@
 export default class MoviePage {
   constructor() {
     this.eventHandler();
+    this.read();
   }
   async read() {
     this.movies = await $.getJSON('/json/movies.json');
@@ -18,38 +19,17 @@ export default class MoviePage {
     <select id="category-filter">
     <option value="default">Genre</option>`;
 
-    this.movies.forEach((movie) => {
-      if (Array.isArray(movie.genre)) {
-        movie.genre.forEach((data) => {
-          if (allGenres.includes(data)) {
-          } else {
-            allGenres.push(data);
-          }
-        });
-      } else {
-        if (allGenres.includes(movie.genre)) {
-        } else {
-          allGenres.push(movie.genre);
-        }
-      }
-    });
-
-    allGenres.forEach((genre) => {
-      html += /*html*/ ` <option value="${genre}">${genre}</option> `;
-    });
+    html = this.addingGenresToHtml(allGenres, html);
 
     html += /*html*/ `
     </select>
     <select id="age-filter">
     <option value="default">Åldersgrupp</option>`;
 
-    this.movies.forEach((movie) => {
-      if (ageRating.includes(movie.ageRating)) {
-      } else {
-        ageRating.push(movie.ageRating);
-      }
-    });
-    sortedAgeRating = ageRating.slice().sort((a, b) => a - b);
+    sortedAgeRating = this.addingAndSortingAgeRating(
+      ageRating,
+      sortedAgeRating
+    );
 
     sortedAgeRating.forEach((age) => {
       html += /*html*/ `<option value="${age}">${age}</option>`;
@@ -66,27 +46,6 @@ export default class MoviePage {
 
     html += '</div></div>';
 
-    return html;
-  }
-
-  addingMovieInfoToHtml(data, html) {
-    let genreString = '';
-    genreString = this.removingUnwantedLastComma(data, genreString);
-    html += /*html*/ `<section class="movie-info">
-          <div class="movie-poster">
-            <a href="#aboutPage${data.id}"><img src="${data.images[0]}"></a>
-          </div>
-          <div class="movie-text">
-            <h2 class="title-name"><p>${data.title}</p></h2>
-            <div class="genre"><h4>Genre: </h4> <p>${genreString}</p></div>
-            <div class="runtime"><h4>Speltid: </h4> <p>${
-              data.length + ' minuter'
-            }</p></div>
-            <div class="story"><h4>Handling:&nbsp;</h4> ${
-              data.description
-            }</div>
-          </div>
-        </section>`;
     return html;
   }
 
@@ -117,6 +76,61 @@ export default class MoviePage {
     html += '</div></div>';
     $('.movies-main-box').html(' ');
     $('.movies-main-box').append(html);
+  }
+
+  addingGenresToHtml(allGenres, html) {
+    this.movies.forEach((movie) => {
+      if (Array.isArray(movie.genre)) {
+        movie.genre.forEach((data) => {
+          if (allGenres.includes(data)) {
+          } else {
+            allGenres.push(data);
+          }
+        });
+      } else {
+        if (allGenres.includes(movie.genre)) {
+        } else {
+          allGenres.push(movie.genre);
+        }
+      }
+    });
+
+    allGenres.forEach((genre) => {
+      html += /*html*/ ` <option value="${genre}">${genre}</option> `;
+    });
+    return html;
+  }
+
+  addingAndSortingAgeRating(ageRating, sortedAgeRating) {
+    this.movies.forEach((movie) => {
+      if (ageRating.includes(movie.ageRating)) {
+      } else {
+        ageRating.push(movie.ageRating);
+      }
+    });
+    sortedAgeRating = ageRating.slice().sort((a, b) => a - b);
+    return sortedAgeRating;
+  }
+
+  addingMovieInfoToHtml(data, html) {
+    let genreString = '';
+    genreString = this.removingUnwantedLastComma(data, genreString);
+    html += /*html*/ `<section class="movie-info">
+          <div class="movie-poster">
+            <a href="#aboutPage${data.id}"><img src="${data.images[0]}"></a>
+          </div>
+          <div class="movie-text">
+            <h2 class="title-name"><p>${data.title}</p></h2>
+            <div class="genre"><h4>Genre: </h4> <p>${genreString}</p></div>
+            <div class="runtime"><h4>Speltid: </h4> <p>${
+              data.length + ' minuter'
+            }</p></div>
+            <div class="story"><h4>Handling:&nbsp;</h4> ${
+              data.description
+            }</div>
+          </div>
+        </section>`;
+    return html;
   }
 
   removingUnwantedLastComma(data, genreString) {
