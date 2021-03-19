@@ -9,7 +9,7 @@ export default class Sidebar {
             </li>
             <hr />
             <li class="navlist-item">
-              <a href='/boka'>Boka</a>
+              <a href='#bookingPage'>Boka</a>
             </li>
             <li class="navlist-item">
               <a href='/nyheter'>Nyheter</a>
