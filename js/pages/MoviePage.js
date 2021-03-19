@@ -61,9 +61,18 @@ export default class MoviePage {
     <div class="movies-main-box">`;
 
     this.movies.forEach((data) => {
-      let genreString = '';
-      genreString = this.removingUnwantedLastComma(data, genreString);
-      html += /*html*/ `<section class="movie-info">
+      html = this.addingMovieInfoToHtml(data, html);
+    });
+
+    html += '</div></div>';
+
+    return html;
+  }
+
+  addingMovieInfoToHtml(data, html) {
+    let genreString = '';
+    genreString = this.removingUnwantedLastComma(data, genreString);
+    html += /*html*/ `<section class="movie-info">
           <div class="movie-poster">
             <a href="#aboutPage${data.id}"><img src="${data.images[0]}"></a>
           </div>
@@ -78,10 +87,6 @@ export default class MoviePage {
             }</div>
           </div>
         </section>`;
-    });
-
-    html += '</div></div>';
-
     return html;
   }
 
@@ -107,23 +112,7 @@ export default class MoviePage {
       }
     });
     filteredMovies.forEach((data) => {
-      let genreString = '';
-      genreString = this.removingUnwantedLastComma(data, genreString);
-      html += /*html*/ `<section class="movie-info">
-          <div class="movie-poster">
-            <a href="#aboutPage${data.id}"><img src="${data.images[0]}"></a>
-          </div>
-          <div class="movie-text">
-            <h2 class="title-name"><p>${data.title}</p></h2>
-            <div class="genre"><h4>Genre: </h4> <p>${genreString}</p></div>
-            <div class="runtime"><h4>Speltid: </h4> <p>${
-              data.length + ' minuter'
-            }</p></div>
-            <div class="story"><h4>Handling:&nbsp;</h4> ${
-              data.description
-            }</div>
-          </div>
-        </section>`;
+      html = this.addingMovieInfoToHtml(data, html);
     });
     html += '</div></div>';
     $('.movies-main-box').html(' ');
