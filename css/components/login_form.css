@@ -1,74 +1,63 @@
-.loginPage.formContainer{
-  margin: 8vh 0 8vh 0;
-  font-size: 23px;
-  max-width:450px;
-  max-height:max-content;
-  display:flex;
-  flex-wrap:wrap;
+.loginPage.login_form{
+  display:grid;
+  justify-items:center; /* Works to Center the Form on the page */
   margin-left:auto;
   margin-right:auto;
-  border:solid 5px black;
-  padding:130px;
+  width:100%;
 }
-.loginPage.emailLabel{
-  padding-left:15px;
+.loginPage.formContainer{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction:column;
+  text-align:center;
+  margin-top:10vh;
 }
-.loginPage.passwordLabel,.loginPage.emailLabel{
-  margin-right: 5px;
-  padding-top:3px;
+
+.loginPage.myImage{
+  height:180px;
+  width:200px;
+  align-self:center;
+  margin-left: 10px;
 }
 .loginPage.emailInput{
-  margin-bottom:5px;
-  width: 250px; 
+  width: 220px;
+  margin-left:auto;
+  margin-right:auto;
+  margin-top:10px;
+  margin-bottom:10px;
 }
-
-.loginPage.passwordInput{
-  width: 350px;
-}
-
-.loginPage.loginPage.log_in_button{
-  margin-top:40px;
-  width: 400px;
-  color:white;
-  background-color:#F54D4D;
-  border: solid 1px black;
-  height: 23px;
-}
-
-.loginPage.emailInput{
+body > main > form > div > input.loginPage.passwordInput{
+  width: 220px;
+  margin-left:auto;
+  margin-right:auto;
+  margin-top:10px;
   margin-bottom:10px;
 }
 
-
-
-.loginPage.myImage{
-  width:180px;
-  height: 120px;
-  margin-bottom: 10px;
-  padding-right: 10px;
-  margin-left:10px;
-}
-
-.loginPage.ellerText{
-  width: 400px;
-  text-align:center;
-  padding-top: 5px;
-  font-weight:bold;
-}
-
-.loginPage.cancel_button{
-  width:400px;
-  text-align:center;
-  background-color:white;
-  color: #F54D4D;
-  border: solid 1px black;
-}
-
-.loginPage.newAccountLink{
-  font-size:18px;
+body > main > form > div > button.loginPage.log_in_button{
+  width: 220px;
   margin-left:auto;
   margin-right:auto;
-  margin-top:4px;
+  margin-top:10px;
+  margin-bottom:10px;
+  color:white;
+  background-color:red;
+  padding: 1px;
+}
+
+body > main > form > div > button.loginPage.cancel_button{
+  width: 220px;
+  margin-left:auto;
+  margin-right:auto;
+  margin-top:10px;
+  margin-bottom:10px;
+  background-color:white;
+  color:red;
+  padding: 1px;
+}
+.loginPage.ellerText{
+  font-weight:bold;
 }
 
 .loginPage.newAccountLink:visited{
