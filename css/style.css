@@ -7,7 +7,6 @@
 @import './pages/aboutPage.css';
 @import './pages/startPage.css';
 @import './pages/BookingPage.css';
-@import './components/select.css';
 * {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
