@@ -3,7 +3,6 @@
   justify-items:center; /* Works to Center the Form on the page */
   margin-left:auto;
   margin-right:auto;
-  width:100%;
 }
 .loginPage.formContainer{
   display: flex;
@@ -42,7 +41,7 @@ body > main > form > div > button.loginPage.log_in_button{
   margin-top:10px;
   margin-bottom:10px;
   color:white;
-  background-color:red;
+  background-color:#F54D4D;
   padding: 1px;
 }
 
