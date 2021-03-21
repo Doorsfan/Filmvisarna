@@ -137,17 +137,17 @@ export default class MoviePage {
     $('body').on('change', '#category-filter', () => {
       this.disableAgeSelector();
     });
-    //$('body').on('change', '#age-filter', disableChoiceFromAge);
+    $('body').on('change', '#age-filter', () => {
+      this.disableCategorySelector();
+    });
   }
 
   disableAgeSelector() {
     $('#age-filter > option').each(function () {
       $(this).prop('disabled', false);
     });
-
     let categoryChoice = $('#category-filter').val();
     let genreAge = [];
-
     this.movies.forEach((movie) => {
       if (movie.genre.includes(categoryChoice)) {
         if (!genreAge.includes(movie.ageRating)) {
@@ -157,7 +157,6 @@ export default class MoviePage {
     });
     genreAge.sort((a, b) => a - b);
     console.log('dessa åldrar finns ' + genreAge);
-
     $('#age-filter > option').each(function () {
       if (this.value < genreAge[0]) {
         $(this).prop('disabled', true);
@@ -169,11 +168,32 @@ export default class MoviePage {
         $(this).prop('disabled', true);
       }
     });
+  }
 
-    /* if (true) {
-        console.log($('#age-filter > option').each());
-        $(`#age-filter option[value="${this}"]`).prop('disabled', true);
-      } */
+  disableCategorySelector() {
+    $('#category-filter > option').each(function () {
+      $(this).prop('disabled', false);
+    });
+    let ageChoice = $('#age-filter').val();
+    let ageCategory = [];
+    this.movies.forEach((movie) => {
+      if (movie.ageRating <= ageChoice) {
+        movie.genre.forEach((data) => {
+          if (!ageCategory.includes(data)) {
+            ageCategory.push(data);
+          }
+        });
+      }
+    });
+
+    $('#category-filter > option').each(function () {
+      if (!ageCategory.includes(this.value)) {
+        console.log(this.value);
+        if (this.value !== 'default') {
+          $(this).prop('disabled', true);
+        }
+      }
+    });
   }
 }
 
@@ -188,4 +208,7 @@ $("#selectId > option").each(function() {
       
      
       * write filters to disable buttons in selector
+     
+      * change so that only the movies at selected age shows.?
+    
 */
