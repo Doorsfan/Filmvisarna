@@ -185,7 +185,6 @@ export default class MoviePage {
         });
       }
     });
-
     $('#category-filter > option').each(function () {
       if (!ageCategory.includes(this.value)) {
         console.log(this.value);
@@ -196,19 +195,3 @@ export default class MoviePage {
     });
   }
 }
-
-//
-
-/*  
-All genres are now stored inside an array.
-
-$("#selectId > option").each(function() {
-    alert(this.text + ' ' + this.val);
-});
-      
-     
-      * write filters to disable buttons in selector
-     
-      * change so that only the movies at selected age shows.?
-    
-*/
