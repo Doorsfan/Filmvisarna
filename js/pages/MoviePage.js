@@ -140,14 +140,51 @@ export default class MoviePage {
     //$('body').on('change', '#age-filter', disableChoiceFromAge);
   }
 
-  disableAgeSelector() {}
+  disableAgeSelector() {
+    $('#age-filter > option').each(function () {
+      $(this).prop('disabled', false);
+    });
+
+    let categoryChoice = $('#category-filter').val();
+    let genreAge = [];
+
+    this.movies.forEach((movie) => {
+      if (movie.genre.includes(categoryChoice)) {
+        if (!genreAge.includes(movie.ageRating)) {
+          genreAge.push(movie.ageRating);
+        }
+      }
+    });
+    genreAge.sort((a, b) => a - b);
+    console.log('dessa åldrar finns ' + genreAge);
+
+    $('#age-filter > option').each(function () {
+      if (this.value < genreAge[0]) {
+        $(this).prop('disabled', true);
+      } else if (
+        !genreAge.includes('barntillåten') &&
+        this.value === 'barntillåten' &&
+        genreAge.length !== 0
+      ) {
+        $(this).prop('disabled', true);
+      }
+    });
+
+    /* if (true) {
+        console.log($('#age-filter > option').each());
+        $(`#age-filter option[value="${this}"]`).prop('disabled', true);
+      } */
+  }
 }
 
-//  $(`option[value="${movie.ageRating}"]`).prop('disabled', true);
+//
 
 /*  
 All genres are now stored inside an array.
 
+$("#selectId > option").each(function() {
+    alert(this.text + ' ' + this.val);
+});
       
      
       * write filters to disable buttons in selector
