@@ -2,20 +2,19 @@ export default class readAndWriteUser {
   constructor() {}
 
   async saveUser(username, password) {
-    await JSON._save('./users/' + username, password);
+    await JSON._save(`./users/${username + password}`, 'user');
   }
 
-  async loadUser(username) {
-    /*
-    fetch("/json/users/" + username + ".json")
-      .then(response => response.json())
-      .then(user => {
-        this.example = user.password;
-      }); */
-    this.user = await JSON._load('/users/' + username + '.json');
+  async loadUser(username, password) {
     if (!this.user) {
-      await this.loadUser(username);
+      try {
+        this.user = await JSON._load(`./users/${username + password}`);
+      } catch (error) {
+        console.log('No user');
+        return;
+      }
     }
+    console.log('Worked');
   }
 
   async loadBooking(user) {
