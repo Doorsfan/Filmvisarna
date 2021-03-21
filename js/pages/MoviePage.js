@@ -62,17 +62,12 @@ export default class MoviePage {
         movieAge = parseInt(movie.ageRating);
       }
       if (movieAge === 'barntillåten' || age === 'default') {
-        if (
-          movie.genre.includes(category) ||
-          category === 'default' ||
-          movie.genre == category
-        ) {
+        if (movie.genre.includes(category) || category === 'default') {
           filteredMovies.push(movie);
         }
       } else if (
         (movieAge <= age && movie.genre.includes(category)) ||
-        (movieAge <= age && category === 'default') ||
-        (movieAge <= age && movie.genre == category)
+        (movieAge <= age && category === 'default')
       ) {
         filteredMovies.push(movie);
       }
