@@ -9,7 +9,6 @@ export default class MoviePage {
   async render() {
     let allGenres = [];
     let ageRating = [];
-    let sortedAgeRating = [];
 
     if (!this.movies) {
       await this.read();
@@ -31,9 +30,8 @@ export default class MoviePage {
     <option value="default">Åldersgrupp</option>`;
 
     this.gettingAgeRatingFromJson(ageRating);
-    sortedAgeRating = ageRating.slice().sort((a, b) => a - b);
 
-    sortedAgeRating.forEach((age) => {
+    ageRating.forEach((age) => {
       html += /*html*/ `<option value="${age}">${age}</option>`;
     });
 
@@ -92,12 +90,12 @@ export default class MoviePage {
 
   gettingAgeRatingFromJson(ageRating) {
     this.movies.forEach((movie) => {
-      if (ageRating.includes(movie.ageRating)) {
-        //do nothing
-      } else {
+      if (!ageRating.includes(movie.ageRating)) {
         ageRating.push(movie.ageRating);
       }
     });
+
+    ageRating.sort((a, b) => a - b);
   }
 
   addingMovieInfoToHtml(data, html) {
@@ -150,8 +148,7 @@ export default class MoviePage {
 /*  
 All genres are now stored inside an array.
 
-          
-      * rewrite the filter in the function "reRender"
+      
      
       * write filters to disable buttons in selector
 */
