@@ -87,19 +87,11 @@ export default class MoviePage {
 
   gettingGenresFromJson(allGenres) {
     this.movies.forEach((movie) => {
-      if (Array.isArray(movie.genre)) {
-        movie.genre.forEach((data) => {
-          if (allGenres.includes(data)) {
-          } else {
-            allGenres.push(data);
-          }
-        });
-      } else {
-        if (allGenres.includes(movie.genre)) {
-        } else {
-          allGenres.push(movie.genre);
+      movie.genre.forEach((data) => {
+        if (!allGenres.includes(data)) {
+          allGenres.push(data);
         }
-      }
+      });
     });
   }
 
@@ -135,16 +127,12 @@ export default class MoviePage {
   }
 
   removingUnwantedLastComma(data, genreString) {
-    if (Array.isArray(data.genre)) {
-      for (let i = 0; i < data.genre.length; i++) {
-        if (i === data.genre.length - 1) {
-          genreString += data.genre[i];
-        } else {
-          genreString += data.genre[i] + ', ';
-        }
+    for (let i = 0; i < data.genre.length; i++) {
+      if (i === data.genre.length - 1) {
+        genreString += data.genre[i];
+      } else {
+        genreString += data.genre[i] + ', ';
       }
-    } else {
-      genreString = data.genre;
     }
     return genreString;
   }
@@ -153,5 +141,22 @@ export default class MoviePage {
     $('body').on('change', '.movie-filter', () => {
       this.reRenderMovies($('#category-filter').val(), $('#age-filter').val());
     });
+    $('body').on('change', '#category-filter', () => {
+      this.disableAgeSelector();
+    });
+    //$('body').on('change', '#age-filter', disableChoiceFromAge);
   }
+
+  disableAgeSelector() {}
 }
+
+//  $(`option[value="${movie.ageRating}"]`).prop('disabled', true);
+
+/*  
+All genres are now stored inside an array.
+
+          
+      * rewrite the filter in the function "reRender"
+     
+      * write filters to disable buttons in selector
+*/
