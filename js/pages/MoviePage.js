@@ -156,7 +156,6 @@ export default class MoviePage {
       }
     });
     genreAge.sort((a, b) => a - b);
-    console.log('dessa åldrar finns ' + genreAge);
     $('#age-filter > option').each(function () {
       if (this.value < genreAge[0]) {
         $(this).prop('disabled', true);
@@ -169,7 +168,6 @@ export default class MoviePage {
       }
     });
   }
-
   disableCategorySelector() {
     $('#category-filter > option').each(function () {
       $(this).prop('disabled', false);
@@ -177,7 +175,10 @@ export default class MoviePage {
     let ageChoice = $('#age-filter').val();
     let ageCategory = [];
     this.movies.forEach((movie) => {
-      if (movie.ageRating <= ageChoice) {
+      if (ageChoice === 'barntillåten') {
+        ageChoice = 1;
+      }
+      if (movie.ageRating <= ageChoice || isNaN(parseFloat(movie.ageRating))) {
         movie.genre.forEach((data) => {
           if (!ageCategory.includes(data)) {
             ageCategory.push(data);
@@ -187,7 +188,6 @@ export default class MoviePage {
     });
     $('#category-filter > option').each(function () {
       if (!ageCategory.includes(this.value)) {
-        console.log(this.value);
         if (this.value !== 'default') {
           $(this).prop('disabled', true);
         }
