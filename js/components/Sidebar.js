@@ -15,7 +15,7 @@ export default class Sidebar {
               <a href='#MoviePage'>Filmer</a>
             </li>            
             <li class="navlist-item">
-              <a href='/boka'>Boka</a>
+              <a href='#bookingPage'>Boka</a>
             </li>
           </ul>
         </nav>
