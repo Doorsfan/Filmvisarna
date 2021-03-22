@@ -41,6 +41,7 @@
 .trailer {
   grid-area: v;
   width: 100%;
+  height: 100%;
 }
 
 .about-info {
@@ -124,18 +125,16 @@
 
 @media screen and (max-width: 600px) {
   .about-container {
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 2fr 2fr 1fr 1fr 1fr;
-    grid-template-areas:
-      'v v v'
-      'v v v'
-      'a a a'
-      'e e e'
-      'c c c';
+    max-height: 100%;
+    display: flex;
+    flex-direction: column;
   }
 
-  .book-show {
-    height: 100%;
+  .trailer iframe {
+    height: 250px;
+  }
+  .trailer {
+    height: 250px;
   }
 
   .about-info,
