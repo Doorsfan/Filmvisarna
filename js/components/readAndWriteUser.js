@@ -5,16 +5,26 @@ export default class readAndWriteUser {
     await JSON._save(`./users/${username + password}`, 'user');
   }
 
-  async loadUser(username, password) {
-    if (!this.user) {
-      try {
-        this.user = await JSON._load(`./users/${username + password}`);
-      } catch (error) {
-        console.log('No user');
-        return;
-      }
+  async validateUser(username, password) {
+    try {
+      this.user = await JSON._load(`./users/${username + password}`);
+    } catch (error) {
+      console.log('No .json with that combination');
+      return;
     }
-    console.log('Worked');
+    this.saveUserToSessionStorage(username);
+  }
+
+  saveUserToSessionStorage(username) {
+    let store = {};
+    try {
+      store = JSON.parse(sessionStorage.store);
+    } catch (e) {}
+    store.save = function () {
+      sessionStorage.store = JSON.stringify(this);
+    };
+    store['username'] = username;
+    store.save();
   }
 
   async loadBooking(user) {
@@ -38,6 +48,7 @@ export default class readAndWriteUser {
     }
   }
 }
+
 //put this in async read in startPage to test out component
 // let booking = {
 //   id: 'none',

@@ -14,8 +14,10 @@ export default class UserPage {
   }
 
   async read() {
+    this.username = JSON.parse(sessionStorage.store);
+    this.username = this.username['username'];
     this.userBookings = await $.getJSON(
-      '/json/bookings/users/robban@gmail.se.json'
+      `/json/bookings/users/${this.username}.json`
     );
   }
 
@@ -23,11 +25,12 @@ export default class UserPage {
     if (!this.userBookings) {
       await this.read();
     }
+
     let html = $(/*html*/ `
         <div class="userpage-container">
         <div class="userpage-title">
           <h1>Mina Sidor</h1>
-          <p>${this.userBookings[0].id}</p>
+          <p>${this.username}</p>
         </div>
         </div>
     `);
