@@ -14,7 +14,7 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  width: 100%;
+  width: 100vw;
 }
 
 .h1-aktuellt {
@@ -28,7 +28,6 @@
 .startpage-infobar {
   display: flex;
   margin: 0 auto;
-  text-align: center;
   border: 3px solid whitesmoke;
   width: 40%;
   min-width: 260px;
@@ -38,6 +37,7 @@
   z-index: 3;
   left: 33%;
   top: 6%;
+  overflow: hidden;
 }
 
 .startpage-infobar:hover, .startpage-infobar:active {
@@ -48,8 +48,9 @@
 
 .startpage-infobar p {
   color: inherit;
+  text-align: center;
   font-size: 2rem;
-  padding: 2rem;
+  padding: 1rem;
   line-height: 3rem;
 }
 
@@ -217,6 +218,7 @@
   animation: changeopacity 0.4s;
   display: flex;
   flex-direction: row;
+  width: 100%; 
 }
 
 @keyframes changeopacity {
@@ -240,6 +242,7 @@
 
 .slideshow-slide img {
   height: 600px;
+  /* width: 100%; */
   transition: transform 0.2s, border 0.2s;
 }
 
@@ -292,3 +295,53 @@
     margin-left: 0;
   }
 }
+
+ /* Extra small devices (portrait phones, less than 576px) */
+@media only screen and (max-width: 575.98px) { 
+
+  .userpage-button {
+    display: none;
+  }
+
+  .home-button {
+    width: 100%;
+    text-align: center;
+    margin-left: 0em;
+  }
+
+  .startpage-infobar {
+    left: 17%;
+  }
+
+  .h1-aktuellt {
+    font-size: 4rem;
+  }
+
+  .video-container {
+    padding: 0;
+  }
+
+  .video-container h3 {
+    /* padding: 0 2rem 0 2rem; */
+    margin: auto 2rem;
+  }
+
+ }
+
+ /* Small devices (landscape phones, less than 768px) */
+@media only screen and  (max-width: 767.98px) { 
+
+ }
+
+ /* Medium devices (tablets, less than 992px) */
+@media only screen and  (max-width: 991.98px) { 
+
+ }
+
+ /* Large devices (desktops, less than 1200px) */
+@media only screen and  (max-width: 1199.98px) { 
+
+ }
+
+ /* Extra large devices (large desktops) */
+ /* No media query since the extra-large breakpoint has no upper bound on its width */

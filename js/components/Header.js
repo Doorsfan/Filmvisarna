@@ -36,7 +36,9 @@ export default class Header {
         <img class="hamburger-icon" src="../images/hamburger_icon.png" alt="home" />
         
         <a class="home-button" href="#startPage">Filmvisarna</a>
-        <img class="user-icon" src="../images/user.png" alt="home"/>
+        <a class="userpage-button" href="#loginPage">
+          <img class="user-icon" src="../images/user.png" alt="home"/>
+        </a>
       </nav>
     </header>`);
     header.append(sidebar.render());
