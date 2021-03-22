@@ -91,12 +91,10 @@ export default class MoviePage {
           <div class="movie-text">
             <h2 class="title-name"><p>${data.title}</p></h2>
             <div class="genre"><h4>Genre: </h4> <p>${genreString}</p></div>
-            <div class="runtime"><h4>Speltid: </h4> <p>${
-              data.length + ' minuter'
-            }</p></div>
-            <div class="story"><h4>Handling:&nbsp;</h4> ${
-              data.description
-            }</div>
+            <div class="runtime"><h4>Speltid: </h4> <p>
+            ${data.length + ' minuter'}</p></div>
+            <div class="story"><h4>Handling:&nbsp;</h4>
+            ${data.description}</div>
           </div>
         </section>`;
   }
