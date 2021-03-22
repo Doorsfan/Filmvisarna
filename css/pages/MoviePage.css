@@ -27,7 +27,7 @@
   flex-wrap: wrap;
   gap: 1.5em;
   width: 100%;
-  max-width: 850px;
+  max-width: 60rem;
   margin-bottom: 1em;
   border-bottom: 0.2em solid black;
 }

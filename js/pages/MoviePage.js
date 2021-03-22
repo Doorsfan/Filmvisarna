@@ -54,11 +54,10 @@ export default class MoviePage {
     let filteredMovies = [];
     let movieAge = '';
     this.movies.forEach((movie) => {
-      if (isNaN(parseFloat(movie.ageRating))) {
-        movieAge = movie.ageRating;
-      } else {
-        movieAge = parseInt(movie.ageRating);
-      }
+      isNaN(parseFloat(movie.ageRating))
+        ? (movieAge = movie.ageRating)
+        : (movieAge = parseInt(movie.ageRating));
+
       if (movieAge === 'barntillåten' || age === 'default') {
         if (movie.genre.includes(category) || category === 'default') {
           filteredMovies.push(movie);
