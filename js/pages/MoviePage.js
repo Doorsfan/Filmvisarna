@@ -7,50 +7,50 @@ export default class MoviePage {
     this.movies = await $.getJSON('/json/movies.json');
   }
   async render() {
-    let allGenres = [];
-    let ageRating = [];
-
+    let genresToAdd = [];
+    let ageRatingsToAdd = [];
+    let allGenres = '';
+    let ageRatings = '';
+    let movieInfo = '';
     if (!this.movies) {
       await this.read();
     }
-    let html = /*html*/ `
-    <div class="movie-container"><h1>Våra filmer</h1><div class="movie-filter">
-    <select id="category-filter">
-    <option value="default">Genre</option>`;
 
-    this.gettingGenresFromJson(allGenres);
+    this.gettingGenresFromJson(genresToAdd);
 
-    allGenres.forEach((genre) => {
-      html += /*html*/ ` <option value="${genre}">${genre}</option> `;
+    genresToAdd.forEach((genre) => {
+      allGenres += /*html*/ ` <option value="${genre}">${genre}</option> `;
     });
 
-    html += /*html*/ `
-    </select>
-    <select id="age-filter">
-    <option value="default">Åldersgrupp</option>`;
+    this.gettingAgeRatingFromJson(ageRatingsToAdd);
 
-    this.gettingAgeRatingFromJson(ageRating);
-
-    ageRating.forEach((age) => {
-      html += /*html*/ `<option value="${age}">${age}</option>`;
+    ageRatingsToAdd.forEach((age) => {
+      ageRatings += /*html*/ `<option value="${age}">${age}</option>`;
     });
-
-    html += /*html*/ `
-    </select>
-    </div>
-    <div class="movies-main-box">`;
 
     this.movies.forEach((data) => {
-      html = this.addingMovieInfoToHtml(data, html);
+      movieInfo += this.addingMovieInfoToHtml(data);
     });
 
-    html += '</div></div>';
-
-    return html;
+    return `
+    <div class="movie-container"><h1>Våra filmer</h1><div class="movie-filter">
+      <select id="category-filter">
+      <option value="default">Genre</option>
+        ${allGenres}
+      </select>
+      <select id="age-filter">
+      <option value="default">Åldersgrupp</option>
+        ${ageRatings}
+      </select>
+    </div>
+    <div class="movies-main-box">
+        ${movieInfo}
+    </div></div>
+    `;
   }
 
   reRenderMovies(category, age) {
-    let html = '';
+    let movieInfo = '';
     let filteredMovies = [];
     let movieAge = '';
     this.movies.forEach((movie) => {
@@ -70,11 +70,11 @@ export default class MoviePage {
       }
     });
     filteredMovies.forEach((data) => {
-      html = this.addingMovieInfoToHtml(data, html);
+      movieInfo += this.addingMovieInfoToHtml(data);
     });
-    html += '</div></div>';
+    movieInfo += '</div></div>';
     $('.movies-main-box').html(' ');
-    $('.movies-main-box').append(html);
+    $('.movies-main-box').append(movieInfo);
   }
 
   gettingGenresFromJson(allGenres) {
@@ -100,7 +100,7 @@ export default class MoviePage {
   addingMovieInfoToHtml(data, html) {
     let genreString = '';
     genreString = this.removingUnwantedLastComma(data, genreString);
-    html += /*html*/ `<section class="movie-info">
+    return `<section class="movie-info">
           <div class="movie-poster">
             <a href="#aboutPage/${data.id}"><img src="${data.images[0]}"></a>
           </div>
@@ -115,7 +115,6 @@ export default class MoviePage {
             }</div>
           </div>
         </section>`;
-    return html;
   }
 
   removingUnwantedLastComma(data, genreString) {
