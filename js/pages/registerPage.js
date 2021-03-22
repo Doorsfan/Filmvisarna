@@ -1,5 +1,16 @@
+import readAndWriteUser from "../components/readAndWriteUser.js";
 export default class registerPage {
-  constructor() {}
+  constructor() {
+    const readAndWriteComponent = new readAndWriteUser();
+    $("main").on("click", ".registerPage.register_button", function () {
+      if ($(".registerPage.emailInput").val().length > 0 && $(".registerPage.passwordInput").val().length > 0 &&
+        $(".registerPage.passwordInput").val() === $(".registerPage.secondPasswordInput").val()) {
+        readAndWriteComponent.saveUser(
+          encodeURI($(".registerPage.emailInput").val()),
+          encodeURI($(".registerPage.passwordInput").val()));
+      }
+    })
+  }
   render() {
     return /*html*/ ` 
       <div class="registerPage formContainer">
@@ -16,5 +27,4 @@ export default class registerPage {
       </div>
     `;
   }
-  
 }

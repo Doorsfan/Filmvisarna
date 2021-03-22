@@ -2,7 +2,7 @@ export default class readAndWriteUser {
   constructor() {}
 
   async saveUser(username, password) {
-    await JSON._save(`./users/${username + password}`, 'user');
+    await JSON._save(`./users/${username + password}`, "test");
   }
 
   async loadUser(username, password) {
@@ -14,7 +14,6 @@ export default class readAndWriteUser {
         return;
       }
     }
-    console.log('Worked');
   }
 
   async loadBooking(user) {

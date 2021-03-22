@@ -1,9 +1,19 @@
-import loginForm from '../components/loginForm.js';
-
+import readAndWriteUser from '../components/readAndWriteUser.js';
 export default class LoginPage {
+  constructor() {
+    const readAndWriteComponent = new readAndWriteUser();
+    $("main").on("click", ".loginPage.log_in_button", function () {
+      if ($(".loginPage.emailInput").val().length > 0 && $(".loginPage.passwordInput").val().length > 0) {
+        console.log("Should check for login");
+        let user = readAndWriteComponent.loadUser($(".loginPage.emailInput").val(), $(".loginPage.passwordInput").val());
+        console.log("user was: " + user);
+      }
+    });
+  }
+
   render() {
     return /*html*/ `
-     <form class="loginPage login_form" action="validate_user.js" method="get">
+     <form class="loginPage login_form" method="get">
        <div class="loginPage borderBox">
         <div class="loginPage formContainer">
           <img class="loginPage myImage" src="/images/movie_posters/relic.jpg">
