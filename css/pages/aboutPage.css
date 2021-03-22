@@ -3,7 +3,7 @@
   max-width: 60rem;
   max-height: 91vh;
   display: grid;
-  grid-gap: 5px;
+
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 2fr 2fr 1fr 2fr 2fr;
   grid-template-areas:
@@ -11,7 +11,8 @@
     'v v v'
     'v v v'
     'a a c'
-    'e e c';
+    'e e e';
+  background-color: #e1e0e2;
 }
 
 .select {
@@ -42,50 +43,43 @@
   width: 100%;
 }
 
-.about-text {
+.about-info {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  margin: 5px;
   grid-area: a;
-  overflow: hidden;
-  margin-right: 10px;
+
+  padding: 10px;
+
   font-size: 1rem;
 }
 
-.movie-posters {
-  /* margin-left: 10px; */
-  margin-right: 10px;
-  display: flex;
-  flex-direction: row;
-
-  justify-content: space-between;
-  grid-area: e;
+.about-info > p:nth-child(odd) {
+  color: #5d5d5d;
+}
+.about-info > p:nth-child(even) {
+  color: #a9a9a9;
 }
 
-.movie-posters img {
-  transition: 0.2s ease;
-  width: 108px;
-  height: 151px;
+.movie-story {
+  grid-area: e;
+  font-size: 1.5rem;
+  display: flex;
+  padding: 1rem;
+  align-items: center;
+  font-style: italic;
+  text-align: center;
 }
 
 .book-show {
-  margin-right: 5px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 0 0 0 7px;
   padding: 10px;
-  z-index: 10;
-
-  height: 100%;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr 2fr;
-  grid-template-areas:
-    'h h h'
-    't t t'
-    'y y o'
-    '. . .';
-
   grid-area: c;
-  background-color: #e1e0e2;
+
+  font-size: 1.4rem;
+  height: 80%;
 }
 
 .aboutPage-btn {
@@ -103,7 +97,6 @@
   align-items: center;
   justify-content: center;
   display: flex;
-  align-self: flex-end;
 }
 
 .about-container p {
@@ -122,84 +115,31 @@
   width: 100%;
   height: 2rem;
 }
-#display-saloon {
-  padding-top: 2rem;
-  display: flex;
-  flex-direction: column;
-  align-items: space-between;
-  grid-area: y;
-}
 
 .trailer iframe {
   width: 100%;
   height: 100%;
+  border: none;
 }
 
-.movie-posters img:hover {
-  transform: scale(1.05);
-}
-
-@media screen and (max-width: 840px) {
-  .movie-posters a:nth-last-child(1) {
-    display: none;
-  }
-  .movie-posters {
-    justify-content: space-around;
-  }
-}
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 600px) {
   .about-container {
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 2fr 2fr 1fr;
+    grid-template-rows: 2fr 2fr 1fr 1fr 1fr;
     grid-template-areas:
       'v v v'
       'v v v'
-      'a a c';
+      'a a a'
+      'e e e'
+      'c c c';
   }
+
   .book-show {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr;
-    grid-template-areas:
-      'h h h'
-      't t t'
-      'y y .'
-      'o . .';
-
-    grid-area: c;
-    background-color: #e1e0e2;
+    height: 100%;
   }
 
-  #display-saloon {
-    padding: 0;
-    margin: 0;
-  }
-
-  #display-saloon p {
-    margin-top: 8px;
-    font-size: 0.8rem;
-  }
-  .movie-posters a:first-child {
-    display: none;
-  }
-
-  .movie-posters {
-    display: none;
-  }
-
-  .aboutPage-text {
-    font-size: 1.5rem;
-  }
-
-  .about-text {
-    font-size: 1.1rem;
+  .about-info,
+  .movie-story {
+    font-size: 0.9rem;
   }
 }
-
-/* EV ANVÄNDA SENARE */
-
-/* .display-saloon {
-  display: flex;
-  flex-direction: row;
-  color: red;
-} */
