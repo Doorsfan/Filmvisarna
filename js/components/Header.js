@@ -19,6 +19,7 @@ export default class Header {
           $('.sidebar-container').removeClass('sidebar-show');
           openSidebar = !openSidebar;
           event.stopPropagation();
+          $(document).off();
         } else if (!$target.closest('.sidebar-show').length) {
           openSidebar = !openSidebar;
           event.stopPropagation();
