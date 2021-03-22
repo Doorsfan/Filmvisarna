@@ -14,8 +14,8 @@ export default class UserPage {
   }
 
   async read() {
-    this.username = JSON.parse(sessionStorage.store);
-    this.username = this.username['username'];
+    this.username = JSON.parse(sessionStorage.store)['username'];
+
     this.userBookings = await $.getJSON(
       `/json/bookings/users/${this.username}.json`
     );
@@ -23,7 +23,11 @@ export default class UserPage {
 
   async render() {
     if (!this.userBookings) {
-      await this.read();
+      try {
+        await this.read();
+      } catch (e) {
+        return '<div>Du måste logga in</div>';
+      }
     }
 
     let html = $(/*html*/ `
@@ -34,7 +38,7 @@ export default class UserPage {
         </div>
         </div>
     `);
-    console.log(this.today);
+
     let btn = `<div class="booking-button"><p>Avboka</p><button>X</button></div>`;
 
     this.userBookings.forEach((booking) => {
@@ -58,7 +62,6 @@ export default class UserPage {
         </div>
       </div>`);
     });
-
     return html;
   }
 }
