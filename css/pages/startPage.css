@@ -1,17 +1,11 @@
 @import '../components/videoSlider.css';
 
-.big-div {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
-  color: black;
-  justify-content: center;
-}
-
 .big-container {
   overflow: hidden;
   position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
 }
 
 .h1-aktuellt {
@@ -23,16 +17,20 @@
 }
 
 .startpage-infobar {
+  display: flex;
   margin: 0 auto;
-  text-align: center;
   border: 3px solid whitesmoke;
-  width: 40rem;
+  width: 40%;
+  min-width: 260px;
   background: black;
   color: white;
   position: absolute;
   z-index: 3;
-  left: 33%;
   top: 6%;
+  overflow: hidden;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
 }
 
 .startpage-infobar:hover, .startpage-infobar:active {
@@ -43,8 +41,9 @@
 
 .startpage-infobar p {
   color: inherit;
+  text-align: center;
   font-size: 2rem;
-  padding: 2rem;
+  padding: 1rem;
   line-height: 3rem;
 }
 
@@ -53,10 +52,11 @@
 }
 
 .video-container {
-  width: 40%;
-  margin: 0 auto;
-  margin-bottom: 10rem;
-  margin-top: 10rem;
+  width: 100%;
+  max-width: 718px;
+  margin: 10rem auto;
+  padding: 2rem;
+  padding-top: 1rem;
   border-top: 10px solid black;
   border-bottom: 10px solid black;
 }
@@ -65,11 +65,12 @@
   font-size: 3rem;
   text-align: center;
   margin-bottom: 2rem;
+  padding-bottom: 1rem;
   border-bottom: 10px solid black;
 }
 
 .startpage-coverphoto {
-  width: 100vw;
+  width: 100%;
   height: 40rem;
   background-image: url('/images/cover_startpage.jpg');
   background-position: bottom;
@@ -109,22 +110,26 @@
 }
 
 .poster-container {
-  width: 100%;
-  margin: 0 auto;
   padding: 2rem;
   display: flex;
-  justify-content: center;
+  flex-wrap: nowrap;
+  justify-content: center; 
   border-bottom: 10px solid black;
   border-top: 10px solid black;
+  margin: 2rem;
+  overflow: auto;
 }
 
+
 .start-poster {
+  height: 100%;
   display: flex;
   align-self: center;
   justify-content: center;
   align-items: center;
   transition: transform 0.1s;
   padding: 0 1rem;
+  flex: 0 0 auto;
 }
 
 .start-poster:hover,
@@ -150,6 +155,7 @@
   border-top: 10px solid black;
   border-bottom: 10px solid black;
   padding: 2rem;
+  margin: 2rem;
 }
 
 .bestof-container ul {
@@ -161,6 +167,7 @@
   list-style-type: none;
   position: relative;
   margin-right: 2rem;
+   flex: 0 0 auto;
 }
 
 .toplist-listitem:last-of-type {
@@ -187,14 +194,13 @@
 
 .bestof-img:hover, .bestof-img:active {
   transform: scale(1.2);
-  
 }
 
 .slideshow-container{
-  margin-top: 10rem;
+  margin: 10rem 3em;
   text-align: center;
   transition: transform 2s;
-  margin-bottom: 10rem;
+  flex-direction: row;
 }
 
 .slideshow-slide {
@@ -202,6 +208,9 @@
   position: relative;
   opacity: 1;
   animation: changeopacity 0.4s;
+  display: flex;
+  flex-direction: row;
+  width: 100%; 
 }
 
 @keyframes changeopacity {
@@ -213,10 +222,20 @@
   }
 }
 
+.slideshow-slide a {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: center;
+  flex-wrap: wrap;
+  text-decoration: none;
+}
+
 
 .slideshow-slide img {
   height: 600px;
   transition: transform 0.2s, border 0.2s;
+  padding: 2rem;
 }
 
 .slideshow-slide img:hover, .slideshow-slide img:active {
@@ -224,20 +243,22 @@
 }
 
 .slide-aside {
-  position:absolute;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: stretch;
   margin-left: 2rem;
   margin-top: 5rem;
-  padding-top: 3em;
-  height: 400px;
+  padding: 2rem 1rem 3rem 1rem;
+  height: fit-content;
   width: 500px;
   border-radius: 10px;
-  display: inline-block;
   background-color: beige;
+  font-size: 3rem;
 }
 
 .slide-aside h3 {
-  font-size: 3rem;
+  font-size: inherit;
   margin-top: 1rem;
   color: black;
 }
@@ -249,5 +270,105 @@
 
 .slide-aside p:last-of-type {
   margin-top: 3rem;
-  font-size: 2rem;
+  font-size: calc(1.5rem + 0.5vw);
 }
+
+ @media only screen and (max-width: 1448px) {
+  .poster-container {
+    border: 10px solid black;
+    justify-content: start;
+  }
+
+  .bestof-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    overflow: auto;
+    border: 10px solid black;
+  }
+}
+
+@media only screen and  (max-width: 1199.98px) { 
+  .slide-aside {
+    margin-left: 0;
+  } 
+ }
+
+@media only screen and (max-width: 1025px) {
+  .slide-aside p:last-of-type {
+    display: none;
+  }
+
+  .slide-aside {
+    height: fit-content;
+    padding-bottom: 2.5rem;
+  }
+
+  .slide-aside h3 {
+    font-size: inherit;
+  }
+}
+
+
+@media only screen and (max-width: 575.98px) { 
+  .userpage-button {
+    display: none;
+  }
+
+  .home-button {
+    width: 100%;
+    text-align: center;
+    margin-left: 0em;
+  }
+
+  .startpage-infobar {
+    position: absolute;
+  }
+
+  .h1-aktuellt {
+    font-size: 3rem;
+    margin-bottom: 3rem;
+  }
+
+  .slide-aside {
+    margin-top: 2rem;
+  }
+
+  .slide-aside h3 {
+    font-size: 1.5rem;
+  }
+
+  .slide-aside p:first-of-type {
+    font-size: 10vw;
+  }
+
+  .ourmovies-title {
+    font-size: 2.5rem;
+  }
+
+  .bestmovies-title {
+    font-size: 2.5rem;
+    margin-top: 10rem;
+  }
+
+  .video-container h3 {
+    font-size: 2.5rem;
+  }
+
+  .video-slider {
+    height: 250px;
+  }
+
+  .slide {
+    height: 250px;
+  }
+
+  .video-container iframe {
+    height: 250px;
+  }
+ }
+
+
+
+
+

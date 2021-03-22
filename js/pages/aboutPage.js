@@ -26,22 +26,18 @@ export default class AboutPage {
       <iframe width="420" height="315"
       src="https://www.youtube.com/embed/${this.movie.youtubeTrailers}"></iframe>
     </div>
-    <div class="about-text">
-      <p>Titel: ${this.movie.title}</p>
-      <p>Genre: ${this.movie.genre}</p>
-      <p>Land: ${this.movie.productionCountries}</p>
-      <p>Produktionsår: ${this.movie.productionYear}</p>
-      <p>Språk: ${this.movie.language}</p>
-      <p>Skådespelare: ${this.movie.actors}</p>
-      <p>Regissör: ${this.movie.director}</p>
-      <p>Längd: ${length}</p>
+    <div class="about-info">
+      <p>Titel:</p><p> ${this.movie.title}</p>
+      <p>Genre:</p><p> ${this.movie.genre}</p>
+      <p>Land:</p><p> ${this.movie.productionCountries}</p>
+      <p>Produktionsår:</p><p> ${this.movie.productionYear}</p>
+      <p>Språk:</p><p> ${this.movie.language}</p>
+      <p>Skådespelare:</p><p> ${this.movie.actors}</p>
+      <p>Längd:</p><p> ${length}</p>
       
     </div>
-    <div class="movie-posters">
-    <a href="#aboutPage/${this.movie.id}"><img src="${this.movie.images[0]}"></a>
-    <a href="#aboutPage/${this.movie.id}"><img src="${this.movie.images[0]}"></a>
-    <a href="#aboutPage/${this.movie.id}"><img src="${this.movie.images[0]}"></a>
-    <a href="#aboutPage/${this.movie.id}"><img src="${this.movie.images[0]}"></a>
+    <div class="movie-story">
+      ${this.movie.description}
     </div>
     
     `);

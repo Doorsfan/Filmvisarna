@@ -7,6 +7,7 @@
 @import './pages/aboutPage.css';
 @import './pages/startPage.css';
 @import './pages/BookingPage.css';
+@import './pages/saloon.css';
 * {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -25,11 +26,19 @@
 html {
 }
 body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
   background: #bebdbf;
+  overflow-x: hidden;
   /* background: radial-gradient(
     circle,
     rgba(225, 224, 226, 1) 3%,
     rgb(158, 157, 159) 67%
   ); */
-  overflow-x: hidden;
+  
+}
+
+main {
+  flex: 1;
 }
