@@ -10,9 +10,9 @@ export default class StartPage {
   }
 
   async render() {
-    let sliderContainer1 = '';
-    let posterContainer = '';
-    let bestList = '';
+    let allMovies = '';
+    let blinkingPosts = '';
+    let bestMovies = '';
     let counter = 1;
     let currentSlide = 0;
 
@@ -20,21 +20,14 @@ export default class StartPage {
       await this.read();
     }
 
-    let movz = [];
-    this.movies.forEach((movie) => {
-      movz.push(movie);
-    });
-
-    console.log(movz);
-
     this.movies.forEach((data) => {
-      posterContainer += /*html*/ `
+      blinkingPosts += /*html*/ `
         <div class="start-poster ${data.id}">
           <a href="#aboutPage/${data.id}"><img src="${data.images[0]}"></a>
         </div>
       `;
 
-      sliderContainer1 += /*html*/ `
+      allMovies += /*html*/ `
         <div class="slideshow-slide">
           <a href="#aboutPage/${data.id}">
             <img src="${data.images[0]}" alt="nyckeln till frihet" />
@@ -48,7 +41,7 @@ export default class StartPage {
       `;
 
       if (counter < 6) {
-        bestList += /*html*/ `
+        bestMovies += /*html*/ `
           <li class="toplist-listitem">
            <a href="#aboutPage/${data.id}">
              <span class="bestof-span">${counter}.</span>
@@ -89,16 +82,16 @@ export default class StartPage {
         <div class="startpage-skew"></div>
         <h1 class="h1-aktuellt">AKTUELLT</h1>
         <div class="slideshow-container">
-          ${sliderContainer1}
+          ${allMovies}
         </div>
         <h2 class="ourmovies-title">VÅRA FILMER</h2>
         <div class="poster-container">
-          ${posterContainer}
+          ${blinkingPosts}
         </div>
         <h2 class="bestmovies-title">BÄST I BETYG</h2>
         <div class="bestof-container">
           <ul>
-          ${bestList}
+          ${bestMovies}
           </ul>
         </div>
         <div class="video-container">
