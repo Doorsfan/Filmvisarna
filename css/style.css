@@ -6,7 +6,7 @@
 @import './pages/MoviePage.css';
 @import './pages/aboutPage.css';
 @import './pages/startPage.css';
-@import './components/select.css';
+@import './pages/BookingPage.css';
 * {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;

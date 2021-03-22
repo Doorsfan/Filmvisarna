@@ -77,8 +77,8 @@
     ]
   },
   {
-    "id": "patersson",
-    "title": "Patersson",
+    "id": "paterson",
+    "title": "Paterson",
     "productionCountries": ["Frankrike", "Tyskland", "USA"],
     "productionYear": 2016,
     "length": 118,
@@ -156,7 +156,7 @@
     "productionCountries": ["Frankrike", "Italien"],
     "productionYear": 1958,
     "length": 116,
-    "genre": "Komedi",
+    "genre": ["Komedi"],
     "distributor": "Artfilm AB",
     "language": "Franska",
     "subtitles": "Svenska",
@@ -196,7 +196,7 @@
     "productionCountries": ["USA"],
     "productionYear": 1994,
     "length": 142,
-    "genre": "Drama",
+    "genre": ["Drama"],
     "distributor": "Castle Rock Entertainment",
     "language": "Engelska",
     "subtitles": "svenska",

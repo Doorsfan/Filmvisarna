@@ -1,6 +1,6 @@
 import loginForm from '../components/loginForm.js';
+
 export default class LoginPage {
-  constructor() {}
   render() {
     return /*html*/ `
      <form class="loginPage login_form" action="validate_user.js" method="get">
