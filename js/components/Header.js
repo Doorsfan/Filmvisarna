@@ -18,8 +18,10 @@ export default class Header {
           $('.sidebar-container').addClass('sidebar-close');
           $('.sidebar-container').removeClass('sidebar-show');
           openSidebar = !openSidebar;
+          event.stopPropagation();
         } else if (!$target.closest('.sidebar-show').length) {
           openSidebar = !openSidebar;
+          event.stopPropagation();
         }
       });
     };
