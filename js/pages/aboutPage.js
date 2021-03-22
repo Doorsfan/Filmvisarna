@@ -5,7 +5,6 @@ export default class AboutPage {
     this.movieID = movieID;
   }
 
-  //Ask alex if its confusing
   async read() {
     this.movies = await $.getJSON('/json/movies.json');
     await Promise.all(
@@ -39,10 +38,10 @@ export default class AboutPage {
       
     </div>
     <div class="movie-posters">
-    <a href="#aboutPage${this.movie.id}"><img src="${this.movie.images[0]}"></a>
-    <a href="#aboutPage${this.movie.id}"><img src="${this.movie.images[0]}"></a>
-    <a href="#aboutPage${this.movie.id}"><img src="${this.movie.images[0]}"></a>
-    <a href="#aboutPage${this.movie.id}"><img src="${this.movie.images[0]}"></a>
+    <a href="#aboutPage/${this.movie.id}"><img src="${this.movie.images[0]}"></a>
+    <a href="#aboutPage/${this.movie.id}"><img src="${this.movie.images[0]}"></a>
+    <a href="#aboutPage/${this.movie.id}"><img src="${this.movie.images[0]}"></a>
+    <a href="#aboutPage/${this.movie.id}"><img src="${this.movie.images[0]}"></a>
     </div>
     
     `);
