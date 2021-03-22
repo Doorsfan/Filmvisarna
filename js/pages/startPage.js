@@ -20,6 +20,13 @@ export default class StartPage {
       await this.read();
     }
 
+    let movz = [];
+    this.movies.forEach((movie) => {
+      movz.push(movie);
+    });
+
+    console.log(movz);
+
     this.movies.forEach((data) => {
       posterContainer += /*html*/ `
         <div class="start-poster ${data.id}">
@@ -53,18 +60,9 @@ export default class StartPage {
       }
     });
 
-    // let sliderContainer = $('');
-    // let ytSlider = this.yt.render(this.movies);
-    // console.log(ytSlider);
-    // sliderContainer += ytSlider;
-
     $('main').load('load', showSlides);
 
-    let sliderContainer = $(
-      /*html*/ `<div class="video-container"><h3>FILMTRAILERS</h3></div>`
-    );
     let ytSlider = await this.yt.render(this.movies);
-    sliderContainer.append(ytSlider);
 
     function showSlides() {
       let slides = document.getElementsByClassName('slideshow-slide');
@@ -83,7 +81,7 @@ export default class StartPage {
     }
 
     return `
-      < class="big-container">
+      <div class="big-container">
         <div class="startpage-infobar">
           <p>Välkommen! <br> Filmvisarnas Biografer håller för tillfället öppet, trots nuvarande coronapandemi.</p>
         </div>
@@ -103,16 +101,11 @@ export default class StartPage {
           ${bestList}
           </ul>
         </div>
-          ${sliderContainer[0].outerHTML}
+        <div class="video-container">
+          <h3>FILMTRAILERS</h3>
+          ${ytSlider[0].outerHTML}
+        </div>
       </div>
     `;
-
-    //FRÅGOR
-    //1. VARFÖR KAN JAG INTE SPRÄNGA IN JQUERY OBJEKTET, UTAN MÅSTE APPENDA DEN... OCH HUR LÖSER JAG DET DÅ SÅ JAG KAN SPRÄNGA IN DEN?
-    //2. ÄR DENNA TYP AV KODSTUKTUR BÄTTRE SOM JAG NU HAR ORGANISERAT TEXTEN? --
-    //3. HUR RESIZAR JAG TEXT SÅ DEN INTE BLIR FÖR STOR I EN CONTAINER (MEDIA-QUERIES)
-    //4. JAG SKAPAR JU MINDRE JQUERY OBJEKT I DENNA TYPEN OCH LÄGGER RENT HTML I VARIBLER, ÄR DETTA OKEJ ELLER VILL JAG ANVÄNDA MIG AV JQUERY ISTÄLLET
-    //5. ÄR DET LUGNT MED MINA MEDIA-QUERIES? ÄR DET CHILL ATT LÖSA SÅ MÅNGA SAKER?
   }
 }
-// ${ytSlider}

@@ -1,14 +1,5 @@
 @import '../components/videoSlider.css';
 
-.big-div {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
-  color: black;
-  justify-content: center;
-}
-
 .big-container {
   overflow: hidden;
   position: relative;
@@ -35,7 +26,7 @@
   color: white;
   position: absolute;
   z-index: 3;
-  left: 33%;
+  left: calc(30% - 0.5vw);
   top: 6%;
   overflow: hidden;
 }
@@ -244,6 +235,7 @@
   height: 600px;
   /* width: 100%; */
   transition: transform 0.2s, border 0.2s;
+  padding: 2rem;
 }
 
 .slideshow-slide img:hover, .slideshow-slide img:active {
@@ -252,17 +244,22 @@
 
 .slide-aside {
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: stretch;
   margin-left: 2rem;
   margin-top: 5rem;
-  padding-top: 3em;
-  height: 400px;
+  padding: 2rem 1rem 3rem 1rem;
+  height: fit-content;
+  /* height: 400px; */
   width: 500px;
   border-radius: 10px;
   background-color: beige;
+  font-size: 3rem;
 }
 
 .slide-aside h3 {
-  font-size: 3rem;
+  font-size: inherit;
   margin-top: 1rem;
   color: black;
 }
@@ -274,7 +271,7 @@
 
 .slide-aside p:last-of-type {
   margin-top: 3rem;
-  font-size: 2rem;
+  font-size: calc(1.5rem + 0.5vw);
 }
 
 @media only screen and (max-width: 1448px) {
@@ -290,13 +287,25 @@
     overflow: auto;
     border: 10px solid black;
   }
+}
+
+@media only screen and (max-width: 1025px) {
+  .slide-aside p:last-of-type {
+    display: none;
+  }
 
   .slide-aside {
-    margin-left: 0;
+    /* height: 100%; */
+    height: fit-content;
+    padding-bottom: 2.5rem;
+  }
+
+  .slide-aside h3 {
+    font-size: inherit;
   }
 }
 
- /* Extra small devices (portrait phones, less than 576px) */
+
 @media only screen and (max-width: 575.98px) { 
 
   .userpage-button {
@@ -310,11 +319,20 @@
   }
 
   .startpage-infobar {
-    left: 17%;
+    position: absolute;
+    left: calc(15% - 0.5vw);
   }
 
   .h1-aktuellt {
-    font-size: 4rem;
+    font-size: 3rem;
+  }
+
+  .ourmovies-title {
+    font-size: 2.5rem;
+  }
+
+  .bestmovies-title {
+    font-size: 2.5rem;
   }
 
   .video-container {
@@ -323,7 +341,8 @@
 
   .video-container h3 {
     /* padding: 0 2rem 0 2rem; */
-    margin: auto 2rem;
+    /* margin: auto 2rem; */
+    font-size: 2.5rem;
   }
 
  }
@@ -335,12 +354,16 @@
 
  /* Medium devices (tablets, less than 992px) */
 @media only screen and  (max-width: 991.98px) { 
+  
 
  }
 
  /* Large devices (desktops, less than 1200px) */
 @media only screen and  (max-width: 1199.98px) { 
-
+  .slide-aside {
+    margin-left: 0;
+    /* font-size: 199p; */
+  } 
  }
 
  /* Extra large devices (large desktops) */
