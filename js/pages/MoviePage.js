@@ -12,22 +12,18 @@ export default class MoviePage {
     let allGenres = '';
     let ageRatings = '';
     let movieInfo = '';
+
     if (!this.movies) {
       await this.read();
     }
-
     this.gettingGenresFromJson(genresToAdd);
-
     genresToAdd.forEach((genre) => {
       allGenres += /*html*/ ` <option value="${genre}">${genre}</option> `;
     });
-
     this.gettingAgeRatingFromJson(ageRatingsToAdd);
-
     ageRatingsToAdd.forEach((age) => {
       ageRatings += /*html*/ `<option value="${age}">${age}</option>`;
     });
-
     this.movies.forEach((data) => {
       movieInfo += this.addingMovieInfoToHtml(data);
     });
@@ -53,25 +49,13 @@ export default class MoviePage {
     let movieInfo = '';
     let filteredMovies = [];
     let movieAge = '';
-    this.movies.forEach((movie) => {
-      isNaN(parseFloat(movie.ageRating))
-        ? (movieAge = movie.ageRating)
-        : (movieAge = parseInt(movie.ageRating));
 
-      if (movieAge === 'barntillåten' || age === 'default') {
-        if (movie.genre.includes(category) || category === 'default') {
-          filteredMovies.push(movie);
-        }
-      } else if (
-        (movieAge <= age && movie.genre.includes(category)) ||
-        (movieAge <= age && category === 'default')
-      ) {
-        filteredMovies.push(movie);
-      }
-    });
+    movieAge = this.filteringMovies(movieAge, age, category, filteredMovies);
+
     filteredMovies.forEach((data) => {
       movieInfo += this.addingMovieInfoToHtml(data);
     });
+
     movieInfo += '</div></div>';
     $('.movies-main-box').html(' ');
     $('.movies-main-box').append(movieInfo);
@@ -126,6 +110,25 @@ export default class MoviePage {
       }
     }
     return genreString;
+  }
+
+  filteringMovies(movieAge, age, category, filteredMovies) {
+    this.movies.forEach((movie) => {
+      isNaN(parseFloat(movie.ageRating))
+        ? (movieAge = movie.ageRating)
+        : (movieAge = parseInt(movie.ageRating));
+      if (movieAge === 'barntillåten' || age === 'default') {
+        if (movie.genre.includes(category) || category === 'default') {
+          filteredMovies.push(movie);
+        }
+      } else if (
+        (movieAge <= age && movie.genre.includes(category)) ||
+        (movieAge <= age && category === 'default')
+      ) {
+        filteredMovies.push(movie);
+      }
+    });
+    return movieAge;
   }
 
   eventHandler() {
