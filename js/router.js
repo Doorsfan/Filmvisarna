@@ -11,6 +11,7 @@ import AboutPage from './pages/aboutPage.js';
 import BookingPage from './pages/BookingPage.js';
 import UserPage from './pages/userPage.js';
 import Saloon from './pages/saloon.js';
+import TicketPage from './pages/ticketPage.js';
 // import PeoplePage from './pages/PeoplePage.js';
 
 // instanciate to reuse instances of pages
@@ -20,7 +21,7 @@ const loginPage = new LoginPage();
 const moviePage = new MoviePage();
 const bookingPage = new BookingPage();
 const userPage = new UserPage();
-
+const ticketPage = new TicketPage();
 // const peoplePage = new PeoplePage(changeListener);
 
 export default class Router {
@@ -85,5 +86,9 @@ export default class Router {
 
   saloon() {
     return new Saloon().render();
+  }
+
+  ticketPage() {
+    return ticketPage.render();
   }
 }

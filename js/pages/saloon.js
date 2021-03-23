@@ -9,6 +9,10 @@ export default class Saloon {
     this.saloon = this.saloon[1]; // just so we can test on one saloon
   }
 
+  c = () => {
+    return this.selectedSeats;
+  };
+
   async render() {
     if (!this.saloon) {
       await this.loadSaloon();
@@ -34,10 +38,37 @@ export default class Saloon {
   }
 
   eventHandler() {
-    $('main').on('click', '.btn', () => this.saveSelectedSeats());
+    $('main').on('click', '.btn', () => {
+      this.saveSelectedSeats();
+    });
+    $('main').on('click', '.seats', (e) => {
+      $('.booking-info').append(/*html**/ `
+      <div class='ticket-box'>
+        <p> Biljett ${e.target.value}</p>
+        <select>
+          <option value='Vuxen'>Vuxen</option>
+          <option value='Barn'>Barn</option>
+          <option value='Pensionär'>Pensionär</option>
+        </select>
+      </div>
+      `);
+    });
   }
 
   saveSelectedSeats() {
+    let checked = $('input:checkbox[type=checkbox]:checked');
+    let arr = [];
+    console.log(checked);
+    $('input:checkbox[type=checkbox]:checked').each(function () {
+      arr.push(Number($(this).val()));
+    });
+    this.selectedSeats = arr.slice();
+
+    this.bookedTickets = [...this.bookedTickets, ...arr];
+    console.log(this.selectedSeats);
+  }
+
+  sendToTicketPage() {
     let checked = $('input:checkbox[type=checkbox]:checked');
     let arr = [];
     console.log(checked);
@@ -46,7 +77,7 @@ export default class Saloon {
     });
     this.selectedSeats = arr.slice();
 
-    this.bookedTickets = [...this.bookedTickets, Number(...arr)];
-    console.log(this.bookedTickets);
+    this.sendTickets = [...this.bookedTickets, Number(...arr)];
+    return this.sendTickets;
   }
 }

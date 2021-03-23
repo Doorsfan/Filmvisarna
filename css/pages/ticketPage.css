@@ -1,0 +1,13 @@
+.ticketpage-container {
+  display: flex;
+  flex-direction: row;
+  /* margin: 2rem; */
+  height: 91vh;
+  justify-content: center;
+  align-items: center;
+}
+
+.ticket-box {
+  display: flex;
+  flex-direction: row;
+}
