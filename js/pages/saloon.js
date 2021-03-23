@@ -1,6 +1,7 @@
 export default class Saloon {
   constructor() {
     this.eventHandler();
+    this.bookedTickets = [1, 4, 5, 8, 20, 40]; // istället för att kolla mot databas
     this.selectedSeats = [];
   }
   async loadSaloon() {
@@ -21,13 +22,15 @@ export default class Saloon {
       for (let j = 0; j < seatsArray[i]; j++) {
         seatNumber++;
         row.append(
-          `<input type="checkbox" class="seats" value="${seatNumber}">
+          `<input type="checkbox" class="seats" value="${seatNumber}" ${
+            this.bookedTickets.includes(seatNumber) ? 'disabled' : false
+          }>
           <label>${seatNumber}</label>`
         );
       }
       html.append(row);
     }
-    return html.append('<button class="btn">Hej</button>');
+    return html.append('<button class="btn">Köpa biljetter</button>');
   }
 
   eventHandler() {
@@ -42,6 +45,8 @@ export default class Saloon {
       arr.push($(this).val());
     });
     this.selectedSeats = arr.slice();
-    console.log(this.selectedSeats);
+
+    this.bookedTickets = [...this.bookedTickets, Number(...arr)];
+    console.log(this.bookedTickets);
   }
 }
