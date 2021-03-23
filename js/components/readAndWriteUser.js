@@ -2,10 +2,24 @@ export default class readAndWriteUser {
   constructor() {}
 
   async saveUser(username, password) {
-    await JSON._save(`./users/${username + password}`, 'user');
+    await JSON._save(`./users/${username + password}`, {
+      user: username,
+      password: password,
+    });
   }
 
-  async validateUser(username, password) {
+  // async loadUser(username, password) {
+  //   try {
+  //     console.log('trying to load with username of: ' + username);
+  //     console.log('trying to load with pw of: ' + password);
+  //     this.user = await JSON._load(`./users/${username + password}.json`);
+  //     return this.user;
+  //   } catch (error) {
+  //     return;
+  //   }
+  // }
+
+  async loadUser(username, password) {
     try {
       this.user = await JSON._load(`./users/${username + password}`);
     } catch (error) {

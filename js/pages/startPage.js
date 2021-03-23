@@ -10,15 +10,16 @@ export default class StartPage {
   }
 
   async render() {
+    if (!this.movies) {
+      await this.read();
+    }
+
     let allMovies = '';
     let blinkingPosts = '';
     let bestMovies = '';
     let counter = 1;
     let currentSlide = 0;
-
-    if (!this.movies) {
-      await this.read();
-    }
+    let ytSlider = await this.yt.render(this.movies);
 
     this.movies.forEach((data) => {
       blinkingPosts += /*html*/ `
@@ -55,10 +56,8 @@ export default class StartPage {
 
     $('main').load('load', showSlides);
 
-    let ytSlider = await this.yt.render(this.movies);
-
     function showSlides() {
-      let slides = document.getElementsByClassName('slideshow-slide');
+      let slides = $('.slideshow-slide');
 
       for (let i = 0; i < slides.length; i++) {
         slides[i].style.display = 'none';
