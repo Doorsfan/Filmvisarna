@@ -11,7 +11,6 @@ export default class readAndWriteUser {
         this.user = await JSON._load(`./users/${username + password}`);
         return this.user;
       } catch (error) {
-        console.log('No user');
         return;
       }
     }

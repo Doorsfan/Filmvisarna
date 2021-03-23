@@ -7,7 +7,12 @@ export default class LoginPage {
         let user = readAndWriteComponent.loadUser($('.loginPage.emailInput').val(),
           $('.loginPage.passwordInput').val());
         user.then((userObject) => {
-          this.setLoggedInUser(userObject.user, userObject.pw);
+          try {
+            this.setLoggedInUser(userObject.user, userObject.pw);
+          }
+          catch (error) {
+            console.log("No such user - Put in graphics to telegraph this?");
+          }
         });
       }
     });
