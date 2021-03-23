@@ -2,18 +2,33 @@ import readAndWriteUser from '../components/readAndWriteUser.js';
 export default class LoginPage {
   constructor() {
     const readAndWriteComponent = new readAndWriteUser();
-    $("main").on("click", ".loginPage.log_in_button", function () {
+    $("main").on("click", ".loginPage.log_in_button", (data) => {
       if ($(".loginPage.emailInput").val().length > 0 && $(".loginPage.passwordInput").val().length > 0) {
-        console.log("Should check for login");
-        let user = readAndWriteComponent.loadUser($(".loginPage.emailInput").val(), $(".loginPage.passwordInput").val());
-        console.log("user was: " + user);
+        let user = readAndWriteComponent.loadUser($('.loginPage.emailInput').val(),
+          $('.loginPage.passwordInput').val());
+        user.then((userObject) => {
+          this.setLoggedInUser(userObject.user, userObject.pw);
+        });
       }
     });
   }
 
+  setLoggedInUser(username, password) {
+    this.loggedInUsername = username;
+    this.loggedInUserPassword = password;
+  }
+
+  getLoggedInUsername() {
+    return this.loggedInUsername;
+  }
+
+  getLoggedInUserPassword() {
+    return this.loggedInUserPassword;
+  }
+
   render() {
     return /*html*/ `
-     <form class="loginPage login_form" method="get">
+      <div class="loginPage holderBox">
        <div class="loginPage borderBox">
         <div class="loginPage formContainer">
           <img class="loginPage myImage" src="/images/movie_posters/relic.jpg">
@@ -27,6 +42,7 @@ export default class LoginPage {
           <a class="loginPage newAccountLink" href="#registerPage">Registrera Nytt Konto</a>
         </div>
        </div>
-     </form>`;
+      </div>
+     `;
   }
 }

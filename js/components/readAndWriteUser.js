@@ -2,13 +2,14 @@ export default class readAndWriteUser {
   constructor() {}
 
   async saveUser(username, password) {
-    await JSON._save(`./users/${username + password}`, "test");
+    await JSON._save(`./users/${username + password}`, { "user": username, "pw": password });
   }
 
   async loadUser(username, password) {
     if (!this.user) {
       try {
         this.user = await JSON._load(`./users/${username + password}`);
+        return this.user;
       } catch (error) {
         console.log('No user');
         return;
