@@ -11,7 +11,7 @@ export default class LoginPage {
             //Managed to find a user, logic to implement sessionStorage goes here
             console.log("Managed to log in with: " + userObject.user + " with pw of: " + userObject.pw);
             this.setLoggedInUser(userObject.user, userObject.pw); //Replace this
-            window.location.href = '';
+            window.location.href = ''; //Go back to default startPage on login
           }
           catch (error) {
             console.log("No such user - Put in graphics to telegraph this?");

@@ -13,6 +13,7 @@ export default class registerPage {
     })
     $("main").on("click", ".registerPage.cancel_button", function () {
       window.location.href = '#loginPage';
+      //window.history.go(-1); - In case of change to go to previous page
     })
   }
   render() {
