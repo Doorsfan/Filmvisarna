@@ -9,13 +9,13 @@ export default class Sidebar {
             </li>
             <hr />
             <li class="navlist-item">
-              <a href='#bookingPage'>Boka</a>
-            </li>
-            <li class="navlist-item">
-              <a href='/nyheter'>Nyheter</a>
+              <a href='#startPage'>Start Page</a>
             </li>
             <li class="navlist-item">
               <a href='#MoviePage'>Filmer</a>
+            </li>            
+            <li class="navlist-item">
+              <a href='#bookingPage'>Boka</a>
             </li>
           </ul>
         </nav>
