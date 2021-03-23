@@ -10,6 +10,7 @@ import MoviePage from './pages/MoviePage.js';
 import AboutPage from './pages/aboutPage.js';
 import BookingPage from './pages/BookingPage.js';
 import UserPage from './pages/userPage.js';
+import Saloon from './pages/saloon.js';
 // import PeoplePage from './pages/PeoplePage.js';
 
 // instanciate to reuse instances of pages
@@ -80,5 +81,9 @@ export default class Router {
 
   test() {
     return test.render();
+  }
+
+  saloon() {
+    return new Saloon().render();
   }
 }
