@@ -8,10 +8,13 @@ export default class LoginPage {
           $('.loginPage.passwordInput').val());
         user.then((userObject) => {
           try {
-            this.setLoggedInUser(userObject.user, userObject.pw);
+            //Managed to find a user, logic to implement sessionStorage goes here
+            console.log("Managed to log in with: " + userObject.user + " with pw of: " + userObject.pw);
+            this.setLoggedInUser(userObject.user, userObject.pw); //Replace this
           }
           catch (error) {
             console.log("No such user - Put in graphics to telegraph this?");
+            console.log("The error was: " + error);
           }
         });
       }
