@@ -95,7 +95,6 @@ export default class MoviePage {
         ageRating.push(movie.ageRating);
       }
     });
-
     ageRating.sort((a, b) => a - b);
   }
 
