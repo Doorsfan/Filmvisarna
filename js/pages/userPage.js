@@ -14,9 +14,15 @@ export default class UserPage {
   }
 
   async read() {
-    this.userBookings = await $.getJSON(
-      `/json/bookings/users/${window.username}.json`
-    );
+    if (window.username == 'admin') {
+      this.userBookings = await $.getJSON(
+        `/json/bookings/adminbookings/bookings.json`
+      );
+    } else {
+      this.userBookings = await $.getJSON(
+        `/json/bookings/users/${window.username}.json`
+      );
+    }
   }
 
   async render() {
