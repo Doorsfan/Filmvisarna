@@ -8,7 +8,11 @@ export default class registerPage {
         readAndWriteComponent.saveUser(
           encodeURI($(".registerPage.emailInput").val()),
           encodeURI($(".registerPage.passwordInput").val()));
+        alert("Thank you for registering an account to Filmvisarna!");
       }
+    })
+    $("main").on("click", ".registerPage.cancel_button", function () {
+      window.location.href = '#loginPage';
     })
   }
   render() {
