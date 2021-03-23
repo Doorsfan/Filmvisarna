@@ -40,6 +40,10 @@ export default class readAndWriteUser {
     $('.navlist').append(
       `<li class="navlist-item"><a href='#'>Logga ut</a></li>`
     );
+    $('.userpage-button')
+      .replaceWith(`<a class="userpage-button" href="#userPage">
+          <img class="user-icon" src="../images/user.png" alt="home"/>
+        </a>`);
   }
 
   saveUserToSessionStorage(username) {
