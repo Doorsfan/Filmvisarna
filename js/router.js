@@ -3,6 +3,7 @@ import ChangeListener from './ChangeListener.js';
 const changeListener = new ChangeListener();
 
 // imported pages
+import Test from './pages/test.js';
 import StartPage from './pages/StartPage.js';
 import LoginPage from './pages/LoginPage.js';
 import MoviePage from './pages/MoviePage.js';
@@ -12,6 +13,7 @@ import UserPage from './pages/userPage.js';
 // import PeoplePage from './pages/PeoplePage.js';
 
 // instanciate to reuse instances of pages
+const test = new Test();
 const startPage = new StartPage();
 const loginPage = new LoginPage();
 const moviePage = new MoviePage();
@@ -30,18 +32,20 @@ export default class Router {
     // but also render it right now, based on the current hash or default page
     this.setCurrentPage(selector);
   }
-  //Ask alex if its confusing
+
   async setCurrentPage(selector) {
+    //localhost:3000/#aboutPage/harry
     let name = window.location.hash.replace('-', '').replace('#', '');
+    let movieTitle = name.split('/');
+    name = movieTitle[0];
+    movieTitle.length >= 2 ? (movieTitle = movieTitle[1]) : (movieTitle = '');
+
     let result;
-    if (name.includes('aboutPage')) {
-      let movieName = name.substr(9, name.length - 1);
-      result = await this.aboutPage(movieName);
-    } else if (!this[name]) {
+    if (!this[name]) {
       name = 'default';
       result = await this[name]();
     } else {
-      result = await this[name]();
+      result = await this[name](movieTitle);
     }
     $(selector).html('');
     $(selector).append(result);
@@ -72,5 +76,9 @@ export default class Router {
 
   userPage() {
     return userPage.render();
+  }
+
+  test() {
+    return test.render();
   }
 }
