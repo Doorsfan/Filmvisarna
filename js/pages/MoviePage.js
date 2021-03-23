@@ -48,9 +48,8 @@ export default class MoviePage {
   reRenderMovies(category, age) {
     let movieInfo = '';
     let filteredMovies = [];
-    let movieAge = '';
 
-    movieAge = this.filteringMovies(movieAge, age, category, filteredMovies);
+    this.filteringMovies(age, category, filteredMovies);
 
     filteredMovies.forEach((data) => {
       movieInfo += this.addingMovieInfoToHtml(data);
@@ -59,6 +58,25 @@ export default class MoviePage {
     movieInfo += '</div></div>';
     $('.movies-main-box').html(' ');
     $('.movies-main-box').append(movieInfo);
+  }
+
+  filteringMovies(age, category, filteredMovies) {
+    this.movies.forEach((movie) => {
+      let movieAge = '';
+      isNaN(parseFloat(movie.ageRating))
+        ? (movieAge = movie.ageRating)
+        : (movieAge = parseInt(movie.ageRating));
+      if (movieAge === 'barntillåten' || age === 'default') {
+        if (movie.genre.includes(category) || category === 'default') {
+          filteredMovies.push(movie);
+        }
+      } else if (
+        (movieAge <= age && movie.genre.includes(category)) ||
+        (movieAge <= age && category === 'default')
+      ) {
+        filteredMovies.push(movie);
+      }
+    });
   }
 
   gettingGenresFromJson(allGenres) {
@@ -108,25 +126,6 @@ export default class MoviePage {
       }
     }
     return genreString;
-  }
-
-  filteringMovies(movieAge, age, category, filteredMovies) {
-    this.movies.forEach((movie) => {
-      isNaN(parseFloat(movie.ageRating))
-        ? (movieAge = movie.ageRating)
-        : (movieAge = parseInt(movie.ageRating));
-      if (movieAge === 'barntillåten' || age === 'default') {
-        if (movie.genre.includes(category) || category === 'default') {
-          filteredMovies.push(movie);
-        }
-      } else if (
-        (movieAge <= age && movie.genre.includes(category)) ||
-        (movieAge <= age && category === 'default')
-      ) {
-        filteredMovies.push(movie);
-      }
-    });
-    return movieAge;
   }
 
   eventHandler() {
