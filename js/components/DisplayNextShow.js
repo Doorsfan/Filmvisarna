@@ -1,13 +1,16 @@
+import Test from '../pages/test.js';
 export default class DisplaySpecificShow {
   constructor(movieID) {
     this.movieID = movieID;
     this.eventHandler();
     this.read();
+    this.test = new Test();
   }
 
   async read() {
     this.filteredShow = [];
     this.movieSchedule = await $.getJSON('/json/movieSchedule.json');
+    this.shows = await $.getJSON('/json/movieSchedule.json');
     await Promise.all(
       this.movieSchedule.map(async (data) => {
         if (data.film.toLowerCase().includes(this.movieID)) {
@@ -34,7 +37,7 @@ export default class DisplaySpecificShow {
     let nextShow = $(/*html*/ `
     <div id="display-saloon">
     <p>Salong:</p>
-    <p>Tid:</p>
+    <div>Tid:</div>
     </div>
     `);
 
@@ -62,12 +65,26 @@ export default class DisplaySpecificShow {
 
     $('#display-saloon').html(/*html*/ `
     <p>Salong ${displayShow.auditorium}</p>
-    <p>Tid: ${displayShow.time}</p>`);
+    <div id="showtime">Tid: ${displayShow.time}</div>`);
   }
 
   eventHandler() {
     $('main').on('change', '#select-date', (event) =>
       this.createSaloonDisplay(event)
     );
+
+    $('main').on('click', '.aboutPage-btn', () => {
+      let date = $('#select-date').val();
+      let time = $('#showtime').html().replace('Tid: ', '');
+      let selectedShow = this.filterSelectedShow(date, time);
+      this.test.render(selectedShow);
+    });
+  }
+
+  filterSelectedShow(date, time) {
+    let displayShow = this.shows.find((show) => {
+      return show.date == date && show.time == time;
+    });
+    return displayShow;
   }
 }
