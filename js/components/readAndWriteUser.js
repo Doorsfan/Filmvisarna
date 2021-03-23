@@ -37,6 +37,9 @@ export default class readAndWriteUser {
     $('.login').replaceWith(`
       <a href='#userPage'>Mina sidor</a>
     `);
+    $('.navlist').append(
+      `<li class="navlist-item"><a href='#'>Logga ut</a></li>`
+    );
   }
 
   saveUserToSessionStorage(username) {
