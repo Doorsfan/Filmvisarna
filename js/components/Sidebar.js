@@ -4,7 +4,7 @@ export default class Sidebar {
     <div class="sidebar-container">
         <nav>
           <ul class="navlist">
-            <li class="navlist-item">
+            <li class="navlist-item login">
               <a href='#loginPage'>Login</a>
             </li>
             <hr />

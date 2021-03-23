@@ -14,27 +14,20 @@ export default class UserPage {
   }
 
   async read() {
-    this.username = JSON.parse(sessionStorage.store)['username'];
-
     this.userBookings = await $.getJSON(
-      `/json/bookings/users/${this.username}.json`
+      `/json/bookings/users/${window.username}.json`
     );
   }
 
   async render() {
     if (!this.userBookings) {
-      try {
-        await this.read();
-      } catch (e) {
-        return '<div>Du måste logga in</div>';
-      }
+      await this.read();
     }
-
     let html = $(/*html*/ `
         <div class="userpage-container">
         <div class="userpage-title">
           <h1>Mina Sidor</h1>
-          <p>${this.username}</p>
+          <p>${window.username}</p>
         </div>
         </div>
     `);

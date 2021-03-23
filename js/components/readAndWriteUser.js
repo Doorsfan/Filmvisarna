@@ -12,7 +12,14 @@ export default class readAndWriteUser {
       console.log('No .json with that combination');
       return;
     }
+    window.username = username;
     this.saveUserToSessionStorage(username);
+  }
+
+  renderForActiveUser() {
+    $('.login').replaceWith(`
+      <a href='#userPage'>Mina sidor</a>
+    `);
   }
 
   saveUserToSessionStorage(username) {

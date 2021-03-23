@@ -15,8 +15,6 @@ export default class Test {
   }
 
   eventH() {
-    $('main').on('click', '.hej', () =>
-      this.read.validateUser(this.username, this.password)
-    );
+    $('main').on('click', '.hej', () => {});
   }
 }
