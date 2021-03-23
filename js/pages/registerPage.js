@@ -1,21 +1,34 @@
-import readAndWriteUser from "../components/readAndWriteUser.js";
+import readAndWriteUser from '../components/readAndWriteUser.js';
 export default class registerPage {
   constructor() {
-    const readAndWriteComponent = new readAndWriteUser();
-    $("main").on("click", ".registerPage.register_button", function () {
-      if ($(".registerPage.emailInput").val().length > 0 && $(".registerPage.passwordInput").val().length > 0 &&
-        $(".registerPage.passwordInput").val() === $(".registerPage.secondPasswordInput").val()) {
-        readAndWriteComponent.saveUser(
-          encodeURI($(".registerPage.emailInput").val()),
-          encodeURI($(".registerPage.passwordInput").val()));
-        alert("Thank you for registering an account to Filmvisarna!");
+    this.createAccount = new readAndWriteUser();
+    this.eventHandler();
+  }
+
+  eventHandler() {
+    $('main').on('click', '.registerPage.register_button', () => {
+      const username = $('.emailInput').val();
+      const password = $('.passwordInput').val();
+
+      if (
+        $('.registerPage.emailInput').val().length > 0 &&
+        $('.registerPage.passwordInput').val().length > 0 &&
+        $('.registerPage.passwordInput').val() ===
+          $('.registerPage.secondPasswordInput').val()
+      ) {
+        this.createAccount.saveUser(username, password);
+        alert(
+          `Thank you for registering an account to Filmvisarna! Username: ${username} - Password: ${password}`
+        );
+        window.location.href = '#loginPage';
       }
-    })
-    $("main").on("click", ".registerPage.cancel_button", function () {
+    });
+    $('main').on('click', '.cancel_button', function () {
       window.location.href = '#loginPage';
       //window.history.go(-1); - In case of change to go to previous page
-    })
+    });
   }
+
   render() {
     return /*html*/ ` 
       <div class="registerPage formContainer">

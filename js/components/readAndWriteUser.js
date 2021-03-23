@@ -23,11 +23,14 @@ export default class readAndWriteUser {
     try {
       this.user = await JSON._load(`./users/${username + password}`);
     } catch (error) {
-      console.log('No .json with that combination');
-      return;
+      alert('No .json with that combination');
+      return false;
     }
     window.username = username;
     this.saveUserToSessionStorage(username);
+    this.renderForActiveUser();
+    alert(`Välkommen ${username}`);
+    return true;
   }
 
   renderForActiveUser() {

@@ -1,38 +1,25 @@
 import readAndWriteUser from '../components/readAndWriteUser.js';
 export default class LoginPage {
   constructor() {
-    const readAndWriteComponent = new readAndWriteUser();
-    $("main").on("click", ".loginPage.log_in_button", (data) => {
-      if ($(".loginPage.emailInput").val().length > 0 && $(".loginPage.passwordInput").val().length > 0) {
-        let user = readAndWriteComponent.loadUser($('.loginPage.emailInput').val(),
-          $('.loginPage.passwordInput').val());
-        user.then((userObject) => {
-          try {
-            //Managed to find a user, logic to implement sessionStorage goes here
-            console.log("Managed to log in with: " + userObject.user + " with pw of: " + userObject.pw);
-            this.setLoggedInUser(userObject.user, userObject.pw); //Replace this
-            window.location.href = ''; //Go back to default startPage on login
-          }
-          catch (error) {
-            console.log("No such user - Put in graphics to telegraph this?");
-            console.log("The error was: " + error);
-          }
-        });
+    this.validate = new readAndWriteUser();
+    this.eventHandler();
+  }
+
+  eventHandler() {
+    $('main').on('click', '.loginPage.log_in_button', (data) => {
+      if (
+        $('.loginPage.emailInput').val().length > 0 &&
+        $('.loginPage.passwordInput').val().length > 0
+      ) {
+        //fix this
+        this.validate.loadUser(
+          $('.loginPage.emailInput').val(),
+          $('.loginPage.passwordInput').val()
+        )
+          ? (window.location.href = '#loginPage')
+          : (window.location.href = '#startPage');
       }
     });
-  }
-
-  setLoggedInUser(username, password) {
-    this.loggedInUsername = username;
-    this.loggedInUserPassword = password;
-  }
-
-  getLoggedInUsername() {
-    return this.loggedInUsername;
-  }
-
-  getLoggedInUserPassword() {
-    return this.loggedInUserPassword;
   }
 
   render() {
