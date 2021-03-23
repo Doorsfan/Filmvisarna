@@ -131,11 +131,7 @@ export default class MoviePage {
   eventHandler() {
     $('body').on('change', '.movie-filter', () => {
       this.reRenderMovies($('#category-filter').val(), $('#age-filter').val());
-    });
-    $('body').on('change', '#category-filter', () => {
       this.disableAgeSelector();
-    });
-    $('body').on('change', '#age-filter', () => {
       this.disableCategorySelector();
     });
   }
