@@ -36,8 +36,25 @@ export default class TicketPage {
 
     return /*html*/ ` 
     <div class='ticketpage-container'>
-      ${this.saloonView[0].outerHTML}
-      <div class='booking-info'>
+      <div class="ticketpage-content">
+        ${this.saloonView[0].outerHTML}
+        <div class='booking-info'>
+          <div class="ticket-item">
+          </div>
+          <div class="booking-info_container">
+            <div class="info-summation">
+              <p>1x Vuxen á xx kr</p>
+              <p>1x Vuxen á xx kr</p>
+              <p>1x Vuxen á xx kr</p>
+              <hr />
+              <p>XXX kr</p>
+            </div>
+            <div class="info-buttons">
+              <button>AVBRYT</button>
+              <button>BOKA</button>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
     `;

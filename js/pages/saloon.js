@@ -42,9 +42,9 @@ export default class Saloon {
       this.saveSelectedSeats();
     });
     $('main').on('click', '.seats', (e) => {
-      $('.booking-info').append(/*html**/ `
+      $('.ticket-item').append(/*html**/ `
       <div class='ticket-box'>
-        <p> Biljett ${e.target.value}</p>
+        <p> Biljett - Stolsnummer: ${e.target.value}</p>
         <select>
           <option value='Vuxen'>Vuxen</option>
           <option value='Barn'>Barn</option>
