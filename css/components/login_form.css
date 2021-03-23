@@ -1,4 +1,4 @@
-.loginPage.login_form{
+.loginPage.holderBox{
   display:grid;
   justify-items:center; /* Works to Center the Form on the page */
   margin-left:auto;
@@ -39,7 +39,8 @@
 .loginPage.myImage{
   min-width:110px;
   width:19vw;
-  max-height:20vh;
+  min-height:150px;
+  max-height:200px;
   max-width: 200px;
   align-self:center;
 }
