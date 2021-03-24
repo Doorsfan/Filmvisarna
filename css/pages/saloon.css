@@ -13,32 +13,45 @@
   display: flex;
 }
 
-label {
-  background-color: silver;
-  border: 2px outset white;
+.saloon-container label {
+  background: linear-gradient(
+    to top,
+    #761818,
+    #761818,
+    #761818,
+    #761818,
+    #761818,
+    #b54041,
+    #f3686a
+  );
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+  margin-left: 5px;
+  margin-right: 5px;
   border-radius: 25% 25% 0 0;
   color: black;
   padding: 5px;
   text-align: center;
+  width: 25px;
+  height: 35px;
 }
 
-input[type='checkbox'] {
+.saloon-container input[type='checkbox'] {
   z-index: 2;
   opacity: 0;
   width: 30px;
   height: 25px;
 }
 
-input[type='checkbox'] + label {
+.saloon-container input[type='checkbox'] + label {
   margin-left: -30px;
   z-index: 1;
 }
-input[type='checkbox']:checked + label {
+.saloon-container input[type='checkbox']:checked + label {
   background-color: black;
   color: white;
 }
-input[type='checkbox']:disabled + label {
-  background-color: darkgray;
+.saloon-container input[type='checkbox']:disabled + label {
+  background: darkgray;
   color: darkgray;
   border-color: transparent;
 }
