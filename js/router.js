@@ -10,6 +10,8 @@ import MoviePage from './pages/MoviePage.js';
 import AboutPage from './pages/aboutPage.js';
 import BookingPage from './pages/BookingPage.js';
 import UserPage from './pages/userPage.js';
+import Saloon from './pages/saloon.js';
+import TicketPage from './pages/ticketPage.js';
 import registerPage from './pages/registerPage.js';
 // import PeoplePage from './pages/PeoplePage.js';
 
@@ -20,6 +22,7 @@ const loginPage = new LoginPage();
 const moviePage = new MoviePage();
 const bookingPage = new BookingPage();
 const userPage = new UserPage();
+const ticketPage = new TicketPage();
 const myRegisterPage = new registerPage();
 
 // const peoplePage = new PeoplePage(changeListener);
@@ -86,5 +89,13 @@ export default class Router {
 
   test() {
     return test.render();
+  }
+
+  saloon() {
+    return new Saloon().render();
+  }
+
+  ticketPage() {
+    return ticketPage.render();
   }
 }
