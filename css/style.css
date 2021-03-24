@@ -10,6 +10,8 @@
 @import './components/select.css';
 @import './pages/BookingPage.css';
 @import './pages/saloon.css';
+@import './pages/ticketPage.css';
+
 * {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -38,7 +40,6 @@ body {
     rgba(225, 224, 226, 1) 3%,
     rgb(158, 157, 159) 67%
   ); */
-  
 }
 
 main {

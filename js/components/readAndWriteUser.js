@@ -24,8 +24,11 @@ export default class readAndWriteUser {
   }
 
   async saveBookings(booking, user) {
+    console.log(user);
     if (!this.allBooking) {
-      await this.loadBooking(user);
+      try {
+        await this.loadBooking(user);
+      } catch (e) {}
     }
 
     this.allBooking.push(booking);
