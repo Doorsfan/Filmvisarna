@@ -23,7 +23,7 @@ export default class DisplaySpecificShow {
   createSelect() {
     let html = $(/*html*/ `<div class="book-show"></div>`);
     let select = $(
-      /*html*/ `<select class="select" id="select-date"><option disabled selected>Välj datum</option></select>`
+      /*html*/ `<select class="select" id="select-date"></select>`
     );
 
     this.filteredShow.forEach((show) => {
@@ -36,8 +36,8 @@ export default class DisplaySpecificShow {
 
     let nextShow = $(/*html*/ `
     <div id="display-saloon">
-    <p>Salong:</p>
-    <div>Tid:</div>
+    <p>Salong ${this.filteredShow[0].auditorium}</p>
+    <div id="showtime">Tid: ${this.filteredShow[0].time}</div>
     </div>
     `);
 
@@ -59,13 +59,13 @@ export default class DisplaySpecificShow {
   }
 
   async createSaloonDisplay(event) {
-    let displayShow = this.filteredShow.find(
+    this.displayShow = this.filteredShow.find(
       (show) => show.date == event.target.value
     );
 
     $('#display-saloon').html(/*html*/ `
-    <p>Salong ${displayShow.auditorium}</p>
-    <div id="showtime">Tid: ${displayShow.time}</div>`);
+    <p>Salong ${this.displayShow.auditorium}</p>
+    <div id="showtime">Tid: ${this.displayShow.time}</div>`);
   }
 
   eventHandler() {
