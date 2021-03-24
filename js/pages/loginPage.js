@@ -12,12 +12,16 @@ export default class LoginPage {
         $('.loginPage.passwordInput').val().length > 0
       ) {
         //fix this
-        this.validate.loadUser(
-          $('.loginPage.emailInput').val(),
-          $('.loginPage.passwordInput').val()
-        )
-          ? (window.location.href = '#loginPage')
-          : (window.location.href = '#startPage');
+        if (
+          this.validate.loadUser(
+            $('.loginPage.emailInput').val(),
+            $('.loginPage.passwordInput').val()
+          )
+        ) {
+          window.location.href = '#startPage';
+        } else {
+          window.location.href = '#loginPage';
+        }
       }
     });
   }
