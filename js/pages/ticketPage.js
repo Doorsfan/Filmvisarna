@@ -1,4 +1,5 @@
 import Saloon from './saloon.js';
+import ReadNWrite from '../components/readAndWriteUser.js';
 
 export default class TicketPage {
   constructor() {}
@@ -6,33 +7,32 @@ export default class TicketPage {
   async render() {
     if (!this.saloonView) {
       this.saloonView = await new Saloon().render();
-
-      // console.log(this.saloonView.7
     }
 
-    //1. Få tag på biljetter
-    // let tickets = saloonView.getSeats();
+    console.log(window.clickedSeat);
 
-    // let tickets = this.saloonView.selectedSeats();
+    //Kolla först ifall användaren är inloggad
 
-    //rendera biljettboxes beroende på det
-    // tickets.forEach()
+    //Om den är inloggad ska den sparas i personliga bokningshistorik
 
-    let html = $('');
+    //Oavsett ska den sparas i admin bookings
 
-    // $('main').on('click', '.seats', (e) => {
+    //Efter den är sparad i bokningars
 
-    //   $('.booking-info').append(/*html**/ `
-    //   <div class='ticket-box'>
-    //     <p> Biljett</p>
-    //     <select>
-    //       <option value='Vuxen'>Vuxen</option>
-    //       <option value='Barn'>Barn</option>
-    //       <option value='Pensionär'>Pensionär</option>
-    //     </select>
-    //   </div>
-    //   `);
-    // });
+    $('main').on('click', '.ticket-booking', () => {
+      console.log(window.selectedShow);
+
+      window.username = 'robban@gmail.se';
+
+      window.username
+        ? (window.selectedShow.id = window.username)
+        : (window.selectedShow.id = 'none');
+
+      new ReadNWrite().saveBookings(window.selectedShow, window.username);
+
+      console.log(window.selectedSeats);
+      console.log(window.selectedShow);
+    });
 
     return /*html*/ ` 
     <div class='ticketpage-container'>
@@ -51,7 +51,7 @@ export default class TicketPage {
             </div>
             <div class="info-buttons">
               <button>AVBRYT</button>
-              <button>BOKA</button>
+              <button class="ticket-booking">BOKA</button>
             </div>
           </div>
         </div>

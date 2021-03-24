@@ -3,15 +3,21 @@ export default class Saloon {
     this.eventHandler();
     this.bookedTickets = [1, 4, 5, 8, 20, 40]; // istället för att kolla mot databas
     this.selectedSeats = [];
+    window.selectedShow = {
+      auditorium: 'Savannen',
+      film: "Harry Potter and the Sorcerer's Stone",
+      date: '2021-03-22',
+      time: '16.00',
+      seat: [],
+      price: 300,
+    };
   }
   async loadSaloon() {
     this.saloon = await JSON._load('../../json/auditoriums.json');
-    this.saloon = this.saloon[1]; // just so we can test on one saloon
+    window.selectedShow.auditorium === 'Savannen'
+      ? (this.saloon = this.saloon[0])
+      : (this.saloon = this.saloon[1]);
   }
-
-  c = () => {
-    return this.selectedSeats;
-  };
 
   async render() {
     if (!this.saloon) {
@@ -34,28 +40,34 @@ export default class Saloon {
       }
       html.append(row);
     }
-    return html.append('<button class="btn">Köpa biljetter</button>');
+    return html.append('<button class="btn">Välj Platser</button>');
   }
 
   eventHandler() {
     $('main').on('click', '.btn', () => {
       this.saveSelectedSeats();
+      $('.btn').addClass('regret');
+      $('.btn').html('Ångra');
     });
     $('main').on('click', '.seats', (e) => {
-      $('.ticket-item').append(/*html**/ `
-      <div class='ticket-box'>
-        <p> Biljett - Stolsnummer: ${e.target.value}</p>
-        <select>
-          <option value='Vuxen'>Vuxen</option>
-          <option value='Barn'>Barn</option>
-          <option value='Pensionär'>Pensionär</option>
-        </select>
-      </div>
-      `);
+      window.clickedSeat = [];
+      if (window.clickedSeat != e.target.value) {
+        window.clickedSeat.push(e.target.value);
+      }
+    });
+
+    $('main').on('click', '.regret', (e) => {
+      console.log('here');
+      $('.ticket-item').html('');
+      $(e.target).removeClass('regret');
+      $('.btn').html('Välj Platser');
+
+      $('.seats').prop('checked', false);
     });
   }
 
   saveSelectedSeats() {
+    $('.ticket-item').html('');
     let checked = $('input:checkbox[type=checkbox]:checked');
     let arr = [];
     console.log(checked);
@@ -66,18 +78,21 @@ export default class Saloon {
 
     this.bookedTickets = [...this.bookedTickets, ...arr];
     console.log(this.selectedSeats);
-  }
 
-  sendToTicketPage() {
-    let checked = $('input:checkbox[type=checkbox]:checked');
-    let arr = [];
-    console.log(checked);
-    $('input:checkbox[type=checkbox]:checked').each(function () {
-      arr.push($(this).val());
+    this.selectedSeats.forEach((seat) => {
+      $('.ticket-item').append(/*html**/ `
+         <div class='ticket-box'>
+           <p> Biljett - Stolsnummer: ${seat}</p>
+           <select>
+             <option value='Vuxen'>Vuxen</option>
+             <option value='Barn'>Barn</option>
+             <option value='Pensionär'>Pensionär</option>
+           </select>
+         </div>
+     `);
     });
-    this.selectedSeats = arr.slice();
 
-    this.sendTickets = [...this.bookedTickets, Number(...arr)];
-    return this.sendTickets;
+    window.selectedShow.seat.push(...this.selectedSeats);
+    console.log(window.selectedShow);
   }
 }
