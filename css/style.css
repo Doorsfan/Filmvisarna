@@ -6,6 +6,8 @@
 @import './pages/MoviePage.css';
 @import './pages/aboutPage.css';
 @import './pages/startPage.css';
+@import './pages/registerPage.css';
+@import './components/select.css';
 @import './pages/BookingPage.css';
 @import './pages/saloon.css';
 @import './pages/ticketPage.css';

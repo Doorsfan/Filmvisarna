@@ -1,13 +1,16 @@
+import Test from '../pages/test.js';
 export default class DisplaySpecificShow {
   constructor(movieID) {
     this.movieID = movieID;
     this.eventHandler();
     this.read();
+    this.test = new Test();
   }
 
   async read() {
     this.filteredShow = [];
     this.movieSchedule = await $.getJSON('/json/movieSchedule.json');
+    this.shows = await $.getJSON('/json/movieSchedule.json');
     await Promise.all(
       this.movieSchedule.map(async (data) => {
         if (data.film.toLowerCase().includes(this.movieID)) {
@@ -20,7 +23,7 @@ export default class DisplaySpecificShow {
   createSelect() {
     let html = $(/*html*/ `<div class="book-show"></div>`);
     let select = $(
-      /*html*/ `<select class="select" id="select-date"><option disabled selected>Välj datum</option></select>`
+      /*html*/ `<select class="select" id="select-date"></select>`
     );
 
     this.filteredShow.forEach((show) => {
@@ -33,8 +36,8 @@ export default class DisplaySpecificShow {
 
     let nextShow = $(/*html*/ `
     <div id="display-saloon">
-    <p>Salong:</p>
-    <p>Tid:</p>
+    <p>Salong ${this.filteredShow[0].auditorium}</p>
+    <div id="showtime">Tid: ${this.filteredShow[0].time}</div>
     </div>
     `);
 
@@ -56,18 +59,34 @@ export default class DisplaySpecificShow {
   }
 
   async createSaloonDisplay(event) {
-    let displayShow = this.filteredShow.find(
+    this.displayShow = this.filteredShow.find(
       (show) => show.date == event.target.value
     );
 
     $('#display-saloon').html(/*html*/ `
-    <p>Salong ${displayShow.auditorium}</p>
-    <p>Tid: ${displayShow.time}</p>`);
+    <p>Salong ${this.displayShow.auditorium}</p>
+    <div id="showtime">Tid: ${this.displayShow.time}</div>`);
   }
 
   eventHandler() {
     $('main').on('change', '#select-date', (event) =>
       this.createSaloonDisplay(event)
     );
+
+    $('main').on('click', '.aboutPage-btn', (event) => {
+      console.log(event.target);
+      let date = $('#select-date').val();
+      let time = $('#showtime').html().replace('Tid: ', '');
+      window.selectedShow = this.filterSelectedShow(date, time);
+      console.log(window.selectedShow);
+    });
+  }
+
+  filterSelectedShow(date, time) {
+    //this.shows == movieSchedule.json
+    let displayShow = this.shows.find((show) => {
+      return show.date == date && show.time == time;
+    });
+    return displayShow;
   }
 }
