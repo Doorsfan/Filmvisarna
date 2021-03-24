@@ -6,6 +6,7 @@ export default class readAndWriteUser {
       user: username,
       password: password,
     });
+    await JSON._save(`./bookings/users/${username}`, []);
   }
 
   // async loadUser(username, password) {

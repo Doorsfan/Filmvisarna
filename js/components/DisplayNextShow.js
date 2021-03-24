@@ -42,7 +42,7 @@ export default class DisplaySpecificShow {
     `);
 
     let btn = $(
-      /*html*/ `<button class="aboutPage-btn" type="button">Boka</button>`
+      /*html*/ `<a href="#ticketPage"><button class="aboutPage-btn" type="button">Boka</button></a>`
     );
     html.append(text);
     html.append(select);
@@ -74,7 +74,6 @@ export default class DisplaySpecificShow {
     );
 
     $('main').on('click', '.aboutPage-btn', (event) => {
-      console.log(event.target);
       let date = $('#select-date').val();
       let time = $('#showtime').html().replace('Tid: ', '');
       window.selectedShow = this.filterSelectedShow(date, time);
