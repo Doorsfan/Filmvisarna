@@ -73,15 +73,17 @@ export default class DisplaySpecificShow {
       this.createSaloonDisplay(event)
     );
 
-    $('main').on('click', '.aboutPage-btn', () => {
+    $('main').on('click', '.aboutPage-btn', (event) => {
+      console.log(event.target);
       let date = $('#select-date').val();
       let time = $('#showtime').html().replace('Tid: ', '');
-      let selectedShow = this.filterSelectedShow(date, time);
-      this.test.render(selectedShow);
+      window.selectedShow = this.filterSelectedShow(date, time);
+      console.log(window.selectedShow);
     });
   }
 
   filterSelectedShow(date, time) {
+    //this.shows == movieSchedule.json
     let displayShow = this.shows.find((show) => {
       return show.date == date && show.time == time;
     });
