@@ -81,7 +81,11 @@ export default class Router {
   }
 
   userPage() {
-    return new UserPage().render();
+    if (window.username) {
+      return new UserPage().render();
+    } else {
+      return loginPage.render();
+    }
   }
 
   ticketPage() {
