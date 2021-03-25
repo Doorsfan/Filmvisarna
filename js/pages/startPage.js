@@ -33,7 +33,7 @@ export default class StartPage {
           <a href="#aboutPage/${data.id}">
             <img src="${data.images[0]}" alt="${data.title}" />
             <aside class="slide-aside">
-              <p>${data.title}</p>
+              <h2>${data.title}</h2>
               <h3>SPELAS NU</h3>
               <p>${data.reviews[0].quote}<br> - ${data.reviews[0].source}</p>
             </aside>

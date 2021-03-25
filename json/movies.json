@@ -90,24 +90,24 @@
     "ageRating": "15",
     "actors": ["Adam Driver", "Golshifteh Farahani", "Barry Shabaka Henley"],
     "description": "<p>Paterson är busschaufför i staden Paterson, New Jersey. Varje dag kör han sin dagliga rutt under vilken han observerar staden när den flimrar förbi genom vindrutan och lyssnar samtidigt på fragment av passagerarnas konversationer, han skriver poesi i en anteckningsbok, han går ut med sin tjejs egensinniga engelska bulldogg Marvin, han stannar till vid samma bar och dricker exakt en öl innan han går hem till sin fru Laura.</p>",
-    "images": ["/images/movie_posters/paterson.jfif"],
+    "images": ["/images/movie_posters/paterson.jpg"],
     "youtubeTrailers": ["m8pGJBgiiDU"],
     "reviews": [
       {
         "source": "Kulturnyheterna",
-        "quote": "”lyfter vardagens futtighet och tristess till poesi”",
+        "quote": "Lyfter vardagens futtighet och tristess till poesi",
         "stars": 4,
         "max": 5
       },
       {
         "source": "Svenska Dagbladet",
-        "quote": "”regissören närmar sig nivån för fornstora dagar”",
+        "quote": "Regissören närmar sig nivån för fornstora dagar",
         "stars": 5,
         "max": 5
       },
       {
         "source": "DN",
-        "quote": "”Jim Jarmusch, den lakoniska humorns specialist”",
+        "quote": "Jim Jarmusch, den lakoniska humorns specialist",
         "stars": 4,
         "max": 5
       }
