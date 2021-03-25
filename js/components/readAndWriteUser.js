@@ -2,18 +2,61 @@ export default class readAndWriteUser {
   constructor() {}
 
   async saveUser(username, password) {
-    await JSON._save(`./users/${username + password}`, { "user": username, "pw": password });
+    await JSON._save(`./users/${username + password}`, {
+      user: username,
+      password: password,
+    });
+    await JSON._save(`./bookings/users/${username}`, []);
   }
 
-  async loadUser(username, password) {    
+  // async loadUser(username, password) {
+  //   try {
+  //     console.log('trying to load with username of: ' + username);
+  //     console.log('trying to load with pw of: ' + password);
+  //     this.user = await JSON._load(`./users/${username + password}.json`);
+  //     return this.user;
+  //   } catch (error) {
+  //     return;
+  //   }
+  // }
+
+  async loadUser(username, password) {
     try {
-      console.log("trying to load with username of: " + username);
-      console.log("trying to load with pw of: " + password);
-      this.user = await JSON._load(`./users/${username + password}.json`);
-      return this.user;
+      this.user = await JSON._load(`./users/${username + password}`);
     } catch (error) {
-      return;
+      alert('No .json with that combination');
+      return false;
     }
+    window.username = username;
+    this.saveUserToSessionStorage(username);
+    this.renderForActiveUser();
+    alert(`Välkommen ${username}`);
+    return true;
+  }
+
+  renderForActiveUser() {
+    $('.login').replaceWith(`
+      <a href='#userPage'>Mina sidor</a>
+    `);
+    $('.navlist').append(
+      `<li class="navlist-item"><a href='#'>Logga ut</a></li>`
+    );
+    $('.userpage-button')
+      .replaceWith(`<a class="userpage-button" href="#userPage">
+          <img class="user-icon" src="../images/user.png" alt="home"/>
+        </a>`);
+  }
+
+  saveUserToSessionStorage(username) {
+    let store = {};
+    try {
+      store = JSON.parse(sessionStorage.store);
+    } catch (e) {}
+    store.save = function () {
+      sessionStorage.store = JSON.stringify(this);
+    };
+    store['username'] = username;
+    store.save();
   }
 
   async loadBooking(user) {
@@ -40,6 +83,7 @@ export default class readAndWriteUser {
     }
   }
 }
+
 //put this in async read in startPage to test out component
 // let booking = {
 //   id: 'none',

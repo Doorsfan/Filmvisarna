@@ -42,9 +42,11 @@ export default class BookingPage {
       <p>${movie.genre.join ? movie.genre.join(', ') : movie.genre} | 
       ${Math.floor(movie.length / 60)} tim ${movie.length % 60} min</p>
       <h3>${show.date} | ${show.time} | ${show.auditorium}</h3>
-      <button class="bookingpage${purgedName} &${show.date} ${show.time}& ${
-        show.auditorium
-      } ${movie.title}">Boka biljett</button>
+      <a href="#ticketPage"><button class="bookingpage${purgedName} &${
+        show.date
+      } ${show.time}& ${show.auditorium} ${
+        movie.title
+      }">Boka biljett</button></a>
       </div>
       `;
     }

@@ -22,8 +22,6 @@ export default class TicketPage {
     $('main').on('click', '.ticket-booking', () => {
       console.log(window.selectedShow);
 
-      window.username = 'robban@gmail.se';
-
       window.username
         ? (window.selectedShow.id = window.username)
         : (window.selectedShow.id = 'none');

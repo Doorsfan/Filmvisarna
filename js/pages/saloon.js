@@ -3,14 +3,6 @@ export default class Saloon {
     this.eventHandler();
     this.bookedTickets = [1, 4, 5, 8, 20, 40]; // istället för att kolla mot databas
     this.selectedSeats = [];
-    window.selectedShow = {
-      auditorium: 'Savannen',
-      film: "Harry Potter and the Sorcerer's Stone",
-      date: '2021-03-22',
-      time: '16.00',
-      seat: [],
-      price: 300,
-    };
   }
   async loadSaloon() {
     this.saloon = await JSON._load('../../json/auditoriums.json');
@@ -91,8 +83,9 @@ export default class Saloon {
          </div>
      `);
     });
+    console.log(window.selectedShow);
 
-    window.selectedShow.seat.push(...this.selectedSeats);
+    window.selectedShow.seat = [...this.selectedSeats];
     console.log(window.selectedShow);
   }
 }

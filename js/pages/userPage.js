@@ -14,9 +14,15 @@ export default class UserPage {
   }
 
   async read() {
-    this.userBookings = await $.getJSON(
-      '/json/bookings/users/robban@gmail.se.json'
-    );
+    if (window.username == 'admin') {
+      this.userBookings = await $.getJSON(
+        `/json/bookings/adminbookings/bookings.json`
+      );
+    } else {
+      this.userBookings = await $.getJSON(
+        `/json/bookings/users/${window.username}.json`
+      );
+    }
   }
 
   async render() {
@@ -27,11 +33,11 @@ export default class UserPage {
         <div class="userpage-container">
         <div class="userpage-title">
           <h1>Mina Sidor</h1>
-          <p>${this.userBookings[0].id}</p>
+          <p>${window.username}</p>
         </div>
         </div>
     `);
-    console.log(this.today);
+
     let btn = `<div class="booking-button"><p>Avboka</p><button>X</button></div>`;
 
     this.userBookings.forEach((booking) => {
@@ -55,7 +61,6 @@ export default class UserPage {
         </div>
       </div>`);
     });
-
     return html;
   }
 }
