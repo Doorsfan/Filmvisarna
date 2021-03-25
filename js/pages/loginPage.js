@@ -23,13 +23,13 @@ export default class LoginPage {
       }
     });
   }
- 
+
   render() {
     return /*html*/ `
       <form class="loginPage inputForm">
        <div class="loginPage borderBox">
         <div class="loginPage formContainer">
-          <img class="loginPage myImage" src="/images/movie_posters/relic.jpg">
+          <img class="loginPage myImage" src="/images/login.jpg">
           <input class="loginPage emailInput" type="email" placeholder="E-postadress" name="email" required>
           <div class="loginPage firstSeperator"></div>
           <input class="loginPage passwordInput" type="password" placeholder="Lösenord" name="password" required>
