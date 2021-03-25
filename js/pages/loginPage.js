@@ -12,15 +12,19 @@ export default class LoginPage {
         $('.loginPage.passwordInput').val().length > 0
       ) {
         //fix this
-        if (
-          this.validate.loadUser(
-            $('.loginPage.emailInput').val(),
-            $('.loginPage.passwordInput').val()
-          )
-        ) {
-          window.location.href = '#startPage';
-        } else {
-          window.location.href = '#loginPage';
+        let myValue = '';
+        myValue = this.validate.loadUser(
+          $('.loginPage.emailInput').val(),
+          $('.loginPage.passwordInput').val()
+        );
+        {
+          myValue.then((loggedIn) => {
+            if (loggedIn) {
+              window.location.href = '#startPage';
+            } else{
+              window.location.href = '#loginPage';
+            }
+          });
         }
       }
     });
