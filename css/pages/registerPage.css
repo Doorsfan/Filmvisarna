@@ -1,9 +1,9 @@
-.registerPage.formContainer{
+.registerPage.inputForm{
   margin: 28vh 0vw 10vh 2em;
 }
 
 @media screen and (max-width: 280px){
-  .registerPage.formContainer{
+  .registerPage.inputForm{
     position:absolute;
     left:25%;
   }
