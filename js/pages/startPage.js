@@ -75,11 +75,11 @@ export default class StartPage {
     return `
       <div class="big-container">
         <div class="startpage-infobar">
-          <p>Välkommen! <br> Filmvisarnas Biografer håller för tillfället öppet, trots nuvarande coronapandemi.</p>
+          <p>Välkommen!<br>Filmvisarnas biografer håller för tillfället öppet, trots nuvarande coronapandemi.</p>
         </div>
         <div class="startpage-coverphoto"></div>
         <div class="startpage-skew"></div>
-        <h1 class="h1-aktuellt">AKTUELLT</h1>
+        <h2 class="h2-aktuellt">AKTUELLT</h2>
         <div class="slideshow-container">
           ${allMovies}
         </div>

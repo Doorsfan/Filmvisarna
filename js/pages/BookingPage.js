@@ -20,7 +20,7 @@ export default class BookingPage  {
     let html = `
     <div class = "bookingpage-container">
     <div class = "bookingpage-cover"></div>
-    <label class="datePickerLabel">Visningsdatum  <input class="datePicker" type="date" value="${this.showDate}"></label>
+    <label class="datePickerLabel">Visningsdatum: <input class="datePicker" type="date" value="${this.showDate}"></label>
     `;
     if (!this.shows) {
       await this.readShowsFromJson();
