@@ -1,4 +1,4 @@
-.loginPage.holderBox{
+.loginPage.inputForm{
   display:grid;
   justify-items:center; /* Works to Center the Form on the page */
   margin-left:auto;
