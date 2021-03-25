@@ -4,7 +4,7 @@ export default class DisplaySpecificShow {
     this.movieID = movieID;
     this.eventHandler();
     this.read();
-    this.test = new Test();
+    this.fromDate = new Date().toISOString().split('T')[0];
   }
 
   async read() {
@@ -13,7 +13,10 @@ export default class DisplaySpecificShow {
     this.shows = await $.getJSON('/json/movieSchedule.json');
     await Promise.all(
       this.movieSchedule.map(async (data) => {
-        if (data.film.toLowerCase().includes(this.movieID)) {
+        if (
+          data.film.toLowerCase().includes(this.movieID) &&
+          data.date >= this.fromDate
+        ) {
           this.filteredShow.push(await data);
         }
       })
