@@ -31,7 +31,7 @@ export default class StartPage {
       allMovies += /*html*/ `
         <div class="slideshow-slide">
           <a href="#aboutPage/${data.id}">
-            <img src="${data.images[0]}" alt="nyckeln till frihet" />
+            <img src="${data.images[0]}" alt="${data.title}" />
             <aside class="slide-aside">
               <p>${data.title}</p>
               <h3>SPELAS NU</h3>
