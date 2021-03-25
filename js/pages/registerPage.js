@@ -6,21 +6,20 @@ export default class registerPage {
   }
 
   eventHandler() {
-    $('main').on('click', '.registerPage.register_button', () => {
-      const username = $('.emailInput').val();
-      const password = $('.passwordInput').val();
-
+    $('main').on('submit', '.registerPage.inputForm', () => {
+      event.preventDefault();
       if (
-        $('.registerPage.emailInput').val().length > 0 &&
-        $('.registerPage.passwordInput').val().length > 0 &&
         $('.registerPage.passwordInput').val() ===
-          $('.registerPage.secondPasswordInput').val()
+        $('.registerPage.secondPasswordInput').val()
       ) {
-        this.createAccount.saveUser(username, password);
+        this.createAccount.saveUser($('.registerPage.emailInput').val(),$('.registerPage.passwordInput').val());
         alert(
-          `Thank you for registering an account to Filmvisarna! Username: ${username} - Password: ${password}`
+          `Thank you for registering an account to Filmvisarna! Username: ${$('.registerPage.emailInput').val()} - Password: ${$('.registerPage.passwordInput').val()}`
         );
         window.location.href = '#loginPage';
+      }
+      else {
+        alert("Password and Confirm password must match up!");
       }
     });
     $('main').on('click', '.cancel_button', function () {
@@ -31,9 +30,9 @@ export default class registerPage {
 
   render() {
     return /*html*/ ` 
-      <div class="registerPage formContainer">
+      <form class="registerPage inputForm">
         <h1 class="registerPage registerTitle">Registrera Ny Användare</h1>
-        <input class="registerPage emailInput" type="text" placeholder="E-postadress" name="email" required>
+        <input class="registerPage emailInput" type="email" placeholder="E-postadress" name="email" required>
         <div class="registerPage firstSeperator"></div>
         <input class="registerPage passwordInput" type="password" placeholder="Lösenord" name="password" required>
         <div class="registerPage secondSeperator"></div>
