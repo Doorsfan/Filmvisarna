@@ -49,7 +49,6 @@ export default class Saloon {
     });
 
     $('main').on('click', '.regret', (e) => {
-      console.log('here');
       $('.ticket-item').html('');
       $(e.target).removeClass('regret');
       $('.btn').html('Välj Platser');
@@ -62,14 +61,13 @@ export default class Saloon {
     $('.ticket-item').html('');
     let checked = $('input:checkbox[type=checkbox]:checked');
     let arr = [];
-    console.log(checked);
+
     $('input:checkbox[type=checkbox]:checked').each(function () {
       arr.push(Number($(this).val()));
     });
     this.selectedSeats = arr.slice();
 
     this.bookedTickets = [...this.bookedTickets, ...arr];
-    console.log(this.selectedSeats);
 
     this.selectedSeats.forEach((seat) => {
       $('.ticket-item').append(/*html**/ `
@@ -83,9 +81,7 @@ export default class Saloon {
          </div>
      `);
     });
-    console.log(window.selectedShow);
 
     window.selectedShow.seat = [...this.selectedSeats];
-    console.log(window.selectedShow);
   }
 }

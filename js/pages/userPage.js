@@ -14,7 +14,7 @@ export default class UserPage {
   }
 
   async read() {
-    if (window.username == 'admin') {
+    if (window.username == 'admin@admin.se') {
       this.userBookings = await $.getJSON(
         `/json/bookings/adminbookings/bookings.json`
       );
@@ -39,13 +39,13 @@ export default class UserPage {
     `);
 
     let btn = `<div class="booking-button"><p>Avboka</p><button>X</button></div>`;
-
+    let num = 1;
     this.userBookings.forEach((booking) => {
       html.append(/*html*/ `
         <div class="userpage-bookings">
           <article class="userpage-booking">
               <div class="booking-top">
-                <h2>Bokning 1</h2>
+                <h2>Bokning ${num++}</h2>
                 ${booking.date > this.today ? btn : ''}  
               </div>
               <div class="booking-bottom">
