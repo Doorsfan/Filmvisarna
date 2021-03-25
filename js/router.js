@@ -82,7 +82,7 @@ export default class Router {
 
   userPage() {
     if (window.username) {
-      return userPage.render();
+      return new UserPage.render();
     }
     else {
       return loginPage.render();
