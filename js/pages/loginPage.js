@@ -11,21 +11,18 @@ export default class LoginPage {
         $('.loginPage.emailInput').val().length > 0 &&
         $('.loginPage.passwordInput').val().length > 0
       ) {
-        //fix this
         let myValue = '';
         myValue = this.validate.loadUser(
           $('.loginPage.emailInput').val(),
           $('.loginPage.passwordInput').val()
         );
-        {
-          myValue.then((loggedIn) => {
-            if (loggedIn) {
-              window.location.href = '#startPage';
-            } else{
-              window.location.href = '#loginPage';
-            }
-          });
-        }
+        myValue.then((loggedIn) => {
+          if (loggedIn) {
+            window.location.href = '#startPage';
+          } else {
+            window.location.href = '#loginPage';
+          }
+        });
       }
     });
   }
