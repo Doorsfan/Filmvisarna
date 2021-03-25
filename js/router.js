@@ -88,7 +88,7 @@ export default class Router {
       return userPage.render();
     }
     else {
-      return startPage.render();
+      return loginPage.render();
     }
   }
 
