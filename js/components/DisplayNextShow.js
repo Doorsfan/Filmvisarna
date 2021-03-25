@@ -1,13 +1,16 @@
+import Test from '../pages/test.js';
 export default class DisplaySpecificShow {
   constructor(movieID) {
     this.movieID = movieID;
-    this.eventhandeler();
+    this.eventHandler();
     this.read();
+    this.test = new Test();
   }
 
   async read() {
     this.filteredShow = [];
     this.movieSchedule = await $.getJSON('/json/movieSchedule.json');
+    this.shows = await $.getJSON('/json/movieSchedule.json');
     await Promise.all(
       this.movieSchedule.map(async (data) => {
         if (data.film.toLowerCase().includes(this.movieID)) {
@@ -20,7 +23,7 @@ export default class DisplaySpecificShow {
   createSelect() {
     let html = $(/*html*/ `<div class="book-show"></div>`);
     let select = $(
-      /*html*/ `<select class="select" id="select-date"><option disabled selected>Välj datum</option></select>`
+      /*html*/ `<select class="select" id="select-date"></select>`
     );
 
     this.filteredShow.forEach((show) => {
@@ -33,8 +36,8 @@ export default class DisplaySpecificShow {
 
     let nextShow = $(/*html*/ `
     <div id="display-saloon">
-    <p>Salong:</p>
-    <p>Tid:</p>
+    <p>Salong ${this.filteredShow[0].auditorium}</p>
+    <div id="showtime">Tid: ${this.filteredShow[0].time}</div>
     </div>
     `);
 
@@ -55,36 +58,35 @@ export default class DisplaySpecificShow {
     return this.createSelect();
   }
 
-  async createSaloonDisplay() {
-    //make it in jquery
-    let e = document.getElementById('select-date');
-    let date = e.options[e.selectedIndex].text;
+  async createSaloonDisplay(event) {
+    this.displayShow = this.filteredShow.find(
+      (show) => show.date == event.target.value
+    );
 
-    let time;
-    let saloon;
-    this.filteredShow.forEach((show) => {
-      if (show.date === date) {
-        time = show.time;
-        saloon = show.auditorium;
-        return;
-      }
-    });
-    if (!time || !saloon) {
-      $('#display-saloon').html('');
-      $('#display-saloon').append(/*html*/ `
-      <p>Salong:</p>
-        <p>Tid:</p>
-      `);
-    } else {
-      $('#display-saloon').html('');
-      $('#display-saloon').append(/*html*/ `
-      <p>Salong ${saloon}</p>
-        <p>Tid: ${time}</p>
-      `);
-    }
+    $('#display-saloon').html(/*html*/ `
+    <p>Salong ${this.displayShow.auditorium}</p>
+    <div id="showtime">Tid: ${this.displayShow.time}</div>`);
   }
 
-  eventhandeler() {
-    $('main').on('change', '#select-date', () => this.createSaloonDisplay());
+  eventHandler() {
+    $('main').on('change', '#select-date', (event) =>
+      this.createSaloonDisplay(event)
+    );
+
+    $('main').on('click', '.aboutPage-btn', (event) => {
+      console.log(event.target);
+      let date = $('#select-date').val();
+      let time = $('#showtime').html().replace('Tid: ', '');
+      window.selectedShow = this.filterSelectedShow(date, time);
+      console.log(window.selectedShow);
+    });
+  }
+
+  filterSelectedShow(date, time) {
+    //this.shows == movieSchedule.json
+    let displayShow = this.shows.find((show) => {
+      return show.date == date && show.time == time;
+    });
+    return displayShow;
   }
 }

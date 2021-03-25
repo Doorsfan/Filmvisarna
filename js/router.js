@@ -3,18 +3,27 @@ import ChangeListener from './ChangeListener.js';
 const changeListener = new ChangeListener();
 
 // imported pages
+import Test from './pages/test.js';
 import StartPage from './pages/StartPage.js';
 import LoginPage from './pages/LoginPage.js';
 import MoviePage from './pages/MoviePage.js';
 import AboutPage from './pages/aboutPage.js';
+import BookingPage from './pages/BookingPage.js';
 import UserPage from './pages/userPage.js';
+import Saloon from './pages/saloon.js';
+import TicketPage from './pages/ticketPage.js';
+import registerPage from './pages/registerPage.js';
 // import PeoplePage from './pages/PeoplePage.js';
 
 // instanciate to reuse instances of pages
+const test = new Test();
 const startPage = new StartPage();
 const loginPage = new LoginPage();
 const moviePage = new MoviePage();
+const bookingPage = new BookingPage();
 const userPage = new UserPage();
+const ticketPage = new TicketPage();
+const myRegisterPage = new registerPage();
 
 // const peoplePage = new PeoplePage(changeListener);
 
@@ -28,18 +37,20 @@ export default class Router {
     // but also render it right now, based on the current hash or default page
     this.setCurrentPage(selector);
   }
-  //Ask alex if its confusing
+
   async setCurrentPage(selector) {
+    //localhost:3000/#aboutPage/harry
     let name = window.location.hash.replace('-', '').replace('#', '');
+    let movieTitle = name.split('/');
+    name = movieTitle[0];
+    movieTitle.length >= 2 ? (movieTitle = movieTitle[1]) : (movieTitle = '');
+
     let result;
-    if (name.includes('aboutPage')) {
-      let movieName = name.substr(9, name.length - 1);
-      result = await this.aboutPage(movieName);
-    } else if (!this[name]) {
+    if (!this[name]) {
       name = 'default';
       result = await this[name]();
     } else {
-      result = await this[name]();
+      result = await this[name](movieTitle);
     }
     $(selector).html('');
     $(selector).append(result);
@@ -64,7 +75,27 @@ export default class Router {
     return new AboutPage(movieTitle).render();
   }
 
+  registerPage() {
+    return myRegisterPage.render();
+  }
+
+  bookingPage() {
+    return bookingPage.render();
+  }
+
   userPage() {
     return userPage.render();
+  }
+
+  test() {
+    return test.render();
+  }
+
+  saloon() {
+    return new Saloon().render();
+  }
+
+  ticketPage() {
+    return ticketPage.render();
   }
 }

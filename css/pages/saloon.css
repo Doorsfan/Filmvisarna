@@ -1,0 +1,57 @@
+.saloon-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.row {
+  margin: 5px;
+  display: flex;
+  align-self: center;
+}
+
+.seats {
+  display: flex;
+}
+
+.saloon-container label {
+  background: linear-gradient(
+    to top,
+    #761818,
+    #761818,
+    #761818,
+    #761818,
+    #761818,
+    #b54041,
+    #f3686a
+  );
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+  margin-left: 5px;
+  margin-right: 5px;
+  border-radius: 25% 25% 0 0;
+  color: black;
+  padding: 5px;
+  text-align: center;
+  width: 25px;
+  height: 35px;
+}
+
+.saloon-container input[type='checkbox'] {
+  z-index: 2;
+  opacity: 0;
+  width: 30px;
+  height: 25px;
+}
+
+.saloon-container input[type='checkbox'] + label {
+  margin-left: -30px;
+  z-index: 1;
+}
+.saloon-container input[type='checkbox']:checked + label {
+  background-color: black;
+  color: white;
+}
+.saloon-container input[type='checkbox']:disabled + label {
+  background: darkgray;
+  color: darkgray;
+  border-color: transparent;
+}

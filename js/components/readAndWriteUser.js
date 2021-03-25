@@ -2,19 +2,17 @@ export default class readAndWriteUser {
   constructor() {}
 
   async saveUser(username, password) {
-    await JSON._save('./users/' + username, password);
+    await JSON._save(`./users/${username + password}`, { "user": username, "pw": password });
   }
 
-  async loadUser(username) {
-    /*
-    fetch("/json/users/" + username + ".json")
-      .then(response => response.json())
-      .then(user => {
-        this.example = user.password;
-      }); */
-    this.user = await JSON._load('/users/' + username + '.json');
-    if (!this.user) {
-      await this.loadUser(username);
+  async loadUser(username, password) {    
+    try {
+      console.log("trying to load with username of: " + username);
+      console.log("trying to load with pw of: " + password);
+      this.user = await JSON._load(`./users/${username + password}.json`);
+      return this.user;
+    } catch (error) {
+      return;
     }
   }
 
@@ -26,8 +24,11 @@ export default class readAndWriteUser {
   }
 
   async saveBookings(booking, user) {
+    console.log(user);
     if (!this.allBooking) {
-      await this.loadBooking(user);
+      try {
+        await this.loadBooking(user);
+      } catch (e) {}
     }
 
     this.allBooking.push(booking);

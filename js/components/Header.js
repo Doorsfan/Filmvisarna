@@ -18,8 +18,11 @@ export default class Header {
           $('.sidebar-container').addClass('sidebar-close');
           $('.sidebar-container').removeClass('sidebar-show');
           openSidebar = !openSidebar;
+          event.stopPropagation();
+          $(document).off();
         } else if (!$target.closest('.sidebar-show').length) {
           openSidebar = !openSidebar;
+          event.stopPropagation();
         }
       });
     };
@@ -36,7 +39,9 @@ export default class Header {
         <img class="hamburger-icon" src="../images/hamburger_icon.png" alt="home" />
         
         <a class="home-button" href="#startPage">Filmvisarna</a>
-        <img class="user-icon" src="../images/user.png" alt="home"/>
+        <a class="userpage-button" href="#loginPage">
+          <img class="user-icon" src="../images/user.png" alt="home"/>
+        </a>
       </nav>
     </header>`);
     header.append(sidebar.render());
