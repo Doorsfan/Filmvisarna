@@ -1,14 +1,17 @@
 @import url("https://fonts.googleapis.com/css2?family=Merriweather+Sans:ital,wght@0,400;0,700;1,700&family=Merriweather:ital,wght@0,400;0,700;1,400;1,700&family=Sansita+Swashed:wght@400;700&family=Shrikhand&display=swap");
-@import "./components/header.css";
-@import "./components/sidebar.css";
-@import "./components/footer.css";
-@import "./pages/userPage.css";
-@import "./components/login_form.css";
-@import "./pages/MoviePage.css";
-@import "./pages/aboutPage.css";
-@import "./pages/startPage.css";
-@import "./pages/BookingPage.css";
-@import "./pages/saloon.css";
+@import './components/header.css';
+@import './components/sidebar.css';
+@import './components/footer.css';
+@import './pages/userPage.css';
+@import './components/login_form.css';
+@import './pages/MoviePage.css';
+@import './pages/aboutPage.css';
+@import './pages/startPage.css';
+@import './pages/registerPage.css';
+@import './pages/BookingPage.css';
+@import './pages/saloon.css';
+@import './pages/ticketPage.css';
+
 * {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -43,4 +46,8 @@ body {
   flex-direction: column;
   background: #96acb3;
   overflow-x: hidden;
+
+
+main {
+  flex: 1;
 }

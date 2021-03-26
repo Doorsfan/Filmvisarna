@@ -1,9 +1,10 @@
-.loginPage.login_form {
-  display: grid;
-  justify-items: center; /* Works to Center the Form on the page */
-  margin-left: auto;
-  margin-right: auto;
-  min-height: 90vh;
+
+.loginPage.inputForm{
+  display:grid;
+  justify-items:center; /* Works to Center the Form on the page */
+  margin-left:auto;
+  margin-right:auto;
+  min-height:90vh;
   max-width: 96vw;
   width: 96vw;
 }
@@ -37,10 +38,12 @@
   padding: 100px;
 }
 
-.loginPage.myImage {
-  min-width: 110px;
-  width: 19vw;
-  max-height: 20vh;
+
+.loginPage.myImage{
+  min-width:110px;
+  width:19vw;
+  min-height:150px;
+  max-height:200px;
   max-width: 200px;
   align-self: center;
 }
