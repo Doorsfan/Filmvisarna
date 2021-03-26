@@ -3,14 +3,6 @@ export default class Saloon {
     this.eventHandler();
     this.bookedTickets = [1, 4, 5, 8, 20, 40]; // istället för att kolla mot databas
     this.selectedSeats = [];
-    window.selectedShow = {
-      auditorium: 'Savannen',
-      film: "Harry Potter and the Sorcerer's Stone",
-      date: '2021-03-22',
-      time: '16.00',
-      seat: [],
-      price: 300,
-    };
   }
   async loadSaloon() {
     this.saloon = await JSON._load('../../json/auditoriums.json');
@@ -57,7 +49,6 @@ export default class Saloon {
     });
 
     $('main').on('click', '.regret', (e) => {
-      console.log('here');
       $('.ticket-item').html('');
       $(e.target).removeClass('regret');
       $('.btn').html('Välj Platser');
@@ -70,14 +61,13 @@ export default class Saloon {
     $('.ticket-item').html('');
     let checked = $('input:checkbox[type=checkbox]:checked');
     let arr = [];
-    console.log(checked);
+
     $('input:checkbox[type=checkbox]:checked').each(function () {
       arr.push(Number($(this).val()));
     });
     this.selectedSeats = arr.slice();
 
     this.bookedTickets = [...this.bookedTickets, ...arr];
-    console.log(this.selectedSeats);
 
     this.selectedSeats.forEach((seat) => {
       $('.ticket-item').append(/*html**/ `
@@ -92,7 +82,6 @@ export default class Saloon {
      `);
     });
 
-    window.selectedShow.seat.push(...this.selectedSeats);
-    console.log(window.selectedShow);
+    window.selectedShow.seat = [...this.selectedSeats];
   }
 }

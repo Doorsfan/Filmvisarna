@@ -1,11 +1,13 @@
 footer {
   display: flex;
   flex-direction: row;
-  padding: 0 1rem 0 1rem;
+  padding: 1rem 1rem 1rem 1rem;
   width: 100vw;
-  background-color: #bebdbf;
+  height: 8vh;
+  background-color: #798f96;
   justify-content: center;
 }
 footer p {
-  color: #eeeeee;
+  color: #fffff0;
+  font-size: 2.5vh;
 }

@@ -21,17 +21,15 @@ export default class TicketPage {
 
     $('main').on('click', '.ticket-booking', () => {
       console.log(window.selectedShow);
-
-      window.username = 'robban@gmail.se';
+      console.log(window.selectedSeats);
 
       window.username
         ? (window.selectedShow.id = window.username)
         : (window.selectedShow.id = 'none');
-
       new ReadNWrite().saveBookings(window.selectedShow, window.username);
-
-      console.log(window.selectedSeats);
-      console.log(window.selectedShow);
+      let string = JSON.stringify(window.selectedShow);
+      alert(string);
+      window.location.href = '#startPage';
     });
 
     return /*html*/ ` 

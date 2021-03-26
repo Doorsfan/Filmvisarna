@@ -11,87 +11,92 @@ Extra Färger:
   #434244;
   #626163;
 */
-.bookingpage-container  {
+.bookingpage-container {
   align-items: center;
   padding: 1rem 2rem;
-  }
+}
 
-.bookingpage-cover  {
+.bookingpage-cover {
   height: 30vh;
   background-color: #86b9b6;
-  background-image: url('/images/bookingpage_cover.jpg');
+  background-image: url("/images/bookingpage_cover.jpg");
   background-size: cover;
   background-position: center;
   margin-top: 1rem;
   margin-bottom: 1rem;
   border-radius: 3px;
-  }
+}
 
 .bookingpage-show {
-  background-color: #E1E0E2;
+  background-color: #e1e0e2;
   padding: 1rem;
   position: relative;
   margin-bottom: 0.5rem;
   border-radius: 3px;
-  }
+}
 
 .bookingpage-show:after {
   content: "";
   display: table;
   clear: both;
-  }
+}
 
 .bookingpage-show img {
   float: left;
   margin-right: 1rem;
   width: 20vw;
   border-radius: 3px;
-  }
+}
 
 .bookingpage-show button {
-  width:  10vw;
+  width: 10vw;
   height: 5vh;
   background-color: #434244;
   cursor: pointer;
   border: #434244;
   border-radius: 5px;
-  color: #EEEEEE;
+  color: #eeeeee;
   font-weight: 700;
   text-decoration: none;
   justify-content: center;
   position: absolute;
   right: 1rem;
   bottom: 1rem;
-  }
+}
 
-.bookingpage-show h2  {
-  color: #434244;
+.bookingpage-show h2 {
+  color: #4e6d75;
   margin-bottom: 1rem;
-  }
+}
 
-.bookingpage-show h3  {
-  color: #434244;
+.bookingpage-show h3 {
+  color: #4e6d75;
   font-weight: 700;
   font-size: 1rem;
-  }
+}
 
 .bookingpage-show p {
-  color: black;
+  color: #3a4752;
   margin-bottom: 1rem;
-  } 
+}
 
-.datePickerLabel  {
+.datePickerLabel {
   display: block;
+  padding: 0 2rem 0 0.5rem;
   margin-bottom: 1rem;
   font-weight: bold;
   font-size: 1.5rem;
-  color: #FFFFFF;
+  color: #fffff0;
 }
 
 .datePicker {
   display: inline-block;
-  margin-left: 1rem;
-  color: #626163;
+  width: 9rem;
+  color: #4e6d75;
+  background-color: #fffff0;
   border-radius: 3px;
-  border-color: #E1E0E2;
+  border-color: #fffff0;
+  padding-inline-start: 0.5rem;
+  font-family: "Merriweather";
+  font-weight: bold;
 }

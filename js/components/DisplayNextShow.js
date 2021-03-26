@@ -4,7 +4,7 @@ export default class DisplaySpecificShow {
     this.movieID = movieID;
     this.eventHandler();
     this.read();
-    this.test = new Test();
+    this.fromDate = new Date().toISOString().split('T')[0];
   }
 
   async read() {
@@ -13,7 +13,10 @@ export default class DisplaySpecificShow {
     this.shows = await $.getJSON('/json/movieSchedule.json');
     await Promise.all(
       this.movieSchedule.map(async (data) => {
-        if (data.film.toLowerCase().includes(this.movieID)) {
+        if (
+          data.film.toLowerCase().includes(this.movieID) &&
+          data.date >= this.fromDate
+        ) {
           this.filteredShow.push(await data);
         }
       })
@@ -32,7 +35,7 @@ export default class DisplaySpecificShow {
       );
     });
 
-    let text = $(/*html*/ `<div class="aboutPage-text">Boka Biljett</div>`);
+    let text = $(/*html*/ `<div class="aboutPage-text">Boka biljett</div>`);
 
     let nextShow = $(/*html*/ `
     <div id="display-saloon">
@@ -42,7 +45,7 @@ export default class DisplaySpecificShow {
     `);
 
     let btn = $(
-      /*html*/ `<button class="aboutPage-btn" type="button">Boka</button>`
+      /*html*/ `<a href="#ticketPage"><button class="aboutPage-btn" type="button">Boka</button></a>`
     );
     html.append(text);
     html.append(select);
@@ -74,7 +77,6 @@ export default class DisplaySpecificShow {
     );
 
     $('main').on('click', '.aboutPage-btn', (event) => {
-      console.log(event.target);
       let date = $('#select-date').val();
       let time = $('#showtime').html().replace('Tid: ', '');
       window.selectedShow = this.filterSelectedShow(date, time);
