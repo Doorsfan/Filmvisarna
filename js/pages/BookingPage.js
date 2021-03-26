@@ -1,12 +1,11 @@
-export default class BookingPage  {
-
-  showDate = new Date().toISOString().split('T')[0];
+export default class BookingPage {
+  fromDate = new Date().toISOString().split('T')[0];
 
   constructor() {
     // Adding event handler for date input
     let that = this;
     $('body').on('change', '.datePicker', async function () {
-      that.showDate = $(this).val();
+      that.fromDate = $(this).val();
       $('main').html(await that.render());
     });
     this.eventHandler();
@@ -17,16 +16,17 @@ export default class BookingPage  {
     this.movies = await $.getJSON('json/movies.json');
   }
 
-  async render()  {
+  async render() {
+    console.log(this.fromDate);
     let html = `
     <div class = "bookingpage-container">
     <div class = "bookingpage-cover"></div>
-    <label class="datePickerLabel">Visningsdatum: <input class="datePicker" type="date" value="${this.showDate}"></label>
+    <label class="datePickerLabel">Visningar från och med: <input class="datePicker" type="date" value="${this.fromDate}"></label>
     `;
     if (!this.shows) {
       await this.readShowsFromJson();
     }
-    let shows = this.shows.filter(show => show.date === this.showDate);
+    let shows = this.shows.filter((show) => show.date >= this.fromDate);
     for (let show of shows) {
       let movie = this.movies.find((movie) => movie.title === show.film);
       if (!movie) {
