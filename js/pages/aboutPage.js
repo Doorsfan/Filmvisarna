@@ -27,17 +27,17 @@ export default class AboutPage {
       src="https://www.youtube.com/embed/${this.movie.youtubeTrailers}"></iframe>
     </div>
     <div class="about-info">
-      <p>Titel:</p><p> ${this.movie.title}</p>
-      <p>Genre:</p><p> ${this.movie.genre}</p>
-      <p>Land:</p><p> ${this.movie.productionCountries}</p>
-      <p>Produktionsår:</p><p> ${this.movie.productionYear}</p>
-      <p>Språk:</p><p> ${this.movie.language}</p>
-      <p>Skådespelare:</p><p> ${this.movie.actors}</p>
-      <p>Längd:</p><p> ${length}</p>
+      <p>TITEL</p><p> ${this.movie.title}</p>
+      <p>GENRE</p><p> ${this.movie.genre}</p>
+      <p>LAND</p><p> ${this.movie.productionCountries}</p>
+      <p>PRODUKTIONSÅR</p><p> ${this.movie.productionYear}</p>
+      <p>SPRÅK</p><p> ${this.movie.language}</p>
+      <p>SKÅDESPELARE</p><p> ${this.movie.actors}</p>
+      <p>LÄNGD</p><p> ${length}</p>
       
     </div>
     <div class="movie-story">
-      ${this.movie.description}
+      <p>${this.movie.description}</p>
     </div>
     
     `);
