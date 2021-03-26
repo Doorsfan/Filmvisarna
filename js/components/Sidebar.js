@@ -4,12 +4,11 @@ export default class Sidebar {
     <div class="sidebar-container">
         <nav>
           <ul class="navlist">
-            <li class="navlist-item login">
-              <a href='#loginPage'>Login</a>
-            </li>
-            <hr />
             <li class="navlist-item">
-              <a href='#startPage'>Start Page</a>
+              <a href='#loginPage'>Logga in</a>
+            </li>
+            <li class="navlist-item">
+              <a href='#startPage'>Startsida</a>
             </li>
             <li class="navlist-item">
               <a href='#MoviePage'>Filmer</a>
