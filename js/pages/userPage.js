@@ -1,6 +1,9 @@
+import cancelBooking from '../components/cancelBooking.js';
+const cancelBookingObject = new cancelBooking();
 export default class UserPage {
   constructor() {
     this.today = this.getTodayDate();
+    this.cancelBookingListener();
   }
 
   getTodayDate() {
@@ -11,6 +14,22 @@ export default class UserPage {
     let yyyy = today.getFullYear();
     today = yyyy + '-' + mm + '-' + dd;
     return today;
+  }
+
+  async cancelBookingListener() {
+    if (!this.userBookings) {
+      await this.read();
+      this.userBookings.forEach((element) => {
+        $('main').on(
+          'click',
+          '.' + element.bookingNumber,
+          (cancelBookingButton) => {
+            console.log(cancelBookingButton.target.className);
+            cancelBookingObject.cancelBookingById("temp",cancelBookingButton.target.className);
+          }
+        );
+      });
+    }
   }
 
   async read() {
@@ -38,9 +57,16 @@ export default class UserPage {
         </div>
     `);
 
-    let btn = `<div class="booking-button"><p>Avboka</p><button>X</button></div>`;
     let num = 1;
+    console.log(this.userBookings);
     this.userBookings.forEach((booking) => {
+      console.log(booking.bookingNumber);
+      let btn = '';
+      if (booking.bookingNumber) {
+        btn = `<div class="booking-button"><p>Avboka</p><button class="${booking.bookingNumber}">X</button></div>`;
+      } else {
+        btn = '';
+      }
       html.append(/*html*/ `
         <div class="userpage-bookings">
           <article class="userpage-booking">
