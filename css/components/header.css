@@ -18,7 +18,8 @@ header {
 
 .hamburger-icon:hover,
 .hamburger-icon:active {
-  background-color: #9db3b9;
+  background-color: #d1cbc9;
+  border-radius: 3px;
   cursor: pointer;
 }
 
@@ -45,7 +46,7 @@ header {
 
 .user-icon:hover,
 .user-icon:active {
-  background-color: #9db3b9;
+  background-color: #d1cbc9;
   border-radius: 3px;
   cursor: pointer;
 }

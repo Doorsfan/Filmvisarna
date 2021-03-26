@@ -5,11 +5,10 @@ export default class Sidebar {
         <nav>
           <ul class="navlist">
             <li class="navlist-item">
-              <a href='#loginPage'>Login</a>
+              <a href='#loginPage'>Logga in</a>
             </li>
-            <hr />
             <li class="navlist-item">
-              <a href='#startPage'>Start Page</a>
+              <a href='#startPage'>Startsida</a>
             </li>
             <li class="navlist-item">
               <a href='#MoviePage'>Filmer</a>

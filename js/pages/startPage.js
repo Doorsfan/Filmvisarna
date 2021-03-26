@@ -87,14 +87,14 @@ export default class StartPage {
         <div class="poster-container">
           ${blinkingPosts}
         </div>
-        <h2 class="bestmovies-title">BÄST I BETYG</h2>
+        <h2 class="bestmovies-title">BÄST BETYG</h2>
         <div class="bestof-container">
           <ul>
           ${bestMovies}
           </ul>
         </div>
         <div class="video-container">
-          <h3>FILMTRAILERS</h3>
+          <h2>FILMTRAILERS</h2>
           ${ytSlider[0].outerHTML}
         </div>
       </div>
