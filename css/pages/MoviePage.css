@@ -3,26 +3,14 @@
   flex-direction: column;
   padding-top: 2rem;
   align-items: center;
-  line-height: 140%;
 }
-.movie-container h2 {
+.movie-container h1 {
   align-self: center;
-  margin-top: 0.5rem;
-  margin-bottom: 1rem;
-  color: #3a4752;
-  font-family: "Merriweather Sans";
-  line-height: 140%;
+  margin-bottom: 1em;
 }
-.movie-container h3 {
-  display: inline;
-  font-family: "Merriweather Sans";
-  font-size: 90%;
-  color: #4e6d75;
-  padding-right: 0.5rem;
-}
+
 .movie-container p {
-  display: inline;
-  color: #3a4752;
+  color: black;
 }
 .movie-container .movie-filter {
   align-self: center;
@@ -32,7 +20,7 @@
   background: #e1e0e2;
   border: 1px solid #9f9f9f;
   cursor: pointer;
-  border-radius: 3px;
+  border-radius: 4px;
 
   appearance: none;
   -webkit-appearance: none;
@@ -57,10 +45,21 @@ select:hover {
   /*  gap: 1rem; */
   width: 100%;
   max-width: 60rem;
-  padding: 0.4rem 0.8rem;
   margin-bottom: 1rem;
   border-bottom: 0.1rem solid black;
   border-radius: 0.2rem;
+}
+.movie-container .genre h4 {
+  display: inline;
+}
+.movie-container .genre p {
+  display: inline;
+}
+.movie-container .runtime h4 {
+  display: inline;
+}
+.movie-container .runtime p {
+  display: inline;
 }
 .movie-container .movie-poster {
   margin: auto;
@@ -86,6 +85,6 @@ select:hover {
   }
 }
 
-.movie-container .movie-text h3 {
+.movie-container .movie-text h4 {
   margin: 0.2rem 0;
 }

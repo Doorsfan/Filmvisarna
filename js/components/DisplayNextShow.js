@@ -35,7 +35,7 @@ export default class DisplaySpecificShow {
       );
     });
 
-    let text = $(/*html*/ `<div class="aboutPage-text">Boka biljett</div>`);
+    let text = $(/*html*/ `<div class="aboutPage-text">Boka Biljett</div>`);
 
     let nextShow = $(/*html*/ `
     <div id="display-saloon">

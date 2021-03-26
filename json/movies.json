@@ -2,13 +2,13 @@
   {
     "id": "relic",
     "title": "Relic",
-    "productionCountries": ["Australien"],
+    "productionCountries": ["Australia"],
     "productionYear": "2020",
     "length": "90",
     "genre": ["Drama", "Skräck", "Mysterium"],
     "distributor": "Paramount Pictures",
     "language": "Engelska",
-    "subtitles": "Svenska",
+    "subtitles": "svenska",
     "director": "Natalie Erika James",
     "ageRating": "18",
     "actors": ["Robyn Nevin", "Emily Mortimer", "Bella Heathcote"],
@@ -85,29 +85,29 @@
     "genre": ["Komedi", "Drama", "Romans"],
     "distributor": "Scanbox",
     "language": "Engelska",
-    "subtitles": "Svenska",
+    "subtitles": "svenska",
     "director": "Jim Jarmusch",
     "ageRating": "15",
     "actors": ["Adam Driver", "Golshifteh Farahani", "Barry Shabaka Henley"],
     "description": "<p>Paterson är busschaufför i staden Paterson, New Jersey. Varje dag kör han sin dagliga rutt under vilken han observerar staden när den flimrar förbi genom vindrutan och lyssnar samtidigt på fragment av passagerarnas konversationer, han skriver poesi i en anteckningsbok, han går ut med sin tjejs egensinniga engelska bulldogg Marvin, han stannar till vid samma bar och dricker exakt en öl innan han går hem till sin fru Laura.</p>",
-    "images": ["/images/movie_posters/paterson.jpg"],
+    "images": ["/images/movie_posters/paterson.jfif"],
     "youtubeTrailers": ["m8pGJBgiiDU"],
     "reviews": [
       {
         "source": "Kulturnyheterna",
-        "quote": "Lyfter vardagens futtighet och tristess till poesi",
+        "quote": "”lyfter vardagens futtighet och tristess till poesi”",
         "stars": 4,
         "max": 5
       },
       {
         "source": "Svenska Dagbladet",
-        "quote": "Regissören närmar sig nivån för fornstora dagar",
+        "quote": "”regissören närmar sig nivån för fornstora dagar”",
         "stars": 5,
         "max": 5
       },
       {
         "source": "DN",
-        "quote": "Jim Jarmusch, den lakoniska humorns specialist",
+        "quote": "”Jim Jarmusch, den lakoniska humorns specialist”",
         "stars": 4,
         "max": 5
       }
@@ -122,7 +122,7 @@
     "genre": ["Drama", "Brott"],
     "distributor": "Paramount Pictures",
     "language": "Engelska",
-    "subtitles": "Svenska",
+    "subtitles": "svenska",
     "director": "Francis Ford Coppola",
     "ageRating": "15",
     "actors": ["Marlon Brando", "Al Pacino", "James Caan"],
@@ -163,7 +163,7 @@
     "director": "Jacques Tati",
     "ageRating": "barntillåten",
     "actors": ["Jacques Tati", "Jean-Pierre Zola", "Adrienne Servantie"],
-    "description": "<p>Herr och fru Arpel är de modernaste av människor. Deras hem styrs på samma sätt som herr Arpel styr sin plastfabrik — metodiskt och med exakta rutiner. En dröm för vissa, men en mardröm för sonen Gérard. Han flyr den stela, steriliserade världen in i famnen på sin onkel, monsieur Hulot. Men så kommer föräldrarna på dem. Hulot måste stoppas! I deras värld äger han det farligaste vapnet av allt. Ett hjärta.</p>",
+    "description": "<p>Herr och fru Arpel är de modernaste av människor. Deras hem styrs på samma sätt som herr Arpel styr sin plastfabrik — metodiskt och med exakta rutiner. En dröm för vissa, men en mardröm för sonen Gérard.</p><p>Han flyr den stela, steriliserade världen in i famnen på sin onkel, monsieur Hulot. Men så kommer föräldrarna på dem. Hulot måste stoppas! I deras värld äger han det farligaste vapnet av allt. Ett hjärta.</p>",
     "images": [
       "./images/movie_posters/min_onkel_1.jpg",
       "./images/movie_posters/min_onkel_2.jpg"
@@ -199,7 +199,7 @@
     "genre": ["Drama"],
     "distributor": "Castle Rock Entertainment",
     "language": "Engelska",
-    "subtitles": "Svenska",
+    "subtitles": "svenska",
     "director": "Frank Darabont",
     "ageRating": "15",
     "actors": ["Tim Robbins", "Morgan Freeman", "Bob Gunton"],
