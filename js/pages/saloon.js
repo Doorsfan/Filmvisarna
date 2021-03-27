@@ -82,6 +82,10 @@ export default class Saloon {
     let priceSum = priser.reduce((a, b) => a + b, 0);
 
     $('.info-summation').html('');
+    for (let i = 0; i < ticketType.length; i++) {
+      $('.info-summation').append(`
+      <p>1x ${ticketType[i]} á ${priser[i]} kr</p>`);
+    }
     /*     priser.forEach((price) => {
       $('.info-summation').append(`
       <p>1x ${ticketType} á ${price} kr</p>
