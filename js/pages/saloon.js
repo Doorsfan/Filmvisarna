@@ -55,6 +55,15 @@ export default class Saloon {
 
       $('.seats').prop('checked', false);
     });
+
+    $('main').on('change', '.ticket-price', (e) => {
+      let priser = $("[class^='ticket-price']")
+        .map(function () {
+          return this.value;
+        })
+        .get();
+      console.log(priser);
+    });
   }
 
   saveSelectedSeats() {
@@ -71,15 +80,16 @@ export default class Saloon {
 
     this.selectedSeats.forEach((seat) => {
       $('.ticket-item').append(/*html**/ `
-         <div class='ticket-box'>
-           <p> Biljett - Stolsnummer: ${seat}</p>
-           <select>
-             <option value='Vuxen'>Vuxen</option>
-             <option value='Barn'>Barn</option>
-             <option value='Pensionär'>Pensionär</option>
-           </select>
-         </div>
-     `);
+          <div class='ticket-box'>
+            <p> Biljett - Stolsnummer: ${seat}</p>
+            <select class="ticket-price">
+              <option value='default'>Välj typ:</option>
+              <option value='85'>Vuxen</option>
+              <option value='65'>Barn</option>
+              <option value='75'>Pensionär</option>
+            </select>
+          </div>
+      `);
     });
 
     window.selectedShow.seat = [...this.selectedSeats];
