@@ -50,32 +50,36 @@ export default class Saloon {
 
     $('main').on('click', '.regret', (e) => {
       $('.ticket-item').html('');
+      $('.info-summation').html('');
       $(e.target).removeClass('regret');
       $('.btn').html('Välj Platser');
 
       $('.seats').prop('checked', false);
     });
-
+    //Kolla om eventhandlern kollar fel sak.
     $('main').on('change', '.ticket-price', () => {
-      let priser = $("[class='ticket-price']")
-        .map(function () {
-          return Number(this.value);
-        })
-        .get();
-      let priceSum = priser.reduce((a, b) => a + b, 0);
-
-      console.log(priser);
-      console.log(priceSum);
+      console.log('Hej');
+      this.readingTicketPrices();
     });
-    /* $('main').on('change', '.ticket-price', (e) => {
-      let priser = $("[class^='ticket-price']")
-        .map(function () {
-          return this.value;
-        })
-        .get();
-      $('info-summation').html(`Kommer detta?`);
-      console.log(priser);
-    }); */
+  }
+  //måste lyfta ut summan
+  readingTicketPrices() {
+    let priser = $("[class='ticket-price']")
+      .map(function () {
+        return Number(this.value);
+      })
+      .get();
+    let priceSum = priser.reduce((a, b) => a + b, 0);
+
+    //Bara sista som printas
+    console.log(priser);
+    $('.info-summation').html('');
+    priser.forEach((price) => {
+      $('.info-summation').append(/*html*/ `
+      <p>1x Vuxen á ${price} kr</p>
+    `);
+    });
+    $('.info-summation').append(`<p>${priceSum} kr</p>`);
   }
 
   saveSelectedSeats() {
