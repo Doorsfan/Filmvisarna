@@ -56,14 +56,26 @@ export default class Saloon {
       $('.seats').prop('checked', false);
     });
 
-    $('main').on('change', '.ticket-price', (e) => {
+    $('main').on('change', '.ticket-price', () => {
+      let priser = $("[class='ticket-price']")
+        .map(function () {
+          return Number(this.value);
+        })
+        .get();
+      let priceSum = priser.reduce((a, b) => a + b, 0);
+
+      console.log(priser);
+      console.log(priceSum);
+    });
+    /* $('main').on('change', '.ticket-price', (e) => {
       let priser = $("[class^='ticket-price']")
         .map(function () {
           return this.value;
         })
         .get();
+      $('info-summation').html(`Kommer detta?`);
       console.log(priser);
-    });
+    }); */
   }
 
   saveSelectedSeats() {
@@ -83,7 +95,7 @@ export default class Saloon {
           <div class='ticket-box'>
             <p> Biljett - Stolsnummer: ${seat}</p>
             <select class="ticket-price">
-              <option value='default'>Välj typ:</option>
+              <option value='0'>Välj typ:</option>
               <option value='85'>Vuxen</option>
               <option value='65'>Barn</option>
               <option value='75'>Pensionär</option>
