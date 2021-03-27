@@ -85,11 +85,7 @@
     "film": "Harry Potter and the Sorcerer's Stone",
     "date": "2021-03-22",
     "time": "16.00",
-    "seat": [
-      35,
-      36,
-      50
-    ],
+    "seat": [35, 36, 50],
     "price": 300
   },
   {
@@ -97,11 +93,7 @@
     "film": "Harry Potter and the Sorcerer's Stone",
     "date": "2021-03-22",
     "time": "16.00",
-    "seat": [
-      67,
-      68,
-      69
-    ],
+    "seat": [67, 68, 69],
     "price": 300,
     "id": "none"
   },
@@ -110,12 +102,7 @@
     "film": "Harry Potter and the Sorcerer's Stone",
     "date": "2021-03-22",
     "time": "16.00",
-    "seat": [
-      49,
-      50,
-      51,
-      52
-    ],
+    "seat": [49, 50, 51, 52],
     "price": 300,
     "id": "robban@gmail.se"
   }

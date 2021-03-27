@@ -64,34 +64,28 @@ export default class Saloon {
   }
 
   readingTicketPrices() {
-    let priser = $("[class='ticket-price']")
+    let prices = $("[class='ticket-price']")
       .map(function () {
         return Number(this.value);
       })
       .get();
 
     let ticketType = [];
-    //Bråkar här.
     $("[class='ticket-price'] option:selected").each(function () {
       ticketType.push($(this).data('name'));
     });
-    this.ticketObject.ticketPrice = priser;
+    this.ticketObject.ticketPrice = prices;
     this.ticketObject.ticketType = ticketType;
-    console.log(this.ticketObject);
+    window.selectedShow.tickets = this.ticketObject;
 
-    let priceSum = priser.reduce((a, b) => a + b, 0);
+    let priceSum = prices.reduce((a, b) => a + b, 0);
 
     $('.info-summation').html('');
     for (let i = 0; i < ticketType.length; i++) {
       $('.info-summation').append(`
-      <p>1x ${ticketType[i]} á ${priser[i]} kr</p>`);
+      <p>Billjet typ: ${ticketType[i]} á ${prices[i]} kr</p>`);
     }
-    /*     priser.forEach((price) => {
-      $('.info-summation').append(`
-      <p>1x ${ticketType} á ${price} kr</p>
-      
-    `);
-    }); */
+
     $('.info-summation').append(`<hr><p>Summma: ${priceSum} kr</p>`);
   }
 
