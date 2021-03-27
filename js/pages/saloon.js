@@ -3,6 +3,7 @@ export default class Saloon {
     this.eventHandler();
     this.bookedTickets = [1, 4, 5, 8, 20, 40]; // istället för att kolla mot databas
     this.selectedSeats = [];
+    this.ticketObject = {};
   }
   async loadSaloon() {
     this.saloon = await JSON._load('../../json/auditoriums.json');
@@ -56,30 +57,38 @@ export default class Saloon {
 
       $('.seats').prop('checked', false);
     });
-    //Kolla om eventhandlern kollar fel sak.
+
     $('main').on('change', '.ticket-price', () => {
-      console.log('Hej');
       this.readingTicketPrices();
     });
   }
-  //måste lyfta ut summan
+
   readingTicketPrices() {
     let priser = $("[class='ticket-price']")
       .map(function () {
         return Number(this.value);
       })
       .get();
+
+    let ticketType = [];
+    //Bråkar här.
+    $("[class='ticket-price'] option:selected").each(function () {
+      ticketType.push($(this).data('name'));
+    });
+    this.ticketObject.ticketPrice = priser;
+    this.ticketObject.ticketType = ticketType;
+    console.log(this.ticketObject);
+
     let priceSum = priser.reduce((a, b) => a + b, 0);
 
-    //Bara sista som printas
-    console.log(priser);
     $('.info-summation').html('');
-    priser.forEach((price) => {
-      $('.info-summation').append(/*html*/ `
-      <p>1x Vuxen á ${price} kr</p>
+    /*     priser.forEach((price) => {
+      $('.info-summation').append(`
+      <p>1x ${ticketType} á ${price} kr</p>
+      
     `);
-    });
-    $('.info-summation').append(`<p>${priceSum} kr</p>`);
+    }); */
+    $('.info-summation').append(`<hr><p>Summma: ${priceSum} kr</p>`);
   }
 
   saveSelectedSeats() {
@@ -99,10 +108,10 @@ export default class Saloon {
           <div class='ticket-box'>
             <p> Biljett - Stolsnummer: ${seat}</p>
             <select class="ticket-price">
-              <option value='0'>Välj typ:</option>
-              <option value='85'>Vuxen</option>
-              <option value='65'>Barn</option>
-              <option value='75'>Pensionär</option>
+              <option value='0' data-name='Inte vald'>Välj typ:</option>
+              <option value='85' data-name='Vuxen'>Vuxen</option>
+              <option value='65' data-name='Barn'>Barn</option>
+              <option value='75' data-name='Pensionär'>Pensionär</option>
             </select>
           </div>
       `);
