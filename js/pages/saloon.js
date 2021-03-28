@@ -64,28 +64,27 @@ export default class Saloon {
   }
 
   readingTicketPrices() {
-    //Tar in priserna från selektorerna
-    let prices = $("[class='ticket-price']")
+    let selectedTicketPrice = $("[class='ticket-price']")
       .map(function () {
         return Number(this.value);
       })
       .get();
-    //Tar in Biljettyp från selektorerna
-    let ticketType = [];
+
+    let selectedTicketType = [];
     $("[class='ticket-price'] option:selected").each(function () {
-      ticketType.push($(this).data('name'));
+      selectedTicketType.push($(this).data('name'));
     });
-    //Sparar och lägger till pris/typ i ett objekt
-    this.ticketObject.ticketPrice = prices;
-    this.ticketObject.ticketType = ticketType;
+
+    this.ticketObject.ticketPrice = selectedTicketPrice;
+    this.ticketObject.ticketType = selectedTicketType;
     window.selectedShow.tickets = this.ticketObject;
-    //Räknar ut summan
-    let priceSum = prices.reduce((sum, price) => sum + price, 0);
-    //skriver ut typ & pris => summa
+
+    let priceSum = selectedTicketPrice.reduce((sum, price) => sum + price, 0);
+
     $('.info-summation').html('');
-    for (let i = 0; i < ticketType.length; i++) {
+    for (let i = 0; i < selectedTicketType.length; i++) {
       $('.info-summation').append(`
-      <p>Billjet typ: ${ticketType[i]} á ${prices[i]} kr</p>`);
+      <p>Billjet typ: ${selectedTicketType[i]} á ${selectedTicketPrice[i]} kr</p>`);
     }
     $('.info-summation').append(`<hr><p>Summma: ${priceSum} kr</p>`);
   }
