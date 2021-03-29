@@ -1,6 +1,5 @@
 import ChangeListener from './ChangeListener.js';
 // Only create ONE change listener for the whole application
-const changeListener = new ChangeListener();
 
 // imported pages
 import Test from './pages/test.js';
@@ -21,7 +20,6 @@ const loginPage = new LoginPage();
 const moviePage = new MoviePage();
 const bookingPage = new BookingPage();
 const myRegisterPage = new registerPage();
-const ticketPage = new TicketPage(changeListener);
 
 // const peoplePage = new PeoplePage(changeListener);
 
@@ -34,6 +32,7 @@ export default class Router {
     window.onhashchange = () => this.setCurrentPage(selector);
     // but also render it right now, based on the current hash or default page
     this.setCurrentPage(selector);
+    this.changeListener = new ChangeListener();
   }
 
   async setCurrentPage(selector) {
@@ -94,6 +93,6 @@ export default class Router {
   }
 
   ticketPage() {
-    return ticketPage.render();
+    return new TicketPage(this.changeListener).render();
   }
 }
