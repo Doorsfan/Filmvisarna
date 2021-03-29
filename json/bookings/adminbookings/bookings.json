@@ -145,5 +145,44 @@
     ],
     "price": 300,
     "id": "robban@gmail.se"
+  },
+  {
+    "auditorium": "Savannen",
+    "film": "Harry Potter and the Sorcerer's Stone",
+    "date": "2021-03-29",
+    "time": "16.00",
+    "id": "robban@gmail.se"
+  },
+  {
+    "auditorium": "Savannen",
+    "film": "Gudfadern",
+    "date": "2021-03-30",
+    "time": "16.00",
+    "id": "robban@gmail.se",
+    "bookingNumber": "jf7h4g60"
+  },
+  {
+    "auditorium": "Savannen",
+    "film": "Gudfadern",
+    "date": "2021-03-30",
+    "time": "16.00",
+    "id": "robban@gmail.se",
+    "bookingNumber": "grv7h9df"
+  },
+  {
+    "auditorium": "Savannen",
+    "film": "Gudfadern",
+    "date": "2021-03-30",
+    "time": "16.00",
+    "id": "robban@gmail.se",
+    "bookingNumber": "hnr5xpew"
+  },
+  {
+    "auditorium": "Savannen",
+    "film": "Gudfadern",
+    "date": "2021-03-30",
+    "time": "16.00",
+    "id": "robban@gmail.se",
+    "bookingNumber": "bneqb0ld"
   }
 ]

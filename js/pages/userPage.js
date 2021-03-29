@@ -28,6 +28,7 @@ export default class UserPage {
           (cancelBookingButton) => {
             cancelBookingObject.cancelBookingById(this.userBookings, cancelBookingButton.target.className);
             readAndWriteUserObject.updateUserBookings(window.username, this.userBookings);
+            readAndWriteUserObject.updateAdminBookings(cancelBookingButton.target.className);
             $("." + cancelBookingButton.target.className).remove();
             $('.bookingNrDisplay').each(function (index) {
               $(this).text('Bokning ' + (index+1));
@@ -64,9 +65,7 @@ export default class UserPage {
     `);
 
     let num = 1;
-    console.log(this.userBookings);
     this.userBookings.forEach((booking) => {
-      console.log(booking.bookingNumber);
       let btn = '';
       if (booking.bookingNumber) {
         btn = `<div class="booking-button"><p>Avboka</p><button class="${booking.bookingNumber}">X</button></div>`;
