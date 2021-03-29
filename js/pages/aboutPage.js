@@ -27,7 +27,7 @@ export default class AboutPage {
       src="https://www.youtube.com/embed/${this.movie.youtubeTrailers}"></iframe>
     </div>
     <div class="about-info">
-      <p>TITEL</p><p> ${this.movie.title}</p>
+      <p>TITEL</p><h3> ${this.movie.title}</h3>
       <p>GENRE</p><p> ${this.movie.genre}</p>
       <p>LAND</p><p> ${this.movie.productionCountries}</p>
       <p>PRODUKTIONSÅR</p><p> ${this.movie.productionYear}</p>

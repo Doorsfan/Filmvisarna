@@ -7,11 +7,11 @@
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 2fr 2fr 1fr 2fr 2fr;
   grid-template-areas:
-    "v v v"
-    "v v v"
-    "v v v"
-    "a a c"
-    "e e e";
+    'v v v'
+    'v v v'
+    'v v v'
+    'a a c'
+    'e e e';
   background-color: #e1e0e2;
 }
 
@@ -49,13 +49,16 @@
   flex-direction: column;
   justify-content: space-between;
   grid-area: a;
-
   padding: 2rem;
+}
+
+.about-info h3 {
+  color: #4e6d75;
 }
 
 .about-info > p:nth-child(odd) {
   color: #a9a9a9;
-  font-family: "Merriweather Sans";
+  font-family: 'Merriweather Sans';
   font-size: 90%;
   font-weight: bold;
 }
