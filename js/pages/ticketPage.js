@@ -5,6 +5,8 @@ export default class TicketPage {
   constructor() {}
 
   async render() {
+    this.username = await JSON.parse(sessionStorage.store);
+    this.username = this.username['username'];
     if (!this.saloonView) {
       this.saloonView = await new Saloon().render();
     }
@@ -23,10 +25,10 @@ export default class TicketPage {
       console.log(window.selectedShow);
       console.log(window.selectedSeats);
 
-      window.username
-        ? (window.selectedShow.id = window.username)
+      this.username
+        ? (window.selectedShow.id = this.username)
         : (window.selectedShow.id = 'none');
-      new ReadNWrite().saveBookings(window.selectedShow, window.username);
+      new ReadNWrite().saveBookings(window.selectedShow, this.username);
       let string = JSON.stringify(window.selectedShow);
       alert(string);
       window.location.href = '#startPage';
