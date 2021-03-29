@@ -23,7 +23,7 @@ export default class UserPage {
       );
     } else {
       this.userBookings = await $.getJSON(
-        `/json/bookings/users/${window.username}.json`
+        `/json/bookings/users/${this.username}.json`
       );
     }
   }
