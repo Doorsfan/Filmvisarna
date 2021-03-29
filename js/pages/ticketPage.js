@@ -41,11 +41,7 @@ export default class TicketPage {
           </div>
           <div class="booking-info_container">
             <div class="info-summation">
-              <p>1x Vuxen á xx kr</p>
-              <p>1x Vuxen á xx kr</p>
-              <p>1x Vuxen á xx kr</p>
-              <hr />
-              <p>XXX kr</p>
+              
             </div>
             <div class="info-buttons">
               <button>AVBRYT</button>
