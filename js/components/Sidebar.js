@@ -1,3 +1,5 @@
+import Header from './Header.js';
+
 export default class Sidebar {
   constructor() {
     this.eventHandler();
@@ -6,7 +8,7 @@ export default class Sidebar {
     $('body').on('click', '.logout', () => {
       delete this.store.username;
       this.store.save();
-      window.location.reload();
+      $('header').replaceWith(new Header().render());
     });
   }
 
