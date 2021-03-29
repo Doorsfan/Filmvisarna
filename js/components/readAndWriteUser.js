@@ -27,7 +27,6 @@ export default class readAndWriteUser {
       alert('No .json with that combination');
       return false;
     }
-    window.username = username;
     this.saveUserToSessionStorage(username);
     this.renderForActiveUser();
     alert(`Välkommen ${username}`);
@@ -39,7 +38,7 @@ export default class readAndWriteUser {
       <a href='#userPage'>Mina sidor</a>
     `);
     $('.navlist').append(
-      `<li class="navlist-item"><a href='#'>Logga ut</a></li>`
+      `<li class="navlist-item logout"><a href='#'>Logga ut</a></li>`
     );
     $('.userpage-button')
       .replaceWith(`<a class="userpage-button" href="#userPage">

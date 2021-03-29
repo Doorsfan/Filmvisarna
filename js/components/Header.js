@@ -1,6 +1,8 @@
 import Sidebar from './Sidebar.js';
 
 export default class Header {
+  constructor() {}
+
   render() {
     let sidebar = new Sidebar();
     let openSidebar = false;
