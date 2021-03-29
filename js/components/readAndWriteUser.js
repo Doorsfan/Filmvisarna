@@ -66,8 +66,11 @@ export default class readAndWriteUser {
     }
   }
 
+  async updateUserBookings(user,bookings) {
+    await JSON._save(`bookings/users/${user}.json`, bookings);
+  }
+
   async saveBookings(booking, user) {
-    console.log(user);
     if (!this.allBooking) {
       try {
         await this.loadBooking(user);

@@ -1,5 +1,11 @@
 export default class cancelBooking {
   cancelBookingById(bookings, bookingId) {
-    console.log("Still remains to be implemented " + bookings + " " + bookingId);
+    let index = 0;
+    for (let myBooking of bookings) {
+      if (myBooking.bookingNumber == bookingId) {
+        bookings.splice(index, 1);
+      }
+      index += 1;
+    }
   }
 }

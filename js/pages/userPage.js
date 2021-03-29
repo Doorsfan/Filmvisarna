@@ -1,5 +1,7 @@
 import cancelBooking from '../components/cancelBooking.js';
+import readAndWriteUser from '../components/readAndWriteUser.js';
 const cancelBookingObject = new cancelBooking();
+const readAndWriteUserObject = new readAndWriteUser();
 export default class UserPage {
   constructor() {
     this.today = this.getTodayDate();
@@ -24,8 +26,12 @@ export default class UserPage {
           'click',
           '.' + element.bookingNumber,
           (cancelBookingButton) => {
-            console.log(cancelBookingButton.target.className);
-            cancelBookingObject.cancelBookingById("temp",cancelBookingButton.target.className);
+            cancelBookingObject.cancelBookingById(this.userBookings, cancelBookingButton.target.className);
+            readAndWriteUserObject.updateUserBookings(window.username, this.userBookings);
+            $("." + cancelBookingButton.target.className).remove();
+            $('.bookingNrDisplay').each(function (index) {
+              $(this).text('Bokning ' + (index+1));
+            });
           }
         );
       });
@@ -69,9 +75,9 @@ export default class UserPage {
       }
       html.append(/*html*/ `
         <div class="userpage-bookings">
-          <article class="userpage-booking">
+          <article class="userpage-booking ${booking.bookingNumber}">
               <div class="booking-top">
-                <h2>Bokning ${num++}</h2>
+                <h2 class="bookingNrDisplay">Bokning ${num++}</h2>
                 ${booking.date > this.today ? btn : ''}  
               </div>
               <div class="booking-bottom">
