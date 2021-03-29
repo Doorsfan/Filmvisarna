@@ -73,7 +73,7 @@
   padding: 1rem;
   align-items: center;
   text-align: left;
-  padding: 2rem;
+  padding: 0rem 2rem 2rem 2rem;
 }
 
 .book-show {
@@ -81,7 +81,7 @@
   flex-direction: column;
   justify-content: space-around;
   border-radius: 0 0 0 7px;
-  padding: 2rem;
+  padding: 1rem 2rem 1rem 1rem;
   grid-area: c;
   height: 100%;
   font-size: 120%;
