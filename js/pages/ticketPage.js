@@ -2,37 +2,34 @@ import Saloon from './saloon.js';
 import ReadNWrite from '../components/readAndWriteUser.js';
 
 export default class TicketPage {
-  constructor() {}
+  constructor(changeListener) {
+    this.changeListener = changeListener;
+    this.eventHandler();
+  }
+
+  eventHandler() {
+    $('main').on('click', '.ticket-booking', () => this.saveUserBooking());
+    this.changeListener.on('/json/bookings/adminbookings/bookings.json', () =>
+      this.reRender()
+    );
+  }
+
+  saveUserBooking() {
+    this.username
+      ? (window.selectedShow.id = this.username)
+      : (window.selectedShow.id = 'none');
+    new ReadNWrite().saveBookings(window.selectedShow, this.username);
+    let string = JSON.stringify(window.selectedShow);
+    alert(string);
+    window.location.href = '#startPage';
+  }
 
   async render() {
-    this.username = await JSON.parse(sessionStorage.store);
-    this.username = this.username['username'];
+    // this.username = await JSON.parse(sessionStorage.store);
+    // this.username = this.username['username'];
     if (!this.saloonView) {
       this.saloonView = await new Saloon().render();
     }
-
-    console.log(window.clickedSeat);
-
-    //Kolla först ifall användaren är inloggad
-
-    //Om den är inloggad ska den sparas i personliga bokningshistorik
-
-    //Oavsett ska den sparas i admin bookings
-
-    //Efter den är sparad i bokningars
-
-    $('main').on('click', '.ticket-booking', () => {
-      console.log(window.selectedShow);
-      console.log(window.selectedSeats);
-
-      this.username
-        ? (window.selectedShow.id = this.username)
-        : (window.selectedShow.id = 'none');
-      new ReadNWrite().saveBookings(window.selectedShow, this.username);
-      let string = JSON.stringify(window.selectedShow);
-      alert(string);
-      window.location.href = '#startPage';
-    });
 
     return /*html*/ ` 
     <div class='ticketpage-container'>
@@ -60,4 +57,3 @@ export default class TicketPage {
     `;
   }
 }
-// $('input:checkbox[type=checkbox]:checked');

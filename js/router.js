@@ -21,6 +21,7 @@ const loginPage = new LoginPage();
 const moviePage = new MoviePage();
 const bookingPage = new BookingPage();
 const myRegisterPage = new registerPage();
+const ticketPage = new TicketPage(changeListener);
 
 // const peoplePage = new PeoplePage(changeListener);
 
@@ -93,6 +94,6 @@ export default class Router {
   }
 
   ticketPage() {
-    return new TicketPage().render();
+    return ticketPage.render();
   }
 }
