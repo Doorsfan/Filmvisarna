@@ -111,7 +111,9 @@ export default class Saloon {
           </div>
       `);
     });
-
+    if (window.selectedShow == null) {
+      window.selecterShow = {};
+    }
     window.selectedShow.seat = [...this.selectedSeats];
   }
 }
