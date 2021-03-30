@@ -34,6 +34,7 @@ export default class TicketPage {
       new ReadNWrite().saveBookings(window.selectedShow, this.username);
       let string = JSON.stringify(window.selectedShow);
       alert(string);
+      sessionStorage.removeItem('selectedShow');
       window.location.href = '#startPage';
     });
 
