@@ -1,13 +1,18 @@
 export default class BookingModal {
+  deleteHandler() {
+    $('.backdrop').remove();
+  }
+
   render(props) {
+    $('main').on('click', '.button-delete', this.deleteHandler);
+
     return /*html*/ `
     <div class="backdrop">
       <div class="booking-modal_container">
+        <button class="button-delete">X</button>
         <div class="booking-modal_title">
-          <h1>Bokningsinformation
-     <!--     <div class="booking-check">
-          <img class="booking-check_img" src='../../images/checksign.webp' />
-          </div> --></h1></div> 
+          <h1>Bokningsinformation</h1>
+        </div>
         <div class="booking-info_container">
           <p class="booking_username">Användarnamn: <span class="booking-value">${props.username}</span></p>
           <p class="booking-movie">Film:<span class="booking-value">${props.film}</span></p>
@@ -42,8 +47,7 @@ export default class BookingModal {
               </div>
               <div class="card-name">${props.username} Andersson</div>
             </div>
-          </div>
-        
+          </div>  
       </div>
     </div>
     `;
