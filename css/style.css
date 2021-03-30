@@ -37,14 +37,11 @@
 
 html {
 }
-header {
-  background-color: #798f96;
-}
 body {
   display: flex;
   min-height: 100vh;
   flex-direction: column;
-  background: #96acb3;
+  background: #bebdbf;
   overflow-x: hidden;
 }
 

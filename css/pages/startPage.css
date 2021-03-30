@@ -1,4 +1,4 @@
-@import "../components/videoSlider.css";
+@import '../components/videoSlider.css';
 
 .big-container {
   overflow: hidden;
@@ -6,52 +6,45 @@
   display: flex;
   flex-direction: column;
   width: 100%;
-  align-content: center;
-  background-color: #96acb3;
 }
 
-.h2-aktuellt {
-  display: block;
-  position: relative;
+.h1-aktuellt {
   text-align: center;
-  color: #4e6d75;
-  font-family: "Merriweather Sans";
-  line-height: 140%;
-  font-size: 200%;
-  margin-top: -25vh;
+  font-size: 5rem;
   padding-bottom: 2rem;
+  margin-bottom: 10rem;
+  border-bottom: 15px solid black;
 }
 
 .startpage-infobar {
   display: flex;
   margin: 0 auto;
-  border: 3px solid #fffff0;
+  border: 3px solid whitesmoke;
   width: 40%;
   min-width: 260px;
   background: black;
-  color: #fffff0;
+  color: white;
   position: absolute;
   z-index: 3;
-  top: 4%;
+  top: 6%;
   overflow: hidden;
   margin: 0 auto;
   left: 0;
   right: 0;
 }
 
-.startpage-infobar:hover,
-.startpage-infobar:active {
+.startpage-infobar:hover, .startpage-infobar:active {
   border: 3px solid black;
-  background: #fffff0;
+  background: white;
   color: black;
 }
 
 .startpage-infobar p {
-  color: #fffff0;
-  font-size: 120%;
+  color: inherit;
   text-align: center;
-  padding: 3vh;
-  line-height: 160%;
+  font-size: 2rem;
+  padding: 1rem;
+  line-height: 3rem;
 }
 
 .sidebar-container {
@@ -60,22 +53,26 @@
 
 .video-container {
   width: 100%;
-  width: 60vw;
-  margin: 2rem auto 1rem auto;
+  max-width: 718px;
+  margin: 10rem auto;
+  padding: 2rem;
+  padding-top: 1rem;
+  border-top: 10px solid black;
+  border-bottom: 10px solid black;
 }
 
-.video-container h2 {
+.video-container h3 {
+  font-size: 3rem;
   text-align: center;
-  color: #4e6d75;
-  font-family: "Merriweather Sans";
-  line-height: 140%;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 10px solid black;
 }
 
 .startpage-coverphoto {
-  height: 70vh;
   width: 100%;
-  background-image: url("/images/cover_startpage.jpg");
+  height: 40rem;
+  background-image: url('/images/cover_startpage.jpg');
   background-position: bottom;
   filter: blur(5px);
   animation: movecover 40s infinite;
@@ -96,35 +93,33 @@
 .startpage-skew {
   margin: 0;
   padding: 0;
-  height: 20vh;
+  height: 15em;
   width: 100%;
   position: relative;
-  top: -4em;
-  border-top: 1px solid #666666;
+  top: -5em;
+  border-top: 1px solid rgb(122, 122, 122);
   transform: skewY(2deg);
   background: #bebdbf;
 }
 
+
 .ourmovies-title {
-  text-align: center;
-  color: #4e6d75;
-  line-height: 140%;
-  font-family: "Merriweather Sans";
-  margin-top: 2rem;
-  margin-bottom: 1rem;
+  font-size: 3rem; 
+  text-align: center; 
+  margin-bottom: 2rem;
 }
 
 .poster-container {
-  padding: 1.2rem 0 1rem 0;
+  padding: 2rem;
   display: flex;
   flex-wrap: nowrap;
-  justify-content: center;
-  background-color: #bebdbf;
-  border: 3px solid #4e6d75;
-  border-radius: 3px;
-  margin: 0 2rem;
+  justify-content: center; 
+  border-bottom: 10px solid black;
+  border-top: 10px solid black;
+  margin: 2rem;
   overflow: auto;
 }
+
 
 .start-poster {
   height: 100%;
@@ -134,12 +129,13 @@
   align-items: center;
   transition: transform 0.1s;
   padding: 0 1rem;
+  flex: 0 0 auto;
 }
 
 .start-poster:hover,
 .start-poster:active {
   transform: scale(1.2);
-  opacity: 0.7;
+   opacity: 0.7;
 }
 
 .start-poster img {
@@ -148,67 +144,60 @@
 }
 
 .bestmovies-title {
-  text-align: center;
-  color: #4e6d75;
-  font-family: "Merriweather Sans";
-  line-height: 140%;
-  margin-top: 2rem;
-  margin-bottom: 1rem;
+  text-align: center; 
+  font-size: 3rem; 
+  margin-top: 15rem;
+  margin-bottom: 2rem;
 }
 
 .bestof-container {
-  background-color: #bebdbf;
-  border: 3px solid #4e6d75;
-  border-radius: 3px;
-  padding: 1.2rem 0 1rem 0;
-  margin: 0 2rem;
+  border-bottom: 15px solid black;
+  border-top: 10px solid black;
+  border-bottom: 10px solid black;
+  padding: 2rem;
+  margin: 2rem;
 }
 
 .bestof-container ul {
-  display: flex;
-  justify-content: center;
+   display: flex; 
+   justify-content: center;
 }
 
 .toplist-listitem {
   list-style-type: none;
   position: relative;
-  padding: 0 1rem;
-  flex: 0 0 auto;
+  margin-right: 2rem;
+   flex: 0 0 auto;
 }
 
-/*
 .toplist-listitem:last-of-type {
   margin-right: 0;
 }
-*/
 
 .toplist-listitem a {
   text-decoration: none;
-  color: #4e6d75;
+  color: black;
 }
 
 .bestof-span {
-  background-color: #fffff0;
+  background-color: white;
   position: absolute;
-  font-size: 120%;
-  padding: 0.5rem;
-  border-radius: 3px;
-  margin: 0.5rem;
-  font-family: "Merriweather Sans";
+  left: 3.5em;
+  font-size: 3em;
 }
 
 .bestof-img {
-  width: 200px;
+  width: 200px; 
   height: 300px;
   transition: transform 0.2s;
 }
 
-.bestof-img:hover,
-.bestof-img:active {
+.bestof-img:hover, .bestof-img:active {
   transform: scale(1.2);
 }
 
-.slideshow-container {
+.slideshow-container{
+  margin: 10rem 3em;
   text-align: center;
   transition: transform 2s;
   flex-direction: row;
@@ -221,7 +210,7 @@
   animation: changeopacity 0.4s;
   display: flex;
   flex-direction: row;
-  width: 100%;
+  width: 100%; 
 }
 
 @keyframes changeopacity {
@@ -242,15 +231,14 @@
   text-decoration: none;
 }
 
+
 .slideshow-slide img {
-  height: 80vh;
+  height: 600px;
   transition: transform 0.2s, border 0.2s;
-  padding: 1rem;
-  border-radius: 3px;
+  padding: 2rem;
 }
 
-.slideshow-slide img:hover,
-.slideshow-slide img:active {
+.slideshow-slide img:hover, .slideshow-slide img:active {
   opacity: 0.5;
 }
 
@@ -261,35 +249,33 @@
   justify-content: stretch;
   margin-left: 2rem;
   margin-top: 5rem;
-  padding: 1rem 1rem;
+  padding: 2rem 1rem 3rem 1rem;
   height: fit-content;
-  width: 400px;
-  border-radius: 3px;
-  background-color: #e1e0e2;
-  color: #3a4752;
+  width: 500px;
+  border-radius: 10px;
+  background-color: beige;
+  font-size: 3rem;
 }
 
-.slide-aside h2 {
-  margin-top: 2rem;
-}
 .slide-aside h3 {
-  color: #4e6d75;
-  font-size: 90%;
-  line-height: 140%;
+  font-size: inherit;
+  margin-top: 1rem;
+  color: black;
 }
 
 .slide-aside p {
-  margin-top: 1rem;
-  color: #3a4752;
+  font-size: 3rem;
+  color: black;
 }
 
 .slide-aside p:last-of-type {
-  margin-bottom: 2rem;
+  margin-top: 3rem;
+  font-size: calc(1.5rem + 0.5vw);
 }
 
-@media only screen and (max-width: 1448px) {
+ @media only screen and (max-width: 1448px) {
   .poster-container {
-    border: 6px solid #4e6d75;
+    border: 10px solid black;
     justify-content: start;
   }
 
@@ -298,15 +284,15 @@
     flex-direction: row;
     justify-content: start;
     overflow: auto;
-    border: 6px solid #4e6d75;
+    border: 10px solid black;
   }
 }
 
-@media only screen and (max-width: 1199.98px) {
+@media only screen and  (max-width: 1199.98px) { 
   .slide-aside {
     margin-left: 0;
-  }
-}
+  } 
+ }
 
 @media only screen and (max-width: 1025px) {
   .slide-aside p:last-of-type {
@@ -323,12 +309,8 @@
   }
 }
 
-@media only screen and (min-width: 576px) {
-  .startpage-infobar {
-    max-width: 40vw;
-  }
-}
-@media only screen and (max-width: 575.98px) {
+
+@media only screen and (max-width: 575.98px) { 
   .userpage-button {
     display: none;
   }
@@ -341,6 +323,11 @@
 
   .startpage-infobar {
     position: absolute;
+  }
+
+  .h1-aktuellt {
+    font-size: 3rem;
+    margin-bottom: 3rem;
   }
 
   .slide-aside {
@@ -379,4 +366,9 @@
   .video-container iframe {
     height: 250px;
   }
-}
+ }
+
+
+
+
+

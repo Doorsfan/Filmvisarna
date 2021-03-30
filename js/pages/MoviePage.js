@@ -29,7 +29,7 @@ export default class MoviePage {
     });
 
     return `
-    <div class="movie-container"><h2>Våra filmer</h2><div class="movie-filter">
+    <div class="movie-container"><h1>Våra filmer</h1><div class="movie-filter">
       <select id="category-filter">
       <option value="default">Genre</option>
         ${allGenres}
@@ -106,12 +106,12 @@ export default class MoviePage {
             <a href="#aboutPage/${data.id}"><img src="${data.images[0]}"></a>
           </div>
           <div class="movie-text">
-            <h2 class="title-name">${data.title}</h2>
-            <div class="genre"><h3>GENRE </h3><p>${genreString}</p></div>
-            <div class="runtime"><h3>SPELTID </h3><p>
+            <h2 class="title-name"><p>${data.title}</p></h2>
+            <div class="genre"><h4>Genre: </h4> <p>${genreString}</p></div>
+            <div class="runtime"><h4>Speltid: </h4> <p>
             ${data.length + ' minuter'}</p></div>
-            <div class="story"><h3>HANDLING </h3><p>
-            ${data.description}</p></div>
+            <div class="story"><h4>Handling:&nbsp;</h4>
+            ${data.description}</div>
           </div>
         </section>`;
   }

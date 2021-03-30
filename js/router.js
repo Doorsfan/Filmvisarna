@@ -80,8 +80,12 @@ export default class Router {
     return bookingPage.render();
   }
 
-  userPage() {
-    if (window.username) {
+  async userPage() {
+    let user;
+    try {
+      user = JSON.parse(sessionStorage.store);
+    } catch (e) {}
+    if (user.username) {
       return new UserPage().render();
     } else {
       return loginPage.render();

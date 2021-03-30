@@ -1,7 +1,7 @@
 header {
-  height: 10vh;
+  height: 3rem;
   width: 100%;
-  background-color: #798f96;
+  background-color: #bebdbf;
   z-index: 5;
 }
 
@@ -18,18 +18,17 @@ header {
 
 .hamburger-icon:hover,
 .hamburger-icon:active {
-  background-color: #d1cbc9;
-  border-radius: 3px;
+  background-color: #eeeeee;
   cursor: pointer;
 }
 
 .home-button {
   text-decoration: none;
-  color: #fffff0;
+  color: white;
   height: 100%;
-  margin-left: 2vw;
-  font-family: "Sansita Swashed";
-  font-size: 7.5vh;
+  padding-top: 0.1em;
+  margin-left: 3em;
+  font-size: 2rem;
 }
 
 .userpage-button {
@@ -46,10 +45,11 @@ header {
 
 .user-icon:hover,
 .user-icon:active {
-  background-color: #d1cbc9;
-  border-radius: 3px;
+  background-color: #eeeeee;
   cursor: pointer;
 }
 
-@media (max-width: 575.98px) {
-}
+@media (max-width: 575.98px) { 
+
+
+ }

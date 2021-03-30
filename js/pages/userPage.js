@@ -1,6 +1,11 @@
+import cancelBooking from '../components/cancelBooking.js';
+import readAndWriteUser from '../components/readAndWriteUser.js';
+const cancelBookingObject = new cancelBooking();
+const readAndWriteUserObject = new readAndWriteUser();
 export default class UserPage {
   constructor() {
-    this.today = this.getTodayDate();
+    this.cancelBookingListener();
+    this.today = new Date().toISOString().split('T')[0];
   }
 
   getTodayDate() {
@@ -13,14 +18,40 @@ export default class UserPage {
     return today;
   }
 
+  async cancelBookingListener() {
+    if (!this.userBookings) {
+      await this.read();
+      this.userBookings.forEach((element) => {
+        $('main').on(
+          'click',
+          '.' + element.bookingNumber,
+          (cancelBookingButton) => {
+            cancelBookingObject.cancelBookingById(this.userBookings, cancelBookingButton.target.className);
+            if (this.username != 'admin@admin.se') {
+              readAndWriteUserObject.updateUserBookings(this.username, this.userBookings);
+            }
+            readAndWriteUserObject.updateAdminBookings(cancelBookingButton.target.className);
+            $("." + cancelBookingButton.target.className).remove();
+            $('.bookingNrDisplay').each(function (index) {
+              $(this).text('Bokning ' + (index+1));
+            });
+          }
+        );
+      });
+    }
+  }
+
   async read() {
-    if (window.username == 'admin@admin.se') {
+    this.username = await JSON.parse(sessionStorage.store);
+    this.username = this.username['username'];
+    console.log(this.username);
+    if (this.username == 'admin@admin.se') {
       this.userBookings = await $.getJSON(
         `/json/bookings/adminbookings/bookings.json`
       );
     } else {
       this.userBookings = await $.getJSON(
-        `/json/bookings/users/${window.username}.json`
+        `/json/bookings/users/${this.username}.json`
       );
     }
   }
@@ -33,19 +64,24 @@ export default class UserPage {
         <div class="userpage-container">
         <div class="userpage-title">
           <h1>Mina Sidor</h1>
-          <p>${window.username}</p>
+          <p>${this.username}</p>
         </div>
         </div>
     `);
 
-    let btn = `<div class="booking-button"><p>Avboka</p><button>X</button></div>`;
     let num = 1;
     this.userBookings.forEach((booking) => {
+      let btn = '';
+      if (booking.bookingNumber) {
+        btn = `<div class="booking-button"><p>Avboka</p><button class="${booking.bookingNumber}">X</button></div>`;
+      } else {
+        btn = '';
+      }
       html.append(/*html*/ `
         <div class="userpage-bookings">
-          <article class="userpage-booking">
+          <article class="userpage-booking ${booking.bookingNumber}">
               <div class="booking-top">
-                <h2>Bokning ${num++}</h2>
+                <h2 class="bookingNrDisplay">Bokning ${num++}</h2>
                 ${booking.date > this.today ? btn : ''}  
               </div>
               <div class="booking-bottom">

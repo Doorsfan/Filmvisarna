@@ -3,6 +3,7 @@ export default class Saloon {
     this.eventHandler();
     this.bookedTickets = [1, 4, 5, 8, 20, 40]; // istället för att kolla mot databas
     this.selectedSeats = [];
+    this.ticketObject = {};
   }
   async loadSaloon() {
     this.saloon = await JSON._load('../../json/auditoriums.json');
@@ -50,11 +51,42 @@ export default class Saloon {
 
     $('main').on('click', '.regret', (e) => {
       $('.ticket-item').html('');
+      $('.info-summation').html('');
       $(e.target).removeClass('regret');
       $('.btn').html('Välj Platser');
 
       $('.seats').prop('checked', false);
     });
+
+    $('main').on('change', '.ticket-price', () => {
+      this.readingTicketPrices();
+    });
+  }
+
+  readingTicketPrices() {
+    let selectedTicketPrice = $("[class='ticket-price']")
+      .map(function () {
+        return Number(this.value);
+      })
+      .get();
+
+    let selectedTicketType = [];
+    $("[class='ticket-price'] option:selected").each(function () {
+      selectedTicketType.push($(this).data('name'));
+    });
+
+    this.ticketObject.ticketPrice = selectedTicketPrice;
+    this.ticketObject.ticketType = selectedTicketType;
+    window.selectedShow.tickets = this.ticketObject;
+
+    let priceSum = selectedTicketPrice.reduce((sum, price) => sum + price, 0);
+
+    $('.info-summation').html('');
+    for (let i = 0; i < selectedTicketType.length; i++) {
+      $('.info-summation').append(`
+      <p>Billjet typ: ${selectedTicketType[i]} á ${selectedTicketPrice[i]} kr</p>`);
+    }
+    $('.info-summation').append(`<hr><p>Summma: ${priceSum} kr</p>`);
   }
 
   saveSelectedSeats() {
@@ -71,15 +103,16 @@ export default class Saloon {
 
     this.selectedSeats.forEach((seat) => {
       $('.ticket-item').append(/*html**/ `
-         <div class='ticket-box'>
-           <p> Biljett - Stolsnummer: ${seat}</p>
-           <select>
-             <option value='Vuxen'>Vuxen</option>
-             <option value='Barn'>Barn</option>
-             <option value='Pensionär'>Pensionär</option>
-           </select>
-         </div>
-     `);
+          <div class='ticket-box'>
+            <p> Biljett - Stolsnummer: ${seat}</p>
+            <select class="ticket-price">
+              <option value='0' data-name='Inte vald'>Välj typ:</option>
+              <option value='85' data-name='Vuxen'>Vuxen</option>
+              <option value='65' data-name='Barn'>Barn</option>
+              <option value='75' data-name='Pensionär'>Pensionär</option>
+            </select>
+          </div>
+      `);
     });
 
     window.selectedShow.seat = [...this.selectedSeats];

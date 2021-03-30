@@ -31,9 +31,9 @@ export default class StartPage {
       allMovies += /*html*/ `
         <div class="slideshow-slide">
           <a href="#aboutPage/${data.id}">
-            <img src="${data.images[0]}" alt="${data.title}" />
+            <img src="${data.images[0]}" alt="nyckeln till frihet" />
             <aside class="slide-aside">
-              <h2>${data.title}</h2>
+              <p>${data.title}</p>
               <h3>SPELAS NU</h3>
               <p>${data.reviews[0].quote}<br> - ${data.reviews[0].source}</p>
             </aside>
@@ -75,11 +75,11 @@ export default class StartPage {
     return `
       <div class="big-container">
         <div class="startpage-infobar">
-          <p>Välkommen!<br>Filmvisarnas biografer håller för tillfället öppet, trots nuvarande coronapandemi.</p>
+          <p>Välkommen! <br> Filmvisarnas Biografer håller för tillfället öppet, trots nuvarande coronapandemi.</p>
         </div>
         <div class="startpage-coverphoto"></div>
         <div class="startpage-skew"></div>
-        <h2 class="h2-aktuellt">AKTUELLT</h2>
+        <h1 class="h1-aktuellt">AKTUELLT</h1>
         <div class="slideshow-container">
           ${allMovies}
         </div>
@@ -87,14 +87,14 @@ export default class StartPage {
         <div class="poster-container">
           ${blinkingPosts}
         </div>
-        <h2 class="bestmovies-title">BÄST BETYG</h2>
+        <h2 class="bestmovies-title">BÄST I BETYG</h2>
         <div class="bestof-container">
           <ul>
           ${bestMovies}
           </ul>
         </div>
         <div class="video-container">
-          <h2>FILMTRAILERS</h2>
+          <h3>FILMTRAILERS</h3>
           ${ytSlider[0].outerHTML}
         </div>
       </div>

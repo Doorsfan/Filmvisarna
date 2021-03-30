@@ -27,7 +27,6 @@ export default class readAndWriteUser {
       alert('No .json with that combination');
       return false;
     }
-    window.username = username;
     this.saveUserToSessionStorage(username);
     this.renderForActiveUser();
     alert(`Välkommen ${username}`);
@@ -39,12 +38,17 @@ export default class readAndWriteUser {
       <a href='#userPage'>Mina sidor</a>
     `);
     $('.navlist').append(
-      `<li class="navlist-item"><a href='#'>Logga ut</a></li>`
+      `<li class="navlist-item logout"><a href='#'>Logga ut</a></li>`
     );
     $('.userpage-button')
       .replaceWith(`<a class="userpage-button" href="#userPage">
           <img class="user-icon" src="../images/user.png" alt="home"/>
         </a>`);
+  }
+
+  createRandomString() {
+    let randomNumber = Math.random().toString(36).substring(2, 12);
+    return randomNumber;
   }
 
   saveUserToSessionStorage(username) {
@@ -66,8 +70,25 @@ export default class readAndWriteUser {
     }
   }
 
+  async updateUserBookings(user,bookings) {
+    await JSON._save(`bookings/users/${user}.json`, bookings);
+  }
+
+  async updateAdminBookings(userId) {
+    this.allBooking = await JSON._load('bookings/adminbookings/bookings.json');
+    let index = 0;
+    for (let booking of this.allBooking) {
+      if (booking.bookingNumber === userId) {
+        this.allBooking.splice(index, 1);
+        break;
+      }
+      index += 1;
+    }
+    await JSON._save('bookings/adminbookings/bookings.json', this.allBooking);
+  }
+
   async saveBookings(booking, user) {
-    console.log(user);
+    booking.bookingNumber = this.createRandomString();
     if (!this.allBooking) {
       try {
         await this.loadBooking(user);

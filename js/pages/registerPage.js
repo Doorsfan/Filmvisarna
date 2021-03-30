@@ -6,20 +6,24 @@ export default class registerPage {
   }
 
   eventHandler() {
-    $('main').on('submit', '.registerPage.inputForm', () => {
+    $('main').on('submit', '.registerPage.inputForm', (event) => {
       event.preventDefault();
       if (
         $('.registerPage.passwordInput').val() ===
         $('.registerPage.secondPasswordInput').val()
       ) {
-        this.createAccount.saveUser($('.registerPage.emailInput').val(),$('.registerPage.passwordInput').val());
+        this.createAccount.saveUser(
+          $('.registerPage.emailInput').val(),
+          $('.registerPage.passwordInput').val()
+        );
         alert(
-          `Thank you for registering an account to Filmvisarna! Username: ${$('.registerPage.emailInput').val()} - Password: ${$('.registerPage.passwordInput').val()}`
+          `Thank you for registering an account to Filmvisarna! Username: ${$(
+            '.registerPage.emailInput'
+          ).val()} - Password: ${$('.registerPage.passwordInput').val()}`
         );
         window.location.href = '#loginPage';
-      }
-      else {
-        alert("Password and Confirm password must match up!");
+      } else {
+        alert('Password and Confirm password must match up!');
       }
     });
     $('main').on('click', '.cancel_button', function () {
@@ -41,7 +45,8 @@ export default class registerPage {
         <button class="registerPage register_button" type="submit">Registrera Mig</button>
         <div class="registerPage ellerText">ELLER</div>
         <button class="registerPage cancel_button">Avbryt</button>
-      </div>
+        </div>
+      </form>
     `;
   }
 }
