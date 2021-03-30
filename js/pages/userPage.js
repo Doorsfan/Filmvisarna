@@ -27,7 +27,9 @@ export default class UserPage {
           '.' + element.bookingNumber,
           (cancelBookingButton) => {
             cancelBookingObject.cancelBookingById(this.userBookings, cancelBookingButton.target.className);
-            readAndWriteUserObject.updateUserBookings(window.username, this.userBookings);
+            if (this.username != 'admin@admin.se') {
+              readAndWriteUserObject.updateUserBookings(this.username, this.userBookings);
+            }
             readAndWriteUserObject.updateAdminBookings(cancelBookingButton.target.className);
             $("." + cancelBookingButton.target.className).remove();
             $('.bookingNrDisplay').each(function (index) {
