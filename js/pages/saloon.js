@@ -76,10 +76,6 @@ export default class Saloon {
       selectedTicketType.push($(this).data('name'));
     });
 
-    this.ticketObject.ticketPrice = selectedTicketPrice;
-    this.ticketObject.ticketType = selectedTicketType;
-    window.selectedShow.tickets = this.ticketObject;
-
     let priceSum = selectedTicketPrice.reduce((sum, price) => sum + price, 0);
 
     $('.info-summation').html('');
