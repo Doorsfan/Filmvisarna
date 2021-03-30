@@ -66,6 +66,10 @@ export default class BookingPage {
         let dateAndTime = myData[1];
         let justDate = dateAndTime.split(' ')[0];
         let justTime = dateAndTime.split(' ')[1];
+        sessionStorage.setItem(
+          'selectedShow',
+          JSON.stringify(this.filterSelectedShow(justDate, justTime))
+        );
         window.selectedShow = this.filterSelectedShow(justDate, justTime);
       });
     });
