@@ -83,8 +83,9 @@ export default class DisplaySpecificShow {
         'selectedShow',
         JSON.stringify(this.filterSelectedShow(date, time))
       );
-      /*  window.selectedShow = this.filterSelectedShow(date, time);
-      console.log(window.selectedShow); */
+
+      window.selectedShow = this.filterSelectedShow(date, time);
+      console.log(window.selectedShow);
     });
   }
 

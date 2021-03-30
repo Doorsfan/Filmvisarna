@@ -25,9 +25,8 @@ export default class TicketPage {
     //Efter den är sparad i bokningars
 
     $('main').on('click', '.ticket-booking', () => {
-      console.log(window.selectedShow);
-      console.log(window.selectedSeats);
-
+      let user = sessionStorage.getItem('store');
+      this.username = user;
       this.username
         ? (window.selectedShow.id = this.username)
         : (window.selectedShow.id = 'none');

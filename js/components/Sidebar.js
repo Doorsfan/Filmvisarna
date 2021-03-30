@@ -14,15 +14,12 @@ export default class Sidebar {
   readSessionStorage() {
     this.store = {};
     try {
-      this.store = JSON.parse(sessionStorage.store);
+      this.store = JSON.parse(sessionStorage.getItem('store'));
     } catch (e) {}
-    this.store.save = function () {
-      sessionStorage.store = JSON.stringify(this);
-    };
   }
   render() {
     this.readSessionStorage();
-    let user = this.store.username;
+    let user = this.store;
     let myPage = user
       ? `<a href='#userPage'>Mina sidor</a>`
       : `<a href='#loginPage'>Login</a>`;

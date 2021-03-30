@@ -52,9 +52,9 @@ export default class readAndWriteUser {
   }
 
   saveUserToSessionStorage(username) {
-    let store = {};
-    store.username = username;
-    sessionStorage.setItem('store', JSON.stringify(store));
+    /* let store = {};
+    store.username = username; */
+    sessionStorage.setItem('store', username);
   }
 
   async loadBooking(user) {
