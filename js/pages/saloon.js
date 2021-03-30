@@ -1,21 +1,32 @@
 export default class Saloon {
   constructor() {
     this.eventHandler();
-    this.bookedTickets = [1, 4, 5, 8, 20, 40]; // istället för att kolla mot databas
-    this.selectedSeats = [];
+
     this.ticketObject = {};
   }
   async loadSaloon() {
     this.saloon = await JSON._load('auditoriums.json');
+    this.movieSchedule = await JSON._load('movieSchedule.json');
     window.selectedShow.auditorium === 'Savannen'
       ? (this.saloon = this.saloon[0])
       : (this.saloon = this.saloon[1]);
   }
+  async getBookedSeats() {
+    this.bookedTickets = this.movieSchedule.find((movie) => {
+      return (
+        movie.film == window.selectedShow.film &&
+        movie.date == window.selectedShow.date
+      );
+    });
+    this.bookedTickets = this.bookedTickets.bookedSeats;
+    await JSON._save('movieSchedule.json', this.movieSchedule);
+  }
 
   async render() {
-    if (!this.saloon) {
-      await this.loadSaloon();
-    }
+    await this.loadSaloon();
+    this.movieS = await JSON._load('movieSchedule.json');
+    await this.getBookedSeats();
+    console.log('HEJSANHOPPAS: ', this.bookedTickets);
 
     let seatsArray = this.saloon.seatsPerRow;
     let html = $('<div class="saloon-container"></div>');

@@ -9,16 +9,12 @@ export default class TicketPage {
 
   eventHandler() {
     $('main').on('click', '.ticket-booking', () => this.saveUserBooking());
-    this.changeListener.on('/json/bookings/adminbookings/bookings.json', () => {
+    this.changeListener.on('/adminbookings/bookings.json', () => {
       this.reRender();
     });
   }
 
   async reRender() {
-    if (this.saloon) {
-      this.saloonView = await new Saloon().render();
-      this.movieSchedule = await JSON._load('movieSchedule.json');
-    }
     $('main').html(await this.render());
   }
 
@@ -37,13 +33,14 @@ export default class TicketPage {
   }
 
   async saveSeats() {
-    let show = this.movieSchedule.forEach((movie) => {
+    this.movieSchedule.forEach((movie) => {
       if (
         movie.film == window.selectedShow.film &&
         movie.date == window.selectedShow.date
       ) {
-        movie.seats = [
-          Number(...movie.seats),
+        console.log(Number(movie.bookedSeats));
+        movie.bookedSeats = [
+          ...movie.bookedSeats,
           Number(...window.selectedShow.seat),
         ];
       }
@@ -54,10 +51,9 @@ export default class TicketPage {
   async render() {
     // this.username = await JSON.parse(sessionStorage.store);
     // this.username = this.username['username'];
-    if (!this.saloonView) {
-      this.saloonView = await new Saloon().render();
-      this.movieSchedule = await JSON._load('movieSchedule.json');
-    }
+
+    this.saloonView = await new Saloon().render();
+    this.movieSchedule = await JSON._load('movieSchedule.json');
 
     return /*html*/ ` 
     <div class='ticketpage-container'>
