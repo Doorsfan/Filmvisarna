@@ -1,4 +1,6 @@
 import ChangeListener from './ChangeListener.js';
+const changeListener = new ChangeListener();
+
 // Only create ONE change listener for the whole application
 
 // imported pages
@@ -26,13 +28,12 @@ const myRegisterPage = new registerPage();
 export default class Router {
   constructor(selector, changeListener) {
     this.selector = selector;
-    this.changeListener = changeListener;
     // main renders on location hash change
     // register the event listener for that:
     window.onhashchange = () => this.setCurrentPage(selector);
     // but also render it right now, based on the current hash or default page
     this.setCurrentPage(selector);
-    this.changeListener = new ChangeListener();
+    this.changeListener = changeListener;
   }
 
   async setCurrentPage(selector) {
