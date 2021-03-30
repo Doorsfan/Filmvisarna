@@ -6,8 +6,7 @@ export default class Sidebar {
   }
   eventHandler() {
     $('body').on('click', '.logout', () => {
-      delete this.store.username;
-      this.store.save();
+      sessionStorage.clear();
       $('header').replaceWith(new Header().render());
     });
   }
