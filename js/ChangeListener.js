@@ -1,14 +1,13 @@
 export default class ChangeListener {
-
   constructor() {
     // Only allow one file listener instance
     if (ChangeListener.one) {
-      throw (new Error('Only create one ChangeListener instance!'));
+      throw new Error('Only create one ChangeListener instance!');
     }
     ChangeListener.one = true;
     // Connect to a SSE source that tells us when files changes
-    this.eventSource = new EventSource("/changes");
-    this.eventSource.onmessage = event => this.fileChange(event.data);
+    this.eventSource = new EventSource('/changes');
+    this.eventSource.onmessage = (event) => this.fileChange(event.data);
     // Memory for event handlers
     this.events = [];
   }
@@ -39,5 +38,4 @@ export default class ChangeListener {
     // Reload the page on changes (same behavior as LiveServer)
     location.reload();
   }
-
 }

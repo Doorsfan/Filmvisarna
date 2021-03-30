@@ -26,14 +26,22 @@ export default class UserPage {
           'click',
           '.' + element.bookingNumber,
           (cancelBookingButton) => {
-            cancelBookingObject.cancelBookingById(this.userBookings, cancelBookingButton.target.className);
+            cancelBookingObject.cancelBookingById(
+              this.userBookings,
+              cancelBookingButton.target.className
+            );
             if (this.username != 'admin@admin.se') {
-              readAndWriteUserObject.updateUserBookings(this.username, this.userBookings);
+              readAndWriteUserObject.updateUserBookings(
+                this.username,
+                this.userBookings
+              );
             }
-            readAndWriteUserObject.updateAdminBookings(cancelBookingButton.target.className);
-            $("." + cancelBookingButton.target.className).remove();
+            readAndWriteUserObject.updateAdminBookings(
+              cancelBookingButton.target.className
+            );
+            $('.' + cancelBookingButton.target.className).remove();
             $('.bookingNrDisplay').each(function (index) {
-              $(this).text('Bokning ' + (index+1));
+              $(this).text('Bokning ' + (index + 1));
             });
           }
         );
@@ -42,8 +50,7 @@ export default class UserPage {
   }
 
   async read() {
-    this.username = await JSON.parse(sessionStorage.store);
-    this.username = this.username['username'];
+    this.username = sessionStorage.getItem('username');
     console.log(this.username);
     if (this.username == 'admin@admin.se') {
       this.userBookings = await $.getJSON(

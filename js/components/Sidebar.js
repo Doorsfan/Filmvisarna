@@ -6,24 +6,13 @@ export default class Sidebar {
   }
   eventHandler() {
     $('body').on('click', '.logout', () => {
-      delete this.store.username;
-      this.store.save();
+      sessionStorage.removeItem('username');
       $('header').replaceWith(new Header().render());
     });
   }
 
-  readSessionStorage() {
-    this.store = {};
-    try {
-      this.store = JSON.parse(sessionStorage.store);
-    } catch (e) {}
-    this.store.save = function () {
-      sessionStorage.store = JSON.stringify(this);
-    };
-  }
   render() {
-    this.readSessionStorage();
-    let user = this.store.username;
+    let user = sessionStorage.getItem('username');
     let myPage = user
       ? `<a href='#userPage'>Mina sidor</a>`
       : `<a href='#loginPage'>Login</a>`;

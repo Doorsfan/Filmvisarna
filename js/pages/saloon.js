@@ -6,7 +6,7 @@ export default class Saloon {
     this.ticketObject = {};
   }
   async loadSaloon() {
-    this.saloon = await JSON._load('../../json/auditoriums.json');
+    this.saloon = await JSON._load('auditoriums.json');
     window.selectedShow.auditorium === 'Savannen'
       ? (this.saloon = this.saloon[0])
       : (this.saloon = this.saloon[1]);

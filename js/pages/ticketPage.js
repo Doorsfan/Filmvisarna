@@ -9,16 +9,25 @@ export default class TicketPage {
 
   eventHandler() {
     $('main').on('click', '.ticket-booking', () => this.saveUserBooking());
-    this.changeListener.on('/json/bookings/adminbookings/bookings.json', () =>
-      this.reRender()
-    );
+    this.changeListener.on('/json/bookings/adminbookings/bookings.json', () => {
+      this.reRender();
+    });
+  }
+
+  async reRender() {
+    if (this.saloon) {
+      this.saloonView = await new Saloon().render();
+    }
+    $('main').html(await this.render());
   }
 
   saveUserBooking() {
-    this.username
-      ? (window.selectedShow.id = this.username)
+    let username = sessionStorage.getItem('username');
+    console.log(username);
+    username
+      ? (window.selectedShow.id = username)
       : (window.selectedShow.id = 'none');
-    new ReadNWrite().saveBookings(window.selectedShow, this.username);
+    new ReadNWrite().saveBookings(window.selectedShow, username);
     let string = JSON.stringify(window.selectedShow);
     alert(string);
     window.location.href = '#startPage';
