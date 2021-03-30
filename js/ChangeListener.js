@@ -20,8 +20,17 @@ export default class ChangeListener {
   }
 
   fileChange(filePath) {
+<<<<<<< Updated upstream
     // Ignore changes in .git folder
     // (caused by git auto fetching)
+=======
+<<<<<<< HEAD
+    // Ignoring changes in .git directory
+=======
+    // Ignore changes in .git folder
+    // (caused by git auto fetching)
+>>>>>>> main
+>>>>>>> Stashed changes
     if (filePath.includes('.git')) {
       return;
     }

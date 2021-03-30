@@ -8,10 +8,18 @@ import StartPage from './pages/StartPage.js';
 import LoginPage from './pages/LoginPage.js';
 import MoviePage from './pages/MoviePage.js';
 import AboutPage from './pages/aboutPage.js';
+<<<<<<< HEAD
 import BookingPage from './pages/BookingPage.js';
+<<<<<<< Updated upstream
 import UserPage from './pages/userPage.js';
 import TicketPage from './pages/ticketPage.js';
 import registerPage from './pages/registerPage.js';
+=======
+
+=======
+import UserPage from './pages/userPage.js';
+>>>>>>> main
+>>>>>>> Stashed changes
 // import PeoplePage from './pages/PeoplePage.js';
 
 // instanciate to reuse instances of pages
@@ -19,8 +27,15 @@ const test = new Test();
 const startPage = new StartPage();
 const loginPage = new LoginPage();
 const moviePage = new MoviePage();
+<<<<<<< HEAD
 const bookingPage = new BookingPage();
+<<<<<<< Updated upstream
 const myRegisterPage = new registerPage();
+=======
+=======
+const userPage = new UserPage();
+>>>>>>> main
+>>>>>>> Stashed changes
 
 // const peoplePage = new PeoplePage(changeListener);
 
@@ -72,14 +87,19 @@ export default class Router {
     return new AboutPage(movieTitle).render();
   }
 
+<<<<<<< Updated upstream
   registerPage() {
     return myRegisterPage.render();
   }
 
+=======
+<<<<<<< HEAD
+>>>>>>> Stashed changes
   bookingPage() {
     return bookingPage.render();
   }
 
+<<<<<<< Updated upstream
   async userPage() {
     let user;
     try {
@@ -95,4 +115,11 @@ export default class Router {
   ticketPage() {
     return new TicketPage().render();
   }
+=======
+=======
+  userPage() {
+    return userPage.render();
+  }
+>>>>>>> main
+>>>>>>> Stashed changes
 }

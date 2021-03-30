@@ -3,7 +3,11 @@
   max-width: 60rem;
   max-height: 91vh;
   display: grid;
+<<<<<<< Updated upstream
 
+=======
+  grid-gap: 5px;
+>>>>>>> Stashed changes
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 2fr 2fr 1fr 2fr 2fr;
   grid-template-areas:
@@ -11,6 +15,7 @@
     'v v v'
     'v v v'
     'a a c'
+<<<<<<< Updated upstream
     'e e e';
   background-color: #e1e0e2;
 }
@@ -36,11 +41,15 @@
 .select:hover {
   outline: none;
   border: 1px solid #626163;
+=======
+    'e e c';
+>>>>>>> Stashed changes
 }
 
 .trailer {
   grid-area: v;
   width: 100%;
+<<<<<<< Updated upstream
   height: 100%;
 }
 
@@ -86,10 +95,56 @@
   height: 100%;
   font-size: 120%;
   line-height: 140%;
+=======
+}
+
+.about-text {
+  /* margin-left: 10px; */
+  grid-area: a;
+  overflow: hidden;
+  margin-right: 10px;
+  font-size: 1.1rem;
+}
+
+.movie-posters {
+  /* margin-left: 10px; */
+  margin-right: 10px;
+  display: flex;
+  flex-direction: row;
+
+  justify-content: space-between;
+  grid-area: e;
+}
+
+.movie-posters img {
+  transition: 0.2s ease;
+  width: 135px;
+  height: 189px;
+}
+
+.book-show {
+  padding: 10px;
+  z-index: 10;
+  border: 2px solid black;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 2fr 2fr;
+  grid-template-areas:
+    'h h h'
+    't t t'
+    '. . .'
+    'y . o'
+    '. . .';
+
+  grid-area: c;
+  background-color: #e1e0e2;
+>>>>>>> Stashed changes
 }
 
 .aboutPage-btn {
   grid-area: o;
+<<<<<<< Updated upstream
 
   width: 50px;
   height: 30px;
@@ -107,21 +162,37 @@
 
 .about-container p {
   color: #3a4752;
+=======
+  width: 5rem;
+  height: 2rem;
+  align-self: flex-end;
+}
+
+.about-container p {
+  color: black;
+>>>>>>> Stashed changes
 }
 
 .aboutPage-text {
   grid-area: h;
   width: 100%;
+<<<<<<< Updated upstream
   font-size: 120%;
 }
 .aboutPage-text h3 {
   color: #4e6d75;
 }
 
+=======
+  font-size: 2rem;
+  text-align: center;
+}
+>>>>>>> Stashed changes
 #select-date {
   align-self: center;
   justify-self: center;
   grid-area: t;
+<<<<<<< Updated upstream
   width: 100%;
   height: 2rem;
 }
@@ -151,3 +222,46 @@
     font-size: 0.9rem;
   }
 }
+=======
+  width: 95%;
+  height: 2rem;
+}
+#display-saloon {
+  padding-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  grid-area: y;
+}
+.trailer iframe {
+  width: 100%;
+  height: 100%;
+}
+
+.movie-posters img:hover {
+  transform: scale(1.05);
+}
+
+@media screen and (max-width: 840px) {
+  .movie-posters a:nth-last-child(1) {
+    display: none;
+  }
+}
+@media screen and (max-width: 630px) {
+  .movie-posters a:first-child {
+    display: none;
+  }
+
+  .movie-posters {
+    justify-content: space-around;
+  }
+}
+
+/* EV ANVÄNDA SENARE */
+
+/* .display-saloon {
+  display: flex;
+  flex-direction: row;
+  color: red;
+} */
+>>>>>>> Stashed changes

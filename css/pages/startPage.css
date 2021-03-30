@@ -47,16 +47,62 @@
   line-height: 3rem;
 }
 
+.big-container {
+  overflow: hidden;
+  position: relative;
+}
+
+.h1-aktuellt {
+  text-align: center;
+  font-size: 5rem;
+  padding-bottom: 2rem;
+  margin-bottom: 10rem;
+  border-bottom: 15px solid black;
+}
+
+.startpage-infobar {
+  margin: 0 auto;
+  text-align: center;
+  border: 3px solid whitesmoke;
+  width: 40rem;
+  background: black;
+  color: white;
+  position: absolute;
+  z-index: 3;
+  left: 33%;
+  top: 6%;
+}
+
+.startpage-infobar:hover, .startpage-infobar:active {
+  border: 3px solid black;
+  background: white;
+  color: black;
+}
+
+.startpage-infobar p {
+  color: inherit;
+  font-size: 2rem;
+  padding: 2rem;
+  line-height: 3rem;
+}
+
 .sidebar-container {
   z-index: 100;
 }
 
 .video-container {
+<<<<<<< Updated upstream
   width: 100%;
   max-width: 718px;
   margin: 10rem auto;
   padding: 2rem;
   padding-top: 1rem;
+=======
+  width: 40%;
+  margin: 0 auto;
+  margin-bottom: 10rem;
+  margin-top: 10rem;
+>>>>>>> Stashed changes
   border-top: 10px solid black;
   border-bottom: 10px solid black;
 }
@@ -65,12 +111,19 @@
   font-size: 3rem;
   text-align: center;
   margin-bottom: 2rem;
+<<<<<<< Updated upstream
   padding-bottom: 1rem;
+=======
+>>>>>>> Stashed changes
   border-bottom: 10px solid black;
 }
 
 .startpage-coverphoto {
+<<<<<<< Updated upstream
   width: 100%;
+=======
+  width: 100vw;
+>>>>>>> Stashed changes
   height: 40rem;
   background-image: url('/images/cover_startpage.jpg');
   background-position: bottom;
@@ -110,14 +163,22 @@
 }
 
 .poster-container {
+  width: 100%;
+  margin: 0 auto;
   padding: 2rem;
   display: flex;
+<<<<<<< Updated upstream
   flex-wrap: nowrap;
   justify-content: center; 
   border-bottom: 10px solid black;
   border-top: 10px solid black;
   margin: 2rem;
   overflow: auto;
+=======
+  justify-content: center;
+  border-bottom: 10px solid black;
+  border-top: 10px solid black;
+>>>>>>> Stashed changes
 }
 
 
@@ -129,7 +190,10 @@
   align-items: center;
   transition: transform 0.1s;
   padding: 0 1rem;
+<<<<<<< Updated upstream
   flex: 0 0 auto;
+=======
+>>>>>>> Stashed changes
 }
 
 .start-poster:hover,
@@ -155,7 +219,10 @@
   border-top: 10px solid black;
   border-bottom: 10px solid black;
   padding: 2rem;
+<<<<<<< Updated upstream
   margin: 2rem;
+=======
+>>>>>>> Stashed changes
 }
 
 .bestof-container ul {
@@ -167,11 +234,102 @@
   list-style-type: none;
   position: relative;
   margin-right: 2rem;
+<<<<<<< Updated upstream
    flex: 0 0 auto;
+=======
+>>>>>>> Stashed changes
 }
 
 .toplist-listitem:last-of-type {
   margin-right: 0;
+<<<<<<< Updated upstream
+=======
+}
+
+.toplist-listitem a {
+  text-decoration: none;
+  color: black;
+}
+
+.bestof-span {
+  background-color: white;
+  position: absolute;
+  left: 3.5em;
+  font-size: 3em;
+}
+
+.bestof-img {
+  width: 200px; 
+  height: 300px;
+  transition: transform 0.2s;
+}
+
+.bestof-img:hover, .bestof-img:active {
+  transform: scale(1.2);
+  
+}
+
+.slideshow-container{
+  margin-top: 10rem;
+  text-align: center;
+  transition: transform 2s;
+  margin-bottom: 10rem;
+}
+
+.slideshow-slide {
+  display: none;
+  position: relative;
+  opacity: 1;
+  animation: changeopacity 0.4s;
+}
+
+@keyframes changeopacity {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+
+.slideshow-slide img {
+  height: 600px;
+  transition: transform 0.2s, border 0.2s;
+}
+
+.slideshow-slide img:hover, .slideshow-slide img:active {
+  opacity: 0.5;
+}
+
+.slide-aside {
+  position:absolute;
+  text-align: center;
+  margin-left: 2rem;
+  margin-top: 5rem;
+  padding-top: 3em;
+  height: 400px;
+  width: 500px;
+  border-radius: 10px;
+  display: inline-block;
+  background-color: beige;
+}
+
+.slide-aside h3 {
+  font-size: 3rem;
+  margin-top: 1rem;
+  color: black;
+}
+
+.slide-aside p {
+  font-size: 3rem;
+  color: black;
+}
+
+.slide-aside p:last-of-type {
+  margin-top: 3rem;
+  font-size: 2rem;
+>>>>>>> Stashed changes
 }
 
 .toplist-listitem a {

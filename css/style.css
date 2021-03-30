@@ -7,11 +7,19 @@
 @import './pages/MoviePage.css';
 @import './pages/aboutPage.css';
 @import './pages/startPage.css';
+<<<<<<< Updated upstream
 @import './pages/registerPage.css';
 @import './pages/BookingPage.css';
 @import './pages/saloon.css';
 @import './pages/ticketPage.css';
 
+=======
+<<<<<<< HEAD
+@import './pages/BookingPage.css';
+=======
+@import './components/select.css';
+>>>>>>> main
+>>>>>>> Stashed changes
 * {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -38,10 +46,19 @@
 html {
 }
 body {
+<<<<<<< Updated upstream
   display: flex;
   min-height: 100vh;
   flex-direction: column;
   background: #bebdbf;
+=======
+  background: #bebdbf;
+  /* background: radial-gradient(
+    circle,
+    rgba(225, 224, 226, 1) 3%,
+    rgb(158, 157, 159) 67%
+  ); */
+>>>>>>> Stashed changes
   overflow-x: hidden;
 }
 

@@ -2,6 +2,7 @@ export default class readAndWriteUser {
   constructor() {}
 
   async saveUser(username, password) {
+<<<<<<< Updated upstream
     await JSON._save(`./users/${username + password}`, {
       user: username,
       password: password,
@@ -61,6 +62,22 @@ export default class readAndWriteUser {
     };
     store['username'] = username;
     store.save();
+=======
+    await JSON._save('./users/' + username, password);
+  }
+
+  async loadUser(username) {
+    /*
+    fetch("/json/users/" + username + ".json")
+      .then(response => response.json())
+      .then(user => {
+        this.example = user.password;
+      }); */
+    this.user = await JSON._load('/users/' + username + '.json');
+    if (!this.user) {
+      await this.loadUser(username);
+    }
+>>>>>>> Stashed changes
   }
 
   async loadBooking(user) {
@@ -70,6 +87,7 @@ export default class readAndWriteUser {
     }
   }
 
+<<<<<<< Updated upstream
   async updateUserBookings(user,bookings) {
     await JSON._save(`bookings/users/${user}.json`, bookings);
   }
@@ -93,6 +111,11 @@ export default class readAndWriteUser {
       try {
         await this.loadBooking(user);
       } catch (e) {}
+=======
+  async saveBookings(booking, user) {
+    if (!this.allBooking) {
+      await this.loadBooking(user);
+>>>>>>> Stashed changes
     }
 
     this.allBooking.push(booking);
@@ -104,7 +127,10 @@ export default class readAndWriteUser {
     }
   }
 }
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
 //put this in async read in startPage to test out component
 // let booking = {
 //   id: 'none',

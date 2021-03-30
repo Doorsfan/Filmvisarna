@@ -26,6 +26,7 @@ export default class AboutPage {
       <iframe width="420" height="315"
       src="https://www.youtube.com/embed/${this.movie.youtubeTrailers}"></iframe>
     </div>
+<<<<<<< Updated upstream
     <div class="about-info">
       <p>TITEL</p><h3> ${this.movie.title}</h3>
       <p>GENRE</p><p> ${this.movie.genre}</p>
@@ -38,6 +39,24 @@ export default class AboutPage {
     </div>
     <div class="movie-story">
       <p>${this.movie.description}</p>
+=======
+    <div class="about-text">
+      <p>Titel: ${this.movie.title}</p>
+      <p>Genre: ${this.movie.genre}</p>
+      <p>Land: ${this.movie.productionCountries}</p>
+      <p>Produktionsår: ${this.movie.productionYear}</p>
+      <p>Språk: ${this.movie.language}</p>
+      <p>Skådespelare: ${this.movie.actors}</p>
+      <p>Regissör: ${this.movie.director}</p>
+      <p>Längd: ${length}</p>
+      
+    </div>
+    <div class="movie-posters">
+    <a href="#aboutPage${this.movie.id}"><img src="${this.movie.images[0]}"></a>
+    <a href="#aboutPage${this.movie.id}"><img src="${this.movie.images[0]}"></a>
+    <a href="#aboutPage${this.movie.id}"><img src="${this.movie.images[0]}"></a>
+    <a href="#aboutPage${this.movie.id}"><img src="${this.movie.images[0]}"></a>
+>>>>>>> Stashed changes
     </div>
     
     `);

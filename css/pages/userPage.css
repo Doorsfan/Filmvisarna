@@ -1,6 +1,11 @@
 .userpage-container {
+<<<<<<< Updated upstream
   background: #e1e0e2;
   height: 100%;
+=======
+  background: #E1E0E2;
+  height: 100vh;
+>>>>>>> Stashed changes
   width: 90vw;
   margin: 0 auto;
   max-width: 50rem;
@@ -34,10 +39,16 @@
   margin: 1rem auto;
 }
 
+<<<<<<< Updated upstream
 .userpage-booking:hover,
 .userpage-booking:active {
   background-color: beige;
   cursor: initial;
+=======
+.userpage-booking:hover, .userpage-booking:active {
+  background-color: beige;
+  cursor:initial;
+>>>>>>> Stashed changes
   opacity: 0.8;
 }
 
@@ -55,13 +66,21 @@
   margin-right: 1rem;
 }
 
+<<<<<<< Updated upstream
 .booking-button p {
+=======
+.booking-button p{
+>>>>>>> Stashed changes
   color: black;
   align-self: center;
   margin-right: 1rem;
 }
 
+<<<<<<< Updated upstream
 .booking-button button {
+=======
+.booking-button button{
+>>>>>>> Stashed changes
   width: 2rem;
 }
 
@@ -84,4 +103,8 @@
   text-align: right;
   margin-right: 1rem;
   flex-grow: 2;
+<<<<<<< Updated upstream
 }
+=======
+}
+>>>>>>> Stashed changes

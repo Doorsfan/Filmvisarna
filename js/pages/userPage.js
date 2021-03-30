@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 import cancelBooking from '../components/cancelBooking.js';
 import readAndWriteUser from '../components/readAndWriteUser.js';
 const cancelBookingObject = new cancelBooking();
@@ -6,6 +7,11 @@ export default class UserPage {
   constructor() {
     this.cancelBookingListener();
     this.today = new Date().toISOString().split('T')[0];
+=======
+export default class UserPage {
+  constructor() {
+    this.today = this.getTodayDate();
+>>>>>>> Stashed changes
   }
 
   getTodayDate() {
@@ -18,6 +24,7 @@ export default class UserPage {
     return today;
   }
 
+<<<<<<< Updated upstream
   async cancelBookingListener() {
     if (!this.userBookings) {
       await this.read();
@@ -54,6 +61,12 @@ export default class UserPage {
         `/json/bookings/users/${this.username}.json`
       );
     }
+=======
+  async read() {
+    this.userBookings = await $.getJSON(
+      '/json/bookings/users/robban@gmail.se.json'
+    );
+>>>>>>> Stashed changes
   }
 
   async render() {
@@ -64,6 +77,7 @@ export default class UserPage {
         <div class="userpage-container">
         <div class="userpage-title">
           <h1>Mina Sidor</h1>
+<<<<<<< Updated upstream
           <p>${this.username}</p>
         </div>
         </div>
@@ -82,6 +96,21 @@ export default class UserPage {
           <article class="userpage-booking ${booking.bookingNumber}">
               <div class="booking-top">
                 <h2 class="bookingNrDisplay">Bokning ${num++}</h2>
+=======
+          <p>${this.userBookings[0].id}</p>
+        </div>
+        </div>
+    `);
+    console.log(this.today);
+    let btn = `<div class="booking-button"><p>Avboka</p><button>X</button></div>`;
+
+    this.userBookings.forEach((booking) => {
+      html.append(/*html*/ `
+        <div class="userpage-bookings">
+          <article class="userpage-booking">
+              <div class="booking-top">
+                <h2>Bokning 1</h2>
+>>>>>>> Stashed changes
                 ${booking.date > this.today ? btn : ''}  
               </div>
               <div class="booking-bottom">
@@ -97,6 +126,10 @@ export default class UserPage {
         </div>
       </div>`);
     });
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
     return html;
   }
 }

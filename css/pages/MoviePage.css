@@ -1,7 +1,11 @@
 .movie-container {
   display: flex;
   flex-direction: column;
+<<<<<<< Updated upstream
   padding-top: 2rem;
+=======
+  padding: 3rem;
+>>>>>>> Stashed changes
   align-items: center;
 }
 .movie-container h1 {
@@ -14,6 +18,7 @@
 }
 .movie-container .movie-filter {
   align-self: center;
+<<<<<<< Updated upstream
   margin-bottom: 2rem;
 }
 .movie-container select {
@@ -48,6 +53,24 @@ select:hover {
   margin-bottom: 1rem;
   border-bottom: 0.1rem solid black;
   border-radius: 0.2rem;
+=======
+  margin-bottom: 0.5em;
+}
+.movie-container #category-filter {
+  background-color: #bebdbf;
+}
+.movie-container #age-filter {
+  background-color: #bebdbf;
+}
+.movie-container .movie-info {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5em;
+  width: 100%;
+  max-width: 850px;
+  margin-bottom: 1em;
+  border-bottom: 0.2em solid black;
+>>>>>>> Stashed changes
 }
 .movie-container .genre h4 {
   display: inline;
@@ -69,6 +92,7 @@ select:hover {
   width: 165px;
   height: 230px;
   object-fit: cover;
+<<<<<<< Updated upstream
   padding-top: 0.3rem;
   border-radius: 0.2rem;
 }
@@ -87,4 +111,15 @@ select:hover {
 
 .movie-container .movie-text h4 {
   margin: 0.2rem 0;
+=======
+  border-radius: 0.2em;
+}
+.movie-container .movie-text {
+  flex: 1 1;
+  min-width: 30ch;
+  margin-bottom: 1em;
+}
+.movie-container .movie-text h4 {
+  margin: 0.2em 0;
+>>>>>>> Stashed changes
 }
