@@ -4,8 +4,8 @@ const cancelBookingObject = new cancelBooking();
 const readAndWriteUserObject = new readAndWriteUser();
 export default class UserPage {
   constructor() {
-    this.today = this.getTodayDate();
     this.cancelBookingListener();
+    this.today = new Date().toISOString().split('T')[0];
   }
 
   getTodayDate() {
@@ -40,13 +40,16 @@ export default class UserPage {
   }
 
   async read() {
-    if (window.username == 'admin@admin.se') {
+    this.username = await JSON.parse(sessionStorage.store);
+    this.username = this.username['username'];
+    console.log(this.username);
+    if (this.username == 'admin@admin.se') {
       this.userBookings = await $.getJSON(
         `/json/bookings/adminbookings/bookings.json`
       );
     } else {
       this.userBookings = await $.getJSON(
-        `/json/bookings/users/${window.username}.json`
+        `/json/bookings/users/${this.username}.json`
       );
     }
   }
@@ -59,7 +62,7 @@ export default class UserPage {
         <div class="userpage-container">
         <div class="userpage-title">
           <h1>Mina Sidor</h1>
-          <p>${window.username}</p>
+          <p>${this.username}</p>
         </div>
         </div>
     `);
