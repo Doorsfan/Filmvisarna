@@ -5,7 +5,10 @@ export default class TicketPage {
   constructor() {}
 
   async render() {
-    this.username = await JSON.parse(sessionStorage.store);
+    if (sessionStorage.getItem('store') == null) {
+      sessionStorage.setItem('store', '');
+    }
+    this.username = sessionStorage.store;
     this.username = this.username['username'];
     if (!this.saloonView) {
       this.saloonView = await new Saloon().render();
