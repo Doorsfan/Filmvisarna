@@ -10,6 +10,7 @@
 @import './pages/BookingPage.css';
 @import './pages/saloon.css';
 @import './pages/ticketPage.css';
+@import './components//bookingModal.css';
 
 * {
   -webkit-box-sizing: border-box;
