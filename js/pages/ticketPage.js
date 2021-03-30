@@ -17,11 +17,12 @@ export default class TicketPage {
   async reRender() {
     if (this.saloon) {
       this.saloonView = await new Saloon().render();
+      this.movieSchedule = await JSON._load('movieSchedule.json');
     }
     $('main').html(await this.render());
   }
 
-  saveUserBooking() {
+  async saveUserBooking() {
     let username = sessionStorage.getItem('username');
     console.log(username);
     username
@@ -29,8 +30,25 @@ export default class TicketPage {
       : (window.selectedShow.id = 'none');
     new ReadNWrite().saveBookings(window.selectedShow, username);
     let string = JSON.stringify(window.selectedShow);
+
     alert(string);
+    await this.saveSeats();
     window.location.href = '#startPage';
+  }
+
+  async saveSeats() {
+    let show = this.movieSchedule.forEach((movie) => {
+      if (
+        movie.film == window.selectedShow.film &&
+        movie.date == window.selectedShow.date
+      ) {
+        movie.seats = [
+          Number(...movie.seats),
+          Number(...window.selectedShow.seat),
+        ];
+      }
+    });
+    await JSON._save('movieSchedule.json', this.movieSchedule);
   }
 
   async render() {
@@ -38,6 +56,7 @@ export default class TicketPage {
     // this.username = this.username['username'];
     if (!this.saloonView) {
       this.saloonView = await new Saloon().render();
+      this.movieSchedule = await JSON._load('movieSchedule.json');
     }
 
     return /*html*/ ` 
