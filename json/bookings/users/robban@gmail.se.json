@@ -5,7 +5,10 @@
     "film": "Relic",
     "date": "2021-02-22",
     "time": "18.00",
-    "seat": [13, 14],
+    "seat": [
+      13,
+      14
+    ],
     "price": 300,
     "bookingNumber": "dasda3"
   },
@@ -15,7 +18,10 @@
     "film": "Bamse",
     "date": "2021-04-22",
     "time": "18.00",
-    "seat": [10, 14],
+    "seat": [
+      10,
+      14
+    ],
     "price": 600,
     "bookingNumber": "gfd6gfd"
   },
@@ -25,7 +31,10 @@
     "film": "Bamse",
     "date": "2021-04-22",
     "time": "18.00",
-    "seat": [10, 14],
+    "seat": [
+      10,
+      14
+    ],
     "price": 600,
     "bookingNumber": "gfsd6gfd"
   },
@@ -35,7 +44,10 @@
     "film": "Disney",
     "date": "2021-01-22",
     "time": "18.00",
-    "seat": [10, 14],
+    "seat": [
+      10,
+      14
+    ],
     "price": 600,
     "bookingNumber": "gfd2gfd"
   },
@@ -45,8 +57,25 @@
     "film": "Pippi",
     "date": "2021-04-22",
     "time": "18.00",
-    "seat": [10, 14],
+    "seat": [
+      10,
+      14
+    ],
     "price": 600,
     "bookingNumber": "gfd1gfd"
+  },
+  {
+    "auditorium": "Savannen",
+    "film": "Harry Potter and the Sorcerer's Stone",
+    "date": "2021-03-22",
+    "time": "16.00",
+    "seat": [
+      49,
+      50,
+      51,
+      52
+    ],
+    "price": 300,
+    "id": "robban@gmail.se"
   }
 ]

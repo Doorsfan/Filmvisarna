@@ -1,97 +1,102 @@
-.loginPage.login_form{
+
+.loginPage.inputForm{
   display:grid;
   justify-items:center; /* Works to Center the Form on the page */
   margin-left:auto;
   margin-right:auto;
   min-height:90vh;
   max-width: 96vw;
-  width:96vw;
+  width: 96vw;
 }
-.loginPage.borderBox{
+.loginPage.borderBox {
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-direction:column;
-  text-align:center;
-  margin-top: 10vh;
-  margin-right:10px;
-  margin-left:10px;
+  flex-direction: column;
+  text-align: center;
+  margin-top: 5vh;
+  margin-right: 10px;
+  margin-left: 10px;
   padding-top: 0px;
-  border: 3px solid black;
+  background-color: #e1e0e2;
+  border-radius: 3px;
   width: 90vw;
   max-width: 340px;
-  height:500px;
-  max-height:500px;
-  min-height:100px;
+  height: 82vh;
+  max-height: 500px;
+  min-height: 100px;
 }
-.loginPage.formContainer{
+.loginPage.formContainer {
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-direction:column;
-  text-align:center;
+  flex-direction: column;
+  text-align: center;
   max-height: 40vh;
   min-width: 100px;
   max-width: max-content;
-  padding:100px;
+  padding: 100px;
 }
+
 
 .loginPage.myImage{
   min-width:110px;
   width:19vw;
-  max-height:20vh;
+  min-height:150px;
+  max-height:200px;
   max-width: 200px;
-  align-self:center;
+  align-self: center;
 }
 
-.loginPage.emailInput{
+.loginPage.emailInput {
   width: 45vw;
   min-width: 130px;
   max-width: 220px;
-  margin-left:auto;
-  margin-right:auto;
-  margin-top:10px;
-  margin-bottom:10px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
-input.loginPage.passwordInput{
+input.loginPage.passwordInput {
   width: 45vw;
   min-width: 130px;
   max-width: 220px;
-  margin-left:auto;
-  margin-right:auto;
-  margin-top:10px;
-  margin-bottom:10px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
-button.loginPage.log_in_button{
+button.loginPage.log_in_button {
   width: 45vw;
   min-width: 130px;
   max-width: 220px;
-  margin-left:auto;
-  margin-right:auto;
-  margin-top:10px;
-  margin-bottom:10px;
-  color:white;
-  background-color:#F54D4D;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  color: white;
+  background-color: #f54d4d;
   padding: 1px;
 }
 
-button.loginPage.cancel_button{
+button.loginPage.cancel_button {
   width: 45vw;
   min-width: 130px;
   max-width: 220px;
-  margin-left:auto;
-  margin-right:auto;
-  margin-top:10px;
-  margin-bottom:10px;
-  background-color:white;
-  color:red;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  background-color: white;
+  color: red;
   padding: 1px;
 }
-.loginPage.ellerText{
-  font-weight:bold;
+.loginPage.ellerText {
+  font-weight: bold;
+  font-family: "Merriweather Sans";
 }
 
-.loginPage.newAccountLink:visited{
+.loginPage.newAccountLink:visited {
   color: blue;
 }
