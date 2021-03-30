@@ -19,14 +19,12 @@ export default class Saloon {
       );
     });
     this.bookedTickets = this.bookedTickets.bookedSeats;
-    await JSON._save('movieSchedule.json', this.movieSchedule);
   }
 
   async render() {
     await this.loadSaloon();
-    this.movieS = await JSON._load('movieSchedule.json');
+    // this.movieSchedule = await JSON._load('movieSchedule.json');
     await this.getBookedSeats();
-    console.log('HEJSANHOPPAS: ', this.bookedTickets);
 
     let seatsArray = this.saloon.seatsPerRow;
     let html = $('<div class="saloon-container"></div>');
@@ -36,7 +34,7 @@ export default class Saloon {
       for (let j = 0; j < seatsArray[i]; j++) {
         seatNumber++;
         row.append(
-          `<input type="checkbox" class="seats" value="${seatNumber}" ${
+          `<input type="checkbox" class="seats " value="${seatNumber}" ${
             this.bookedTickets.includes(seatNumber) ? 'disabled' : false
           }>
           <label>${seatNumber}</label>`

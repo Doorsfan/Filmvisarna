@@ -8,10 +8,11 @@ export default class TicketPage {
   }
 
   eventHandler() {
+    this.bookedBefore = window.selectedShow;
     $('main').on('click', '.ticket-booking', () => this.saveUserBooking());
-    this.changeListener.on('/adminbookings/bookings.json', () => {
-      this.reRender();
-    });
+    this.changeListener.on('movieSchedule.json', this.bookedBefore, () =>
+      this.reRender()
+    );
   }
 
   async reRender() {
@@ -38,20 +39,16 @@ export default class TicketPage {
         movie.film == window.selectedShow.film &&
         movie.date == window.selectedShow.date
       ) {
-        console.log(Number(movie.bookedSeats));
-        movie.bookedSeats = [
-          ...movie.bookedSeats,
-          Number(...window.selectedShow.seat),
-        ];
+        console.log('movie.bookedSeats: ', movie.bookedSeats);
+        console.log('window: ', window.selectedShow.seat);
+        movie.bookedSeats = [...movie.bookedSeats, ...window.selectedShow.seat];
       }
     });
     await JSON._save('movieSchedule.json', this.movieSchedule);
   }
 
   async render() {
-    // this.username = await JSON.parse(sessionStorage.store);
-    // this.username = this.username['username'];
-
+    console.log('Render in ticketPage was called');
     this.saloonView = await new Saloon().render();
     this.movieSchedule = await JSON._load('movieSchedule.json');
 

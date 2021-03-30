@@ -14,7 +14,8 @@ export default class ChangeListener {
 
   // Register event handlers for listening on changes
   // to specific files
-  on(file, func) {
+  on(file, object, func) {
+    this.object = object;
     this.events.push({ file, func });
   }
 
@@ -25,17 +26,39 @@ export default class ChangeListener {
       return;
     }
     // Loop through registered events and call them on file match
-    this.events.forEach(({ file, func }) => {
+    let goBack = false;
+    this.events.map(async ({ file, func }) => {
+      let schedule = await JSON._load(file);
+
+      schedule.forEach((show) => {
+        if (show.film === this.object.film && show.date === this.object.date) {
+          if (show.bookedSeats.length == this.object.bookedSeats.length) {
+            console.log('For the show of ', show);
+            console.log('There was a trigger to return');
+            goBack = true;
+            return;
+          }
+        }
+      });
+      if (goBack) {
+        console.log('Should have returned in goback statement');
+        return;
+      }
       filePath.includes(file) && func();
     });
     // Note:
     // You SHOULD NOT reload the page for json files
     // that can be change usin JSON._save
     // For now: Do not reload on any json file changes
+
     if (filePath.slice(-5) === '.json') {
       return;
     }
+
     // Reload the page on changes (same behavior as LiveServer)
-    location.reload();
+    if (!goBack) {
+      console.log('reload');
+      location.reload();
+    }
   }
 }
