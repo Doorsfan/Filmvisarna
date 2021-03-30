@@ -5,7 +5,7 @@ export default class LoginPage {
     this.eventHandler();
   }
   eventHandler() {
-    $('main').on('submit', '.loginPage.inputForm', () => {
+    $('main').on('submit', '.loginPage.inputForm', (event) => {
       event.preventDefault();
       let myValue = '';
       myValue = this.validate.loadUser(

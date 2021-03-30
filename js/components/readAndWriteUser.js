@@ -46,6 +46,11 @@ export default class readAndWriteUser {
         </a>`);
   }
 
+  createRandomString() {
+    let randomNumber = Math.random().toString(36).substring(2, 12);
+    return randomNumber;
+  }
+
   saveUserToSessionStorage(username) {
     let store = {};
     try {
@@ -65,8 +70,25 @@ export default class readAndWriteUser {
     }
   }
 
+  async updateUserBookings(user,bookings) {
+    await JSON._save(`bookings/users/${user}.json`, bookings);
+  }
+
+  async updateAdminBookings(userId) {
+    this.allBooking = await JSON._load('bookings/adminbookings/bookings.json');
+    let index = 0;
+    for (let booking of this.allBooking) {
+      if (booking.bookingNumber === userId) {
+        this.allBooking.splice(index, 1);
+        break;
+      }
+      index += 1;
+    }
+    await JSON._save('bookings/adminbookings/bookings.json', this.allBooking);
+  }
+
   async saveBookings(booking, user) {
-    console.log(user);
+    booking.bookingNumber = this.createRandomString();
     if (!this.allBooking) {
       try {
         await this.loadBooking(user);

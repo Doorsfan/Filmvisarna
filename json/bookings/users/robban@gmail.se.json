@@ -52,19 +52,6 @@
     "bookingNumber": "gfd2gfd"
   },
   {
-    "id": "Kalle Kula",
-    "auditorium": "Lilla Paris",
-    "film": "Pippi",
-    "date": "2021-04-22",
-    "time": "18.00",
-    "seat": [
-      10,
-      14
-    ],
-    "price": 600,
-    "bookingNumber": "gfd1gfd"
-  },
-  {
     "auditorium": "Savannen",
     "film": "Harry Potter and the Sorcerer's Stone",
     "date": "2021-03-22",
@@ -76,6 +63,13 @@
       52
     ],
     "price": 300,
+    "id": "robban@gmail.se"
+  },
+  {
+    "auditorium": "Savannen",
+    "film": "Harry Potter and the Sorcerer's Stone",
+    "date": "2021-03-29",
+    "time": "16.00",
     "id": "robban@gmail.se"
   }
 ]
