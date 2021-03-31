@@ -77,6 +77,12 @@ export default class Saloon {
     });
 
     let priceSum = selectedTicketPrice.reduce((sum, price) => sum + price, 0);
+    let tickets = {
+      selectedTicketType,
+      selectedTicketPrice,
+      priceSum,
+    };
+    JSON.stringify(sessionStorage.setItem('tickets', tickets));
 
     $('.info-summation').html('');
     for (let i = 0; i < selectedTicketType.length; i++) {
@@ -96,7 +102,7 @@ export default class Saloon {
     });
     this.selectedSeats = arr.slice();
 
-    this.bookedTickets = [...this.bookedTickets, ...arr];
+    this.bookedTickets.push([...this.bookedTickets, ...arr]);
 
     this.selectedSeats.forEach((seat) => {
       $('.ticket-item').append(/*html**/ `
