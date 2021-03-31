@@ -7,10 +7,12 @@ export default class Saloon {
   }
   async loadSaloon() {
     this.saloon = await JSON._load('../../json/auditoriums.json');
+
     let selectedShow = JSON.parse(sessionStorage.getItem('selectedShow'));
     selectedShow.auditorium === 'Savannen'
       ? (this.saloon = this.saloon[0])
       : (this.saloon = this.saloon[1]);
+    console.log(typeof selectedShow);
   }
 
   async render() {
@@ -82,7 +84,8 @@ export default class Saloon {
       selectedTicketPrice,
       priceSum,
     };
-    JSON.stringify(sessionStorage.setItem('tickets', tickets));
+
+    JSON.stringify(sessionStorage.setItem('tickets', JSON.stringify(tickets)));
 
     $('.info-summation').html('');
     for (let i = 0; i < selectedTicketType.length; i++) {
@@ -102,7 +105,7 @@ export default class Saloon {
     });
     this.selectedSeats = arr.slice();
 
-    this.bookedTickets.push([...this.bookedTickets, ...arr]);
+    this.bookedTickets = [...this.bookedTickets, ...arr];
 
     this.selectedSeats.forEach((seat) => {
       $('.ticket-item').append(/*html**/ `
@@ -117,9 +120,9 @@ export default class Saloon {
           </div>
       `);
     });
-
     let selectedShow = JSON.parse(sessionStorage.getItem('selectedShow'));
     selectedShow.seats = [...this.selectedSeats];
-    JSON.stringify(sessionStorage.setItem('selectedShow', selectedShow));
+
+    sessionStorage.setItem('selectedShow', JSON.stringify(selectedShow));
   }
 }

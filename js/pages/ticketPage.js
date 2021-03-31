@@ -14,8 +14,6 @@ export default class TicketPage {
       this.saloonView = await new Saloon().render();
     }
 
-    console.log(window.clickedSeat);
-
     //Kolla först ifall användaren är inloggad
 
     //Om den är inloggad ska den sparas i personliga bokningshistorik
