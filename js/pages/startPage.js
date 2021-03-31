@@ -1,18 +1,8 @@
 import ytSlider from '../components/ytCarousellHandler.js';
-import Modal from '../components/bookingModal.js';
 
 export default class StartPage {
   constructor() {
     this.yt = new ytSlider();
-    this.props2 = {
-      username: 'Kalle',
-      film: 'Relic',
-      show: '23 December 23:00',
-      seat: 23,
-      row: 3,
-    };
-    this.modal = new Modal().render(this.props2);
-    console.log(this.modal);
   }
 
   async read() {
@@ -87,7 +77,6 @@ export default class StartPage {
         <div class="startpage-infobar">
           <p>Välkommen! <br> Filmvisarnas Biografer håller för tillfället öppet, trots nuvarande coronapandemi.</p>
         </div>
-        ${this.modal}
         <div class="startpage-coverphoto"></div>
         <div class="startpage-skew"></div>
         <h1 class="h1-aktuellt">AKTUELLT</h1>

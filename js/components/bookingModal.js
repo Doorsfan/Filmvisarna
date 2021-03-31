@@ -1,9 +1,17 @@
 export default class BookingModal {
   deleteHandler() {
     $('.backdrop').remove();
+    window.location.href = '#startPage';
   }
 
   render(props) {
+    console.log(props);
+
+    this.seatInfo = '';
+    props.seats.forEach((el) => {
+      this.seatInfo += `<p class="booking-seat">Sittplats:<span class="booking-value">${el['seat']} Rad: ${el['row']}</span></p>`;
+    });
+
     $('main').on('click', '.button-delete', this.deleteHandler);
 
     return /*html*/ `
@@ -17,8 +25,7 @@ export default class BookingModal {
           <p class="booking_username">Användarnamn: <span class="booking-value">${props.username}</span></p>
           <p class="booking-movie">Film:<span class="booking-value">${props.film}</span></p>
           <p class="booking-show">Visning:<span class="booking-value">${props.show}</span></p>
-          <p class="booking-seat">Sittplats:<span class="booking-value">${props.seat}</span></p>
-          <p class="boooking-row">Rad:<span class="booking-value">${props.row}</span></p>
+          ${this.seatInfo}
         </div>  
           <hr class="separator"/>
           <div class="credit_container">
