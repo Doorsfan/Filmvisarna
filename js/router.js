@@ -81,7 +81,7 @@ export default class Router {
   }
 
   async userPage() {
-    let user = sessionStorage.getItem('store');
+    let user = sessionStorage.getItem('username');
     console.log(user);
 
     if (user) {
