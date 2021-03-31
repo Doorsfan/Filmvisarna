@@ -70,7 +70,7 @@ export default class BookingPage {
           'selectedShow',
           JSON.stringify(this.filterSelectedShow(justDate, justTime))
         );
-        window.selectedShow = this.filterSelectedShow(justDate, justTime);
+        //window.selectedShow = this.filterSelectedShow(justDate, justTime);
       });
     });
   }
