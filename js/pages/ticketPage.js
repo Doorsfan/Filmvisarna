@@ -16,12 +16,36 @@ export default class TicketPage {
   }
 
   async reRender() {
-    $('main').html(await this.render());
+    this.movieSchedule = await JSON._load('movieSchedule.json');
+    await this.getBookedSeats();
+    let tickets = this.bookedTickets;
+    let overideSeat = [];
+    $('input:checkbox[type=checkbox]').each(function () {
+      let seat = $(this);
+      if (tickets.includes(Number($(this).val()))) {
+        $(this).prop('disabled', true);
+        if ($(this).is(':checked')) {
+          overideSeat.push(Number($(this).val()));
+          $(`.seat-number${Number($(this).val())}`).remove();
+          console.log('Theoverride seat is: ', overideSeat);
+          alert(overideSeat + 'got booked biatch');
+        }
+      }
+    });
+  }
+
+  async getBookedSeats() {
+    this.bookedTickets = this.movieSchedule.find((movie) => {
+      return (
+        movie.film == window.selectedShow.film &&
+        movie.date == window.selectedShow.date
+      );
+    });
+    this.bookedTickets = this.bookedTickets.bookedSeats;
   }
 
   async saveUserBooking() {
     let username = sessionStorage.getItem('username');
-    console.log(username);
     username
       ? (window.selectedShow.id = username)
       : (window.selectedShow.id = 'none');
@@ -48,7 +72,6 @@ export default class TicketPage {
   }
 
   async render() {
-    console.log('Render in ticketPage was called');
     this.saloonView = await new Saloon().render();
     this.movieSchedule = await JSON._load('movieSchedule.json');
 

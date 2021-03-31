@@ -34,7 +34,7 @@ export default class Saloon {
       for (let j = 0; j < seatsArray[i]; j++) {
         seatNumber++;
         row.append(
-          `<input type="checkbox" class="seats " value="${seatNumber}" ${
+          `<input type="checkbox" class="seats seat${seatNumber}" value="${seatNumber}" ${
             this.bookedTickets.includes(seatNumber) ? 'disabled' : false
           }>
           <label>${seatNumber}</label>`
@@ -112,7 +112,7 @@ export default class Saloon {
 
     this.selectedSeats.forEach((seat) => {
       $('.ticket-item').append(/*html**/ `
-          <div class='ticket-box'>
+          <div class='ticket-box seat-number${seat}'>
             <p> Biljett - Stolsnummer: ${seat}</p>
             <select class="ticket-price">
               <option value='0' data-name='Inte vald'>Välj typ:</option>

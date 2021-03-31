@@ -52,19 +52,7 @@ export default class readAndWriteUser {
   }
 
   saveUserToSessionStorage(username) {
-    // let store = {};
-    // try {
-    //   store = JSON.parse(sessionStorage.store);
-    // } catch (e) {}
-    // store.save = function () {
-    //   sessionStorage.store = JSON.stringify(this);
-    // };
-    // store['username'] = username;
-    // store.save();
-    console.log('Username before declaration was: ' + username);
     sessionStorage.setItem('username', username);
-    let myName = sessionStorage.getItem('username');
-    console.log('myName is: ' + myName);
   }
 
   async loadBooking(user) {

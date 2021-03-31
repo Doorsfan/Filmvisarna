@@ -80,6 +80,8 @@ export default class DisplaySpecificShow {
       let date = $('#select-date').val();
       let time = $('#showtime').html().replace('Tid: ', '');
       window.selectedShow = this.filterSelectedShow(date, time);
+
+      // {}
       console.log(window.selectedShow);
     });
   }
