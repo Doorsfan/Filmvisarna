@@ -34,8 +34,11 @@ export default class TicketPage {
       new ReadNWrite().saveBookings(movieInfo, this.username);
       let string = JSON.stringify(movieInfo);
       alert(string);
-      sessionStorage.removeItem('selectedShow');
+      movieInfo.user === 'none'
+        ? sessionStorage.clear()
+        : sessionStorage.removeItem('selectedShow');
       sessionStorage.removeItem('tickets');
+
       window.location.href = '#startPage';
     });
 

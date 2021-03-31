@@ -44,12 +44,12 @@ export default class Saloon {
       $('.btn').addClass('regret');
       $('.btn').html('Ångra');
     });
-    $('main').on('click', '.seats', (e) => {
+    /* $('main').on('click', '.seats', (e) => {
       window.clickedSeat = [];
       if (window.clickedSeat != e.target.value) {
         window.clickedSeat.push(e.target.value);
       }
-    });
+    }); */
 
     $('main').on('click', '.regret', (e) => {
       $('.ticket-item').html('');
@@ -96,7 +96,7 @@ export default class Saloon {
 
   saveSelectedSeats() {
     $('.ticket-item').html('');
-    let checked = $('input:checkbox[type=checkbox]:checked');
+    //let checked = $('input:checkbox[type=checkbox]:checked');
     let arr = [];
 
     $('input:checkbox[type=checkbox]:checked').each(function () {
