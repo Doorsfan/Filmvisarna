@@ -12,15 +12,12 @@ export default class Sidebar {
   }
 
   readSessionStorage() {
-    this.store = {};
-    try {
-      this.store = JSON.parse(sessionStorage.getItem('store'));
-    } catch (e) {}
+    this.store = sessionStorage.getItem('username');
   }
   render() {
     this.readSessionStorage();
     let user = this.store;
-    let myPage = user
+    let myPage = user //Dubbelt?
       ? `<a href='#userPage'>Mina sidor</a>`
       : `<a href='#loginPage'>Login</a>`;
     let logOut = user
