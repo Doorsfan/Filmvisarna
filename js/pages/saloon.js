@@ -12,7 +12,6 @@ export default class Saloon {
     selectedShow.auditorium === 'Savannen'
       ? (this.saloon = this.saloon[0])
       : (this.saloon = this.saloon[1]);
-    console.log(typeof selectedShow);
   }
 
   async render() {
@@ -85,7 +84,7 @@ export default class Saloon {
       priceSum,
     };
 
-    JSON.stringify(sessionStorage.setItem('tickets', JSON.stringify(tickets)));
+    sessionStorage.setItem('tickets', JSON.stringify(tickets));
 
     $('.info-summation').html('');
     for (let i = 0; i < selectedTicketType.length; i++) {

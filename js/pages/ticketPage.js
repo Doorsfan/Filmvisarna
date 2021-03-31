@@ -29,10 +29,13 @@ export default class TicketPage {
         ? sessionStorage.setItem('username', this.username)
         : sessionStorage.setItem('username', 'none');
       let movieInfo = JSON.parse(sessionStorage.getItem('selectedShow'));
+      movieInfo.user = sessionStorage.getItem('username');
+
       new ReadNWrite().saveBookings(movieInfo, this.username);
       let string = JSON.stringify(movieInfo);
       alert(string);
       sessionStorage.removeItem('selectedShow');
+      sessionStorage.removeItem('tickets');
       window.location.href = '#startPage';
     });
 
