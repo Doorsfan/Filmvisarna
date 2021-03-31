@@ -5,11 +5,11 @@ export default class TicketPage {
   constructor() {}
 
   async render() {
-    if (sessionStorage.getItem('store') == null) {
-      sessionStorage.setItem('store', '');
+    if (sessionStorage.getItem('username') == null) {
+      sessionStorage.setItem('username', '');
     }
-    this.username = sessionStorage.store;
-    this.username = this.username['username'];
+    this.username = sessionStorage.getItem('username');
+    //this.username = this.username['username'];
     if (!this.saloonView) {
       this.saloonView = await new Saloon().render();
     }
@@ -25,13 +25,14 @@ export default class TicketPage {
     //Efter den är sparad i bokningars
 
     $('main').on('click', '.ticket-booking', () => {
-      let user = sessionStorage.getItem('store');
+      let user = sessionStorage.getItem('username');
       this.username = user;
       this.username
-        ? (window.selectedShow.id = this.username)
-        : (window.selectedShow.id = 'none');
-      new ReadNWrite().saveBookings(window.selectedShow, this.username);
-      let string = JSON.stringify(window.selectedShow);
+        ? sessionStorage.setItem('username', this.username)
+        : sessionStorage.setItem('username', 'none');
+      let movieInfo = JSON.parse(sessionStorage.getItem('selectedShow'));
+      new ReadNWrite().saveBookings(movieInfo, this.username);
+      let string = JSON.stringify(movieInfo);
       alert(string);
       sessionStorage.removeItem('selectedShow');
       window.location.href = '#startPage';
