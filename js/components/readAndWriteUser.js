@@ -52,15 +52,7 @@ export default class readAndWriteUser {
   }
 
   saveUserToSessionStorage(username) {
-    let store = {};
-    try {
-      store = JSON.parse(sessionStorage.store);
-    } catch (e) {}
-    store.save = function () {
-      sessionStorage.store = JSON.stringify(this);
-    };
-    store['username'] = username;
-    store.save();
+    sessionStorage.setItem('username', username);
   }
 
   async loadBooking(user) {
@@ -70,7 +62,7 @@ export default class readAndWriteUser {
     }
   }
 
-  async updateUserBookings(user,bookings) {
+  async updateUserBookings(user, bookings) {
     await JSON._save(`bookings/users/${user}.json`, bookings);
   }
 

@@ -5,13 +5,14 @@ export default class TicketPage {
   constructor() {}
 
   async render() {
-    this.username = await JSON.parse(sessionStorage.store);
-    this.username = this.username['username'];
+    if (sessionStorage.getItem('username') == null) {
+      sessionStorage.setItem('username', '');
+    }
+    this.username = sessionStorage.getItem('username');
+    //this.username = this.username['username'];
     if (!this.saloonView) {
       this.saloonView = await new Saloon().render();
     }
-
-    console.log(window.clickedSeat);
 
     //Kolla först ifall användaren är inloggad
 
@@ -22,15 +23,22 @@ export default class TicketPage {
     //Efter den är sparad i bokningars
 
     $('main').on('click', '.ticket-booking', () => {
-      console.log(window.selectedShow);
-      console.log(window.selectedSeats);
-
+      let user = sessionStorage.getItem('username');
+      this.username = user;
       this.username
-        ? (window.selectedShow.id = this.username)
-        : (window.selectedShow.id = 'none');
-      new ReadNWrite().saveBookings(window.selectedShow, this.username);
-      let string = JSON.stringify(window.selectedShow);
+        ? sessionStorage.setItem('username', this.username)
+        : sessionStorage.setItem('username', 'none');
+      let movieInfo = JSON.parse(sessionStorage.getItem('selectedShow'));
+      movieInfo.user = sessionStorage.getItem('username');
+
+      new ReadNWrite().saveBookings(movieInfo, this.username);
+      let string = JSON.stringify(movieInfo);
       alert(string);
+      movieInfo.user === 'none'
+        ? sessionStorage.clear()
+        : sessionStorage.removeItem('selectedShow');
+      sessionStorage.removeItem('tickets');
+
       window.location.href = '#startPage';
     });
 

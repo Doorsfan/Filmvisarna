@@ -81,11 +81,10 @@ export default class Router {
   }
 
   async userPage() {
-    let user;
-    try {
-      user = JSON.parse(sessionStorage.store);
-    } catch (e) {}
-    if (user.username) {
+    let user = sessionStorage.getItem('username');
+    console.log(user);
+
+    if (user) {
       return new UserPage().render();
     } else {
       return loginPage.render();

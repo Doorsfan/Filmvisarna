@@ -7,7 +7,9 @@ export default class Saloon {
   }
   async loadSaloon() {
     this.saloon = await JSON._load('../../json/auditoriums.json');
-    window.selectedShow.auditorium === 'Savannen'
+
+    let selectedShow = JSON.parse(sessionStorage.getItem('selectedShow'));
+    selectedShow.auditorium === 'Savannen'
       ? (this.saloon = this.saloon[0])
       : (this.saloon = this.saloon[1]);
   }
@@ -42,12 +44,12 @@ export default class Saloon {
       $('.btn').addClass('regret');
       $('.btn').html('Ångra');
     });
-    $('main').on('click', '.seats', (e) => {
+    /* $('main').on('click', '.seats', (e) => {
       window.clickedSeat = [];
       if (window.clickedSeat != e.target.value) {
         window.clickedSeat.push(e.target.value);
       }
-    });
+    }); */
 
     $('main').on('click', '.regret', (e) => {
       $('.ticket-item').html('');
@@ -75,11 +77,14 @@ export default class Saloon {
       selectedTicketType.push($(this).data('name'));
     });
 
-    this.ticketObject.ticketPrice = selectedTicketPrice;
-    this.ticketObject.ticketType = selectedTicketType;
-    window.selectedShow.tickets = this.ticketObject;
-
     let priceSum = selectedTicketPrice.reduce((sum, price) => sum + price, 0);
+    let tickets = {
+      selectedTicketType,
+      selectedTicketPrice,
+      priceSum,
+    };
+
+    sessionStorage.setItem('tickets', JSON.stringify(tickets));
 
     $('.info-summation').html('');
     for (let i = 0; i < selectedTicketType.length; i++) {
@@ -91,7 +96,7 @@ export default class Saloon {
 
   saveSelectedSeats() {
     $('.ticket-item').html('');
-    let checked = $('input:checkbox[type=checkbox]:checked');
+    //let checked = $('input:checkbox[type=checkbox]:checked');
     let arr = [];
 
     $('input:checkbox[type=checkbox]:checked').each(function () {
@@ -114,7 +119,9 @@ export default class Saloon {
           </div>
       `);
     });
+    let selectedShow = JSON.parse(sessionStorage.getItem('selectedShow'));
+    selectedShow.seats = [...this.selectedSeats];
 
-    window.selectedShow.seat = [...this.selectedSeats];
+    sessionStorage.setItem('selectedShow', JSON.stringify(selectedShow));
   }
 }
