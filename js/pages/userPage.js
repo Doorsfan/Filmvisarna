@@ -94,7 +94,7 @@ export default class UserPage {
               <div class="booking-bottom">
                 <h3>${booking.film}</h3>
                 <p>Bokningsnummer: <b>${booking.bookingNumber}</b> 
-                  | Platser:<b> ${booking.seat}</b>
+                  | Platser:<b> ${booking.seats}</b>
                   | Pris: <b>${booking.price} kr</b></p>
                 <div class="movieDate-container">Datum: <div class="movie-date">${
                   booking.date
