@@ -23,7 +23,6 @@ export default class Saloon {
 
   async render() {
     await this.loadSaloon();
-    // this.movieSchedule = await JSON._load('movieSchedule.json');
     await this.getBookedSeats();
 
     let seatsArray = this.saloon.seatsPerRow;

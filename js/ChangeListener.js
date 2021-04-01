@@ -29,19 +29,15 @@ export default class ChangeListener {
     let goBack = false;
     this.events.map(async ({ file, func }) => {
       let schedule = await JSON._load(file);
-
       schedule.forEach((show) => {
         if (show.film === this.object.film && show.date === this.object.date) {
           if (show.bookedSeats.length == this.object.bookedSeats.length) {
-            console.log('For the show of ', show);
-            console.log('There was a trigger to return');
             goBack = true;
             return;
           }
         }
       });
       if (goBack) {
-        console.log('Should have returned in goback statement');
         return;
       }
       filePath.includes(file) && func();

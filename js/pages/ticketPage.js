@@ -63,8 +63,6 @@ export default class TicketPage {
         movie.film == window.selectedShow.film &&
         movie.date == window.selectedShow.date
       ) {
-        console.log('movie.bookedSeats: ', movie.bookedSeats);
-        console.log('window: ', window.selectedShow.seat);
         movie.bookedSeats = [...movie.bookedSeats, ...window.selectedShow.seat];
       }
     });
