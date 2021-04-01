@@ -19,7 +19,6 @@ export default class AboutPage {
   }
 
   createPage() {
-    let length = this.timeConvert(this.movie.length);
     let html = $(/*html*/ `<div class ="about-container"></div>`);
     html.append(/*html*/ `
     <div class="trailer">
@@ -28,12 +27,12 @@ export default class AboutPage {
     </div>
     <div class="about-info">
       <p>Titel:</p><p> ${this.movie.title}</p>
-      <p>Genre:</p><p> ${this.movie.genre}</p>
+      <p>Genre:</p><p> ${this.movie.genre.join ? this.movie.genre.join(', ') : this.movie.genre}</p>
       <p>Land:</p><p> ${this.movie.productionCountries}</p>
       <p>Produktionsår:</p><p> ${this.movie.productionYear}</p>
       <p>Språk:</p><p> ${this.movie.language}</p>
-      <p>Skådespelare:</p><p> ${this.movie.actors}</p>
-      <p>Längd:</p><p> ${length}</p>
+      <p>Skådespelare:</p><p> ${this.movie.actors.join ? this.movie.actors.join(', ') : this.movie.actors}</p>
+      <p>Längd:</p><p> ${Math.floor(this.movie.length / 60)} tim ${this.movie.length % 60} min</p>
       
     </div>
     <div class="movie-story">
@@ -42,15 +41,6 @@ export default class AboutPage {
     
     `);
     return html;
-  }
-
-  timeConvert(n) {
-    let num = n;
-    let hours = num / 60;
-    let rhours = Math.floor(hours);
-    let minutes = (hours - rhours) * 60;
-    let rminutes = Math.round(minutes);
-    return `${rhours}tim ${rminutes}min`;
   }
 
   async render() {
