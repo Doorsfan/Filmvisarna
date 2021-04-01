@@ -93,6 +93,9 @@ export default class Saloon {
       selectedTicketPrice,
       priceSum,
     };
+    let show = JSON.parse(sessionStorage.getItem('selectedShow'));
+    show.price = priceSum;
+    sessionStorage.setItem('selectedShow', JSON.stringify(show));
 
     sessionStorage.setItem('tickets', JSON.stringify(tickets));
 
