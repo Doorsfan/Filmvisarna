@@ -1,8 +1,22 @@
 header {
-  height: 3rem;
+  height: 3.5rem;
   width: 100%;
-  background-color: #bebdbf;
+  background-color: #212121;
   z-index: 5;
+  /* box-shadow: rgba(194, 194, 194, 0.25) 0px 50px 100px -20px,
+    rgba(202, 202, 202, 0.3) 0px 30px 60px -30px,
+    rgba(211, 211, 211, 0.35) 0px -2px 6px 0px inset; */
+  /* background: radial-gradient(150px 5px at 260px bottom, #666, #222); */
+  background-color: red;
+  /* background: red; */
+  background-color: #990000;
+  background-image: linear-gradient(147deg, #990000 0%, #c20000 84%);
+  border-bottom: 1px solid #121212;
+}
+
+header:hover,
+header:active {
+  background-color: #bd4f6c;
 }
 
 .header-nav {
@@ -18,17 +32,19 @@ header {
 
 .hamburger-icon:hover,
 .hamburger-icon:active {
-  background-color: #eeeeee;
+  background-color: whitesmoke;
   cursor: pointer;
 }
 
 .home-button {
   text-decoration: none;
+  /* color: red; */
   color: white;
   height: 100%;
   padding-top: 0.1em;
   margin-left: 3em;
   font-size: 2rem;
+  font-weight: 300;
 }
 
 .userpage-button {
@@ -49,7 +65,5 @@ header {
   cursor: pointer;
 }
 
-@media (max-width: 575.98px) { 
-
-
- }
+@media (max-width: 575.98px) {
+}
