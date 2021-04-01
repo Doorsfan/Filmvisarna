@@ -29,16 +29,18 @@ export default class Saloon {
 
     let seatsArray = this.saloon.seatsPerRow;
     let html = $('<div class="saloon-container"></div>');
-    let seatNumber = 0;
+    this.seatNumber = 0;
     for (let i = 0; i < seatsArray.length; i++) {
       let row = $(`<div class="row row-${i + 1}"></div>`);
       for (let j = 0; j < seatsArray[i]; j++) {
-        seatNumber++;
+        this.seatNumber++;
         row.append(
-          `<input type="checkbox" class="seats seat${seatNumber}" value="${seatNumber}" ${
-            this.bookedTickets.includes(seatNumber) ? 'disabled' : false
+          `<input type="checkbox" class="seats seat${this.seatNumber}" value="${
+            this.seatNumber
+          }" ${
+            this.bookedTickets.includes(this.seatNumber) ? 'disabled' : false
           }>
-          <label>${seatNumber}</label>`
+          <label>${this.seatNumber}</label>`
         );
       }
       html.append(row);
@@ -97,7 +99,7 @@ export default class Saloon {
     $('.info-summation').html('');
     for (let i = 0; i < selectedTicketType.length; i++) {
       $('.info-summation').append(`
-      <p>Billjet typ: ${selectedTicketType[i]} á ${selectedTicketPrice[i]} kr</p>`);
+      <p class="seat-number${this.seatNumber}">Billjet typ: ${selectedTicketType[i]} á ${selectedTicketPrice[i]} kr</p>`);
     }
     $('.info-summation').append(`<hr><p>Summma: ${priceSum} kr</p>`);
   }
@@ -129,7 +131,7 @@ export default class Saloon {
     });
     let selectedShow = JSON.parse(sessionStorage.getItem('selectedShow'));
     selectedShow.seats = [...this.selectedSeats];
-
+    //mata in ticketprice
     sessionStorage.setItem('selectedShow', JSON.stringify(selectedShow));
   }
 }

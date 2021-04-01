@@ -87,8 +87,7 @@ export default class readAndWriteUser {
       } catch (e) {}
     }
     // remove all booked seats, we dont need that in the object / user
-    let tempBooking = booking;
-    delete tempBooking.bookedSeats;
+    delete booking.bookedSeats;
     this.allBooking.push(booking);
 
     await JSON._save('bookings/adminbookings/bookings.json', this.allBooking);

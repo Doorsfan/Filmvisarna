@@ -27,7 +27,7 @@ export default class TicketPage {
         if ($(this).is(':checked')) {
           overideSeat.push(Number($(this).val()));
           $(`.seat-number${Number($(this).val())}`).remove();
-          console.log('Theoverride seat is: ', overideSeat);
+          new Saloon().readingTicketPrices();
           alert(overideSeat + 'got booked biatch');
         }
       }
@@ -36,7 +36,7 @@ export default class TicketPage {
 
   async getBookedSeats() {
     let selectedShow = JSON.parse(sessionStorage.getItem('selectedShow'));
-    console.log(this.movieSchedule);
+
     this.bookedTickets = this.movieSchedule.find((movie) => {
       return movie.film == selectedShow.film && movie.date == selectedShow.date;
     });
@@ -46,7 +46,6 @@ export default class TicketPage {
   async saveSeats() {
     let selectedShow = JSON.parse(sessionStorage.getItem('selectedShow'));
     this.movieSchedule.forEach((movie) => {
-      console.log(selectedShow.seats);
       if (movie.film == selectedShow.film && movie.date == selectedShow.date) {
         movie.bookedSeats = [...movie.bookedSeats, ...selectedShow.seats];
       }
