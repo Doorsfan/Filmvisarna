@@ -96,15 +96,3 @@ export default class readAndWriteUser {
     }
   }
 }
-
-//put this in async read in startPage to test out component
-// let booking = {
-//   id: 'none',
-//   auditorium: 'Lilla Paris',
-//   film: 'Relic',
-//   date: '2021-03-22',
-//   time: '18.00',
-//   seat: [13, 14],
-//   price: 300,
-// };
-// this.try = await new ReadWrite().saveBookings(booking, "robban@gmail.se");
