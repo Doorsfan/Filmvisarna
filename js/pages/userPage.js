@@ -51,11 +51,6 @@ export default class UserPage {
 
   async read() {
     this.username = sessionStorage.getItem('username');
-<<<<<<< HEAD
-    console.log(this.username);
-=======
-
->>>>>>> main
     if (this.username == 'admin@admin.se') {
       this.userBookings = await $.getJSON(
         `/json/bookings/adminbookings/bookings.json`
@@ -98,7 +93,7 @@ export default class UserPage {
               <div class="booking-bottom">
                 <h3>${booking.film}</h3>
                 <p>Bokningsnummer: <b>${booking.bookingNumber}</b> 
-                  | Platser:<b> ${booking.seat}</b>
+                  | Platser:<b> ${booking.seats}</b>
                   | Pris: <b>${booking.price} kr</b></p>
                 <div class="movieDate-container">Datum: <div class="movie-date">${
                   booking.date

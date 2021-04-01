@@ -2,34 +2,18 @@ import Saloon from './saloon.js';
 import ReadNWrite from '../components/readAndWriteUser.js';
 
 export default class TicketPage {
-<<<<<<< HEAD
   constructor(changeListener) {
     this.changeListener = changeListener;
     this.eventHandler();
   }
 
   eventHandler() {
-    this.bookedBefore = window.selectedShow;
+    let bookedBefore = JSON.parse(sessionStorage.getItem('selectedShow'));
     $('main').on('click', '.ticket-booking', () => this.saveUserBooking());
-    this.changeListener.on('movieSchedule.json', this.bookedBefore, () =>
+    this.changeListener.on('movieSchedule.json', bookedBefore, () =>
       this.reRender()
     );
   }
-=======
-  constructor() {}
-
-  async render() {
-    if (sessionStorage.getItem('username') == null) {
-      sessionStorage.setItem('username', '');
-    }
-    this.username = sessionStorage.getItem('username');
-    //this.username = this.username['username'];
-    if (!this.saloonView) {
-      this.saloonView = await new Saloon().render();
-    }
-
-    //Kolla först ifall användaren är inloggad
->>>>>>> main
 
   async reRender() {
     this.movieSchedule = await JSON._load('movieSchedule.json');
@@ -51,59 +35,36 @@ export default class TicketPage {
   }
 
   async getBookedSeats() {
+    let selectedShow = JSON.parse(sessionStorage.getItem('selectedShow'));
+    console.log(this.movieSchedule);
     this.bookedTickets = this.movieSchedule.find((movie) => {
-      return (
-        movie.film == window.selectedShow.film &&
-        movie.date == window.selectedShow.date
-      );
+      return movie.film == selectedShow.film && movie.date == selectedShow.date;
     });
     this.bookedTickets = this.bookedTickets.bookedSeats;
   }
 
+  async saveSeats() {
+    let selectedShow = JSON.parse(sessionStorage.getItem('selectedShow'));
+    this.movieSchedule.forEach((movie) => {
+      console.log(selectedShow.seats);
+      if (movie.film == selectedShow.film && movie.date == selectedShow.date) {
+        movie.bookedSeats = [...movie.bookedSeats, ...selectedShow.seats];
+      }
+    });
+    await JSON._save('movieSchedule.json', this.movieSchedule);
+  }
+
   async saveUserBooking() {
     let username = sessionStorage.getItem('username');
-    username
-      ? (window.selectedShow.id = username)
-      : (window.selectedShow.id = 'none');
-    new ReadNWrite().saveBookings(window.selectedShow, username);
-    let string = JSON.stringify(window.selectedShow);
+    username ? (username = username) : (username = 'none');
+    let movieInfo = JSON.parse(sessionStorage.getItem('selectedShow'));
+    movieInfo.user = username;
+    new ReadNWrite().saveBookings(movieInfo, username);
+    let string = JSON.stringify(movieInfo);
 
-<<<<<<< HEAD
     alert(string);
     await this.saveSeats();
     window.location.href = '#startPage';
-  }
-
-  async saveSeats() {
-    this.movieSchedule.forEach((movie) => {
-      if (
-        movie.film == window.selectedShow.film &&
-        movie.date == window.selectedShow.date
-      ) {
-        movie.bookedSeats = [...movie.bookedSeats, ...window.selectedShow.seat];
-      }
-=======
-    $('main').on('click', '.ticket-booking', () => {
-      let user = sessionStorage.getItem('username');
-      this.username = user;
-      this.username
-        ? sessionStorage.setItem('username', this.username)
-        : sessionStorage.setItem('username', 'none');
-      let movieInfo = JSON.parse(sessionStorage.getItem('selectedShow'));
-      movieInfo.user = sessionStorage.getItem('username');
-
-      new ReadNWrite().saveBookings(movieInfo, this.username);
-      let string = JSON.stringify(movieInfo);
-      alert(string);
-      movieInfo.user === 'none'
-        ? sessionStorage.clear()
-        : sessionStorage.removeItem('selectedShow');
-      sessionStorage.removeItem('tickets');
-
-      window.location.href = '#startPage';
->>>>>>> main
-    });
-    await JSON._save('movieSchedule.json', this.movieSchedule);
   }
 
   async render() {

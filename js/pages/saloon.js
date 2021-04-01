@@ -13,12 +13,12 @@ export default class Saloon {
       ? (this.saloon = this.saloon[0])
       : (this.saloon = this.saloon[1]);
   }
+
   async getBookedSeats() {
+    let selectedShow = JSON.parse(sessionStorage.getItem('selectedShow'));
+
     this.bookedTickets = this.movieSchedule.find((movie) => {
-      return (
-        movie.film == window.selectedShow.film &&
-        movie.date == window.selectedShow.date
-      );
+      return movie.film == selectedShow.film && movie.date == selectedShow.date;
     });
     this.bookedTickets = this.bookedTickets.bookedSeats;
   }
