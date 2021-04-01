@@ -117,7 +117,11 @@ export default class Saloon {
     });
     this.selectedSeats = arr.slice();
 
-    this.bookedTickets = [...this.bookedTickets, ...arr];
+    if (this.bookedTickets === undefined) {
+      this.bookedTickets = [...arr];
+    } else {
+      this.bookedTickets = [...this.bookedTickets, ...arr];
+    }
 
     this.selectedSeats.forEach((seat) => {
       $('.ticket-item').append(/*html**/ `
