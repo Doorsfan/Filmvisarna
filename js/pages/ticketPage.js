@@ -2,6 +2,7 @@ import Saloon from './saloon.js';
 import ReadNWrite from '../components/readAndWriteUser.js';
 
 export default class TicketPage {
+<<<<<<< HEAD
   constructor(changeListener) {
     this.changeListener = changeListener;
     this.eventHandler();
@@ -14,6 +15,21 @@ export default class TicketPage {
       this.reRender()
     );
   }
+=======
+  constructor() {}
+
+  async render() {
+    if (sessionStorage.getItem('username') == null) {
+      sessionStorage.setItem('username', '');
+    }
+    this.username = sessionStorage.getItem('username');
+    //this.username = this.username['username'];
+    if (!this.saloonView) {
+      this.saloonView = await new Saloon().render();
+    }
+
+    //Kolla först ifall användaren är inloggad
+>>>>>>> main
 
   async reRender() {
     this.movieSchedule = await JSON._load('movieSchedule.json');
@@ -52,6 +68,7 @@ export default class TicketPage {
     new ReadNWrite().saveBookings(window.selectedShow, username);
     let string = JSON.stringify(window.selectedShow);
 
+<<<<<<< HEAD
     alert(string);
     await this.saveSeats();
     window.location.href = '#startPage';
@@ -65,6 +82,26 @@ export default class TicketPage {
       ) {
         movie.bookedSeats = [...movie.bookedSeats, ...window.selectedShow.seat];
       }
+=======
+    $('main').on('click', '.ticket-booking', () => {
+      let user = sessionStorage.getItem('username');
+      this.username = user;
+      this.username
+        ? sessionStorage.setItem('username', this.username)
+        : sessionStorage.setItem('username', 'none');
+      let movieInfo = JSON.parse(sessionStorage.getItem('selectedShow'));
+      movieInfo.user = sessionStorage.getItem('username');
+
+      new ReadNWrite().saveBookings(movieInfo, this.username);
+      let string = JSON.stringify(movieInfo);
+      alert(string);
+      movieInfo.user === 'none'
+        ? sessionStorage.clear()
+        : sessionStorage.removeItem('selectedShow');
+      sessionStorage.removeItem('tickets');
+
+      window.location.href = '#startPage';
+>>>>>>> main
     });
     await JSON._save('movieSchedule.json', this.movieSchedule);
   }

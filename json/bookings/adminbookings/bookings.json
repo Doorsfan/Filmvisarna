@@ -187,6 +187,7 @@
   },
   {
     "auditorium": "Lilla Paris",
+<<<<<<< HEAD
     "film": "Gudfadern",
     "date": "2021-04-02",
     "time": "18.00",
@@ -405,5 +406,15 @@
     },
     "id": "none",
     "bookingNumber": "x2koq7y4uc"
+=======
+    "film": "Harry Potter and the Sorcerer's Stone",
+    "date": "2021-04-01",
+    "time": "18.00",
+    "seats": [
+      55,
+      56
+    ],
+    "bookingNumber": "z494kbwcr"
+>>>>>>> main
   }
 ]

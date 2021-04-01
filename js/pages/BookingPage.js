@@ -1,11 +1,11 @@
 export default class BookingPage {
-  fromDate = new Date().toISOString().split('T')[0];
+  showDate = new Date().toISOString().split('T')[0];
 
   constructor() {
     // Adding event handler for date input
     let that = this;
     $('body').on('change', '.datePicker', async function () {
-      that.fromDate = $(this).val();
+      that.showDate = $(this).val();
       $('main').html(await that.render());
     });
     this.eventHandler();
@@ -17,16 +17,16 @@ export default class BookingPage {
   }
 
   async render() {
-    console.log(this.fromDate);
+    console.log(this.showDate);
     let html = `
     <div class = "bookingpage-container">
     <div class = "bookingpage-cover"></div>
-    <label class="datePickerLabel">Visningar från och med: <input class="datePicker" type="date" value="${this.fromDate}"></label>
+    <label class="datePickerLabel">Visningar från och med: <input class="datePicker" type="date" value="${this.showDate}"></label>
     `;
     if (!this.shows) {
       await this.readShowsFromJson();
     }
-    let shows = this.shows.filter((show) => show.date >= this.fromDate);
+    let shows = this.shows.filter((show) => show.date === this.showDate);
     for (let show of shows) {
       let movie = this.movies.find((movie) => movie.title === show.film);
       if (!movie) {
@@ -66,7 +66,12 @@ export default class BookingPage {
         let dateAndTime = myData[1];
         let justDate = dateAndTime.split(' ')[0];
         let justTime = dateAndTime.split(' ')[1];
-        window.selectedShow = this.filterSelectedShow(justDate, justTime);
+
+        sessionStorage.setItem(
+          'selectedShow',
+          JSON.stringify(this.filterSelectedShow(justDate, justTime))
+        );
+        //window.selectedShow = this.filterSelectedShow(justDate, justTime);
       });
     });
   }

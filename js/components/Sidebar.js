@@ -6,14 +6,18 @@ export default class Sidebar {
   }
   eventHandler() {
     $('body').on('click', '.logout', () => {
-      sessionStorage.removeItem('username');
+      sessionStorage.clear();
       $('header').replaceWith(new Header().render());
     });
   }
 
+  readSessionStorage() {
+    this.store = sessionStorage.getItem('username');
+  }
   render() {
-    let user = sessionStorage.getItem('username');
-    let myPage = user
+    this.readSessionStorage();
+    let user = this.store;
+    let myPage = user //Dubbelt?
       ? `<a href='#userPage'>Mina sidor</a>`
       : `<a href='#loginPage'>Login</a>`;
     let logOut = user

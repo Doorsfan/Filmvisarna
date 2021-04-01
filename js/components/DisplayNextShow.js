@@ -79,10 +79,13 @@ export default class DisplaySpecificShow {
     $('main').on('click', '.aboutPage-btn', (event) => {
       let date = $('#select-date').val();
       let time = $('#showtime').html().replace('Tid: ', '');
-      window.selectedShow = this.filterSelectedShow(date, time);
+      sessionStorage.setItem(
+        'selectedShow',
+        JSON.stringify(this.filterSelectedShow(date, time))
+      );
 
-      // {}
-      console.log(window.selectedShow);
+      /* window.selectedShow = this.filterSelectedShow(date, time);
+      console.log(window.selectedShow); */
     });
   }
 
