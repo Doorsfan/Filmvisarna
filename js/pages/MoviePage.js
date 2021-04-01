@@ -98,15 +98,14 @@ export default class MoviePage {
     ageRating.sort((a, b) => a - b);
   }
 
-  addingMovieInfoToHtml(data, html) {
-    let genreString = '';
-    genreString = this.removingUnwantedLastComma(data, genreString);
+  addingMovieInfoToHtml(data) {
+    let genreString = data.genre.join(', ');
     return `<section class="movie-info">
           <div class="movie-poster">
             <a href="#aboutPage/${data.id}"><img src="${data.images[0]}"></a>
           </div>
           <div class="movie-text">
-            <h2 class="title-name"><p>${data.title}</p></h2>
+            <h2 class="title-name">${data.title}</h2>
             <div class="genre"><h4>Genre: </h4> <p>${genreString}</p></div>
             <div class="runtime"><h4>Speltid: </h4> <p>
             ${data.length + ' minuter'}</p></div>
@@ -114,17 +113,6 @@ export default class MoviePage {
             ${data.description}</div>
           </div>
         </section>`;
-  }
-
-  removingUnwantedLastComma(data, genreString) {
-    for (let i = 0; i < data.genre.length; i++) {
-      if (i === data.genre.length - 1) {
-        genreString += data.genre[i];
-      } else {
-        genreString += data.genre[i] + ', ';
-      }
-    }
-    return genreString;
   }
 
   eventHandler() {
