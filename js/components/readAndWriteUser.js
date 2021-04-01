@@ -57,7 +57,7 @@ export default class readAndWriteUser {
 
   async loadBooking(user) {
     this.allBooking = await JSON._load('bookings/adminbookings/bookings.json');
-    if (user) {
+    if (user !== 'none') {
       this.userBooking = await JSON._load(`/bookings/users/${user}.json`);
     }
   }
@@ -86,25 +86,15 @@ export default class readAndWriteUser {
         await this.loadBooking(user);
       } catch (e) {}
     }
-
+    // remove all booked seats, we dont need that in the object / user
+    delete booking.bookedSeats;
     this.allBooking.push(booking);
+
     await JSON._save('bookings/adminbookings/bookings.json', this.allBooking);
 
-    if (user) {
+    if (user !== 'none') {
       this.userBooking.push(booking);
       await JSON._save(`bookings/users/${user}.json`, this.userBooking);
     }
   }
 }
-
-//put this in async read in startPage to test out component
-// let booking = {
-//   id: 'none',
-//   auditorium: 'Lilla Paris',
-//   film: 'Relic',
-//   date: '2021-03-22',
-//   time: '18.00',
-//   seat: [13, 14],
-//   price: 300,
-// };
-// this.try = await new ReadWrite().saveBookings(booking, "robban@gmail.se");
