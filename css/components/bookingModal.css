@@ -320,4 +320,24 @@
     min-width: 10px;
     max-width: 300px;
   }
+
+  .booking-modal_title h1 {
+    font-size: 1.2rem;
+  }
+
+  .booking-info_container p {
+    font-size: 0.8rem;
+  }
+
+  .credit_container {
+    flex-direction: column;
+  }
+
+  .credit-card {
+    margin: 0 auto;
+  }
+
+  .booking-card {
+    margin-bottom: 1rem;
+  }
 }
