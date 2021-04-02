@@ -20,7 +20,8 @@
   box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
     rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
     rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
-  background-color: #121212;
+  background-color: #2d2d2d;
+
   /* visibility: hidden; */
   box-shadow: rgba(0, 0, 0, 1) 0px 54px 55px, rgba(0, 0, 0, 1) 0px -12px 30px,
     rgba(0, 0, 0, 1) 0px 4px 6px, rgba(0, 0, 0, 1) 0px 12px 13px,
@@ -131,7 +132,8 @@
   flex-grow: 2;
   /* align-self: end; */
   align-self: flex-end;
-  background: radial-gradient(40% 5px at 260px bottom, #666, #121212);
+
+  background: radial-gradient(40% 5px at 260px bottom, #666, #2d2d2d);
 }
 
 .separator {
@@ -169,6 +171,7 @@
 .select,
 .book-show div,
 .book-show a {
+  text-decoration: none;
   margin-top: 1rem;
 }
 
@@ -178,15 +181,14 @@
 
 .aboutPage-btn {
   /* grid-area: o; */
+  font-size: 1rem;
   cursor: pointer;
   width: 200px;
   height: 30px;
-  background-color: #434244;
-  cursor: pointer;
+  background-color: #e50914d4;
   border: #434244;
   border-radius: 5px;
   color: #eeeeee;
-  font-weight: 700;
   text-decoration: none;
   align-items: center;
   justify-content: center;
