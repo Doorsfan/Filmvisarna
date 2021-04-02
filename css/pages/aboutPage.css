@@ -68,18 +68,37 @@
 
 .about-info_container {
   display: flex;
-  flex-direction: row;
+  flex-direction: column-reverse;
+}
+
+.movie-disc {
+  font-style: italic;
+  color: #eeeeee;
+  font-size: 1.1rem;
+  display: flex;
+  padding: 1rem;
+  justify-content: center;
+  margin-top: 2rem;
+  margin-left: 3rem;
 }
 
 .about-info {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  /* grid-area: a; */
   margin: 1rem;
   padding: 10px;
 
   font-size: 1rem;
+}
+
+.movie-reviews {
+  color: #eeeeee;
+  font-size: 0.6rem;
+  display: flex;
+  flex-direction: row;
+  padding: 0.8rem;
+  justify-content: space-between;
+  margin: 2rem;
 }
 
 .about-info > p:nth-child(odd) {

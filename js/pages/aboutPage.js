@@ -22,9 +22,18 @@ export default class AboutPage {
     let review;
     this.movie.reviews.forEach((data) => {
       console.log(data);
-      review += `<div>${data.quote}<br> - ${data.source}</div>
-                <div>${data.stars} / ${data.max}</div>`;
+      review += /*html*/ `
+        <div>
+          <div>
+            ${data.quote} - ${data.source}
+          </div>
+          <div>
+            ${data.stars} / ${data.max}
+          </div>
+        </div >
+          `;
     });
+
     let html = $(/*html*/ `<div class ="about-container"></div>`);
     html.append(/*html*/ `
     <div class="trailer">
@@ -39,13 +48,14 @@ export default class AboutPage {
         <p>Produktionsår:</p><p> ${this.movie.productionYear}</p>
         <p>Språk:</p><p> ${this.movie.language}</p>
         <p>Skådespelare:</p><p> ${this.movie.actors}</p>
-        <p>Längd:</p><p> ${length}</p>  
+        <p>Längd:</p><p> ${Math.floor(this.movie.length / 60)}
+        tim ${this.movie.length % 60}min</p>  
       </div>
-      <div class="movie-review">${review}</div>
-      <div class="movie-story">
-      <button class="tickets_button">Biljetter</button>
+      <div class="movie-reviews">${review}</div>
+ 
+      <div class="movie-disc">
       ${this.movie.description}
-    </div>
+      </div>
     </div>
     <hr class="separator"/>
     `);
