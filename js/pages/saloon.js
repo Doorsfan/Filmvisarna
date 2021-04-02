@@ -80,7 +80,6 @@ export default class Saloon {
 
     $("[class='ticket-price'] option:selected").each(function () {
       if ($(this).data('name') === 'Inte vald') {
-        console.log('hej');
       }
       selectedTicketType.push($(this).data('name'));
     });
@@ -93,12 +92,13 @@ export default class Saloon {
     };
     let show = JSON.parse(sessionStorage.getItem('selectedShow'));
     show.price = priceSum;
-    sessionStorage.setItem('selectedShow', JSON.stringify(show));
+    !selectedTicketType.includes('Inte vald')
+      ? $('.ticket-booking').prop('disabled', false)
+      : $('.ticket-booking').prop('disabled', true);
 
+    sessionStorage.setItem('selectedShow', JSON.stringify(show));
     sessionStorage.setItem('tickets', JSON.stringify(tickets));
-    if (!selectedTicketType.includes('Inte vald')) {
-      $('.ticket-booking').prop('disabled', false);
-    }
+
     $('.info-summation').html('');
     for (let i = 0; i < selectedTicketType.length; i++) {
       $('.info-summation').append(`
