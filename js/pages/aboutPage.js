@@ -28,11 +28,11 @@ export default class AboutPage {
     let html = $(/*html*/ `<div class ="about-container"></div>`);
     html.append(/*html*/ `
     <div class="trailer">
-      <iframe width="420" height="315"
-      src="https://www.youtube.com/embed/${this.movie.youtubeTrailers}"></iframe>
+    <iframe width="420" height="315"
+    src="https://www.youtube.com/embed/${this.movie.youtubeTrailers}"></iframe>
     </div>
     <div class="about-info_container">
-      <div class="about-info">
+    <div class="about-info">
         <p>Titel:</p><p> ${this.movie.title}</p>
         <p>Genre:</p><p> ${this.movie.genre}</p>
         <p>Land:</p><p> ${this.movie.productionCountries}</p>
