@@ -19,6 +19,12 @@ export default class AboutPage {
   }
 
   createPage() {
+    let review;
+    this.movie.reviews.forEach((data) => {
+      console.log(data);
+      review += `<div>${data.quote}<br> - ${data.source}</div>
+                <div>${data.stars} / ${data.max}</div>`;
+    });
     let html = $(/*html*/ `<div class ="about-container"></div>`);
     html.append(/*html*/ `
     <div class="trailer">
@@ -35,7 +41,8 @@ export default class AboutPage {
         <p>Skådespelare:</p><p> ${this.movie.actors}</p>
         <p>Längd:</p><p> ${length}</p>  
       </div>
-    <div class="movie-story">
+      <div class="movie-review">${review}</div>
+      <div class="movie-story">
       <button class="tickets_button">Biljetter</button>
       ${this.movie.description}
     </div>
