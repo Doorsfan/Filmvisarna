@@ -26,14 +26,22 @@ export default class UserPage {
           'click',
           '.' + element.bookingNumber,
           (cancelBookingButton) => {
-            cancelBookingObject.cancelBookingById(this.userBookings, cancelBookingButton.target.className);
+            cancelBookingObject.cancelBookingById(
+              this.userBookings,
+              cancelBookingButton.target.className
+            );
             if (this.username != 'admin@admin.se') {
-              readAndWriteUserObject.updateUserBookings(this.username, this.userBookings);
+              readAndWriteUserObject.updateUserBookings(
+                this.username,
+                this.userBookings
+              );
             }
-            readAndWriteUserObject.updateAdminBookings(cancelBookingButton.target.className);
-            $("." + cancelBookingButton.target.className).remove();
+            readAndWriteUserObject.updateAdminBookings(
+              cancelBookingButton.target.className
+            );
+            $('.' + cancelBookingButton.target.className).remove();
             $('.bookingNrDisplay').each(function (index) {
-              $(this).text('Bokning ' + (index+1));
+              $(this).text('Bokning ' + (index + 1));
             });
           }
         );
@@ -42,9 +50,7 @@ export default class UserPage {
   }
 
   async read() {
-    this.username = await JSON.parse(sessionStorage.store);
-    this.username = this.username['username'];
-    console.log(this.username);
+    this.username = sessionStorage.getItem('username');
     if (this.username == 'admin@admin.se') {
       this.userBookings = await $.getJSON(
         `/json/bookings/adminbookings/bookings.json`
@@ -87,7 +93,7 @@ export default class UserPage {
               <div class="booking-bottom">
                 <h3>${booking.film}</h3>
                 <p>Bokningsnummer: <b>${booking.bookingNumber}</b> 
-                  | Platser:<b> ${booking.seat}</b>
+                  | Platser:<b> ${booking.seats}</b>
                   | Pris: <b>${booking.price} kr</b></p>
                 <div class="movieDate-container">Datum: <div class="movie-date">${
                   booking.date

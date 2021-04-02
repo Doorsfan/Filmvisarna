@@ -19,7 +19,6 @@ export default class AboutPage {
   }
 
   createPage() {
-    let length = this.timeConvert(this.movie.length);
     let html = $(/*html*/ `<div class ="about-container"></div>`);
     html.append(/*html*/ `
     <div class="trailer">
@@ -44,15 +43,6 @@ export default class AboutPage {
     <hr class="separator"/>
     `);
     return html;
-  }
-
-  timeConvert(n) {
-    let num = n;
-    let hours = num / 60;
-    let rhours = Math.floor(hours);
-    let minutes = (hours - rhours) * 60;
-    let rminutes = Math.round(minutes);
-    return `${rhours}tim ${rminutes}min`;
   }
 
   async render() {
