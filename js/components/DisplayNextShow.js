@@ -33,43 +33,13 @@ export default class DisplaySpecificShow {
         <div id="display-saloon">
           <div id="move-saloon">${this.filteredShow[i].auditorium}</div>
           <div id="showtime">Tid: ${this.filteredShow[i].time}</div>
-          <a href="#ticketPage"><button class="aboutPage-btn" type="button">Boka</button></a>
+          <a href="#ticketPage"><button class="aboutPage-btn" type="button" value="${[
+            this.filteredShow[i].date,
+            this.filteredShow[i].time,
+          ]}">Boka</button></a>
         </div>
         </div>`);
     }
-    return html;
-  }
-
-  createSelect1() {
-    let html = $(/*html*/ `<div class="book-show"></div>`);
-    let select = $(
-      /*html*/ `<select class="select" id="select-date"></select>`
-    );
-
-    this.filteredShow.forEach((show) => {
-      select.append(
-        /*html*/ `<option value="${show.date}">${show.date}</option>`
-      );
-    });
-
-    let text = $(/*html*/ `<div class="aboutPage-text">Boka Biljett</div>`);
-
-    let nextShow = $(/*html*/ `
-    
-    <div id="display-saloon">
-    <p>Salong ${this.filteredShow[0].auditorium}</p>
-    <div id="showtime">Tid: ${this.filteredShow[0].time}</div>
-    </div>
-    `);
-
-    let btn = $(
-      /*html*/ `<a href="#ticketPage"><button class="aboutPage-btn" type="button">Boka</button></a>`
-    );
-    html.append(text);
-    html.append(select);
-    html.append(nextShow);
-    html.append(btn);
-
     return html;
   }
 
@@ -96,20 +66,17 @@ export default class DisplaySpecificShow {
     );
 
     $('main').on('click', '.aboutPage-btn', (event) => {
-      let date = $('#select-date').val();
-      let time = $('#showtime').html().replace('Tid: ', '');
+      let value = event.target.value.split(',', 2);
+      let date = value[0];
+      let time = value[1];
       sessionStorage.setItem(
         'selectedShow',
         JSON.stringify(this.filterSelectedShow(date, time))
       );
-
-      /* window.selectedShow = this.filterSelectedShow(date, time);
-      console.log(window.selectedShow); */
     });
   }
 
   filterSelectedShow(date, time) {
-    //this.shows == movieSchedule.json
     let displayShow = this.shows.find((show) => {
       return show.date == date && show.time == time;
     });
