@@ -39,7 +39,7 @@ export default class BookingPage {
     <div class = "bookingpage-show">
       <a href="#aboutPage/${movie.id}"><img src=${movie.images[0]}></a>
       <h2>${show.film}</h2>
-      <p>${movie.genre.join ? movie.genre.join(', ') : movie.genre} | 
+      <p>${(movie.genre = movie.genre.join(', '))} |
       ${Math.floor(movie.length / 60)} tim ${movie.length % 60} min</p>
       <h3>${show.date} | ${show.time} | ${show.auditorium}</h3>
       <a href="#ticketPage"><button class="bookingpage${purgedName} &${
