@@ -4,7 +4,8 @@
   font-family: 'Montserrat', sans-serif;
   /* position: absolute; */
   width: 70%;
-  height: 70%;
+  height: fit-content;
+  min-height: 70%;
   display: flex;
   flex-direction: column;
   background-color: grey;
@@ -21,7 +22,7 @@
   overflow: hidden;
   max-width: 500px;
   min-width: 400px;
-  max-height: 600px;
+  /* max-height: 600px; */
   border-radius: 10px;
 }
 
@@ -319,14 +320,21 @@
   .booking-modal_container {
     min-width: 10px;
     max-width: 300px;
+    padding: 1rem;
   }
 
   .booking-modal_title h1 {
     font-size: 1.2rem;
   }
 
+  .booking-info_container {
+    height: fit-content;
+  }
+
   .booking-info_container p {
     font-size: 0.8rem;
+    font-size: 3.5vw;
+    height: fit-content;
   }
 
   .credit_container {
@@ -339,5 +347,36 @@
 
   .booking-card {
     margin-bottom: 1rem;
+  }
+
+  .booking_username {
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .booking_username span {
+    display: block;
+  }
+
+  .booking-movie {
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .booking-movie span {
+    display: block;
+  }
+
+  .booking-show {
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .booking-show span {
+    display: block;
+  }
+
+  .separator {
+    /* margin-top: 2rem; */
   }
 }
