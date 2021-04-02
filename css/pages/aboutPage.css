@@ -1,28 +1,15 @@
 .about-container {
   margin: auto;
   max-width: 60rem;
-  /* max-height: 91vh; */
+  color: #eeeeee;
   display: flex;
   flex-direction: column;
-  /* display: grid; */
 
-  /* grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 2fr 2fr 1fr 2fr 2fr;
-  grid-template-areas:
-    'v v v'
-    'v v v'
-    'v v v'
-    'a a c'
-    'e e e'; */
-  /* background-color: #e1e0e2; */
-  /* box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset,
-    rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset; */
   box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
     rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
     rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
   background-color: #2d2d2d;
 
-  /* visibility: hidden; */
   box-shadow: rgba(0, 0, 0, 1) 0px 54px 55px, rgba(0, 0, 0, 1) 0px -12px 30px,
     rgba(0, 0, 0, 1) 0px 4px 6px, rgba(0, 0, 0, 1) 0px 12px 13px,
     rgba(0, 0, 0, 1) 0px -3px 5px;
@@ -72,14 +59,17 @@
 }
 
 .movie-disc {
-  font-style: italic;
+  text-align: center;
+  /* font-style: italic; */
   color: #eeeeee;
   font-size: 1.1rem;
   display: flex;
   padding: 1rem;
+  margin: 0 10px 0 10px;
   justify-content: center;
-  margin-top: 2rem;
-  margin-left: 3rem;
+}
+.movie-disc p {
+  font-weight: 100 !important; /*ta bort denna sen, bara så det lirar nu*/
 }
 
 .about-info {
@@ -93,19 +83,29 @@
 
 .movie-reviews {
   color: #eeeeee;
-  font-size: 0.6rem;
+  font-size: 0.8rem;
   display: flex;
   flex-direction: row;
-  padding: 0.8rem;
+  padding: 0 10px 0 10px;
   justify-content: space-between;
-  margin: 2rem;
+  margin: 1rem;
 }
 
 .about-info > p:nth-child(odd) {
-  color: #5d5d5d;
+  color: white;
 }
 .about-info > p:nth-child(even) {
   color: #a9a9a9;
+}
+
+.movie-pictures img {
+  width: 165px;
+  height: 230px;
+}
+.movie-pictures {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 2rem;
 }
 
 .tickets_button {
@@ -114,33 +114,20 @@
   max-width: 300px;
   color: white;
   border: none;
-  /* text-align: center; */
   margin: 0 auto;
   border-radius: 5px;
   padding: 1rem 1.4rem;
   cursor: pointer;
 }
 
-.tickets_button:hover,
-.tickets_button:active {
-  background: white;
-  color: red;
-}
-
 .movie-story {
-  /* grid-area: e; */
   font-size: 1.1rem;
-  /* width: 100%; */
   display: flex;
   padding: 1rem;
-  /* align-items: center; */
   justify-content: center;
-  /* font-style: italic; */
-  /* text-align: justify; */
   flex-direction: column;
   margin-top: 2rem;
   margin-left: 3rem;
-  /* align-items: stretch; */
 }
 
 .movie-story p {
@@ -150,8 +137,6 @@
   color: #a9a9a9;
   font-weight: 100 !important; /*ta bort denna sen, bara så det lirar nu*/
   flex-grow: 2;
-  /* align-self: end; */
-  /* align-self: flex-end; */
   background: #2d2d2d;
 }
 
@@ -192,12 +177,11 @@
 }
 
 .aboutPage-btn {
-  /* grid-area: o; */
   font-size: 1rem;
   cursor: pointer;
-  width: 100px;
-  height: 30px;
-  background-color: #e50914d4;
+  width: 70px;
+  height: 25px;
+  background-image: linear-gradient(147deg, #990000 0%, #c20000 84%);
   border: #434244;
   border-radius: 5px;
   color: #eeeeee;
@@ -207,13 +191,17 @@
   display: flex;
 }
 
+.aboutPage-btn:hover,
+.aboutPage-btn:active {
+  background: white;
+  color: red;
+}
+
 .about-container p {
-  /* color: black; */
   font-weight: 100;
 }
 
 .aboutPage-text {
-  /* grid-area: h; */
   width: 100%;
   font-size: 1rem;
   margin-bottom: 1rem;
@@ -221,7 +209,6 @@
 #select-date {
   align-self: center;
   justify-self: center;
-  /* grid-area: t; */
   width: 100%;
   height: 2rem;
 }
@@ -229,8 +216,6 @@
 .trailer iframe {
   min-height: 515px;
   width: 100%;
-
-  /* height: 100%; */
   border: none;
 }
 

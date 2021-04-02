@@ -32,7 +32,6 @@ header:active {
 
 .hamburger-icon:hover,
 .hamburger-icon:active {
-  background-color: whitesmoke;
   cursor: pointer;
 }
 

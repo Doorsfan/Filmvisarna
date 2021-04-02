@@ -19,8 +19,8 @@ export default class AboutPage {
   }
 
   createPage() {
-    let review;
-    this.movie.reviews.forEach((data) => {
+    let review = '';
+    this.movie.reviews.map((data) => {
       console.log(data);
       review += /*html*/ `
         <div>
@@ -28,11 +28,12 @@ export default class AboutPage {
             ${data.quote} - ${data.source}
           </div>
           <div>
-            ${data.stars} / ${data.max}
+            ${data.stars} / ${data.max} ⭐️
           </div>
         </div >
           `;
     });
+    console.log(review);
 
     let html = $(/*html*/ `<div class ="about-container"></div>`);
     html.append(/*html*/ `
@@ -52,12 +53,20 @@ export default class AboutPage {
         tim ${this.movie.length % 60}min</p>  
       </div>
       <div class="movie-reviews">${review}</div>
- 
       <div class="movie-disc">
       ${this.movie.description}
       </div>
     </div>
     <hr class="separator"/>
+      <div class="movie-pictures">
+      <img src="${this.movie.images[0]}">
+      <img src="${this.movie.images[0]}">
+      <img src="${this.movie.images[0]}">
+      <img src="${this.movie.images[0]}">
+      <img src="${this.movie.images[0]}">
+      </div>
+    <hr class="separator"/>
+
     `);
     return html;
   }
