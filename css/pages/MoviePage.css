@@ -1,20 +1,51 @@
 .movie-container {
   display: flex;
   flex-direction: column;
-  padding-top: 2rem;
   align-items: center;
+  margin: auto;
+  margin-top: 2rem;
+  width: 100%;
+  max-width: 60rem;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  background-color: #121212;
+  /* visibility: hidden; */
+  box-shadow: rgba(0, 0, 0, 1) 0px 54px 55px, rgba(0, 0, 0, 1) 0px -12px 30px,
+    rgba(0, 0, 0, 1) 0px 4px 6px, rgba(0, 0, 0, 1) 0px 12px 13px,
+    rgba(0, 0, 0, 1) 0px -3px 5px;
+
+  box-shadow: rgba(255, 255, 255, 0.2) 0px 4px 5px,
+    rgba(0, 0, 0, 1) 0px -12px 30px, rgba(0, 0, 0, 1) 0px 4px 6px,
+    rgba(0, 0, 0, 1) 0px 12px 13px, rgba(0, 0, 0, 1) 0px -3px 5px;
+}
+.movie-container .headline {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60rem;
+  height: 10rem;
+  background-image: url('/images/film-banner.jpg');
+  object-fit: contain;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: #a11e22;
+  box-shadow: 0 0 8px 8px #121212 inset;
 }
 .movie-container h1 {
   align-self: center;
-  margin-bottom: 1em;
 }
 
-.movie-container p {
-  color: black;
+.movie-container .movie-text > p:nth-child(odd) {
+  color: #8d8d8d;
+}
+.movie-container .movie-text > p:nth-child(even) {
+  color: #a9a9a9;
+  font-weight: 300;
 }
 .movie-container .movie-filter {
   align-self: center;
-  margin-bottom: 2rem;
+  margin: 0.5rem 0 2rem 0;
 }
 .movie-container select {
   background: #e1e0e2;
@@ -41,26 +72,14 @@ select:hover {
 .movie-container .movie-info {
   display: flex;
   flex-wrap: wrap;
-  background-color: #e1e0e2;
+
   /*  gap: 1rem; */
-  width: 100%;
-  max-width: 60rem;
+
   margin-bottom: 1rem;
-  border-bottom: 0.1rem solid black;
+
   border-radius: 0.2rem;
 }
-.movie-container .genre h4 {
-  display: inline;
-}
-.movie-container .genre p {
-  display: inline;
-}
-.movie-container .runtime h4 {
-  display: inline;
-}
-.movie-container .runtime p {
-  display: inline;
-}
+
 .movie-container .movie-poster {
   margin: auto;
 }
@@ -69,22 +88,25 @@ select:hover {
   width: 165px;
   height: 230px;
   object-fit: cover;
-  padding-top: 0.3rem;
+  padding-left: 0.2rem;
   border-radius: 0.2rem;
+  margin-left: 1rem;
 }
 .movie-container .movie-text {
   flex: 1 1;
   min-width: 31ch;
-  margin: 0.5rem 0.7rem;
+  margin: 0.5rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 100;
 }
 
-@media only screen and (max-width: 435.98px) {
+@media only screen and (max-width: 500px) {
   .movie-container .movie-text h2 {
     text-align: center;
     margin-bottom: 1rem;
   }
 }
 
-.movie-container .movie-text h4 {
-  margin: 0.2rem 0;
+.movie-container .title-name {
+  color: #a11e22;
 }
