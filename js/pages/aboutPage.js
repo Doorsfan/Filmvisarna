@@ -23,7 +23,7 @@ export default class AboutPage {
     this.movie.reviews.map((data) => {
       console.log(data);
       review += /*html*/ `
-        <div>
+        <div class="reveiw-box">
           <div>
             ${data.quote} - ${data.source}
           </div>
@@ -59,11 +59,11 @@ export default class AboutPage {
     </div>
     <hr class="separator"/>
       <div class="movie-pictures">
-      <img src="${this.movie.images[0]}">
-      <img src="${this.movie.images[0]}">
-      <img src="${this.movie.images[0]}">
-      <img src="${this.movie.images[0]}">
-      <img src="${this.movie.images[0]}">
+      <img src="${this.movie.pictures[0]}">
+      <img src="${this.movie.pictures[1]}">
+      <img src="${this.movie.pictures[2]}">
+      <img src="${this.movie.pictures[3]}">
+      <img src="${this.movie.pictures[0]}">
       </div>
     <hr class="separator"/>
 

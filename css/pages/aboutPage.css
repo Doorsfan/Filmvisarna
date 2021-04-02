@@ -91,6 +91,13 @@
   margin: 1rem;
 }
 
+.movie-reviews div {
+  margin-right: 0.5rem;
+}
+.movie-reviews :last-child {
+  margin-right: 0;
+}
+
 .about-info > p:nth-child(odd) {
   color: white;
 }
@@ -100,7 +107,7 @@
 
 .movie-pictures img {
   width: 165px;
-  height: 230px;
+  height: 165px;
 }
 .movie-pictures {
   display: flex;
