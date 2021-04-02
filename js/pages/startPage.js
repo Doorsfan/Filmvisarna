@@ -53,24 +53,29 @@ export default class StartPage {
         counter++;
       }
     });
+    let timer = '';
 
-    $('main').load('load', showSlides);
-
-    function showSlides() {
+    let showSlides = function () {
       let slides = $('.slideshow-slide');
 
       for (let i = 0; i < slides.length; i++) {
         slides[i].style.display = 'none';
       }
 
-      slides[currentSlide].style.display = 'flex';
-      if (currentSlide != slides.length - 1) {
-        currentSlide++;
+      if (window.location.hash === '#startPage') {
+        slides[currentSlide].style.display = 'flex';
+        if (currentSlide != slides.length - 1) {
+          currentSlide++;
+        } else {
+          currentSlide = 0;
+        }
       } else {
-        currentSlide = 0;
+        return;
       }
-      setTimeout(showSlides, 4000);
-    }
+      timer = setTimeout(showSlides, 4000);
+    };
+
+    $('main').load('load', showSlides);
 
     return `
       <div class="big-container">

@@ -10,9 +10,12 @@ export default class TicketPage {
   eventHandler() {
     let bookedBefore = JSON.parse(sessionStorage.getItem('selectedShow'));
     $('main').on('click', '.ticket-booking', () => this.saveUserBooking());
-    this.changeListener.on('movieSchedule.json', bookedBefore, () =>
-      this.reRender()
-    );
+
+    if (this.changeListener) {
+      this.changeListener.on('movieSchedule.json', bookedBefore, () =>
+        this.reRender()
+      );
+    }
   }
 
   async reRender() {
