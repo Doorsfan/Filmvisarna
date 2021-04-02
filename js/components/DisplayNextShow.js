@@ -25,6 +25,23 @@ export default class DisplaySpecificShow {
 
   createSelect() {
     let html = $(/*html*/ `<div class="book-show"></div>`);
+
+    for (let i = 0; i < 3; i++) {
+      html.append(/*html*/ `
+        <div class="show">
+        <div class='aboutPage-text'>${this.filteredShow[i].date}</div>
+        <div id="display-saloon">
+          <div id="move-saloon">${this.filteredShow[i].auditorium}</div>
+          <div id="showtime">Tid: ${this.filteredShow[i].time}</div>
+          <a href="#ticketPage"><button class="aboutPage-btn" type="button">Boka</button></a>
+        </div>
+        </div>`);
+    }
+    return html;
+  }
+
+  createSelect1() {
+    let html = $(/*html*/ `<div class="book-show"></div>`);
     let select = $(
       /*html*/ `<select class="select" id="select-date"></select>`
     );
@@ -38,6 +55,7 @@ export default class DisplaySpecificShow {
     let text = $(/*html*/ `<div class="aboutPage-text">Boka Biljett</div>`);
 
     let nextShow = $(/*html*/ `
+    
     <div id="display-saloon">
     <p>Salong ${this.filteredShow[0].auditorium}</p>
     <div id="showtime">Tid: ${this.filteredShow[0].time}</div>
@@ -54,6 +72,7 @@ export default class DisplaySpecificShow {
 
     return html;
   }
+
   async render() {
     if (!this.movieSchedule) {
       await this.read();

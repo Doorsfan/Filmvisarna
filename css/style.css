@@ -62,8 +62,8 @@ body {
   /* background-color: #000000; */
   background: linear-gradient(
       to bottom,
-      rgba(44, 44, 44, 0.9),
-      rgba(44, 44, 44, 1)
+      rgba(33, 33, 33, 0.7),
+      rgb(33, 33, 33, 1)
     ),
     url('../images/testcover.webp');
 }
