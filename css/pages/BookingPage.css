@@ -1,22 +1,25 @@
-/*
-Primär Färg:
-  #BEBDBF;
-Primär Färg - Variation:
-  #E1E0E2;
-Sekundär Färg:
-  #FFFFFF;
-Sekundär Färg - Variation:
-  #EEEEEE;
-Extra Färger: 
-  #434244;
-  #626163;
-*/
-.bookingpage-container  {
+.bookingpage-container {
   align-items: center;
-  padding: 1rem 2rem;
-  }
+  margin: auto;
+  margin-top: 2rem;
+  width: 100%;
+  max-width: 60rem;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  background-color: #121212;
+  /* visibility: hidden; */
+  box-shadow: rgba(0, 0, 0, 1) 0px 54px 55px, rgba(0, 0, 0, 1) 0px -12px 30px,
+    rgba(0, 0, 0, 1) 0px 4px 6px, rgba(0, 0, 0, 1) 0px 12px 13px,
+    rgba(0, 0, 0, 1) 0px -3px 5px;
 
-.bookingpage-cover  {
+  box-shadow: rgba(255, 255, 255, 0.2) 0px 4px 5px,
+    rgba(0, 0, 0, 1) 0px -12px 30px, rgba(0, 0, 0, 1) 0px 4px 6px,
+    rgba(0, 0, 0, 1) 0px 12px 13px, rgba(0, 0, 0, 1) 0px -3px 5px;
+  opacity: 0.9;
+}
+
+.bookingpage-cover {
   height: 30vh;
   background-color: #86b9b6;
   background-image: url('/images/bookingpage_cover.jpg');
@@ -25,67 +28,67 @@ Extra Färger:
   margin-top: 1rem;
   margin-bottom: 1rem;
   border-radius: 3px;
-  }
+  box-shadow: 0 0 8px 8px #121212 inset;
+}
 
 .bookingpage-show {
-  background-color: #E1E0E2;
   padding: 1rem;
   position: relative;
-  margin-bottom: 0.5rem;
   border-radius: 3px;
-  }
+}
 
 .bookingpage-show:after {
-  content: "";
+  content: '';
   display: table;
   clear: both;
-  }
+}
 
 .bookingpage-show img {
   float: left;
   margin-right: 1rem;
   width: 20vw;
   border-radius: 3px;
-  }
+}
 
 .bookingpage-show button {
-  width:  10vw;
+  width: 10vw;
   height: 5vh;
-  background-color: #434244;
+  background-color: #a11e22;
   cursor: pointer;
-  border: #434244;
+  border: #701619;
   border-radius: 5px;
-  color: #EEEEEE;
+  color: #a9a9a9;
   font-weight: 700;
   text-decoration: none;
   justify-content: center;
   position: absolute;
   right: 1rem;
   bottom: 1rem;
-  }
+}
 
-.bookingpage-show h2  {
-  color: #434244;
+.bookingpage-show h2 {
+  color: #a11e22;
   margin-bottom: 1rem;
-  }
+}
 
-.bookingpage-show h3  {
-  color: #434244;
-  font-weight: 700;
+.bookingpage-show h3 {
+  color: #8d8d8d;
+  font-weight: 400;
   font-size: 1rem;
-  }
+}
 
 .bookingpage-show p {
-  color: black;
+  color: #a9a9a9;
   margin-bottom: 1rem;
-  } 
+  font-weight: 100;
+}
 
-.datePickerLabel  {
+.datePickerLabel {
   display: block;
   margin-bottom: 1rem;
   font-weight: bold;
   font-size: 1.5rem;
-  color: #FFFFFF;
+  color: #ffffff;
 }
 
 .datePicker {
@@ -93,5 +96,5 @@ Extra Färger:
   margin-left: 1rem;
   color: #626163;
   border-radius: 3px;
-  border-color: #E1E0E2;
+  border-color: #e1e0e2;
 }
