@@ -24,8 +24,8 @@ export default class MoviePage {
     ageRatingsToAdd.forEach((age) => {
       ageRatings += /*html*/ `<option value="${age}">${age}</option>`;
     });
-    this.movies.forEach((data) => {
-      movieInfo += this.addingMovieInfoToHtml(data);
+    this.movies.forEach((movie) => {
+      movieInfo += this.addingMovieInfoToHtml(movie);
     });
 
     return `
@@ -62,19 +62,22 @@ export default class MoviePage {
     $('.movies-main-box').append(movieInfo);
   }
 
-  filteringMovies(age, category, filteredMovies) {
+  filteringMovies(chosenAge, chosenCategory, filteredMovies) {
     this.movies.forEach((movie) => {
       let movieAge = '';
-      isNaN(parseFloat(movie.ageRating))
+      movie.ageRating === 'barntillåten'
         ? (movieAge = movie.ageRating)
         : (movieAge = parseInt(movie.ageRating));
-      if (movieAge === 'barntillåten' || age === 'default') {
-        if (movie.genre.includes(category) || category === 'default') {
+      if (movieAge === 'barntillåten' || chosenAge === 'default') {
+        if (
+          movie.genre.includes(chosenCategory) ||
+          chosenCategory === 'default'
+        ) {
           filteredMovies.push(movie);
         }
       } else if (
-        (movieAge <= age && movie.genre.includes(category)) ||
-        (movieAge <= age && category === 'default')
+        (movieAge <= chosenAge && movie.genre.includes(chosenCategory)) ||
+        (movieAge <= chosenAge && chosenCategory === 'default')
       ) {
         filteredMovies.push(movie);
       }
@@ -91,29 +94,31 @@ export default class MoviePage {
     });
   }
 
-  gettingAgeRatingFromJson(ageRating) {
+  gettingAgeRatingFromJson(allAgeRatings) {
     this.movies.forEach((movie) => {
-      if (!ageRating.includes(movie.ageRating)) {
-        ageRating.push(movie.ageRating);
+      if (!allAgeRatings.includes(movie.ageRating)) {
+        allAgeRatings.push(movie.ageRating);
       }
     });
-    ageRating.sort((a, b) => a - b);
+    allAgeRatings.sort((a, b) => a - b);
   }
 
   addingMovieInfoToHtml(data) {
     let genreString = data.genre.join(', ');
-    return `<section class="movie-info">
-          <div class="movie-poster">
-            <a href="#aboutPage/${data.id}"><img src="${data.images[0]}"></a>
-          </div>
-          <div class="movie-text">
-            <h2 class="title-name">${data.title}</h2>
-            <p>Genre:</p><p> ${genreString}</p>
-            <p>Speltid:</p><p> ${data.length + ' minuter'}</p>
-            <p>Handling:&nbsp;</p>
-            ${data.description}
-          </div>
-        </section><hr class="seperator">`;
+    return `
+    <section class="movie-info">
+      <div class="movie-poster">
+        <a href="#aboutPage/${data.id}"><img src="${data.images[0]}"></a>
+      </div>
+      <div class="movie-text">
+        <h2 class="title-name">${data.title}</h2>
+        <p>Genre:</p><p> ${genreString}</p>
+        <p>Speltid:</p><p> ${data.length + ' minuter'}</p>
+        <p>Handling:&nbsp;</p>
+        ${data.description}
+      </div>
+    </section>
+    <hr class="seperator">`;
   }
 
   eventHandler() {

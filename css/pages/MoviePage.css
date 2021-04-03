@@ -50,7 +50,7 @@
   margin: 2rem 0 3rem 0;
 }
 .movie-container select {
-  background: #e1e0e2;
+  background: #a9a9a9;
   border: 1px solid #9f9f9f;
   cursor: pointer;
   border-radius: 4px;
@@ -64,8 +64,7 @@
   padding: 0.3rem;
   width: 8rem;
 }
-.movie-container select:focus,
-select:hover {
+.movie-container select:hover select:focus {
   outline: none;
   background-color: #9f9f9f;
   border: 1px solid #2d2d2d;
@@ -78,9 +77,6 @@ select:hover {
   border-radius: 0.2rem;
 }
 
-.movie-container .movie-poster {
-  margin: auto;
-}
 .movie-container .movie-poster img {
   width: 100%;
   width: 165px;
