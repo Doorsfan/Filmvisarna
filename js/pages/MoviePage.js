@@ -29,18 +29,20 @@ export default class MoviePage {
     });
 
     return `
-    <div class="movie-container"><div class="headline"><h1>Våra filmer</h1></div><div class="movie-filter">
-      <select id="category-filter">
-      <option value="default">Genre</option>
-        ${allGenres}
-      </select>
-      <select id="age-filter">
-      <option value="default">Åldersgrupp</option>
-        ${ageRatings}
-      </select>
-    </div>
-    <div class="movies-main-box">
-        ${movieInfo}
+    <div class="movie-container"><div class="headline"></div>
+      <h1>Aktuellt på Bio</h1>
+      <div class="movie-filter">
+        <select id="category-filter">
+          <option value="default">Genre</option>
+          ${allGenres}
+        </select>
+        <select id="age-filter">
+          <option value="default">Åldersgrupp</option>
+          ${ageRatings}
+        </select>
+      </div>
+      <div class="movies-main-box">
+          ${movieInfo}
     </div></div>
     `;
   }
