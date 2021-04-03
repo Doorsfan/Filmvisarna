@@ -33,6 +33,11 @@ export default class AboutPage {
           `;
     });
 
+    let age =
+      this.movie.ageRating === 'barntillåten'
+        ? 'Barntillåten'
+        : 'Från ' + this.movie.ageRating + ' år';
+
     let html = $(/*html*/ `<div class ="about-container"></div>`);
     html.append(/*html*/ `
     <div class="trailer">
@@ -42,11 +47,17 @@ export default class AboutPage {
     <div class="about-info_container">
     <div class="about-info">
         <p>Titel:</p><p> ${this.movie.title}</p>
-        <p>Genre:</p><p> ${this.movie.genre}</p>
+        <p>Genre:</p><p> ${
+          this.movie.genre.join ? this.movie.genre.join(', ') : this.movie.genre
+        }</p>
         <p>Land:</p><p> ${this.movie.productionCountries}</p>
         <p>Produktionsår:</p><p> ${this.movie.productionYear}</p>
         <p>Språk:</p><p> ${this.movie.language}</p>
-        <p>Skådespelare:</p><p> ${this.movie.actors}</p>
+        <p>Skådespelare:</p><p> ${
+          this.movie.actors.join
+            ? this.movie.actors.join(', ')
+            : this.movie.actors
+        }</p>
         <p>Längd:</p><p> ${Math.floor(this.movie.length / 60)}
         tim ${this.movie.length % 60}min</p>  
       </div>
@@ -93,6 +104,7 @@ export default class AboutPage {
       </div>
     <hr class="separator"/>
     <div class="next-show">Boka direkt</div>
+    <div class="age-limit">${age}</div>
 
     `);
     return html;

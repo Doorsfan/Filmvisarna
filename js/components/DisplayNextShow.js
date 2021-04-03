@@ -26,7 +26,7 @@ export default class DisplaySpecificShow {
   createSelect() {
     let html = $(/*html*/ `<div class="book-show"></div>`);
 
-    for (let i = 0; i < 3; i++) {
+    for (let i = 0; i < 4; i++) {
       html.append(/*html*/ `
         <div class="show">
         <div class='aboutPage-text'>${this.filteredShow[i].date}</div>

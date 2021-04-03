@@ -241,6 +241,11 @@
   align-self: center;
   font-size: 2rem;
 }
+.age-limit {
+  align-self: center;
+  font-size: 1rem;
+  font-weight: lighter;
+}
 
 .aboutimg p {
   font-weight: 100;
@@ -281,5 +286,9 @@
   .about-info,
   .movie-story {
     font-size: 0.9rem;
+  }
+
+  .show:last-child {
+    display: none;
   }
 }
