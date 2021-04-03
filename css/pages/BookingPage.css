@@ -70,6 +70,18 @@
 .bookingpage-show button:hover {
   background-color: #701619;
 }
+.bookingpage-container .seperator {
+  margin-bottom: 2rem;
+  border: 0;
+  height: 1px;
+  width: 100%;
+  background-image: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0),
+    rgba(255, 255, 255, 0.75),
+    rgba(255, 255, 255, 0)
+  );
+}
 
 .bookingpage-show h2 {
   color: #a11e22;

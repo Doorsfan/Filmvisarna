@@ -47,7 +47,7 @@ export default class BookingPage {
       } ${show.time}& ${show.auditorium} ${
         movie.title
       }">Boka biljett</button></a>
-      </div>
+      </div><hr class="seperator">
       `;
     }
     html += '</div>';
