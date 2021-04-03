@@ -237,6 +237,11 @@
   color: red;
 }
 
+.next-show {
+  align-self: center;
+  font-size: 2rem;
+}
+
 .aboutimg p {
   font-weight: 100;
 }

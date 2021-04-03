@@ -92,6 +92,7 @@ export default class AboutPage {
   </div>
       </div>
     <hr class="separator"/>
+    <div class="next-show">Boka direkt</div>
 
     `);
     return html;
