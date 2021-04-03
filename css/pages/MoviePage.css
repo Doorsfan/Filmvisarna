@@ -34,6 +34,7 @@
 
 .movie-container h1 {
   align-self: center;
+  margin-top: 1rem;
   color: #a11e22;
 }
 
@@ -46,14 +47,13 @@
 }
 .movie-container .movie-filter {
   align-self: center;
-  margin: 3rem 0 3rem 0;
+  margin: 2rem 0 3rem 0;
 }
 .movie-container select {
   background: #e1e0e2;
   border: 1px solid #9f9f9f;
   cursor: pointer;
   border-radius: 4px;
-
   appearance: none;
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -74,11 +74,7 @@ select:hover {
 .movie-container .movie-info {
   display: flex;
   flex-wrap: wrap;
-
-  /*  gap: 1rem; */
-
   margin-bottom: 1rem;
-
   border-radius: 0.2rem;
 }
 
