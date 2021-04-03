@@ -111,7 +111,7 @@ export default class MoviePage {
             <p>Handling:&nbsp;</p>
             ${data.description}
           </div>
-        </section>`;
+        </section><hr class="seperator">`;
   }
 
   eventHandler() {
