@@ -101,6 +101,10 @@ select:hover {
   font-size: 1rem;
   font-weight: 100;
 }
+.movie-container .title-name {
+  color: #a11e22;
+  margin-bottom: 0.5rem;
+}
 
 .movie-container .seperator {
   margin-bottom: 1.5rem;
@@ -120,8 +124,4 @@ select:hover {
     text-align: center;
     margin-bottom: 1rem;
   }
-}
-
-.movie-container .title-name {
-  color: #a11e22;
 }
