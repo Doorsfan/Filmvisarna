@@ -103,19 +103,19 @@ export default class MoviePage {
     allAgeRatings.sort((a, b) => a - b);
   }
 
-  addingMovieInfoToHtml(data) {
-    let genreString = data.genre.join(', ');
+  addingMovieInfoToHtml(movie) {
+    let genreString = movie.genre.join(', ');
     return `
     <section class="movie-info">
       <div class="movie-poster">
-        <a href="#aboutPage/${data.id}"><img src="${data.images[0]}"></a>
+        <a href="#aboutPage/${movie.id}"><img src="${movie.images[0]}"></a>
       </div>
       <div class="movie-text">
-        <h2 class="title-name">${data.title}</h2>
+        <h2 class="title-name">${movie.title}</h2>
         <p>Genre:</p><p> ${genreString}</p>
-        <p>Speltid:</p><p> ${data.length + ' minuter'}</p>
+        <p>Speltid:</p><p> ${movie.length + ' minuter'}</p>
         <p>Handling:&nbsp;</p>
-        ${data.description}
+        ${movie.description}
       </div>
     </section>
     <hr class="seperator">`;
