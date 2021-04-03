@@ -87,7 +87,7 @@ export default class AboutPage {
   </div>
 
   <div class="container">
-      <img src="${this.movie.pictures[0]}">
+      <img src="${this.movie.pictures[4]}">
         <div class="middle">
     <div class="text">${this.movie.title}</div>
   </div>

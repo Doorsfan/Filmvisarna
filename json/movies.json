@@ -14,6 +14,13 @@
     "actors": ["Robyn Nevin", "Emily Mortimer", "Bella Heathcote"],
     "description": "<p>Den sinnesförvirrade änkan Edna rapporteras försvunnen från sitt förfallna hem. Hennes dotter och barnbarn beger sig till huset för att ta reda på vad som hänt. När Edna plötsligt dyker upp igen är hon sig inte lik. Men än värre – hon är inte ensam.</p>",
     "images": ["./images/movie_posters/relic.jpg"],
+    "pictures": [
+      "/images/movie_pictures/relic1.jpg",
+      "/images/movie_pictures/relic2.jpg",
+      "/images/movie_pictures/relic3.jpg",
+      "/images/movie_pictures/relic4.jpg",
+      "/images/movie_pictures/relic5.jpg"
+    ],
     "youtubeTrailers": ["XWhZDQkq0bw"],
     "reviews": [
       {
@@ -53,6 +60,13 @@
     "images": [
       "./images/movie_posters/harry_potter1.jpg",
       "./images/movie_posters/harry_potter2.jpg"
+    ],
+    "pictures": [
+      "/images/movie_pictures/harry1.jpg",
+      "/images/movie_pictures/harry2.jpg",
+      "/images/movie_pictures/harry3.jpg",
+      "/images/movie_pictures/harry4.jpg",
+      "/images/movie_pictures/harry5.jpg"
     ],
     "youtubeTrailers": ["VyHV0BRtdxo"],
     "reviews": [
