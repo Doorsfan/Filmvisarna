@@ -21,7 +21,6 @@ export default class AboutPage {
   createPage() {
     let review = '';
     this.movie.reviews.map((data) => {
-      console.log(data);
       review += /*html*/ `
         <div class="reveiw-box">
           <div>
@@ -33,7 +32,6 @@ export default class AboutPage {
         </div >
           `;
     });
-    console.log(review);
 
     let html = $(/*html*/ `<div class ="about-container"></div>`);
     html.append(/*html*/ `
