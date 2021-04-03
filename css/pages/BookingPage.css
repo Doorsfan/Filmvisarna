@@ -56,7 +56,8 @@ Extra Färger:
 .bookingpage-show img {
   float: left;
   margin-right: 1rem;
-  max-width: 190px;
+  width: 165px;
+  height: 230px;
   border-radius: 3px;
 }
 
@@ -74,6 +75,11 @@ Extra Färger:
   position: absolute;
   right: 1rem;
   bottom: 1rem;
+}
+.bookingpage-show button:hover,
+.bookingpage-show button:active {
+  background: white;
+  color: red;
 }
 
 .bookingpage-show h2 {
