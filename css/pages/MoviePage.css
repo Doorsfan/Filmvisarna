@@ -67,7 +67,8 @@
 .movie-container select:focus,
 select:hover {
   outline: none;
-  border: 1px solid #626163;
+  background-color: #9f9f9f;
+  border: 1px solid #2d2d2d;
 }
 
 .movie-container .movie-info {
@@ -96,13 +97,13 @@ select:hover {
 .movie-container .movie-text {
   flex: 1 1;
   min-width: 31ch;
-  margin: 0.5rem 1.5rem;
+  margin: 0 1.5rem;
   font-size: 1rem;
   font-weight: 100;
 }
 
 .movie-container .seperator {
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
   border: 0;
   height: 1px;
   width: 100%;
