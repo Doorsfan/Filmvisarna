@@ -1,10 +1,10 @@
 .sidebar-container {
-  height: calc(100% - 3rem);
-  border: 1px solid #e1e0e2;
+  height: 100%;
   width: 20rem;
-  background: #bebdbf;
+
   position: absolute;
   left: -20rem;
+  background-color: #2a2828f2;
 }
 
 .sidebar-show {

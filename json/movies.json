@@ -14,6 +14,13 @@
     "actors": ["Robyn Nevin", "Emily Mortimer", "Bella Heathcote"],
     "description": "<p>Den sinnesförvirrade änkan Edna rapporteras försvunnen från sitt förfallna hem. Hennes dotter och barnbarn beger sig till huset för att ta reda på vad som hänt. När Edna plötsligt dyker upp igen är hon sig inte lik. Men än värre – hon är inte ensam.</p>",
     "images": ["./images/movie_posters/relic.jpg"],
+    "pictures": [
+      "/images/movie_pictures/relic1.jpg",
+      "/images/movie_pictures/relic2.jpg",
+      "/images/movie_pictures/relic3.jpg",
+      "/images/movie_pictures/relic4.jpg",
+      "/images/movie_pictures/relic5.jpg"
+    ],
     "youtubeTrailers": ["XWhZDQkq0bw"],
     "reviews": [
       {
@@ -54,6 +61,13 @@
       "./images/movie_posters/harry_potter1.jpg",
       "./images/movie_posters/harry_potter2.jpg"
     ],
+    "pictures": [
+      "/images/movie_pictures/harry1.jpg",
+      "/images/movie_pictures/harry2.jpg",
+      "/images/movie_pictures/harry3.jpg",
+      "/images/movie_pictures/harry4.jpg",
+      "/images/movie_pictures/harry5.jpg"
+    ],
     "youtubeTrailers": ["VyHV0BRtdxo"],
     "reviews": [
       {
@@ -91,6 +105,13 @@
     "actors": ["Adam Driver", "Golshifteh Farahani", "Barry Shabaka Henley"],
     "description": "<p>Paterson är busschaufför i staden Paterson, New Jersey. Varje dag kör han sin dagliga rutt under vilken han observerar staden när den flimrar förbi genom vindrutan och lyssnar samtidigt på fragment av passagerarnas konversationer, han skriver poesi i en anteckningsbok, han går ut med sin tjejs egensinniga engelska bulldogg Marvin, han stannar till vid samma bar och dricker exakt en öl innan han går hem till sin fru Laura.</p>",
     "images": ["/images/movie_posters/paterson.jpg"],
+    "pictures": [
+      "/images/movie_pictures/paterson1.jpg",
+      "/images/movie_pictures/paterson2.jpg",
+      "/images/movie_pictures/paterson3.jpg",
+      "/images/movie_pictures/paterson4.jpg",
+      "/images/movie_pictures/paterson5.jpg"
+    ],
     "youtubeTrailers": ["m8pGJBgiiDU"],
     "reviews": [
       {
@@ -128,6 +149,13 @@
     "actors": ["Marlon Brando", "Al Pacino", "James Caan"],
     "description": "<p>Maffialedaren Don Vito Corleone styr sitt mäktiga imperium med ett brutalt system av tjänster och gentjänster. När han dör måste någon av sönerna ta över: advokaten Tom, playboyen Sonny, lojale Fredo - eller Michael, den yngste och minst villige.</p>",
     "images": ["./images/movie_posters/the_godfather.jpg"],
+    "pictures": [
+      "/images/movie_pictures/gudfadern1.jpg",
+      "/images/movie_pictures/gudfadern2.jpg",
+      "/images/movie_pictures/gudfadern3.jpg",
+      "/images/movie_pictures/gudfadern4.jpg",
+      "/images/movie_pictures/gudfadern5.jpg"
+    ],
     "youtubeTrailers": ["sY1S34973zA"],
     "reviews": [
       {
@@ -163,10 +191,17 @@
     "director": "Jacques Tati",
     "ageRating": "barntillåten",
     "actors": ["Jacques Tati", "Jean-Pierre Zola", "Adrienne Servantie"],
-    "description": "<p>Herr och fru Arpel är de modernaste av människor. Deras hem styrs på samma sätt som herr Arpel styr sin plastfabrik — metodiskt och med exakta rutiner. En dröm för vissa, men en mardröm för sonen Gérard.</p><p>Han flyr den stela, steriliserade världen in i famnen på sin onkel, monsieur Hulot. Men så kommer föräldrarna på dem. Hulot måste stoppas! I deras värld äger han det farligaste vapnet av allt. Ett hjärta.</p>",
+    "description": "<p>Herr och fru Arpel är de modernaste av människor. Deras hem styrs på samma sätt som herr Arpel styr sin plastfabrik — metodiskt och med exakta rutiner. En dröm för vissa, men en mardröm för sonen Gérard. Han flyr den stela, steriliserade världen in i famnen på sin onkel, monsieur Hulot. Men så kommer föräldrarna på dem. Hulot måste stoppas! I deras värld äger han det farligaste vapnet av allt. Ett hjärta.</p>",
     "images": [
       "./images/movie_posters/min_onkel_1.jpg",
       "./images/movie_posters/min_onkel_2.jpg"
+    ],
+    "pictures": [
+      "/images/movie_pictures/onkel1.jpg",
+      "/images/movie_pictures/onkel2.jpg",
+      "/images/movie_pictures/onkel3.jpg",
+      "/images/movie_pictures/onkel4.jpg",
+      "/images/movie_pictures/onkel5.jpg"
     ],
     "youtubeTrailers": ["vqVpQ6S0BDA"],
     "reviews": [
@@ -207,6 +242,13 @@
     "images": [
       "/images/movie_posters/nyckeln_till_frihet_poster1.jpg",
       "/images/movie_posters/nyckeln_till_frihet_poster2.jpg"
+    ],
+    "pictures": [
+      "/images/movie_pictures/nyckeln1.jpg",
+      "/images/movie_pictures/nyckeln2.jpg",
+      "/images/movie_pictures/nyckeln3.jpg",
+      "/images/movie_pictures/nyckeln4.jpg",
+      "/images/movie_pictures/nyckeln5.jpg"
     ],
     "youtubeTrailers": ["6hB3S9bIaco"],
     "reviews": [
