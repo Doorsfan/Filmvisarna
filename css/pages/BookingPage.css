@@ -11,81 +11,99 @@ Extra Färger:
   #434244;
   #626163;
 */
-.bookingpage-container  {
+.bookingpage-container {
+  max-width: 60rem;
+  margin-left: auto;
+  margin-right: auto;
   align-items: center;
   padding: 1rem 2rem;
-  }
 
-.bookingpage-cover  {
+  background-color: #424141;
+  box-shadow: rgba(0, 0, 0, 1) 0px 54px 55px, rgba(0, 0, 0, 1) 0px -12px 30px,
+    rgba(0, 0, 0, 1) 0px 4px 6px, rgba(0, 0, 0, 1) 0px 12px 13px,
+    rgba(0, 0, 0, 1) 0px -3px 5px;
+}
+
+.bookingpage-cover {
   height: 30vh;
-  background-color: #86b9b6;
   background-image: url('/images/bookingpage_cover.jpg');
   background-size: cover;
   background-position: center;
   margin-top: 1rem;
   margin-bottom: 1rem;
   border-radius: 3px;
-  }
+}
 
 .bookingpage-show {
-  background-color: #E1E0E2;
+  background-color: #363636;
+
+  box-shadow: rgb(32, 32, 32) 0px 5px 5px, rgba(32, 32, 32, 0.8) 0px -2px 3px,
+    rgba(32, 32, 32, 0.8) 0px 4px 6px, rgba(32, 32, 32, 0.8) 0px 3px 3px,
+    rgba(32, 32, 32, 0.8) 0px -3px 5px;
   padding: 1rem;
   position: relative;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.9rem;
   border-radius: 3px;
-  }
+  color: white;
+}
 
 .bookingpage-show:after {
-  content: "";
+  content: '';
   display: table;
   clear: both;
-  }
+}
 
 .bookingpage-show img {
   float: left;
   margin-right: 1rem;
-  width: 20vw;
+  width: 165px;
+  height: 230px;
   border-radius: 3px;
-  }
+}
 
 .bookingpage-show button {
-  width:  10vw;
+  width: 10vw;
   height: 5vh;
-  background-color: #434244;
+  background-color: #e50914d4;
   cursor: pointer;
   border: #434244;
   border-radius: 5px;
-  color: #EEEEEE;
+  color: #eeeeee;
   font-weight: 700;
   text-decoration: none;
   justify-content: center;
   position: absolute;
   right: 1rem;
   bottom: 1rem;
-  }
+}
+.bookingpage-show button:hover,
+.bookingpage-show button:active {
+  background: white;
+  color: red;
+}
 
-.bookingpage-show h2  {
-  color: #434244;
+.bookingpage-show h2 {
+  color: #a4a4a4;
   margin-bottom: 1rem;
-  }
+}
 
-.bookingpage-show h3  {
-  color: #434244;
+.bookingpage-show h3 {
+  color: #9c9c9c;
   font-weight: 700;
   font-size: 1rem;
-  }
+}
 
 .bookingpage-show p {
-  color: black;
+  color: rgb(117, 117, 117);
   margin-bottom: 1rem;
-  } 
+}
 
-.datePickerLabel  {
+.datePickerLabel {
   display: block;
   margin-bottom: 1rem;
   font-weight: bold;
   font-size: 1.5rem;
-  color: #FFFFFF;
+  color: #ffffff;
 }
 
 .datePicker {
@@ -93,5 +111,5 @@ Extra Färger:
   margin-left: 1rem;
   color: #626163;
   border-radius: 3px;
-  border-color: #E1E0E2;
+  border-color: #e1e0e2;
 }
