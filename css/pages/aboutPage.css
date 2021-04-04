@@ -1,27 +1,15 @@
 .about-container {
   margin: auto;
   max-width: 60rem;
-  /* max-height: 91vh; */
+  color: #eeeeee;
   display: flex;
   flex-direction: column;
-  /* display: grid; */
 
-  /* grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 2fr 2fr 1fr 2fr 2fr;
-  grid-template-areas:
-    'v v v'
-    'v v v'
-    'v v v'
-    'a a c'
-    'e e e'; */
-  /* background-color: #e1e0e2; */
-  /* box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset,
-    rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset; */
   box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
     rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
     rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
-  background-color: #121212;
-  /* visibility: hidden; */
+  background-color: #2d2d2d;
+
   box-shadow: rgba(0, 0, 0, 1) 0px 54px 55px, rgba(0, 0, 0, 1) 0px -12px 30px,
     rgba(0, 0, 0, 1) 0px 4px 6px, rgba(0, 0, 0, 1) 0px 12px 13px,
     rgba(0, 0, 0, 1) 0px -3px 5px;
@@ -59,7 +47,7 @@
   /* grid-area: v; */
   width: 100%;
   height: 100%;
-  min-height: 315px;
+  min-height: 515px;
   /* max-height: ; */
   box-sizing: border-box;
   border-bottom: 1px solid rgba(255, 255, 255, 0.3);
@@ -67,25 +55,97 @@
 
 .about-info_container {
   display: flex;
-  flex-direction: row;
+  flex-direction: column-reverse;
+}
+
+.movie-disc {
+  text-align: center;
+  /* font-style: italic; */
+  color: #eeeeee;
+  font-size: 1.1rem;
+  display: flex;
+  padding: 1rem;
+  margin: 0 10px 0 10px;
+  justify-content: center;
+}
+.movie-disc p {
+  font-weight: 100 !important; /*ta bort denna sen, bara så det lirar nu*/
 }
 
 .about-info {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  /* grid-area: a; */
   margin: 1rem;
   padding: 10px;
 
   font-size: 1rem;
 }
 
+.movie-reviews {
+  color: #eeeeee;
+  font-size: 0.8rem;
+  display: flex;
+  flex-direction: row;
+  padding: 0 10px 0 10px;
+  justify-content: space-between;
+  margin: 1rem;
+}
+
+.movie-reviews div {
+  margin-right: 0.5rem;
+}
+.movie-reviews :last-child {
+  margin-right: 0;
+}
+
 .about-info > p:nth-child(odd) {
-  color: #5d5d5d;
+  color: white;
 }
 .about-info > p:nth-child(even) {
   color: #a9a9a9;
+}
+
+.movie-pictures img {
+  display: block;
+  width: 165px;
+  height: 165px;
+  border-radius: 3px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.5s ease;
+  backface-visibility: hidden;
+  object-fit: cover;
+}
+
+.container:hover img {
+  opacity: 0.3;
+}
+
+.container:hover .middle {
+  opacity: 1;
+}
+.container {
+  position: relative;
+}
+
+.middle {
+  transition: 0.5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+}
+
+.text {
+  color: white;
+  font-size: 1rem;
+  padding: 16px 32px;
+}
+.movie-pictures {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 2rem;
 }
 
 .tickets_button {
@@ -94,44 +154,30 @@
   max-width: 300px;
   color: white;
   border: none;
-  /* text-align: center; */
   margin: 0 auto;
   border-radius: 5px;
   padding: 1rem 1.4rem;
   cursor: pointer;
 }
 
-.tickets_button:hover,
-.tickets_button:active {
-  background: white;
-  color: red;
-}
-
 .movie-story {
-  /* grid-area: e; */
   font-size: 1.1rem;
-  /* width: 100%; */
   display: flex;
   padding: 1rem;
-  /* align-items: center; */
   justify-content: center;
-  /* font-style: italic; */
-  /* text-align: justify; */
   flex-direction: column;
   margin-top: 2rem;
   margin-left: 3rem;
-  /* align-items: stretch; */
 }
 
 .movie-story p {
+  font-size: 1.3rem;
   margin-top: 3rem;
   max-width: 500px;
   color: #a9a9a9;
   font-weight: 100 !important; /*ta bort denna sen, bara så det lirar nu*/
   flex-grow: 2;
-  /* align-self: end; */
-  align-self: flex-end;
-  background: radial-gradient(40% 5px at 260px bottom, #666, #121212);
+  background: #2d2d2d;
 }
 
 .separator {
@@ -149,18 +195,15 @@
 
 .book-show {
   display: flex;
-  flex-direction: column;
-  /* justify-content: space-around; */
+  flex-direction: row;
+  justify-content: space-around;
   border-radius: 0 0 0 7px;
   padding: 10px;
-  /* grid-area: c; */
-  font-size: 1.4rem;
+  font-size: 1.1rem;
   height: 100%;
   color: white;
-  max-width: 40%;
-  /* justify-content: center; */
+  width: 80%;
   margin: 0 auto;
-  /* align-items: center; */
   text-align: center;
   margin-bottom: 3rem;
 }
@@ -169,70 +212,83 @@
 .select,
 .book-show div,
 .book-show a {
+  text-decoration: none;
   margin-top: 1rem;
 }
 
-.aboutPage-text {
-  margin-bottom: 1rem;
-}
-
 .aboutPage-btn {
-  /* grid-area: o; */
+  font-size: 1rem;
   cursor: pointer;
-  width: 200px;
-  height: 30px;
-  background-color: #434244;
-  cursor: pointer;
+  width: 70px;
+  height: 25px;
+  background-image: linear-gradient(147deg, #990000 0%, #c20000 84%);
   border: #434244;
   border-radius: 5px;
   color: #eeeeee;
-  font-weight: 700;
   text-decoration: none;
   align-items: center;
   justify-content: center;
   display: flex;
 }
 
-.about-container p {
-  /* color: black; */
+.aboutPage-btn:hover,
+.aboutPage-btn:active {
+  background: white;
+  color: red;
+}
+
+.next-show {
+  align-self: center;
+  font-size: 2rem;
+}
+.age-limit {
+  align-self: center;
+  font-size: 1rem;
+  font-weight: lighter;
+}
+
+.aboutimg p {
   font-weight: 100;
 }
 
 .aboutPage-text {
-  /* grid-area: h; */
   width: 100%;
-  font-size: 1.8rem;
+  font-size: 1rem;
+  margin-bottom: 1rem;
 }
 #select-date {
   align-self: center;
   justify-self: center;
-  /* grid-area: t; */
   width: 100%;
   height: 2rem;
 }
 
 .trailer iframe {
+  min-height: 515px;
   width: 100%;
-  /* height: 100%; */
   border: none;
 }
 
 @media screen and (max-width: 600px) {
-  .about-container {
+  .aboutimg {
     max-height: 100%;
     display: flex;
     flex-direction: column;
   }
 
   .trailer iframe {
-    height: 250px;
+    min-height: 250px;
   }
   .trailer {
-    height: 250px;
+    min-height: 250px;
   }
 
   .about-info,
   .movie-story {
     font-size: 0.9rem;
+  }
+
+  .show:last-child {
+    display: none;
   }
 }
