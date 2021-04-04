@@ -20,9 +20,6 @@
     rgba(0, 0, 0, 1) 0px 12px 13px, rgba(0, 0, 0, 1) 0px -3px 5px;
 }
 .movie-container .headline {
-  display: flex;
-  align-items: center;
-  justify-content: center;
   width: 60rem;
   height: 15rem;
   background-image: url('/images/film-banner1.jpg');
