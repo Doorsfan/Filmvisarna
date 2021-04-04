@@ -35,7 +35,7 @@ export default class LoginPage {
           <input class="loginPage passwordInput" type="password" placeholder="Lösenord" name="password" required>
           <div class="loginPage secondSeperator"></div>
           <button class="loginPage log_in_button" type="submit" value="submit">Logga in</button>
-          <div class="loginPage ellerText">ELLER</div>
+          <hr class="seperator"/>
           <button class="loginPage cancel_button">Avbryt</button>
           <a class="loginPage newAccountLink" href="#registerPage">Registrera Nytt Konto</a>
         </div>

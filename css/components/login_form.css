@@ -3,10 +3,21 @@
   justify-items: center; /* Works to Center the Form on the page */
   margin-left: auto;
   margin-right: auto;
-  min-height: 90vh;
+  min-height: 100vh;
   margin: auto;
   max-width: 60rem;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
   background-color: #2d2d2d;
+
+  box-shadow: rgba(0, 0, 0, 1) 0px 54px 55px, rgba(0, 0, 0, 1) 0px -12px 30px,
+    rgba(0, 0, 0, 1) 0px 4px 6px, rgba(0, 0, 0, 1) 0px 12px 13px,
+    rgba(0, 0, 0, 1) 0px -3px 5px;
+
+  box-shadow: rgba(255, 255, 255, 0.2) 0px 4px 5px,
+    rgba(0, 0, 0, 1) 0px -12px 30px, rgba(0, 0, 0, 1) 0px 4px 6px,
+    rgba(0, 0, 0, 1) 0px 12px 13px, rgba(0, 0, 0, 1) 0px -3px 5px;
 }
 .loginPage.borderBox {
   display: flex;
@@ -36,14 +47,13 @@
 }
 
 .loginPage.myImage {
-  min-width: 110px;
-  width: 19vw;
-  min-height: 150px;
-  max-height: 200px;
+  width: 100%;
   max-width: 200px;
+  height: auto;
   align-self: center;
   margin-bottom: 2rem;
-  border-radius: 4px;
+  border-radius: 100px;
+  opacity: 0.8;
 }
 
 .loginPage.emailInput {
@@ -54,6 +64,7 @@
   margin: 0.5rem auto;
   border-radius: 4px;
   border: 0;
+  background-color: #d4d4d4;
 }
 input.loginPage.passwordInput {
   width: 45vw;
@@ -63,6 +74,7 @@ input.loginPage.passwordInput {
   margin: 0.5rem auto;
   border-radius: 4px;
   border: 0;
+  background-color: #d4d4d4;
 }
 
 button.loginPage.log_in_button {
@@ -81,6 +93,21 @@ button.loginPage.log_in_button {
   align-items: center;
   justify-content: center;
   display: flex;
+  background-color: #d4d4d4;
+}
+
+.seperator {
+  margin: 1rem 0;
+  border: 0;
+  height: 1px;
+  width: 100%;
+  color: #a11e22;
+  background-image: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0),
+    rgba(255, 255, 255, 0.75),
+    rgba(255, 255, 255, 0)
+  );
 }
 
 button.loginPage.cancel_button {
@@ -89,7 +116,8 @@ button.loginPage.cancel_button {
   max-width: 220px;
   height: 1.4rem;
   margin: 0.5rem auto;
-  background-color: white;
+  font-size: 1rem;
+  background-color: #d4d4d4;
   color: red;
   padding: 1px;
   border: 0;
