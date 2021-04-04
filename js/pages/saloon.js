@@ -54,12 +54,6 @@ export default class Saloon {
       $('.btn').addClass('regret');
       $('.btn').html('Ångra');
     });
-    /* $('main').on('click', '.seats', (e) => {
-      window.clickedSeat = [];
-      if (window.clickedSeat != e.target.value) {
-        window.clickedSeat.push(e.target.value);
-      }
-    }); */
 
     $('main').on('click', '.regret', (e) => {
       $('.ticket-item').html('');
@@ -83,7 +77,10 @@ export default class Saloon {
       .get();
 
     let selectedTicketType = [];
+
     $("[class='ticket-price'] option:selected").each(function () {
+      if ($(this).data('name') === 'Inte vald') {
+      }
       selectedTicketType.push($(this).data('name'));
     });
 
@@ -95,8 +92,11 @@ export default class Saloon {
     };
     let show = JSON.parse(sessionStorage.getItem('selectedShow'));
     show.price = priceSum;
-    sessionStorage.setItem('selectedShow', JSON.stringify(show));
+    !selectedTicketType.includes('Inte vald')
+      ? $('.ticket-booking').prop('disabled', false)
+      : $('.ticket-booking').prop('disabled', true);
 
+    sessionStorage.setItem('selectedShow', JSON.stringify(show));
     sessionStorage.setItem('tickets', JSON.stringify(tickets));
 
     $('.info-summation').html('');
@@ -109,7 +109,7 @@ export default class Saloon {
 
   saveSelectedSeats() {
     $('.ticket-item').html('');
-    //let checked = $('input:checkbox[type=checkbox]:checked');
+
     let arr = [];
 
     $('input:checkbox[type=checkbox]:checked').each(function () {
@@ -138,7 +138,7 @@ export default class Saloon {
     });
     let selectedShow = JSON.parse(sessionStorage.getItem('selectedShow'));
     selectedShow.seats = [...this.selectedSeats];
-    //mata in ticketprice
+
     sessionStorage.setItem('selectedShow', JSON.stringify(selectedShow));
   }
 }
