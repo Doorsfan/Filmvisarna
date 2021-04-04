@@ -77,6 +77,9 @@
   border-radius: 0.2rem;
 }
 
+.movie-container .movie-poster {
+  margin: auto;
+}
 .movie-container .movie-poster img {
   width: 100%;
   width: 165px;
