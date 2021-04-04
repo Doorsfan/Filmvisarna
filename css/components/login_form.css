@@ -1,9 +1,8 @@
 .loginPage.inputForm {
   display: grid;
-  justify-items: center; /* Works to Center the Form on the page */
-  margin-left: auto;
-  margin-right: auto;
-  min-height: 100vh;
+  justify-items: center;
+  height: 92vh;
+  box-sizing: border-box;
   margin: auto;
   max-width: 60rem;
   box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
@@ -26,11 +25,10 @@
   flex-direction: column;
   text-align: center;
   background-color: #2a2a2a;
-  margin: 3rem 1rem;
+  margin: 4rem 0;
   width: 90vw;
   max-width: 25rem;
   height: 30rem;
-  max-height: 40rem;
   box-shadow: #4f4f4f 0px 0px 10px;
   border-radius: 30px;
 }
@@ -118,7 +116,7 @@ button.loginPage.cancel_button {
   margin: 0.5rem auto;
   font-size: 1rem;
   background-color: #d4d4d4;
-  color: red;
+  color: #a11e22;
   padding: 1px;
   border: 0;
   border-radius: 4px;
@@ -130,4 +128,6 @@ button.loginPage.cancel_button {
 .loginPage.newAccountLink {
   color: #eeeeee;
   text-decoration: none;
+  font-size: 0.7rem;
+  font-weight: 200;
 }
