@@ -93,13 +93,16 @@ button.loginPage.log_in_button {
   display: flex;
   background-color: #d4d4d4;
 }
+button.loginPage.log_in_button:hover {
+  background: #d4d4d4;
+  color: #c20000;
+}
 
 .seperator {
   margin: 1rem 0;
   border: 0;
   height: 1px;
   width: 100%;
-  color: #a11e22;
   background-image: linear-gradient(
     to right,
     rgba(255, 255, 255, 0),
@@ -109,7 +112,7 @@ button.loginPage.log_in_button {
 }
 
 button.loginPage.cancel_button {
-  width: 45vw;
+  width: 14vw;
   min-width: 130px;
   max-width: 220px;
   height: 1.4rem;
@@ -120,9 +123,10 @@ button.loginPage.cancel_button {
   padding: 1px;
   border: 0;
   border-radius: 4px;
+  cursor: pointer;
 }
-.loginPage.ellerText {
-  font-weight: bold;
+button.loginPage.cancel_button:hover {
+  background-color: #a4a4a4;
 }
 
 .loginPage.newAccountLink {
