@@ -5,7 +5,9 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  width: 100%;
+  /* width: 960px; */
+  background-color: #0e0f0f;
+  margin: 0 auto;
 }
 
 .h1-aktuellt {
@@ -33,7 +35,8 @@
   right: 0;
 }
 
-.startpage-infobar:hover, .startpage-infobar:active {
+.startpage-infobar:hover,
+.startpage-infobar:active {
   border: 3px solid black;
   background: white;
   color: black;
@@ -99,75 +102,110 @@
   top: -5em;
   border-top: 1px solid rgb(122, 122, 122);
   transform: skewY(2deg);
-  background: #bebdbf;
+  background: #0e0f0f;
 }
 
-
 .ourmovies-title {
-  font-size: 3rem; 
-  text-align: center; 
+  font-size: 3rem;
+  text-align: center;
   margin-bottom: 2rem;
+  color: white;
 }
 
 .poster-container {
   padding: 2rem;
   display: flex;
   flex-wrap: nowrap;
-  justify-content: center; 
-  border-bottom: 10px solid black;
-  border-top: 10px solid black;
+  justify-content: center;
+  border-bottom: 3px solid black;
+  border-top: 3px solid black;
   margin: 2rem;
-  overflow: auto;
+  height: 500px;
+  background-color: #2a2828f2;
+  overflow: hidden;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
 
-
 .start-poster {
-  height: 100%;
+  position: relative;
+  height: fit-content;
   display: flex;
   align-self: center;
   justify-content: center;
   align-items: center;
   transition: transform 0.1s;
-  padding: 0 1rem;
+  /* padding: 0 ; */
+  margin: 0 0.5rem;
   flex: 0 0 auto;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px,
+    rgba(0, 0, 0, 0.22) 0px 10px 10px;
+}
+
+.start-poster--backdrop {
+  background-color: black;
+  width: 260px;
+  height: 400px;
+  position: absolute;
+  top: -00px;
+  opacity: 0;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: underline;
+  font-size: 2rem;
+}
+
+.start-poster--backdrop:hover,
+.start-poster--backdrop:active {
+  opacity: 0.8;
 }
 
 .start-poster:hover,
 .start-poster:active {
-  transform: scale(1.2);
-   opacity: 0.7;
+  /* transform: scale(1.1); */
+  /* opacity: 0.7; */
 }
 
 .start-poster img {
-  width: 200px;
-  height: 300px;
+  width: 260px;
+  height: 400px;
 }
 
 .bestmovies-title {
-  text-align: center; 
-  font-size: 3rem; 
+  text-align: center;
+  font-size: 3rem;
   margin-top: 15rem;
   margin-bottom: 2rem;
+  color: white;
 }
 
 .bestof-container {
-  border-bottom: 15px solid black;
-  border-top: 10px solid black;
-  border-bottom: 10px solid black;
+  border-top: 3px solid black;
+  border-bottom: 3x solid black;
   padding: 2rem;
   margin: 2rem;
+  overflow: hidden;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  background-color: #2a2828f2;
 }
 
 .bestof-container ul {
-   display: flex; 
-   justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
 .toplist-listitem {
   list-style-type: none;
   position: relative;
   margin-right: 2rem;
-   flex: 0 0 auto;
+  flex: 0 0 auto;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px,
+    rgba(0, 0, 0, 0.22) 0px 10px 10px;
 }
 
 .toplist-listitem:last-of-type {
@@ -187,17 +225,18 @@
 }
 
 .bestof-img {
-  width: 200px; 
-  height: 300px;
+  width: 260px;
+  height: 400px;
   transition: transform 0.2s;
 }
 
-.bestof-img:hover, .bestof-img:active {
+.bestof-img:hover,
+.bestof-img:active {
   transform: scale(1.2);
 }
 
-.slideshow-container{
-  margin: 10rem 3em;
+.slideshow-container {
+  margin: 5rem 3em 0rem 3em;
   text-align: center;
   transition: transform 2s;
   flex-direction: row;
@@ -210,7 +249,18 @@
   animation: changeopacity 0.4s;
   display: flex;
   flex-direction: row;
-  width: 100%; 
+  width: 100%;
+  margin-top: 20rem;
+
+  position: relative;
+  /* top: 50%; */
+  left: 50%;
+  transform: translate3d(-50%, -50%, 0);
+  background-color: rgba(#000, 0.5);
+  width: fit-content;
+  /* max-width: 600px; */
+  padding: 5px;
+  border: 2px solid #b78846;
 }
 
 @keyframes changeopacity {
@@ -231,14 +281,19 @@
   text-decoration: none;
 }
 
-
-.slideshow-slide img {
-  height: 600px;
-  transition: transform 0.2s, border 0.2s;
-  padding: 2rem;
+.slider {
+  margin: 0 auto;
+  width: 80%;
 }
 
-.slideshow-slide img:hover, .slideshow-slide img:active {
+.slideshow-image {
+  height: 600px;
+  transition: transform 0.2s, border 0.2s;
+  /* padding: 2rem; */
+}
+
+.slideshow-image:hover,
+.slideshow-image:active {
   opacity: 0.5;
 }
 
@@ -247,25 +302,37 @@
   display: flex;
   flex-direction: column;
   justify-content: stretch;
-  margin-left: 2rem;
-  margin-top: 5rem;
+  /* margin-left: 2rem; */
+  /* margin-top: 5rem; */
   padding: 2rem 1rem 3rem 1rem;
-  height: fit-content;
+  height: 100%;
   width: 500px;
-  border-radius: 10px;
-  background-color: beige;
+  /* border-radius: 10px; */
+  background-color: #0e0f0f;
   font-size: 3rem;
+  position: relative;
+  overflow: hidden;
+  /* box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset,
+    rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset; */
+}
+
+.smoke {
+  height: 500px;
+  width: 500px;
+  position: absolute;
+  right: 100px;
+  top: 300px;
 }
 
 .slide-aside h3 {
   font-size: inherit;
   margin-top: 1rem;
-  color: black;
+  color: white;
 }
 
 .slide-aside p {
   font-size: 3rem;
-  color: black;
+  color: white;
 }
 
 .slide-aside p:last-of-type {
@@ -273,7 +340,18 @@
   font-size: calc(1.5rem + 0.5vw);
 }
 
- @media only screen and (max-width: 1448px) {
+.embezzle {
+  position: absolute;
+  top: -270px;
+  right: -50px;
+  width: 1000px;
+  height: 250px;
+  object-fit: cover;
+  object-position: 100% 0%;
+  overflow: hidden;
+}
+
+@media only screen and (max-width: 1448px) {
   .poster-container {
     border: 10px solid black;
     justify-content: start;
@@ -283,16 +361,16 @@
     display: flex;
     flex-direction: row;
     justify-content: start;
-    overflow: auto;
+    /* overflow: auto; */
     border: 10px solid black;
   }
 }
 
-@media only screen and  (max-width: 1199.98px) { 
+@media only screen and (max-width: 1199.98px) {
   .slide-aside {
     margin-left: 0;
-  } 
- }
+  }
+}
 
 @media only screen and (max-width: 1025px) {
   .slide-aside p:last-of-type {
@@ -309,8 +387,7 @@
   }
 }
 
-
-@media only screen and (max-width: 575.98px) { 
+@media only screen and (max-width: 575.98px) {
   .userpage-button {
     display: none;
   }
@@ -366,9 +443,4 @@
   .video-container iframe {
     height: 250px;
   }
- }
-
-
-
-
-
+}

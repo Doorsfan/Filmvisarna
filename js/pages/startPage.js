@@ -23,19 +23,25 @@ export default class StartPage {
 
     this.movies.forEach((data) => {
       blinkingPosts += /*html*/ `
-        <div class="start-poster ${data.id}">
-          <a href="#aboutPage/${data.id}"><img src="${data.images[0]}"></a>
-        </div>
+          <div class="start-poster ${data.id}">
+            <a href="#aboutPage/${data.id}">
+                <img src="${data.images[0]}">
+                <div class="start-poster--backdrop">Mer</div>
+            </a>
+          </div>
       `;
 
       allMovies += /*html*/ `
+        
         <div class="slideshow-slide">
+        <img class="embezzle" src="../../images/embezzle.png"/>
           <a href="#aboutPage/${data.id}">
-            <img src="${data.images[0]}" alt="nyckeln till frihet" />
+            <img class="slideshow-image" src="${data.images[0]}" alt="nyckeln till frihet" />
             <aside class="slide-aside">
               <p>${data.title}</p>
               <h3>SPELAS NU</h3>
               <p>${data.reviews[0].quote}<br> - ${data.reviews[0].source}</p>
+              <img class="smoke" src="../../images/smoke.png"/>
             </aside>
           </a>
         </div>
@@ -47,7 +53,8 @@ export default class StartPage {
            <a href="#aboutPage/${data.id}">
              <span class="bestof-span">${counter}.</span>
              <img class="bestof-img" src="${data.images[0]}"/>
-            </a>
+             <div class="start-poster--backdrop">Mer</div>
+             </a>
           </li>
         `;
         counter++;
@@ -75,6 +82,20 @@ export default class StartPage {
       timer = setTimeout(showSlides, 4000);
     };
 
+    let slider = document.getElementById('myRange');
+    //  output = document.getElementById('demo');
+    // output.innerHTML = slider.value; // Display the default slider value
+
+    // Update the current slider value (each time you drag the slider handle)
+    $('main').on('input', '.slider', (el) => {
+      console.log(el.target.value);
+      260;
+      $('.relic').css('marginLeft', `-${el.target.value * 2}px`);
+    });
+    // slider.oninput = function () {
+    //   output.innerHTML = this.value;
+    // };
+
     $('main').load('load', showSlides);
 
     return `
@@ -84,7 +105,6 @@ export default class StartPage {
         </div>
         <div class="startpage-coverphoto"></div>
         <div class="startpage-skew"></div>
-        <h1 class="h1-aktuellt">AKTUELLT</h1>
         <div class="slideshow-container">
           ${allMovies}
         </div>
@@ -92,12 +112,14 @@ export default class StartPage {
         <div class="poster-container">
           ${blinkingPosts}
         </div>
+        <input type="range" min="1" max="100" value="1" class="slider" id="myRange">
         <h2 class="bestmovies-title">BÄST I BETYG</h2>
         <div class="bestof-container">
           <ul>
           ${bestMovies}
           </ul>
         </div>
+        <input type="range" min="1" max="100" value="1" class="slider" id="myRange">
         <div class="video-container">
           <h3>FILMTRAILERS</h3>
           ${ytSlider[0].outerHTML}
