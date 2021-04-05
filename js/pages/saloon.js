@@ -53,7 +53,7 @@ export default class Saloon {
       this.saveSelectedSeats();
       $('.btn').addClass('regret');
       $('.btn').html('Ångra');
-      $('.info-buttons').append(
+      $('.info-buttons').html(
         `<button type='button' class="ticket-booking" disabled='true'>BOKA</button>`
       );
     });
@@ -63,7 +63,7 @@ export default class Saloon {
       $('.info-summation').html('');
       $(e.target).removeClass('regret');
       $('.btn').html('Välj Platser');
-
+      $('.btn').prop('disabled', true);
       $('.seats').prop('checked', false);
     });
 
