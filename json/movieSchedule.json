@@ -883,5 +883,86 @@
     "bookedSeats": [
       23
     ]
+  },
+  {
+    "auditorium": "Savannen",
+    "film": "Gudfadern",
+    "date": "2021-04-23",
+    "time": "16.00",
+    "bookedSeats": [
+      23
+    ]
+  },
+  {
+    "auditorium": "Lilla Paris",
+    "film": "Paterson",
+    "date": "2021-04-23",
+    "time": "18.00",
+    "bookedSeats": [
+      23
+    ]
+  },
+  {
+    "auditorium": "Savannen",
+    "film": "Monica Z",
+    "date": "2021-04-23",
+    "time": "20.00",
+    "bookedSeats": [
+      23
+    ]
+  },
+  {
+    "auditorium": "Savannen",
+    "film": "Min onkel",
+    "date": "2021-04-24",
+    "time": "16.00",
+    "bookedSeats": [
+      23
+    ]
+  },
+  {
+    "auditorium": "Lilla Paris",
+    "film": "Monica Z",
+    "date": "2021-04-24",
+    "time": "18.00",
+    "bookedSeats": [
+      23
+    ]
+  },
+  {
+    "auditorium": "Savannen",
+    "film": "Harry Potter and the Sorcerer's Stone",
+    "date": "2021-04-24",
+    "time": "20.00",
+    "bookedSeats": [
+      23
+    ]
+  },
+  {
+    "auditorium": "Savannen",
+    "film": "Monica Z",
+    "date": "2021-04-25",
+    "time": "16.00",
+    "bookedSeats": [
+      23
+    ]
+  },
+  {
+    "auditorium": "Lilla Paris",
+    "film": "Nyckeln till frihet",
+    "date": "2021-04-25",
+    "time": "18.00",
+    "bookedSeats": [
+      23
+    ]
+  },
+  {
+    "auditorium": "Savannen",
+    "film": "Gudfadern",
+    "date": "2021-04-25",
+    "time": "20.00",
+    "bookedSeats": [
+      23
+    ]
   }
 ]

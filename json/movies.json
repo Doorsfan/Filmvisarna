@@ -2,15 +2,15 @@
   {
     "id": "relic",
     "title": "Relic",
-    "productionCountries": ["Australia"],
+    "productionCountries": ["Australien"],
     "productionYear": "2020",
     "length": "90",
     "genre": ["Drama", "Skräck", "Mysterium"],
     "distributor": "Paramount Pictures",
     "language": "Engelska",
-    "subtitles": "svenska",
+    "subtitles": "Svenska",
     "director": "Natalie Erika James",
-    "ageRating": "18",
+    "ageRating": "15",
     "actors": ["Robyn Nevin", "Emily Mortimer", "Bella Heathcote"],
     "description": "<p>Den sinnesförvirrade änkan Edna rapporteras försvunnen från sitt förfallna hem. Hennes dotter och barnbarn beger sig till huset för att ta reda på vad som hänt. När Edna plötsligt dyker upp igen är hon sig inte lik. Men än värre – hon är inte ensam.</p>",
     "images": ["./images/movie_posters/relic.jpg"],
@@ -99,7 +99,7 @@
     "genre": ["Komedi", "Drama", "Romans"],
     "distributor": "Scanbox",
     "language": "Engelska",
-    "subtitles": "svenska",
+    "subtitles": "Svenska",
     "director": "Jim Jarmusch",
     "ageRating": "15",
     "actors": ["Adam Driver", "Golshifteh Farahani", "Barry Shabaka Henley"],
@@ -143,7 +143,7 @@
     "genre": ["Drama", "Brott"],
     "distributor": "Paramount Pictures",
     "language": "Engelska",
-    "subtitles": "svenska",
+    "subtitles": "Svenska",
     "director": "Francis Ford Coppola",
     "ageRating": "15",
     "actors": ["Marlon Brando", "Al Pacino", "James Caan"],
@@ -234,7 +234,7 @@
     "genre": ["Drama"],
     "distributor": "Castle Rock Entertainment",
     "language": "Engelska",
-    "subtitles": "svenska",
+    "subtitles": "Svenska",
     "director": "Frank Darabont",
     "ageRating": "15",
     "actors": ["Tim Robbins", "Morgan Freeman", "Bob Gunton"],
@@ -269,6 +269,50 @@
         "quote": "A magnificently hopeful, inspiring work of art.",
         "stars": 5,
         "max": 5
+      }
+    ]
+  },
+  {
+    "id": "monica",
+    "title": "Monica Z",
+    "productionCountries": ["Sverige", "Danmark"],
+    "productionYear": "2013",
+    "length": "111",
+    "genre": ["Drama", "Musik", "Biografi"],
+    "distributor": "AB Svensk Filmindustri",
+    "language": ["Svenska", "Engelska"],
+    "subtitles": "Svenska",
+    "director": "Peter Fly",
+    "ageRating": "7",
+    "actors": ["Edda Magnason", "Kjell Bergqvist", "Sverrir Gudnason", "Vera Vitali"],
+    "description": "<p>Filmen följer den berömda sångerskan och skådespelaren Monica Zetterlund från värmländska Hagfors till jazzens innekretsar i New York på sextiotalet. Filmen skildrar en exceptionell artist som med unik närvaro och sårbarhet levde ett liv på scenen samtidigt som ett turbulent kärleksliv dolde sig bakom rampljuset.</p>",
+    "images": ["./images/movie_posters/monica_z_1.jpg"],
+    "pictures": [
+      "/images/movie_pictures/monica1.jpg",
+      "/images/movie_pictures/monica2.jpg",
+      "/images/movie_pictures/monica3.jpg",
+      "/images/movie_pictures/monica4.jpg",
+      "/images/movie_pictures/monica5.jpg"
+    ],
+    "youtubeTrailers": ["H7qb41FaTXw"],
+    "reviews": [
+      {
+        "source": "GP",
+        "quote": "Musiken i Monica Z håller toppklass redan från start.",
+        "stars": 4,
+        "max": 5
+      },
+      {
+        "source": "Kulturbloggen",
+        "quote": "Med denna film kommer Monicas musikaliska arv få ett nytt ryck i musikvärlden.",
+        "stars": 4,
+        "max": 5
+      },
+      {
+        "source": "DN",
+        "quote": "Edda Magnason är självklar i huvudrollen – porträttlik och med den rätta tonen i rösten.",
+        "stars": 4,
+        "max": 6
       }
     ]
   }
