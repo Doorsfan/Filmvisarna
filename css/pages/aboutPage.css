@@ -116,14 +116,14 @@
   object-fit: cover;
 }
 
-.container:hover img {
+.container-picture:hover img {
   opacity: 0.3;
 }
 
-.container:hover .middle {
+.container-picture:hover .middle {
   opacity: 1;
 }
-.container {
+.container-picture {
   position: relative;
 }
 
@@ -137,7 +137,7 @@
   -ms-transform: translate(-50%, -50%);
 }
 
-.text {
+.text-picture {
   color: white;
   font-size: 1rem;
   padding: 16px 32px;
