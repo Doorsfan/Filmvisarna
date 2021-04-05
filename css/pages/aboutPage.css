@@ -5,7 +5,14 @@
   display: flex;
   flex-direction: column;
 
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
   background-color: #2d2d2d;
+
+  box-shadow: rgba(0, 0, 0, 1) 0px 54px 55px, rgba(0, 0, 0, 1) 0px -12px 30px,
+    rgba(0, 0, 0, 1) 0px 4px 6px, rgba(0, 0, 0, 1) 0px 12px 13px,
+    rgba(0, 0, 0, 1) 0px -3px 5px;
 
   box-shadow: rgba(255, 255, 255, 0.2) 0px 4px 5px,
     rgba(0, 0, 0, 1) 0px -12px 30px, rgba(0, 0, 0, 1) 0px 4px 6px,
@@ -109,14 +116,14 @@
   object-fit: cover;
 }
 
-.container-picture:hover img {
+.container:hover img {
   opacity: 0.3;
 }
 
-.container-picture:hover .middle {
+.container:hover .middle {
   opacity: 1;
 }
-.container-picture {
+.container {
   position: relative;
 }
 
@@ -130,7 +137,7 @@
   -ms-transform: translate(-50%, -50%);
 }
 
-.text-picture {
+.text {
   color: white;
   font-size: 1rem;
   padding: 16px 32px;
