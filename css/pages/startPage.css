@@ -1,12 +1,19 @@
 @import '../components/videoSlider.css';
 
+.element--hidden {
+  opacity: 0;
+  transform: translateY(8rem);
+  transition: transform 1s;
+}
+
 .big-container {
   overflow: hidden;
   position: relative;
   display: flex;
   flex-direction: column;
   /* width: 960px; */
-  background-color: #0e0f0f;
+  /* background-color: #0e0f0f; */
+  background-color: #2a2828f2;
   margin: 0 auto;
 }
 
@@ -56,12 +63,16 @@
 
 .video-container {
   width: 100%;
-  max-width: 718px;
+  /* max-width: 718px; */
   margin: 10rem auto;
   padding: 2rem;
   padding-top: 1rem;
-  border-top: 10px solid black;
-  border-bottom: 10px solid black;
+  /* border-top: 10px solid #0e0f0f; */
+  border-bottom: 10px solid #0e0f0f;
+  position: relative;
+  z-index: 2;
+  background-image: url('../../images/movieseats.png');
+  margin-top: 15rem;
 }
 
 .video-container h3 {
@@ -69,7 +80,30 @@
   text-align: center;
   margin-bottom: 2rem;
   padding-bottom: 1rem;
-  border-bottom: 10px solid black;
+  /* border-bottom: 3px solid #0e0f0f; */
+  color: white;
+  position: relative;
+  top: -100px;
+}
+
+.trailer-seats {
+  position: absolute;
+  top: 0;
+  width: 1920px;
+  left: -10px;
+  z-index: 1;
+  object-fit: cover;
+  object-position: 10px -170px;
+  margin: 0 auto;
+}
+
+.video-slider {
+  z-index: 2;
+  background-color: transparent;
+}
+
+.video-slider iframe {
+  max-width: 718px;
 }
 
 .startpage-coverphoto {
@@ -102,7 +136,7 @@
   top: -5em;
   border-top: 1px solid rgb(122, 122, 122);
   transform: skewY(2deg);
-  background: #0e0f0f;
+  background-color: #2a2828f2;
 }
 
 .ourmovies-title {
@@ -116,16 +150,21 @@
   padding: 2rem;
   display: flex;
   flex-wrap: nowrap;
-  justify-content: center;
+  justify-content: flex-start;
   border-bottom: 3px solid black;
   border-top: 3px solid black;
   margin: 2rem;
   height: 500px;
-  background-color: #2a2828f2;
+  background-color: #a9a9a9;
   overflow: hidden;
-  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+  /* box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
     rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
-    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px; */
+  /* box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset,
+    rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset; */
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset,
+    rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+  transition: transform 1s, opacity 1s;
 }
 
 .start-poster {
@@ -188,10 +227,13 @@
   padding: 2rem;
   margin: 2rem;
   overflow: hidden;
-  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+  /* box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
     rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
-    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
-  background-color: #2a2828f2;
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px; */
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset,
+    rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+  background-color: #a9a9a9;
+  transition: transform 1s, opacity 1s;
 }
 
 .bestof-container ul {
@@ -236,10 +278,11 @@
 }
 
 .slideshow-container {
-  margin: 5rem 3em 0rem 3em;
+  margin: 0rem 3em 0rem 3em;
   text-align: center;
   transition: transform 2s;
   flex-direction: row;
+  flex-wrap: nowrap;
 }
 
 .slideshow-slide {
@@ -282,6 +325,11 @@
 }
 
 .slider {
+  margin: 0 auto;
+  width: 80%;
+}
+
+.slider2 {
   margin: 0 auto;
   width: 80%;
 }
@@ -353,16 +401,16 @@
 
 @media only screen and (max-width: 1448px) {
   .poster-container {
-    border: 10px solid black;
+    border: 3px solid black;
     justify-content: start;
   }
 
   .bestof-container {
     display: flex;
     flex-direction: row;
-    justify-content: start;
+    justify-content: flex-start;
     /* overflow: auto; */
-    border: 10px solid black;
+    border: 3px solid black;
   }
 }
 

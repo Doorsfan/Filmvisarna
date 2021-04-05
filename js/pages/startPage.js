@@ -32,7 +32,6 @@ export default class StartPage {
       `;
 
       allMovies += /*html*/ `
-        
         <div class="slideshow-slide">
         <img class="embezzle" src="../../images/embezzle.png"/>
           <a href="#aboutPage/${data.id}">
@@ -82,21 +81,53 @@ export default class StartPage {
       timer = setTimeout(showSlides, 4000);
     };
 
-    let slider = document.getElementById('myRange');
-    //  output = document.getElementById('demo');
-    // output.innerHTML = slider.value; // Display the default slider value
-
-    // Update the current slider value (each time you drag the slider handle)
     $('main').on('input', '.slider', (el) => {
-      console.log(el.target.value);
-      260;
-      $('.relic').css('marginLeft', `-${el.target.value * 2}px`);
+      let width = document
+        .querySelector('.poster-container')
+        .getBoundingClientRect().width;
+      let ratio = 1700 - width;
+      ratio = ratio / 100;
+      $('.relic').css('marginLeft', `-${el.target.value * ratio}px`);
     });
-    // slider.oninput = function () {
-    //   output.innerHTML = this.value;
-    // };
+
+    $('main').on('input', '.slider2', (el) => {
+      let width = document
+        .querySelector('.bestof-container')
+        .getBoundingClientRect().width;
+      let ratio = 1500 - width;
+      ratio = ratio / 100;
+      $('.bestof-ul').css('marginLeft', `-${el.target.value * ratio}px`);
+    });
+
+    let setupObserver = function () {
+      let posterContainer = document.querySelector('.poster-container');
+      let bestofContainer = document.querySelector('.bestof-container');
+
+      console.log(posterContainer);
+
+      const obsOptions = {
+        root: null,
+        threshold: 0.15,
+      };
+
+      const obsCallBack = function (entries, observer) {
+        const [entry] = entries;
+        console.log(entry);
+
+        if (!entry.isIntersecting) return;
+
+        entry.target.classList.remove('element--hidden');
+        observer.unobserve(entry.target);
+      };
+
+      const observer = new IntersectionObserver(obsCallBack, obsOptions);
+      observer.observe(posterContainer);
+      observer.observe(bestofContainer);
+    };
 
     $('main').load('load', showSlides);
+
+    setTimeout(setupObserver, 3000);
 
     return `
       <div class="big-container">
@@ -109,20 +140,21 @@ export default class StartPage {
           ${allMovies}
         </div>
         <h2 class="ourmovies-title">VÅRA FILMER</h2>
-        <div class="poster-container">
+        <div class="poster-container element--hidden">
           ${blinkingPosts}
         </div>
         <input type="range" min="1" max="100" value="1" class="slider" id="myRange">
         <h2 class="bestmovies-title">BÄST I BETYG</h2>
-        <div class="bestof-container">
-          <ul>
+        <div class="bestof-container element--hidden">
+          <ul class="bestof-ul">
           ${bestMovies}
           </ul>
         </div>
-        <input type="range" min="1" max="100" value="1" class="slider" id="myRange">
+        <input type="range" min="1" max="100" value="1" class="slider2" id="myRange">
         <div class="video-container">
           <h3>FILMTRAILERS</h3>
           ${ytSlider[0].outerHTML}
+          <img class="trailer-seats" src="../../images/movieseats.png"/>
         </div>
       </div>
     `;
