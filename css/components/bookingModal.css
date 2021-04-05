@@ -68,6 +68,10 @@
   align-items: center;
 }
 
+.booking-info_container tr {
+  /* text-align: center; */
+}
+
 .booking-info_container p {
   font-weight: bold;
 }
@@ -119,6 +123,23 @@
 .booking-value {
   margin-left: 1rem;
   font-weight: 100;
+  text-align: left;
+}
+
+.modal-value {
+  text-align: left;
+}
+
+.booking-movie {
+  text-align: right;
+}
+
+.booking-show {
+  text-align: right;
+}
+
+.booking-seat {
+  text-align: right;
 }
 
 .credit_container {

@@ -10,7 +10,7 @@ export default class BookingModal {
     this.seatInfo = '';
     props.seats.forEach((el) => {
       console.log(el);
-      this.seatInfo += `<p class="booking-seat">Sittplats:<span class="booking-value">${el['seat']} Rad: ${el['currentRow']}</span></p>`;
+      this.seatInfo += `<tr><td class="booking-seat">Sittplats:</td><td class="modal-value"><span class="booking-value">${el['seat']}  Rad:  ${el['currentRow']}</td></></span></tr>`;
     });
 
     $('main').on('click', '.button-delete', this.deleteHandler);
@@ -22,12 +22,12 @@ export default class BookingModal {
         <div class="booking-modal_title">
           <h1>Bokningsinformation</h1>
         </div>
-        <div class="booking-info_container">
-          <p class="booking_username">Användarnamn: <span class="booking-value">${props.username}</span></p>
-          <p class="booking-movie">Film:<span class="booking-value">${props.film}</span></p>
-          <p class="booking-show">Visning:<span class="booking-value">${props.show}</span></p>
+        <table class="booking-info_container">
+         <tr> <td class="booking_username">Användare:</td><td class="modal-value"><span class="booking-value">${props.username}</span></td></tr>
+         <tr> <td class="booking-movie">Film:</td><td class="modal-value"><span class="booking-value">${props.film}</span></td></tr>
+         <tr> <td class="booking-show">Visning:</td><td class="modal-value"><span class="booking-value">${props.show}</span></td></tr>
           ${this.seatInfo}
-        </div>  
+        </table>  
           <hr class="separator"/>
           <div class="credit_container">
             <p class="booking-card">Valt kort:  </p>
