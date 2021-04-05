@@ -74,6 +74,10 @@ input.loginPage.passwordInput {
   border: 0;
   background-color: #d4d4d4;
 }
+.loginPage .emailInput:hover,
+input.loginPage.passwordInput:hover {
+  background-color: #a4a4a4;
+}
 
 button.loginPage.log_in_button {
   width: 45vw;
