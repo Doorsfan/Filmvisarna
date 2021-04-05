@@ -28,7 +28,7 @@ export default class registerPage {
         $('main').prepend(`<div class="registerPage registerModal">
           <div class="registerPage modal-content">
             <span class="registerPage closeSuccessfulRegisterModal">&times;</span>
-            <p>Tack för att du registrerat ett konto hos filmsvisarna!</p>
+            <p>Tack för att du registrerat ett konto hos Filmsvisarna!</p>
             <p>Användarnamn: ${$('.registerPage.emailInput').val()}</p>
             <p>Lösenord: ${$('.registerPage.passwordInput').val()}</p>
           </div>
