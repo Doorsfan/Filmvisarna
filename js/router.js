@@ -1,6 +1,6 @@
 import ChangeListener from './ChangeListener.js';
+
 // Only create ONE change listener for the whole application
-const changeListener = new ChangeListener();
 
 // imported pages
 import Test from './pages/test.js';
@@ -25,14 +25,14 @@ const myRegisterPage = new registerPage();
 // const peoplePage = new PeoplePage(changeListener);
 
 export default class Router {
-  constructor(selector, changeListener) {
+  constructor(selector) {
     this.selector = selector;
-    this.changeListener = changeListener;
     // main renders on location hash change
     // register the event listener for that:
     window.onhashchange = () => this.setCurrentPage(selector);
     // but also render it right now, based on the current hash or default page
     this.setCurrentPage(selector);
+    this.changeListener = new ChangeListener();
   }
 
   async setCurrentPage(selector) {
@@ -80,8 +80,8 @@ export default class Router {
     return bookingPage.render();
   }
 
-  userPage() {
-    if (window.username) {
+  async userPage() {
+    if (sessionStorage.getItem('username')) {
       return new UserPage().render();
     } else {
       return loginPage.render();
@@ -89,6 +89,6 @@ export default class Router {
   }
 
   ticketPage() {
-    return new TicketPage().render();
+    return new TicketPage(this.changeListener).render();
   }
 }

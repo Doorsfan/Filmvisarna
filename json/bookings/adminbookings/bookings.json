@@ -148,6 +148,7 @@
   },
   {
     "auditorium": "Savannen",
+<<<<<<< HEAD
     "film": "Nyckeln till frihet",
     "date": "2021-04-02",
     "time": "16.00",
@@ -274,15 +275,80 @@
       54
     ],
     "id": "none"
+=======
+    "film": "Harry Potter and the Sorcerer's Stone",
+    "date": "2021-03-29",
+    "time": "16.00",
+    "id": "robban@gmail.se"
+  },
+  {
+    "auditorium": "Savannen",
+    "film": "Gudfadern",
+    "date": "2021-03-30",
+    "time": "16.00",
+    "id": "robban@gmail.se",
+    "bookingNumber": "jf7h4g60"
+  },
+  {
+    "auditorium": "Savannen",
+    "film": "Gudfadern",
+    "date": "2021-03-30",
+    "time": "16.00",
+    "id": "robban@gmail.se",
+    "bookingNumber": "grv7h9df"
+  },
+  {
+    "auditorium": "Savannen",
+    "film": "Gudfadern",
+    "date": "2021-03-30",
+    "time": "16.00",
+    "id": "robban@gmail.se",
+    "bookingNumber": "hnr5xpew"
+  },
+  {
+    "auditorium": "Savannen",
+    "film": "Gudfadern",
+    "date": "2021-03-30",
+    "time": "16.00",
+    "id": "robban@gmail.se",
+    "bookingNumber": "bneqb0ld"
+  },
+  {
+    "auditorium": "Lilla Paris",
+    "film": "Gudfadern",
+    "date": "2021-04-02",
+    "time": "18.00",
+    "seat": [
+      25,
+      26
+    ],
+    "tickets": {
+      "ticketPrice": [
+        75,
+        85
+      ],
+      "ticketType": [
+        "Pensionär",
+        "Vuxen"
+      ]
+    },
+    "id": "none",
+    "bookingNumber": "f9nkfrrx3l"
+>>>>>>> main
   },
   {
     "auditorium": "Lilla Paris",
     "film": "Relic",
+<<<<<<< HEAD
     "date": "2021-04-03",
+=======
+    "date": "2021-03-31",
+>>>>>>> main
     "time": "18.00",
     "seat": [
       53
     ],
+<<<<<<< HEAD
     "id": "none"
   },
   {
@@ -324,6 +390,43 @@
       51
     ],
     "id": "none"
+=======
+    "tickets": {
+      "ticketPrice": [
+        85
+      ],
+      "ticketType": [
+        "Vuxen"
+      ]
+    },
+    "id": "none",
+    "bookingNumber": "xvjlfa6ibx"
+  },
+  {
+    "auditorium": "Lilla Paris",
+    "film": "Harry Potter and the Sorcerer's Stone",
+    "date": "2021-04-01",
+    "time": "18.00",
+    "seat": [
+      17,
+      18,
+      56
+    ],
+    "tickets": {
+      "ticketPrice": [
+        75,
+        65,
+        65
+      ],
+      "ticketType": [
+        "Pensionär",
+        "Barn",
+        "Barn"
+      ]
+    },
+    "id": "none",
+    "bookingNumber": "xf8hr9qwsg"
+>>>>>>> main
   },
   {
     "auditorium": "Savannen",
@@ -331,6 +434,7 @@
     "date": "2021-04-03",
     "time": "16.00",
     "seat": [
+<<<<<<< HEAD
       36
     ],
     "id": "none"
@@ -344,10 +448,28 @@
       43
     ],
     "id": "none"
+=======
+      50,
+      52
+    ],
+    "tickets": {
+      "ticketPrice": [
+        85,
+        65
+      ],
+      "ticketType": [
+        "Vuxen",
+        "Barn"
+      ]
+    },
+    "id": "none",
+    "bookingNumber": "va17jbg3vm"
+>>>>>>> main
   },
   {
     "auditorium": "Savannen",
     "film": "Harry Potter and the Sorcerer's Stone",
+<<<<<<< HEAD
     "date": "2021-04-03",
     "time": "16.00",
     "seat": [
@@ -416,10 +538,104 @@
       52
     ],
     "id": "none"
+=======
+    "date": "2021-03-31",
+    "time": "16.00",
+    "seat": [
+      90
+    ],
+    "tickets": {
+      "ticketPrice": [
+        85
+      ],
+      "ticketType": [
+        "Vuxen"
+      ]
+    },
+    "id": "none",
+    "bookingNumber": "oud70fa9ow"
+  },
+  {
+    "auditorium": "Savannen",
+    "film": "Harry Potter and the Sorcerer's Stone",
+    "date": "2021-03-31",
+    "time": "16.00",
+    "seat": [
+      89
+    ],
+    "tickets": {
+      "ticketPrice": [
+        75
+      ],
+      "ticketType": [
+        "Pensionär"
+      ]
+    },
+    "id": "none",
+    "bookingNumber": "s9xvbopxj5"
+  },
+  {
+    "auditorium": "Lilla Paris",
+    "film": "Harry Potter and the Sorcerer's Stone",
+    "date": "2021-04-01",
+    "time": "18.00",
+    "seat": [
+      50
+    ],
+    "tickets": {
+      "ticketPrice": [
+        75
+      ],
+      "ticketType": [
+        "Pensionär"
+      ]
+    },
+    "id": "none",
+    "bookingNumber": "vqhfmmdybz"
+  },
+  {
+    "auditorium": "Lilla Paris",
+    "film": "Harry Potter and the Sorcerer's Stone",
+    "date": "2021-04-01",
+    "time": "18.00",
+    "seat": [
+      53
+    ],
+    "tickets": {
+      "ticketPrice": [
+        65
+      ],
+      "ticketType": [
+        "Barn"
+      ]
+    },
+    "id": "admin@admin.se",
+    "bookingNumber": "ltjhq9grhi"
+  },
+  {
+    "auditorium": "Lilla Paris",
+    "film": "Harry Potter and the Sorcerer's Stone",
+    "date": "2021-04-01",
+    "time": "18.00",
+    "seat": [
+      50
+    ],
+    "tickets": {
+      "ticketPrice": [
+        75
+      ],
+      "ticketType": [
+        "Pensionär"
+      ]
+    },
+    "id": "admin@admin.se",
+    "bookingNumber": "wdy3w7ev48"
+>>>>>>> main
   },
   {
     "auditorium": "Lilla Paris",
     "film": "Relic",
+<<<<<<< HEAD
     "date": "2021-04-03",
     "time": "18.00",
     "seat": [
@@ -435,10 +651,28 @@
       50
     ],
     "id": "none"
+=======
+    "date": "2021-03-31",
+    "time": "18.00",
+    "seat": [
+      51
+    ],
+    "tickets": {
+      "ticketPrice": [
+        85
+      ],
+      "ticketType": [
+        "Vuxen"
+      ]
+    },
+    "id": "none",
+    "bookingNumber": "dxam55n9dk"
+>>>>>>> main
   },
   {
     "auditorium": "Savannen",
     "film": "Harry Potter and the Sorcerer's Stone",
+<<<<<<< HEAD
     "date": "2021-04-03",
     "time": "16.00",
     "seat": [
@@ -470,5 +704,45 @@
       89
     ],
     "id": "none"
+=======
+    "date": "2021-03-31",
+    "time": "16.00",
+    "seat": [
+      88
+    ],
+    "tickets": {
+      "ticketPrice": [
+        75
+      ],
+      "ticketType": [
+        "Pensionär"
+      ]
+    },
+    "id": "none",
+    "bookingNumber": "x2koq7y4uc"
+  },
+  {
+    "auditorium": "Lilla Paris",
+    "film": "Harry Potter and the Sorcerer's Stone",
+    "date": "2021-04-01",
+    "time": "18.00",
+    "bookedSeats": [
+      33,
+      32,
+      30,
+      31,
+      34,
+      29,
+      28,
+      27,
+      26,
+      25
+    ],
+    "seats": [
+      19
+    ],
+    "user": "alex@alex.se",
+    "bookingNumber": "ciwtt42vwr"
+>>>>>>> main
   }
 ]

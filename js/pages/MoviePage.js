@@ -24,23 +24,25 @@ export default class MoviePage {
     ageRatingsToAdd.forEach((age) => {
       ageRatings += /*html*/ `<option value="${age}">${age}</option>`;
     });
-    this.movies.forEach((data) => {
-      movieInfo += this.addingMovieInfoToHtml(data);
+    this.movies.forEach((movie) => {
+      movieInfo += this.addingMovieInfoToHtml(movie);
     });
 
     return `
-    <div class="movie-container"><h1>Våra filmer</h1><div class="movie-filter">
-      <select id="category-filter">
-      <option value="default">Genre</option>
-        ${allGenres}
-      </select>
-      <select id="age-filter">
-      <option value="default">Åldersgrupp</option>
-        ${ageRatings}
-      </select>
-    </div>
-    <div class="movies-main-box">
-        ${movieInfo}
+    <div class="movie-container"><div class="headline"></div>
+      <h1>Aktuellt på Bio</h1>
+      <div class="movie-filter">
+        <select id="category-filter">
+          <option value="default">Genre</option>
+          ${allGenres}
+        </select>
+        <select id="age-filter">
+          <option value="default">Åldersgrupp</option>
+          ${ageRatings}
+        </select>
+      </div>
+      <div class="movies-main-box">
+          ${movieInfo}
     </div></div>
     `;
   }
@@ -60,19 +62,22 @@ export default class MoviePage {
     $('.movies-main-box').append(movieInfo);
   }
 
-  filteringMovies(age, category, filteredMovies) {
+  filteringMovies(chosenAge, chosenCategory, filteredMovies) {
     this.movies.forEach((movie) => {
       let movieAge = '';
-      isNaN(parseFloat(movie.ageRating))
+      movie.ageRating === 'barntillåten'
         ? (movieAge = movie.ageRating)
         : (movieAge = parseInt(movie.ageRating));
-      if (movieAge === 'barntillåten' || age === 'default') {
-        if (movie.genre.includes(category) || category === 'default') {
+      if (movieAge === 'barntillåten' || chosenAge === 'default') {
+        if (
+          movie.genre.includes(chosenCategory) ||
+          chosenCategory === 'default'
+        ) {
           filteredMovies.push(movie);
         }
       } else if (
-        (movieAge <= age && movie.genre.includes(category)) ||
-        (movieAge <= age && category === 'default')
+        (movieAge <= chosenAge && movie.genre.includes(chosenCategory)) ||
+        (movieAge <= chosenAge && chosenCategory === 'default')
       ) {
         filteredMovies.push(movie);
       }
@@ -89,42 +94,31 @@ export default class MoviePage {
     });
   }
 
-  gettingAgeRatingFromJson(ageRating) {
+  gettingAgeRatingFromJson(allAgeRatings) {
     this.movies.forEach((movie) => {
-      if (!ageRating.includes(movie.ageRating)) {
-        ageRating.push(movie.ageRating);
+      if (!allAgeRatings.includes(movie.ageRating)) {
+        allAgeRatings.push(movie.ageRating);
       }
     });
-    ageRating.sort((a, b) => a - b);
+    allAgeRatings.sort((a, b) => a - b);
   }
 
-  addingMovieInfoToHtml(data, html) {
-    let genreString = '';
-    genreString = this.removingUnwantedLastComma(data, genreString);
-    return `<section class="movie-info">
-          <div class="movie-poster">
-            <a href="#aboutPage/${data.id}"><img src="${data.images[0]}"></a>
-          </div>
-          <div class="movie-text">
-            <h2 class="title-name"><p>${data.title}</p></h2>
-            <div class="genre"><h4>Genre: </h4> <p>${genreString}</p></div>
-            <div class="runtime"><h4>Speltid: </h4> <p>
-            ${data.length + ' minuter'}</p></div>
-            <div class="story"><h4>Handling:&nbsp;</h4>
-            ${data.description}</div>
-          </div>
-        </section>`;
-  }
-
-  removingUnwantedLastComma(data, genreString) {
-    for (let i = 0; i < data.genre.length; i++) {
-      if (i === data.genre.length - 1) {
-        genreString += data.genre[i];
-      } else {
-        genreString += data.genre[i] + ', ';
-      }
-    }
-    return genreString;
+  addingMovieInfoToHtml(movie) {
+    let genreString = movie.genre.join(', ');
+    return `
+    <section class="movie-info">
+      <div class="movie-poster">
+        <a href="#aboutPage/${movie.id}"><img src="${movie.images[0]}"></a>
+      </div>
+      <div class="movie-text">
+        <h2 class="title-name">${movie.title}</h2>
+        <p>Genre:</p><p> ${genreString}</p>
+        <p>Speltid:</p><p> ${movie.length + ' minuter'}</p>
+        <p>Handling:&nbsp;</p>
+        ${movie.description}
+      </div>
+    </section>
+    <hr class="seperator">`;
   }
 
   eventHandler() {

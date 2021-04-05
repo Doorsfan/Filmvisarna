@@ -27,7 +27,6 @@ export default class readAndWriteUser {
       alert('No .json with that combination');
       return false;
     }
-    window.username = username;
     this.saveUserToSessionStorage(username);
     this.renderForActiveUser();
     alert(`Välkommen ${username}`);
@@ -39,7 +38,7 @@ export default class readAndWriteUser {
       <a href='#userPage'>Mina sidor</a>
     `);
     $('.navlist').append(
-      `<li class="navlist-item"><a href='#'>Logga ut</a></li>`
+      `<li class="navlist-item logout"><a href='#'>Logga ut</a></li>`
     );
     $('.userpage-button')
       .replaceWith(`<a class="userpage-button" href="#userPage">
@@ -47,51 +46,55 @@ export default class readAndWriteUser {
         </a>`);
   }
 
+  createRandomString() {
+    let randomNumber = Math.random().toString(36).substring(2, 12);
+    return randomNumber;
+  }
+
   saveUserToSessionStorage(username) {
-    let store = {};
-    try {
-      store = JSON.parse(sessionStorage.store);
-    } catch (e) {}
-    store.save = function () {
-      sessionStorage.store = JSON.stringify(this);
-    };
-    store['username'] = username;
-    store.save();
+    sessionStorage.setItem('username', username);
   }
 
   async loadBooking(user) {
     this.allBooking = await JSON._load('bookings/adminbookings/bookings.json');
-    if (user) {
+    if (user !== 'none') {
       this.userBooking = await JSON._load(`/bookings/users/${user}.json`);
     }
   }
 
+  async updateUserBookings(user, bookings) {
+    await JSON._save(`bookings/users/${user}.json`, bookings);
+  }
+
+  async updateAdminBookings(userId) {
+    this.allBooking = await JSON._load('bookings/adminbookings/bookings.json');
+    let index = 0;
+    for (let booking of this.allBooking) {
+      if (booking.bookingNumber === userId) {
+        this.allBooking.splice(index, 1);
+        break;
+      }
+      index += 1;
+    }
+    await JSON._save('bookings/adminbookings/bookings.json', this.allBooking);
+  }
+
   async saveBookings(booking, user) {
-    console.log(user);
+    booking.bookingNumber = this.createRandomString();
     if (!this.allBooking) {
       try {
         await this.loadBooking(user);
       } catch (e) {}
     }
-
+    // remove all booked seats, we dont need that in the object / user
+    delete booking.bookedSeats;
     this.allBooking.push(booking);
+
     await JSON._save('bookings/adminbookings/bookings.json', this.allBooking);
 
-    if (user) {
+    if (user !== 'none') {
       this.userBooking.push(booking);
       await JSON._save(`bookings/users/${user}.json`, this.userBooking);
     }
   }
 }
-
-//put this in async read in startPage to test out component
-// let booking = {
-//   id: 'none',
-//   auditorium: 'Lilla Paris',
-//   film: 'Relic',
-//   date: '2021-03-22',
-//   time: '18.00',
-//   seat: [13, 14],
-//   price: 300,
-// };
-// this.try = await new ReadWrite().saveBookings(booking, "robban@gmail.se");
