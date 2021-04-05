@@ -67,14 +67,30 @@
   align-items: flex-end;
 }
 
-.info-buttons button {
+.info-buttons .ticket-booking {
   width: fit-content;
   padding: 0.5rem;
   margin-left: 3rem;
   margin-top: 1rem;
+  background-image: linear-gradient(147deg, #990000 0%, #c20000 84%);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.info-buttons .ticket-booking:disabled {
+  width: fit-content;
+  padding: 0.5rem;
+  margin-left: 3rem;
+  margin-top: 1rem;
+  background-image: linear-gradient(147deg, #2d2d2d 0%, #6d6d6d 84%);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
 .saloon-container {
-  border-right: 3px solid black;
   padding: 0rem 1rem 2rem 0;
 }

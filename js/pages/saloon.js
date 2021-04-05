@@ -45,7 +45,7 @@ export default class Saloon {
       }
       html.append(row);
     }
-    return html.append('<button class="btn">Välj Platser</button>');
+    return html.append('<button class="btn">Fortsätt</button>');
   }
 
   eventHandler() {

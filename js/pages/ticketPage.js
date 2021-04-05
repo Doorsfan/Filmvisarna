@@ -85,7 +85,6 @@ export default class TicketPage {
               
             </div>
             <div class="info-buttons">
-              <button>AVBRYT</button>
               <button type='button' class="ticket-booking" disabled='true'>BOKA</button>
             </div>
           </div>
