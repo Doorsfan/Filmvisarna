@@ -39,7 +39,7 @@
 .ticket-box p {
   flex-grow: 2;
   text-align: center;
-  margin-right: 2rem;
+  margin-right: 1rem;
 }
 
 .ticket-item {
@@ -47,9 +47,9 @@
   width: 100%;
   flex-grow: 5;
   overflow-x: hidden;
-  overflow-y: scroll;
   min-width: 320px;
   max-height: 169px;
+  padding-right: 0.3rem;
 }
 
 .booking-info_container {
@@ -76,6 +76,5 @@
 
 .saloon-container {
   border-right: 3px solid black;
-  padding-right: 2rem;
-  padding: 0rem 2rem 2rem 0;
+  padding: 0rem 1rem 2rem 0;
 }
