@@ -1,0 +1,12 @@
+[
+  {
+    "auditorium": "Savannen",
+    "film": "Relic",
+    "date": "2021-04-05",
+    "time": "16.00",
+    "seats": [88],
+    "price": 85,
+    "user": "none",
+    "bookingNumber": "xreen5ewcb"
+  }
+]
