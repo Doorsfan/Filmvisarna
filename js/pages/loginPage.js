@@ -23,19 +23,19 @@ export default class LoginPage {
       }
     });
   }
- 
+
   render() {
     return /*html*/ `
       <form class="loginPage inputForm">
        <div class="loginPage borderBox">
         <div class="loginPage formContainer">
-          <img class="loginPage myImage" src="/images/movie_posters/relic.jpg">
+          <img class="loginPage myImage" src="/images/login.jpg">
           <input class="loginPage emailInput" type="email" placeholder="E-postadress" name="email" required>
           <div class="loginPage firstSeperator"></div>
           <input class="loginPage passwordInput" type="password" placeholder="Lösenord" name="password" required>
           <div class="loginPage secondSeperator"></div>
           <button class="loginPage log_in_button" type="submit" value="submit">Logga in</button>
-          <div class="loginPage ellerText">ELLER</div>
+          <hr class="seperator"/>
           <a href="#startPage"><button type="button" class="loginPage cancel_button">Avbryt</button></a>
           <a class="loginPage newAccountLink" href="#registerPage">Registrera Nytt Konto</a>
         </div>

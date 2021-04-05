@@ -1,5 +1,4 @@
 export default class loginForm {
-  
   render() {
     return /*html*/ `
     <form class="loginPage login_form" action="validate_user.js" method="get">
@@ -15,6 +14,4 @@ export default class loginForm {
       </div>
     </form>`;
   }
-};
-
-
+}
