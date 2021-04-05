@@ -91,12 +91,28 @@ export default class TicketPage {
 
   popModal(movieInfo) {
     let modalInfo = {
-      username: movieInfo.username ? movieInfo.username : 'Ej Användare',
+      username: movieInfo.user ? movieInfo.user : 'Ej Användare',
       film: movieInfo.film,
       show:
         movieInfo.auditorium + ' | ' + movieInfo.date + ' | ' + movieInfo.time,
       seats: this.getRow(movieInfo),
     };
+
+    console.log(movieInfo.user);
+
+    //email
+    if (movieInfo.user) {
+      console.log('email');
+      Email.send({
+        Host: 'smtp.elasticemail.com',
+        Username: 'filmvisarna.ab@gmail.com',
+        Password: 'A08E1A7B682C92F73F8017B6F09FCB237990',
+        To: movieInfo.user,
+        From: 'filmvisarna.ab@gmail.com',
+        Subject: 'Bokningsinformation',
+        Body: modalInfo,
+      }).then((message) => console.log(message));
+    }
 
     this.modal = new Modal().render(modalInfo);
     $('.ticketpage-container').append(this.modal);
