@@ -6,9 +6,12 @@ export default class LoginPage {
     this.closeModalHandler();
   }
   closeModalHandler() {
-    $('main').on('click', '.loginPage.closeModal', (event) => {
+    $('main').on('click', '.loginPage.closeSuccessfulLoginModal', (event) => {
       window.location.href = '#startPage';
-    })
+    });
+    $('main').on('click', '.loginPage.closeFailedLoginModal', (event) => {
+      $('.loginModal').remove();
+    });
   }
   eventHandler() {
     $('main').on('submit', '.loginPage.inputForm', (event) => {

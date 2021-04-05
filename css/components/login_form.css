@@ -160,15 +160,30 @@ button.loginPage.cancel_button:hover {
   width: 80%; 
 }
 
-.loginPage.closeModal {
+.loginPage.closeSuccessfulLoginModal,
+.loginPage.closeFailedLoginModal {
   color: #aaa;
   float: right;
   font-size: 28px;
   font-weight: bold;
+  position:relative;
+  bottom:5px;
+  background-color: grey;
+  box-shadow: 0px 0px 12px -2px rgba(0, 0, 0, 0.5);
+  text-align: center;
+  display: inline;
+  width: 2rem;
+  height: 2rem;
+  padding-bottom:1rem;
+  border-radius: 100px;
+  outline: none;
+  border: none;
 }
 
-.loginPage.closeModal:hover,
-.loginPage.closeModal:focus {
+.loginPage.closeSuccessfulLoginModal:hover,
+.loginPage.closeSuccessfulLoginModal:focus,
+.loginPage.closeFailedLoginModal:hover,
+.loginPage.closeFailedLoginModal:focus {
   color: black;
   text-decoration: none;
   cursor: pointer;
