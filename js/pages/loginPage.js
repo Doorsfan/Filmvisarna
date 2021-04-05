@@ -3,6 +3,12 @@ export default class LoginPage {
   constructor() {
     this.validate = new readAndWriteUser();
     this.eventHandler();
+    this.closeModalHandler();
+  }
+  closeModalHandler() {
+    $('main').on('click', '.loginPage.closeModal', (event) => {
+      window.location.href = '#startPage';
+    })
   }
   eventHandler() {
     $('main').on('submit', '.loginPage.inputForm', (event) => {
@@ -14,6 +20,7 @@ export default class LoginPage {
       );
       {
         myValue.then((loggedIn) => {
+          return false;
           if (loggedIn) {
             window.location.href = '#startPage';
           } else {

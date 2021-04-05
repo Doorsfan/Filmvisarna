@@ -29,7 +29,13 @@ export default class readAndWriteUser {
     }
     this.saveUserToSessionStorage(username);
     this.renderForActiveUser();
-    alert(`Välkommen ${username}`);
+    $('main').prepend(`
+      <div class="loginPage loginModal">
+        <div class="loginPage modal-content">
+          <span class="loginPage closeModal">&times;</span>
+          <p>Välkommen, ${username}!</p>
+        </div>
+      </div>`)
     return true;
   }
 
