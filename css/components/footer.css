@@ -5,8 +5,7 @@ footer {
   flex-direction: column;
   padding: 0 1rem 0 1rem;
   width: 100vw;
-  background-color: #eeeeee;
-  background-color: #363636;
+  background-color: #0e0f0f;
   justify-content: center;
 }
 
@@ -27,14 +26,13 @@ footer {
   justify-content: center;
   align-self: center;
   width: 30%;
-  background-color: #363636;
+  background-color: #0e0f0f;
   flex-grow: 2;
   max-width: 359px;
   min-width: 200px;
   border-width: 1px;
   border-style: solid;
   border-image: linear-gradient(to bottom, red, rgba(0, 0, 0, 0)) 1 100%;
-  box-shadow: rgba(0, 0, 0, 0.2) 0px 18px 50px -10px;
 }
 
 .footer-column p {
