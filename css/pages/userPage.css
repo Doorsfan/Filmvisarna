@@ -1,9 +1,13 @@
 .userpage-container {
-  background: #e1e0e2;
-  height: 100%;
+  min-height: 90vh;
   width: 90vw;
   margin: 0 auto;
   max-width: 50rem;
+  background-color: #2d2d2d;
+  box-shadow: rgba(255, 255, 255, 0.2) 0px 4px 5px,
+    rgba(0, 0, 0, 1) 0px -12px 30px, rgba(0, 0, 0, 1) 0px 4px 6px,
+    rgba(0, 0, 0, 1) 0px 12px 13px, rgba(0, 0, 0, 1) 0px -3px 5px;
+  color: #a9a9a9;
 }
 
 .userpage-title {
@@ -18,7 +22,8 @@
 }
 
 .userpage-title p {
-  color: black;
+  color: white;
+
   align-self: center;
   text-align: right;
   margin-right: 1rem;
@@ -28,15 +33,22 @@
 
 .userpage-booking {
   display: flex;
+  font-size: 1rem;
   flex-direction: column;
   border-bottom: 2px solid black;
   border-top: 2px solid black;
   margin: 1rem auto;
+  background-color: #363636;
+
+  box-shadow: rgb(32, 32, 32) 0px 5px 5px, rgba(32, 32, 32, 0.8) 0px -2px 3px,
+    rgba(32, 32, 32, 0.8) 0px 4px 6px, rgba(32, 32, 32, 0.8) 0px 3px 3px,
+    rgba(32, 32, 32, 0.8) 0px -3px 5px;
 }
 
 .userpage-booking:hover,
 .userpage-booking:active {
-  background-color: beige;
+  background-color: #707070;
+
   cursor: initial;
   opacity: 0.8;
 }
@@ -45,6 +57,7 @@
   display: flex;
   flex-direction: row;
   padding: 1rem;
+  font-size: 1rem;
 }
 
 .booking-button {
@@ -56,7 +69,8 @@
 }
 
 .booking-button p {
-  color: black;
+  color: #f3dcdc;
+
   align-self: center;
   margin-right: 1rem;
 }
@@ -77,7 +91,7 @@
 }
 
 .booking-bottom p {
-  color: black;
+  color: #a9a9a9;
 }
 
 .booking-bottom p:last-of-type {

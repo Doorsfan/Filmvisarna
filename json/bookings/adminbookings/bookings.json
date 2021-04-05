@@ -1,0 +1,26 @@
+[
+  {
+    "auditorium": "Lilla Paris",
+    "film": "Harry Potter and the Sorcerer's Stone",
+    "date": "2021-04-01",
+    "time": "18.00",
+    "bookedSeats": [
+      33,
+      32,
+      30,
+      31,
+      34,
+      29,
+      28,
+      27,
+      26,
+      25
+    ],
+    "seats": [
+      19
+    ],
+    "price": 300,
+    "user": "alex@alex.se",
+    "bookingNumber": "ciwtt42vwr"
+  }
+]
