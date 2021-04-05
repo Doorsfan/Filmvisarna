@@ -16,6 +16,7 @@ footer {
   height: 100%;
   width: 100%;
   margin-top: 2rem;
+  flex-wrap: wrap;
 }
 
 .footer-column {
@@ -29,10 +30,11 @@ footer {
   background-color: #363636;
   flex-grow: 2;
   max-width: 359px;
-
+  min-width: 200px;
   border-width: 1px;
   border-style: solid;
   border-image: linear-gradient(to bottom, red, rgba(0, 0, 0, 0)) 1 100%;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 18px 50px -10px;
 }
 
 .footer-column p {
@@ -85,4 +87,17 @@ footer {
   color: #9c9c9c;
   margin-bottom: 2rem;
   font-weight: 300;
+}
+
+@media only screen and (max-width: 430px) {
+  .footer-column {
+    border-image: none;
+    border: none;
+  }
+}
+
+@media only screen and (max-width: 630px) {
+  .footer-column:first-of-type {
+    border: none;
+  }
 }
