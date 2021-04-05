@@ -9,12 +9,12 @@
   padding-bottom: 4.5rem;
 }
 
-.ticketpage-content {
+.ticketpage-container .ticketpage-content {
   display: flex;
   flex-direction: row;
 }
 
-.booking-info {
+.ticketpage-container .booking-info {
   display: flex;
   flex-direction: column;
   flex-basis: 100%;
@@ -22,7 +22,7 @@
   margin-left: 1rem;
   min-width: 300px;
 }
-.ticket-price {
+.ticketpage-container .ticket-price {
   background: #f2f2f2;
   border: 1px solid #9f9f9f;
   cursor: pointer;
@@ -37,19 +37,19 @@
   padding: 0.1rem;
   width: 5rem;
 }
-.ticket-price:hover,
+.ticketpage-container .ticket-price:hover,
 :focus {
   outline: none;
   background-color: #c3c3c3;
   border: 1px solid #2d2d2d;
 }
 
-.info-summation {
+.ticketpage-container .info-summation {
   align-self: flex-end;
   /* margin-left: 1rem; */
 }
 
-.info-summation .seperator {
+.ticketpage-container .info-summation .seperator {
   margin: 1rem 0;
   border: 0;
   height: 1px;
@@ -62,20 +62,7 @@
   );
 }
 
-.ticket-box {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
-  margin-bottom: 1rem;
-}
-
-.ticket-box p {
-  flex-grow: 2;
-  text-align: center;
-  margin-right: 1rem;
-}
-
-.ticket-item {
+.ticketpage-container.ticket-item {
   text-align: right;
   width: 100%;
   flex-grow: 5;
@@ -85,22 +72,35 @@
   padding-right: 0.3rem;
 }
 
-.booking-info_container {
+.ticketpage-container .ticket-box {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  margin-bottom: 1rem;
+}
+
+.ticketpage-container .ticket-box p {
+  flex-grow: 2;
+  text-align: center;
+  margin-right: 1rem;
+}
+
+.ticketpage-container .booking-info_container {
   display: flex;
   flex-direction: row;
   flex-grow: 1;
   padding-bottom: 2.5rem;
 }
 
-.info-buttons {
+.ticketpage-container .info-buttons {
   display: flex;
-  flex-direction: column;
   justify-content: flex-end;
   flex-grow: 2;
-  align-items: flex-end;
+  align-self: flex-end;
+  justify-self: flex-start;
 }
 
-.info-buttons .ticket-booking {
+.ticketpage-container .info-buttons .ticket-booking {
   width: fit-content;
   padding: 0.5rem;
   margin-left: 3rem;
@@ -112,7 +112,7 @@
   cursor: pointer;
 }
 
-.info-buttons .ticket-booking:disabled {
+.ticketpage-container .info-buttons .ticket-booking:disabled {
   width: fit-content;
   padding: 0.5rem;
   margin-left: 3rem;
@@ -122,8 +122,4 @@
   border: none;
   border-radius: 5px;
   cursor: pointer;
-}
-
-.saloon-container {
-  padding: 0rem 1rem 2rem 0;
 }
