@@ -83,8 +83,10 @@
   margin: 15% auto; 
   padding: 20px;
   border: 1px solid #888;
-  width: max-content;
   text-align:center;
+  min-width: max-content;
+  max-width: 40%;
+  border-radius:15px;
 }
 
 .registerPage.closeSuccessfulRegisterModal,
