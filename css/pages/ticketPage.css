@@ -3,7 +3,9 @@
   flex-direction: row;
   background: url('/images/screen1.jpg') no-repeat center fixed;
   background-size: cover;
-  height: 91vh;
+  background-attachment: scroll;
+  height: 90vh;
+  width: 100%;
   justify-content: center;
   align-items: center;
   padding-bottom: 4.5rem;
@@ -21,6 +23,7 @@
   align-self: stretch;
   margin-left: 1rem;
   min-width: 300px;
+  padding-top: 2rem;
 }
 .ticketpage-container .ticket-price {
   background: #f2f2f2;
