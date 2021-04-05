@@ -45,7 +45,7 @@ export default class Saloon {
       }
       html.append(row);
     }
-    return html.append('<button class="btn">Fortsätt</button>');
+    return html.append('<button class="btn" disabled="true">Fortsätt</button>');
   }
 
   eventHandler() {
@@ -53,6 +53,9 @@ export default class Saloon {
       this.saveSelectedSeats();
       $('.btn').addClass('regret');
       $('.btn').html('Ångra');
+      $('.info-buttons').append(
+        `<button type='button' class="ticket-booking" disabled='true'>BOKA</button>`
+      );
     });
 
     $('main').on('click', '.regret', (e) => {
@@ -104,7 +107,9 @@ export default class Saloon {
       $('.info-summation').append(`
       <p class="seat-number${this.seatNumber}">Billjet typ: ${selectedTicketType[i]} á ${selectedTicketPrice[i]} kr</p>`);
     }
-    $('.info-summation').append(`<hr><p>Summma: ${priceSum} kr</p>`);
+    $('.info-summation').append(
+      `<hr class="seperator"><p>Summma: ${priceSum} kr</p>`
+    );
   }
 
   saveSelectedSeats() {

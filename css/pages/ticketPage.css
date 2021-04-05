@@ -22,11 +22,44 @@
   margin-left: 1rem;
   min-width: 300px;
 }
+.ticket-price {
+  background: #f2f2f2;
+  border: 1px solid #9f9f9f;
+  cursor: pointer;
+  border-radius: 4px;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url('data:image/svg+xml;utf8, <svg xmlns="http://www.w3.org/2000/svg" width="100" height="50"><polygon points="0,0 100,0 50,50" style="fill:%23626163;"/></svg>');
+  background-position: right 5px top 50%;
+  background-repeat: no-repeat;
+  background-size: 0.8rem;
+  padding: 0.1rem;
+  width: 5rem;
+}
+.ticket-price:hover,
+:focus {
+  outline: none;
+  background-color: #c3c3c3;
+  border: 1px solid #2d2d2d;
+}
 
 .info-summation {
   align-self: flex-end;
   /* margin-left: 1rem; */
-  color: aquamarine;
+}
+
+.info-summation .seperator {
+  margin: 1rem 0;
+  border: 0;
+  height: 1px;
+  width: 100%;
+  background-image: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0),
+    rgba(0, 0, 0, 0.75),
+    rgba(0, 0, 0, 0)
+  );
 }
 
 .ticket-box {

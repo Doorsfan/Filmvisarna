@@ -16,6 +16,11 @@ export default class TicketPage {
         this.reRender()
       );
     }
+    $('main').on('change', '.saloon-container', () => {
+      $('input[type=checkbox]').is(':checked')
+        ? $('.btn').prop('disabled', false)
+        : $('.btn').prop('disabled', true);
+    });
   }
 
   async reRender() {
@@ -85,7 +90,7 @@ export default class TicketPage {
               
             </div>
             <div class="info-buttons">
-              <button type='button' class="ticket-booking" disabled='true'>BOKA</button>
+              
             </div>
           </div>
         </div>
