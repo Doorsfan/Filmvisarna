@@ -93,6 +93,8 @@ export default class readAndWriteUser {
     await JSON._save('bookings/adminbookings/bookings.json', this.allBooking);
 
     if (user !== 'none') {
+      delete booking.bookedSeats;
+      this.allBooking.push(booking);
       this.userBooking.push(booking);
       await JSON._save(`bookings/users/${user}.json`, this.userBooking);
     }
