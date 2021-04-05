@@ -9,7 +9,8 @@ export default class BookingModal {
 
     this.seatInfo = '';
     props.seats.forEach((el) => {
-      this.seatInfo += `<p class="booking-seat">Sittplats:<span class="booking-value">${el['seat']} Rad: ${el['row']}</span></p>`;
+      console.log(el);
+      this.seatInfo += `<p class="booking-seat">Sittplats:<span class="booking-value">${el['seat']} Rad: ${el['currentRow']}</span></p>`;
     });
 
     $('main').on('click', '.button-delete', this.deleteHandler);
