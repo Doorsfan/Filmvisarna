@@ -165,7 +165,7 @@ button.loginPage.cancel_button:hover {
 .loginPage.closeFailedLoginModal {
   color: black;
   float: right;
-  font-size: 28px;
+  font-size: 26px;
   font-weight:lighter;
   position:relative;
   bottom:5px;
