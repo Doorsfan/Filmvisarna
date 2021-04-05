@@ -153,11 +153,12 @@ button.loginPage.cancel_button:hover {
 }
 
 .loginPage.modal-content {
-  background-color: #fefefe;
+  background-color: grey;
+  text-align:center;
   margin: 15% auto; 
   padding: 20px;
   border: 1px solid #888;
-  width: 50%; 
+  width: max-content; 
 }
 
 .loginPage.closeSuccessfulLoginModal,
