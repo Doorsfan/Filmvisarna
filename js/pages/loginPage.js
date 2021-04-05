@@ -36,7 +36,7 @@ export default class LoginPage {
           <div class="loginPage secondSeperator"></div>
           <button class="loginPage log_in_button" type="submit" value="submit">Logga in</button>
           <div class="loginPage ellerText">ELLER</div>
-          <button class="loginPage cancel_button">Avbryt</button>
+          <a href="#startPage"><button type="button" class="loginPage cancel_button">Avbryt</button></a>
           <a class="loginPage newAccountLink" href="#registerPage">Registrera Nytt Konto</a>
         </div>
        </div>
