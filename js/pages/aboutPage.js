@@ -68,37 +68,37 @@ export default class AboutPage {
     </div>
     <hr class="separator"/>
       <div class="movie-pictures">
-      <div class="container">
+      <div class="container-picture">
       <img src="${this.movie.pictures[0]}">
         <div class="middle">
-    <div class="text">${this.movie.title}</div>
+    <div class="text-picture">${this.movie.title}</div>
   </div>
   </div>
-  <div class="container">
+  <div class="container-picture">
       <img src="${this.movie.pictures[1]}">
         <div class="middle">
-    <div class="text">${this.movie.title}</div>
+    <div class="text-picture">${this.movie.title}</div>
   </div>
   </div>
 
-  <div class="container">
+  <div class="container-picture">
       <img src="${this.movie.pictures[2]}">
         <div class="middle">
-    <div class="text">${this.movie.title}</div>
+    <div class="text-picture">${this.movie.title}</div>
   </div>
   </div>
 
-  <div class="container">
+  <div class="container-picture">
       <img src="${this.movie.pictures[3]}">
         <div class="middle">
-    <div class="text">${this.movie.title}</div>
+    <div class="text-picture">${this.movie.title}</div>
   </div>
   </div>
 
-  <div class="container">
+  <div class="container-picture">
       <img src="${this.movie.pictures[4]}">
         <div class="middle">
-    <div class="text">${this.movie.title}</div>
+    <div class="text-picture">${this.movie.title}</div>
   </div>
   </div>
       </div>

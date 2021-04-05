@@ -17,8 +17,8 @@ Extra Färger:
   margin-right: auto;
   align-items: center;
   padding: 1rem 2rem;
+  background-color: #2d2d2d;
 
-  background-color: #424141;
   box-shadow: rgba(0, 0, 0, 1) 0px 54px 55px, rgba(0, 0, 0, 1) 0px -12px 30px,
     rgba(0, 0, 0, 1) 0px 4px 6px, rgba(0, 0, 0, 1) 0px 12px 13px,
     rgba(0, 0, 0, 1) 0px -3px 5px;
@@ -35,7 +35,7 @@ Extra Färger:
 }
 
 .bookingpage-show {
-  background-color: #363636;
+  background-color: #424141;
 
   box-shadow: rgb(32, 32, 32) 0px 5px 5px, rgba(32, 32, 32, 0.8) 0px -2px 3px,
     rgba(32, 32, 32, 0.8) 0px 4px 6px, rgba(32, 32, 32, 0.8) 0px 3px 3px,
