@@ -98,17 +98,14 @@ export default class TicketPage {
       seats: this.getRow(movieInfo),
     };
 
-    console.log(movieInfo.user);
-
     //email
     if (movieInfo.user) {
-      console.log('email');
       Email.send({
         Host: 'smtp.elasticemail.com',
         Username: 'filmvisarna.ab@gmail.com',
-        Password: 'A08E1A7B682C92F73F8017B6F09FCB237990',
+        Password: '315B9CEC8EE434D7D6AED97130C10582959C',
         To: movieInfo.user,
-        From: 'filmvisarna.ab@gmail.com',
+        From: 'alexander.x.ekdahl@gmail.com',
         Subject: 'Bokningsinformation',
         Body: modalInfo,
       }).then((message) => console.log(message));
