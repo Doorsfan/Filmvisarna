@@ -15,6 +15,9 @@
 }
 
 .saloon-container label {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
   background: linear-gradient(
     to top,
     #761818,
