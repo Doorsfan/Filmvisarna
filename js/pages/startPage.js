@@ -102,6 +102,7 @@ export default class StartPage {
     let setupObserver = function () {
       let posterContainer = document.querySelector('.poster-container');
       let bestofContainer = document.querySelector('.bestof-container');
+      let videoContainer = document.querySelector('.video-container');
 
       console.log(posterContainer);
 
@@ -123,6 +124,7 @@ export default class StartPage {
       const observer = new IntersectionObserver(obsCallBack, obsOptions);
       observer.observe(posterContainer);
       observer.observe(bestofContainer);
+      observer.observe(videoContainer);
     };
 
     $('main').load('load', showSlides);
@@ -131,11 +133,13 @@ export default class StartPage {
 
     return `
       <div class="big-container">
-        <div class="startpage-infobar">
-          <p>Välkommen! <br> Filmvisarnas Biografer håller för tillfället öppet, trots nuvarande coronapandemi.</p>
-        </div>
+<blockquote class="twitter-tweet"><p>Tack så mycket för ett superbt bio besök!</p>&mdash; Gabriele Romanato (@gabromanato) <a href="https://twitter.com/gabromanato/status/275673554408837120" data-datetime="2012-12-03T18:51:11+00:00">December 3, 2012</a></blockquote>
+<script src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+    <div style="color: white;">DETTA SKA VARA EN LISTA AV MÄNNISKOR SOM GILLAR VÅR BIOGRAF, SOM HAR EN TIMEOUT SOM SKICKAR IN OCH UT DEM UR BILDEN, HÖGER TILL VÄNSTER VARJE 3 SEKUND</div>
+
         <div class="startpage-coverphoto"></div>
         <div class="startpage-skew"></div>
+        <img src="../../images/smoke2.png" class="smoke2"/>
         <div class="slideshow-container">
           ${allMovies}
         </div>
@@ -151,7 +155,7 @@ export default class StartPage {
           </ul>
         </div>
         <input type="range" min="1" max="100" value="1" class="slider2" id="myRange">
-        <div class="video-container">
+        <div class="video-container element--hidden">
           <h3>FILMTRAILERS</h3>
           ${ytSlider[0].outerHTML}
           <img class="trailer-seats" src="../../images/movieseats.png"/>
