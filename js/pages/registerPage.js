@@ -2,7 +2,7 @@ import readAndWriteUser from '../components/readAndWriteUser.js';
 export default class registerPage {
   constructor() {
     this.createAccount = new readAndWriteUser();
-    this.eventHandler();
+    this.addEventHandlerForSubmitform();
     this.addCloseModalHandlers();
   }
 
@@ -14,7 +14,7 @@ export default class registerPage {
       $('.registerModal').remove();
     })
   }
-  eventHandler() {
+  addEventHandlerForSubmitform() {
     $('main').on('submit', '.registerPage.inputForm', (event) => {
       event.preventDefault();
       if (
@@ -33,7 +33,6 @@ export default class registerPage {
             <p>Lösenord: ${$('.registerPage.passwordInput').val()}</p>
           </div>
         </div>`);
-        //window.location.href = '#loginPage';
       } else {
         $('main').prepend(`<div class="registerPage registerModal">
           <div class="registerPage modal-content">

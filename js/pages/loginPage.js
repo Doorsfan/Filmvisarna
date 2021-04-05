@@ -2,7 +2,7 @@ import readAndWriteUser from '../components/readAndWriteUser.js';
 export default class LoginPage {
   constructor() {
     this.validate = new readAndWriteUser();
-    this.eventHandler();
+    this.addEventHandlerForSubmitForm();
     this.closeModalHandler();
   }
   closeModalHandler() {
@@ -13,7 +13,7 @@ export default class LoginPage {
       $('.loginModal').remove();
     });
   }
-  eventHandler() {
+  addEventHandlerForSubmitForm() {
     $('main').on('submit', '.loginPage.inputForm', (event) => {
       event.preventDefault();
       let myValue = '';
@@ -24,11 +24,6 @@ export default class LoginPage {
       {
         myValue.then((loggedIn) => {
           return false;
-          if (loggedIn) {
-            window.location.href = '#startPage';
-          } else {
-            window.location.href = '#loginPage';
-          }
         });
       }
     });

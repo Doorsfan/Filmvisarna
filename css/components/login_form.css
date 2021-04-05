@@ -157,18 +157,18 @@ button.loginPage.cancel_button:hover {
   margin: 15% auto; 
   padding: 20px;
   border: 1px solid #888;
-  width: 80%; 
+  width: 50%; 
 }
 
 .loginPage.closeSuccessfulLoginModal,
 .loginPage.closeFailedLoginModal {
-  color: #aaa;
+  color: white;
   float: right;
   font-size: 28px;
   font-weight: bold;
   position:relative;
   bottom:5px;
-  background-color: grey;
+  background-color: #bd4f6c;
   box-shadow: 0px 0px 12px -2px rgba(0, 0, 0, 0.5);
   text-align: center;
   display: inline;
