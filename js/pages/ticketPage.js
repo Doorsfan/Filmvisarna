@@ -118,7 +118,7 @@ export default class TicketPage {
         <div class='booking-info'>
           <div class="ticket-item">
           </div>
-          <div class="booking-info_container">
+          <div class="booking-info-container">
             <div class="info-summation">
             </div>
             <div class="info-buttons">

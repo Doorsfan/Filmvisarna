@@ -28,7 +28,9 @@ export default class Saloon {
     await this.getBookedSeats();
 
     let seatsArray = this.saloon.seatsPerRow;
-    let html = $('<div class="saloon-container"></div>');
+    let html = $(
+      `<div class="saloon-container ${this.saloon.auditorium}"></div>`
+    );
     this.seatNumber = 0;
     for (let i = 0; i < seatsArray.length; i++) {
       let row = $(`<div class="row row-${i + 1}"></div>`);
