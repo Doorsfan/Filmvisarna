@@ -1,97 +1,147 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600&display=swap');
 
-.registerPage.inputForm{
-  margin: 28vh 0vw 10vh 2em;
+.registerPage.inputForm {
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  align-items: center;
+  height: 92vh;
+  box-sizing: border-box;
+  margin: auto;
+  max-width: 60rem;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  background-color: #2d2d2d;
+
+  box-shadow: rgba(0, 0, 0, 1) 0px 54px 55px, rgba(0, 0, 0, 1) 0px -12px 30px,
+    rgba(0, 0, 0, 1) 0px 4px 6px, rgba(0, 0, 0, 1) 0px 12px 13px,
+    rgba(0, 0, 0, 1) 0px -3px 5px;
+
+  box-shadow: rgba(255, 255, 255, 0.2) 0px 4px 5px,
+    rgba(0, 0, 0, 1) 0px -12px 30px, rgba(0, 0, 0, 1) 0px 4px 6px,
+    rgba(0, 0, 0, 1) 0px 12px 13px, rgba(0, 0, 0, 1) 0px -3px 5px;
+}
+.registerPage .formContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  background-color: #2a2a2a;
+  margin: 4rem 0;
+  width: 90vw;
+  max-width: 25rem;
+  height: 30rem;
+  box-shadow: #4f4f4f 0px 0px 10px;
+  border-radius: 30px;
 }
 
-@media screen and (max-width: 280px){
-  .registerPage.inputForm{
-    position:absolute;
-    left:25%;
-  }
+.registerPage .myImage {
+  width: 100%;
+  max-width: 200px;
+  height: 200px;
+  align-self: center;
+  margin-bottom: 1.7rem;
+  border-radius: 100px;
+  opacity: 0.8;
 }
 
-.registerPage.registerTitle{
-  text-align:center;
-  display:block;
-  font-size:1.25em;
-  color:white;
+.registerPage .emailInput,
+.registerPage .passwordInput,
+.registerPage .secondPasswordInput {
+  width: 45vw;
+  min-width: 130px;
+  max-width: 220px;
+  height: 1.4rem;
+  margin: 0.5rem auto;
+  border-radius: 4px;
+  border: 0;
+  background-color: #d4d4d4;
 }
 
-.registerPage.emailInput, .registerPage.passwordInput, .registerPage.secondPasswordInput{
-  margin:5px;
-  display: block;
-  margin-left:auto;
-  margin-right:auto;
-  text-indent:2px;
-  margin-top: 12px;
-  margin-bottom:12px;
+.registerPage .emailInput:hover,
+.registerPage .passwordInput:hover,
+.registerPage.secondPasswordInput:hover {
+  background-color: #a4a4a4;
 }
 
-
-.registerPage.register_button{
-  display:block;
-  margin-left:auto;
-  margin-right:auto;
-  padding:3px;
-  padding-right:40px;
-  padding-left: 40px;
-  color:white;
-  background-color:#F54D4D;
-  border: solid 1px black;
+.registerPage .register_button {
+  width: 45vw;
+  min-width: 130px;
+  max-width: 220px;
+  height: 1.4rem;
+  margin: 0.5rem auto;
+  font-size: 1rem;
+  cursor: pointer;
+  background-image: linear-gradient(147deg, #990000 0%, #c20000 84%);
+  border: #434244;
+  border-radius: 4px;
+  color: #eeeeee;
+  text-decoration: none;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  background-color: #d4d4d4;
+}
+.registerPage .register_button:hover {
+  background: #d4d4d4;
+  color: #c20000;
 }
 
-.registerPage.register_button:focus, .registerPage.cancel_button:focus{
-  outline:none;
-}
-.registerPage.emailTitle, .registerPage.passwordTitle, .registerPage.confirmPasswordTitle{
-  text-align:center;
-  margin:2px;
-}
-
-.registerPage.ellerText{
-  text-align:center;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  font-weight:bold;
-  color:white;
+.registerPage .seperator {
+  margin: 0.5rem 0;
+  border: 0;
+  height: 1px;
+  width: 75%;
+  background-image: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0),
+    rgba(255, 255, 255, 0.75),
+    rgba(255, 255, 255, 0)
+  );
 }
 
-.registerPage.cancel_button{
-  display:block;
-  width:168px;
-  text-align:center;
-  background-color:white;
-  color: #F54D4D;
-  border: solid 1px black;
-  margin-left:auto;
-  margin-right:auto;
-  margin-top:2px;
-  padding:2px;
+.registerPage .cancel_button {
+  width: 14vw;
+  min-width: 130px;
+  max-width: 220px;
+  height: 1.4rem;
+  margin: 0.5rem auto;
+  font-size: 1rem;
+  background-color: #d4d4d4;
+  color: #a11e22;
+  padding: 1px;
+  border: 0;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.registerPage .cancel_button:hover {
+  background-color: #a4a4a4;
 }
 
 .registerPage.registerModal {
-  position: fixed; 
-  z-index: 1; 
+  position: fixed;
+  z-index: 1;
   left: 0;
   top: 0;
-  width: 100%; 
-  height: 100%; 
-  overflow: auto; 
-  background-color: rgb(0,0,0); 
-  background-color: rgba(0,0,0,0.4);
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.4);
 }
 
 .registerPage.modal-content {
   font-family: 'Montserrat', sans-serif;
   background-color: grey;
-  margin: 15% auto; 
+  margin: 15% auto;
   padding: 20px;
   border: 2px solid black;
-  text-align:center;
+  text-align: center;
   min-width: max-content;
   max-width: 40%;
-  border-radius:15px;
+  border-radius: 15px;
 }
 
 .registerPage.closeSuccessfulRegisterModal,
@@ -100,15 +150,15 @@
   float: right;
   font-size: 26px;
   font-weight: lighter;
-  position:relative;
-  bottom:5px;
+  position: relative;
+  bottom: 5px;
   background-color: grey;
   box-shadow: 0px 0px 12px -2px rgba(0, 0, 0, 0.5);
   text-align: center;
   display: inline;
   width: 2rem;
   height: 2rem;
-  padding-bottom:1rem;
+  padding-bottom: 1rem;
   border-radius: 100px;
   outline: none;
   border: none;
