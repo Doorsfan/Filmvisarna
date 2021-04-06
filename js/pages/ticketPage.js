@@ -67,7 +67,7 @@ export default class TicketPage {
               <p>Tyvärr, så blev sätena: `;
       myHTML += overideSeat;
       myHTML += ` tagna!</p></div></div>`;
-      $('main').prepend(myHTML); //Put in seats from Array
+      $('main').prepend(myHTML);
       sessionStorage.setItem('selectedShow', JSON.stringify(selectedShow));
     }
   }
