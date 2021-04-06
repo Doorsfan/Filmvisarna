@@ -221,7 +221,15 @@
   text-decoration: none;
   align-items: center;
   justify-content: center;
-  display: flex;
+}
+
+a[href="#ticketPage"] {
+  display: block;
+  text-align: center;
+}
+
+.empty-seats {
+  font-size: 80%;
 }
 
 .aboutPage-btn:hover,
