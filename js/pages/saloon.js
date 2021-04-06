@@ -90,21 +90,30 @@ export default class Saloon {
       selectedTicketPrice,
       priceSum,
     };
-    let show = JSON.parse(sessionStorage.getItem('selectedShow'));
-    show.price = priceSum;
-    !selectedTicketType.includes('Inte vald')
-      ? $('.ticket-booking').prop('disabled', false)
-      : $('.ticket-booking').prop('disabled', true);
+    if (tickets.selectedTicketType.length > 0) {
+      let show = JSON.parse(sessionStorage.getItem('selectedShow'));
+      show.price = priceSum;
+      !selectedTicketType.includes('Inte vald')
+        ? $('.ticket-booking').prop('disabled', false)
+        : $('.ticket-booking').prop('disabled', true);
 
-    sessionStorage.setItem('selectedShow', JSON.stringify(show));
-    sessionStorage.setItem('tickets', JSON.stringify(tickets));
+      sessionStorage.setItem('selectedShow', JSON.stringify(show));
+      sessionStorage.setItem('tickets', JSON.stringify(tickets));
 
-    $('.info-summation').html('');
-    for (let i = 0; i < selectedTicketType.length; i++) {
-      $('.info-summation').append(`
+      $('.info-summation').html('');
+      for (let i = 0; i < selectedTicketType.length; i++) {
+        $('.info-summation').append(`
       <p class="seat-number${this.seatNumber}">Billjet typ: ${selectedTicketType[i]} á ${selectedTicketPrice[i]} kr</p>`);
+      }
+      $('.info-summation').append(`<hr><p>Summa: ${priceSum} kr</p>`);
     }
-    $('.info-summation').append(`<hr><p>Summma: ${priceSum} kr</p>`);
+    else {
+      $('.ticket-item').html('');
+      $('.info-summation').html('');
+      $('.btn').removeClass('regret');
+      $('.btn').html('Välj Platser');
+      $('.ticket-booking').prop('disabled', true);
+    }
   }
 
   saveSelectedSeats() {

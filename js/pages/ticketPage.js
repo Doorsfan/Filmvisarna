@@ -34,6 +34,7 @@ export default class TicketPage {
       if (tickets.includes(Number($(this).val()))) {
         $(this).prop('disabled', true);
         if ($(this).is(':checked')) {
+          $(this).prop('checked', false);
           overideSeat.push(Number($(this).val()));
           $(`.seat-number${Number($(this).val())}`).remove();
           new Saloon().readingTicketPrices();
@@ -117,7 +118,6 @@ export default class TicketPage {
   async render() {
     this.saloonView = await new Saloon().render();
     this.movieSchedule = await JSON._load('movieSchedule.json');
-    console.log(this.movieSchedule);
     return /*html*/ ` 
     <div class='ticketpage-container'>
       <div class="ticketpage-content">
