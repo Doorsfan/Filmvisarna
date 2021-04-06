@@ -19,10 +19,8 @@ export default class TicketPage {
         this.reRender()
       );
     }
-    $('main').on('change', '.saloon-container', () => {
-      $('input[type=checkbox]').is(':checked')
-        ? $('.btn').prop('disabled', false)
-        : $('.btn').prop('disabled', true);
+    $('main').on('click', '.ticketPage.closeTakenSeatModal', (event) => {
+      $('.takenSeatModal').remove();
     });
   }
 
@@ -36,13 +34,48 @@ export default class TicketPage {
       if (tickets.includes(Number($(this).val()))) {
         $(this).prop('disabled', true);
         if ($(this).is(':checked')) {
+          $(this).prop('checked', false);
           overideSeat.push(Number($(this).val()));
           $(`.seat-number${Number($(this).val())}`).remove();
           new Saloon().readingTicketPrices();
-          alert(overideSeat + 'got booked biatch');
         }
       }
     });
+    tickets.forEach((wantedSeat) => {
+      overideSeat.forEach((takenSeat) => {
+        if (wantedSeat == takenSeat) {
+          tickets = this.removeWithSlice(tickets, tickets.indexOf(wantedSeat));
+        }
+      })
+    })
+    let selectedShow = JSON.parse(sessionStorage.getItem('selectedShow'));
+    this.movieSchedule.forEach((movie) => {
+      if (movie.film == selectedShow.film && movie.date == selectedShow.date) {
+        overideSeat.forEach((takenSeat) => {
+          if (selectedShow.seats.includes(takenSeat)) {
+            selectedShow.seats = this.removeWithSlice(selectedShow.seats, selectedShow.seats.indexOf(takenSeat));
+          }
+        });
+      }
+    })
+
+    //Only render the Modal once, in case there isn't one already
+    if ($('.takenSeatModal').length == 0 && overideSeat.length > 0) {
+      let myHTML = `<div class="ticketPage takenSeatModal">
+            <div class="ticketPage modal-content">
+              <span class="ticketPage closeTakenSeatModal">&times;</span>
+              <p>Tyvärr, så blev sätena: `;
+      myHTML += overideSeat;
+      myHTML += ` tagna!</p></div></div>`;
+      $('main').prepend(myHTML);
+      sessionStorage.setItem('selectedShow', JSON.stringify(selectedShow));
+    }
+  }
+  // Due to Splice refusing to work properly, i work around it with Slice and Concat
+  removeWithSlice(originalArray, index) {
+    let firstPart = originalArray.slice(0, index);
+    let secondPart = originalArray.slice(index + 1);
+    return firstPart.concat(secondPart);
   }
 
   async getBookedSeats() {
@@ -56,7 +89,6 @@ export default class TicketPage {
 
   async saveSeats() {
     let selectedShow = JSON.parse(sessionStorage.getItem('selectedShow'));
-    console.log(selectedShow);
     this.movieSchedule.forEach((movie) => {
       if (movie.film == selectedShow.film && movie.date == selectedShow.date) {
         movie.bookedSeats = [...movie.bookedSeats, ...selectedShow.seats];
@@ -72,8 +104,6 @@ export default class TicketPage {
     movieInfo.user = username;
     new ReadNWrite().saveBookings(movieInfo, username);
     let string = JSON.stringify(movieInfo);
-    console.log(string);
-
     this.popModal(movieInfo);
     // window.location.href = '#startPage';
   }
@@ -110,8 +140,12 @@ export default class TicketPage {
   async render() {
     this.saloonView = await new Saloon().render();
     this.movieSchedule = await JSON._load('movieSchedule.json');
+<<<<<<< HEAD
     console.log(this.movieSchedule);
     return /*html*/ `
+=======
+    return /*html*/ ` 
+>>>>>>> main
     <div class='ticketpage-container'>
       <div class="ticketpage-content">
         ${this.saloonView[0].outerHTML}

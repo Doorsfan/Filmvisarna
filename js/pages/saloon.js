@@ -55,12 +55,11 @@ export default class Saloon {
 
   eventHandler() {
     $('main').on('click', '.btn', () => {
-      this.saveSelectedSeats();
-      $('.btn').addClass('regret');
-      $('.btn').html('Ångra');
-      $('.info-buttons').html(
-        `<button type='button' class="ticket-booking" disabled='true'>BOKA</button>`
-      );
+      if ($('input:checkbox[type=checkbox]:checked').length > 0) {
+        this.saveSelectedSeats();
+        $('.btn').addClass('regret');
+        $('.btn').html('Ångra');
+      }
     });
 
     $('main').on('click', '.regret', (e) => {
@@ -98,19 +97,28 @@ export default class Saloon {
       selectedTicketPrice,
       priceSum,
     };
-    let show = JSON.parse(sessionStorage.getItem('selectedShow'));
-    show.price = priceSum;
-    !selectedTicketType.includes('Inte vald')
-      ? $('.ticket-booking').prop('disabled', false)
-      : $('.ticket-booking').prop('disabled', true);
+    if (tickets.selectedTicketType.length > 0) {
+      let show = JSON.parse(sessionStorage.getItem('selectedShow'));
+      show.price = priceSum;
+      !selectedTicketType.includes('Inte vald')
+        ? $('.ticket-booking').prop('disabled', false)
+        : $('.ticket-booking').prop('disabled', true);
 
-    sessionStorage.setItem('selectedShow', JSON.stringify(show));
-    sessionStorage.setItem('tickets', JSON.stringify(tickets));
+      sessionStorage.setItem('selectedShow', JSON.stringify(show));
+      sessionStorage.setItem('tickets', JSON.stringify(tickets));
 
-    $('.info-summation').html('');
-    for (let i = 0; i < selectedTicketType.length; i++) {
-      $('.info-summation').append(`
+      $('.info-summation').html('');
+      for (let i = 0; i < selectedTicketType.length; i++) {
+        $('.info-summation').append(`
       <p class="seat-number${this.seatNumber}">Billjet typ: ${selectedTicketType[i]} á ${selectedTicketPrice[i]} kr</p>`);
+      }
+      $('.info-summation').append(`<hr><p>Summa: ${priceSum} kr</p>`);
+    } else {
+      $('.ticket-item').html('');
+      $('.info-summation').html('');
+      $('.btn').removeClass('regret');
+      $('.btn').html('Välj Platser');
+      $('.ticket-booking').prop('disabled', true);
     }
     $('.info-summation').append(
       `<hr class="seperator"><p>Summma: ${priceSum} kr</p>`
