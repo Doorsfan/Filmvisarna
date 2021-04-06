@@ -57,7 +57,7 @@ export default class registerPage {
     
       <form class="registerPage inputForm">
       <div class="formContainer">
-        <img class="registerPage myImage" src="/images/login.jpg">
+        <img class="registerPage myImage" src="/images/register.jpg">
         <input class="registerPage emailInput" type="email" placeholder="E-postadress" name="email" required>
         <div class="registerPage firstSeperator"></div>
         <input class="registerPage passwordInput" type="password" placeholder="Lösenord" name="password" required>

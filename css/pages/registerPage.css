@@ -40,9 +40,9 @@
 .registerPage .myImage {
   width: 100%;
   max-width: 200px;
-  height: auto;
+  height: 200px;
   align-self: center;
-  margin-bottom: 2rem;
+  margin-bottom: 1.7rem;
   border-radius: 100px;
   opacity: 0.8;
 }
