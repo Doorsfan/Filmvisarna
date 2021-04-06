@@ -41,6 +41,24 @@ export default class TicketPage {
         }
       }
     });
+    tickets.forEach((wantedSeat) => {
+      overideSeat.forEach((takenSeat) => {
+        if (wantedSeat == takenSeat) {
+          tickets = this.removeWithSlice(tickets, tickets.indexOf(wantedSeat));
+        }
+      })
+    })
+    let selectedShow = JSON.parse(sessionStorage.getItem('selectedShow'));
+    this.movieSchedule.forEach((movie) => {
+      if (movie.film == selectedShow.film && movie.date == selectedShow.date) {
+        overideSeat.forEach((takenSeat) => {
+          if (selectedShow.seats.includes(takenSeat)) {
+            selectedShow.seats = this.removeWithSlice(selectedShow.seats, selectedShow.seats.indexOf(takenSeat));
+          }
+        });
+      }
+    })
+
     //Only render the Modal once, in case there isn't one already
     if ($('.takenSeatModal').length == 0 && overideSeat.length > 0) {
       let myHTML = `<div class="ticketPage takenSeatModal">
@@ -50,7 +68,14 @@ export default class TicketPage {
       myHTML += overideSeat;
       myHTML += ` tagna!</p></div></div>`;
       $('main').prepend(myHTML); //Put in seats from Array
+      sessionStorage.setItem('selectedShow', JSON.stringify(selectedShow));
     }
+  }
+  // Due to Splice refusing to work properly, i work around it with Slice and Concat
+  removeWithSlice(originalArray, index) {
+    let firstPart = originalArray.slice(0, index);
+    let secondPart = originalArray.slice(index + 1);
+    return firstPart.concat(secondPart);
   }
 
   async getBookedSeats() {
@@ -64,7 +89,6 @@ export default class TicketPage {
 
   async saveSeats() {
     let selectedShow = JSON.parse(sessionStorage.getItem('selectedShow'));
-    console.log(selectedShow);
     this.movieSchedule.forEach((movie) => {
       if (movie.film == selectedShow.film && movie.date == selectedShow.date) {
         movie.bookedSeats = [...movie.bookedSeats, ...selectedShow.seats];
@@ -80,8 +104,6 @@ export default class TicketPage {
     movieInfo.user = username;
     new ReadNWrite().saveBookings(movieInfo, username);
     let string = JSON.stringify(movieInfo);
-    console.log(string);
-
     this.popModal(movieInfo);
     // window.location.href = '#startPage';
   }
