@@ -2,9 +2,18 @@ import readAndWriteUser from '../components/readAndWriteUser.js';
 export default class LoginPage {
   constructor() {
     this.validate = new readAndWriteUser();
-    this.eventHandler();
+    this.addEventHandlerForSubmitForm();
+    this.closeModalHandler();
   }
-  eventHandler() {
+  closeModalHandler() {
+    $('main').on('click', '.loginPage.closeSuccessfulLoginModal', (event) => {
+      window.location.href = '#startPage';
+    });
+    $('main').on('click', '.loginPage.closeFailedLoginModal', (event) => {
+      $('.loginModal').remove();
+    });
+  }
+  addEventHandlerForSubmitForm() {
     $('main').on('submit', '.loginPage.inputForm', (event) => {
       event.preventDefault();
       let myValue = '';
@@ -14,11 +23,7 @@ export default class LoginPage {
       );
       {
         myValue.then((loggedIn) => {
-          if (loggedIn) {
-            window.location.href = '#startPage';
-          } else {
-            window.location.href = '#loginPage';
-          }
+          return false;
         });
       }
     });
@@ -36,7 +41,7 @@ export default class LoginPage {
           <div class="loginPage secondSeperator"></div>
           <button class="loginPage log_in_button" type="submit" value="submit">Logga in</button>
           <hr class="seperator"/>
-          <button class="loginPage cancel_button">Avbryt</button>
+          <a href="#startPage"><button type="button" class="loginPage cancel_button">Avbryt</button></a>
           <a class="loginPage newAccountLink" href="#registerPage">Registrera Nytt Konto</a>
         </div>
        </div>
