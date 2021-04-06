@@ -29,7 +29,8 @@ export default class Saloon {
 
     let seatsArray = this.saloon.seatsPerRow;
     let html = $(
-      `<div class="saloon-container ${this.saloon.auditorium}"></div>`
+      `<div class="saloon-container ${this.saloon.auditorium}"></div>
+      `
     );
     this.seatNumber = 0;
     for (let i = 0; i < seatsArray.length; i++) {
@@ -47,6 +48,8 @@ export default class Saloon {
       }
       html.append(row);
     }
+
+    html.prepend('<div class="screen"></div>');
     return html.append('<button class="btn" disabled="true">Fortsätt</button>');
   }
 

@@ -111,7 +111,7 @@ export default class TicketPage {
     this.saloonView = await new Saloon().render();
     this.movieSchedule = await JSON._load('movieSchedule.json');
     console.log(this.movieSchedule);
-    return /*html*/ ` 
+    return /*html*/ `
     <div class='ticketpage-container'>
       <div class="ticketpage-content">
         ${this.saloonView[0].outerHTML}
