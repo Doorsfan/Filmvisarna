@@ -2,7 +2,6 @@ export default class BookingPage {
   showDate = new Date().toISOString().split('T')[0];
 
   constructor() {
-    // Adding event handler for date input
     let that = this;
     $('body').on('change', '.datePicker', async function () {
       that.showDate = $(this).val();
@@ -36,10 +35,10 @@ export default class BookingPage {
       purgedName = purgedName.replaceAll("'", '');
       html += `
     <div class = "bookingpage-show">
-      <img src=${movie.images[0]}>
-      <h2>${show.film}</h2>
-      <p>${movie.genre.join ? movie.genre.join(', ') : movie.genre} | 
-      ${Math.floor(movie.length / 60)} tim ${movie.length % 60} min</p>
+      <a href="#aboutPage/${movie.id}"><img src=${movie.images[0]}></a>
+      <h2><a href="#aboutPage/${movie.id}">${show.film}</a></h2>
+      <p>${movie.genre.join ? movie.genre.join(', ') : movie.genre}
+      | ${movie.ageRating === "barntillåten" ? "Barntillåten" : movie.ageRating + " år"} | ${Math.floor(movie.length / 60)} tim ${movie.length % 60} min</p>
       <h3>${show.date} | ${show.time} | ${show.auditorium}</h3>
       <a href="#ticketPage"><button class="bookingpage${purgedName} &${
         show.date
