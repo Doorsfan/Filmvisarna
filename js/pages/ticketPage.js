@@ -46,18 +46,21 @@ export default class TicketPage {
         if (wantedSeat == takenSeat) {
           tickets = this.removeWithSlice(tickets, tickets.indexOf(wantedSeat));
         }
-      })
-    })
+      });
+    });
     let selectedShow = JSON.parse(sessionStorage.getItem('selectedShow'));
     this.movieSchedule.forEach((movie) => {
       if (movie.film == selectedShow.film && movie.date == selectedShow.date) {
         overideSeat.forEach((takenSeat) => {
           if (selectedShow.seats.includes(takenSeat)) {
-            selectedShow.seats = this.removeWithSlice(selectedShow.seats, selectedShow.seats.indexOf(takenSeat));
+            selectedShow.seats = this.removeWithSlice(
+              selectedShow.seats,
+              selectedShow.seats.indexOf(takenSeat)
+            );
           }
         });
       }
-    })
+    });
 
     //Only render the Modal once, in case there isn't one already
     if ($('.takenSeatModal').length == 0 && overideSeat.length > 0) {
@@ -140,12 +143,7 @@ export default class TicketPage {
   async render() {
     this.saloonView = await new Saloon().render();
     this.movieSchedule = await JSON._load('movieSchedule.json');
-<<<<<<< HEAD
-    console.log(this.movieSchedule);
-    return /*html*/ `
-=======
     return /*html*/ ` 
->>>>>>> main
     <div class='ticketpage-container'>
       <div class="ticketpage-content">
         ${this.saloonView[0].outerHTML}
