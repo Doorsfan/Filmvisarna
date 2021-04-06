@@ -14,7 +14,7 @@ export default class BookingModal {
     });
 
     $('main').on('click', '.button-delete', this.deleteHandler);
-
+    let myUser = sessionStorage.getItem('username');
     return /*html*/ `
     <div class="backdrop">
       <div class="booking-modal_container">
@@ -23,7 +23,7 @@ export default class BookingModal {
           <h1>Bokningsinformation</h1>
         </div>
         <table class="booking-info_container">
-         <tr> <td class="booking_username">Användare:</td><td class="modal-value"><span class="booking-value">${props.username}</span></td></tr>
+         <tr> <td class="booking_username">Användare:</td><td class="modal-value"><span class="booking-value">${myUser}</span></td></tr>
          <tr> <td class="booking-movie">Film:</td><td class="modal-value"><span class="booking-value">${props.film}</span></td></tr>
          <tr> <td class="booking-show">Visning:</td><td class="modal-value"><span class="booking-value">${props.show}</span></td></tr>
           ${this.seatInfo}

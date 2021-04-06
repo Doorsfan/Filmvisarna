@@ -50,9 +50,11 @@ export default class Saloon {
 
   eventHandler() {
     $('main').on('click', '.btn', () => {
-      this.saveSelectedSeats();
-      $('.btn').addClass('regret');
-      $('.btn').html('Ångra');
+      if ($('input:checkbox[type=checkbox]:checked').length > 0) {
+        this.saveSelectedSeats();
+        $('.btn').addClass('regret');
+        $('.btn').html('Ångra');  
+      }
     });
 
     $('main').on('click', '.regret', (e) => {
