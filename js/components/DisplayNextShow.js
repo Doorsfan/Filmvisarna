@@ -1,16 +1,15 @@
 import Test from '../pages/test.js';
+import enrichScheduleWithEmptySeats from './EmptySeats.js';
 export default class DisplaySpecificShow {
   constructor(movieID) {
     this.movieID = movieID;
     this.eventHandler();
-    this.read();
     this.fromDate = new Date().toISOString().split('T')[0];
   }
 
   async read() {
     this.filteredShow = [];
-    this.movieSchedule = await $.getJSON('/json/movieSchedule.json');
-    this.shows = await $.getJSON('/json/movieSchedule.json');
+    this.movieSchedule = await enrichScheduleWithEmptySeats(await $.getJSON('/json/movieSchedule.json'));
     await Promise.all(
       this.movieSchedule.map(async (data) => {
         if (
@@ -26,13 +25,14 @@ export default class DisplaySpecificShow {
   createSelect() {
     let html = $(/*html*/ `<div class="book-show"></div>`);
 
-    for (let i = 0; i < 4; i++) {
+    for (let i = 0; i < Math.min(4, this.filteredShow.length); i++) {
       html.append(/*html*/ `
         <div class="show">
         <div class='aboutPage-text'>${this.filteredShow[i].date}</div>
         <div id="display-saloon">
           <div id="move-saloon">${this.filteredShow[i].auditorium}</div>
           <div id="showtime">Tid: ${this.filteredShow[i].time}</div>
+          <div class="empty-seats">Lediga platser: ${this.filteredShow[i].emptySeats}</div>
           <a href="#ticketPage"><button class="aboutPage-btn" type="button" value="${[
             this.filteredShow[i].date,
             this.filteredShow[i].time,
@@ -77,7 +77,7 @@ export default class DisplaySpecificShow {
   }
 
   filterSelectedShow(date, time) {
-    let displayShow = this.shows.find((show) => {
+    let displayShow = this.movieSchedule.find((show) => {
       return show.date == date && show.time == time;
     });
     return displayShow;
