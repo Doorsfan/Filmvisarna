@@ -34,7 +34,12 @@ export default class TicketPage {
           overideSeat.push(Number($(this).val()));
           $(`.seat-number${Number($(this).val())}`).remove();
           new Saloon().readingTicketPrices();
-          alert(overideSeat + 'got booked biatch');
+          $('main').prepend(`<div class="ticketPage takenSeatModal">
+          <div class="ticketPage modal-content">
+            <span class="ticketPage closeTakenSeatModal">&times;</span>
+            <p>Tyvärr, så blev dina valda säten tagna!</p>
+          </div>
+        </div>`);
         }
       }
     });
