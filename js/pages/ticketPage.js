@@ -37,15 +37,19 @@ export default class TicketPage {
           overideSeat.push(Number($(this).val()));
           $(`.seat-number${Number($(this).val())}`).remove();
           new Saloon().readingTicketPrices();
-          $('main').prepend(`<div class="ticketPage takenSeatModal">
-          <div class="ticketPage modal-content">
-            <span class="ticketPage closeTakenSeatModal">&times;</span>
-            <p>Tyvärr, så blev dina valda säten tagna!</p>
-          </div>
-        </div>`);
         }
       }
     });
+    //Only render the Modal once, in case there isn't one already
+    if ($('.takenSeatModal').length == 0 && overideSeat.length > 0) {
+      let myHTML = `<div class="ticketPage takenSeatModal">
+            <div class="ticketPage modal-content">
+              <span class="ticketPage closeTakenSeatModal">&times;</span>
+              <p>Tyvärr, så blev sätena: `;
+      myHTML += overideSeat;
+      myHTML += ` tagna!</p></div></div>`;
+      $('main').prepend(myHTML); //Put in seats from Array
+    }
   }
 
   async getBookedSeats() {
