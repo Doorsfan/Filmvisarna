@@ -22,6 +22,11 @@ export default class TicketPage {
     $('main').on('click', '.ticketPage.closeTakenSeatModal', (event) => {
       $('.takenSeatModal').remove();
     });
+    $('main').on('change', '.saloon-container', () => {
+      $('input[type=checkbox]').is(':checked')
+        ? $('.btn').prop('disabled', false)
+        : $('.btn').prop('disabled', true);
+    });
   }
 
   async reRender() {
