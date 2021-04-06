@@ -13,6 +13,7 @@
   text-align:center;
   display:block;
   font-size:1.25em;
+  color:white;
 }
 
 .registerPage.emailInput, .registerPage.passwordInput, .registerPage.secondPasswordInput{
@@ -51,6 +52,7 @@
   padding-top: 5px;
   padding-bottom: 5px;
   font-weight:bold;
+  color:white;
 }
 
 .registerPage.cancel_button{
