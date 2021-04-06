@@ -5,6 +5,7 @@
   background-image: url('/images/movieseats.png');
   background-position: center;
   object-fit: cover;
+  background-repeat: no-repeat;
 
   box-shadow: rgba(255, 255, 255, 0.2) 0px 4px 5px,
     rgba(0, 0, 0, 1) 0px -12px 30px, rgba(0, 0, 0, 1) 0px 4px 6px,

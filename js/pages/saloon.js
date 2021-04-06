@@ -113,7 +113,6 @@ export default class Saloon {
         $('.info-summation').append(`
       <p class="seat-number${this.seatNumber}">Billjet typ: ${selectedTicketType[i]} á ${selectedTicketPrice[i]} kr</p>`);
       }
-      $('.info-summation').append(`<hr><p>Summa: ${priceSum} kr</p>`);
     } else {
       $('.ticket-item').html('');
       $('.info-summation').html('');
