@@ -39,7 +39,6 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding-bottom: 3rem;
 }
 
 .ticket-booking:disabled {
@@ -69,7 +68,8 @@
   overflow-x: hidden;
   max-height: 169px;
   overflow-y: auto;
-  margin-bottom: 3px;
+  margin-bottom: 3rem;
+
   color: #eeeeee !important;
 }
 
@@ -128,6 +128,11 @@
     zoom: 0.8;
     -moz-transform: scale(0.8);
   }
+  .ticketpage-container .booking-info {
+    flex-direction: column;
+    padding: 0;
+    align-items: center;
+  }
 }
 @media only screen and (max-width: 500px) {
   .Savannen {
@@ -138,8 +143,5 @@
     flex-direction: column;
     padding: 0;
     align-items: center;
-  }
-  .ticket-item {
-    margin-bottom: 2rem;
   }
 }
