@@ -24,12 +24,24 @@ export default class readAndWriteUser {
     try {
       this.user = await JSON._load(`./users/${username + password}`);
     } catch (error) {
-      alert('No .json with that combination');
+      $('main').prepend(`
+      <div class="loginPage loginModal">
+        <div class="loginPage modal-content">
+          <span class="loginPage closeFailedLoginModal">&times;</span>
+          <p>Tyvärr, kunde inte logga in med användarnamnet av ${username}.</p>
+        </div>
+      </div>`);
       return false;
     }
     this.saveUserToSessionStorage(username);
     this.renderForActiveUser();
-    alert(`Välkommen ${username}`);
+    $('main').prepend(`
+      <div class="loginPage loginModal">
+        <div class="loginPage modal-content">
+          <span class="loginPage closeSuccessfulLoginModal">&times;</span>
+          <p>Välkommen, ${username}!</p>
+        </div>
+      </div>`)
     return true;
   }
 

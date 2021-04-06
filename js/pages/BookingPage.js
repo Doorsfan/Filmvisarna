@@ -17,7 +17,6 @@ export default class BookingPage {
   }
 
   async render() {
-    console.log(this.showDate);
     let html = `
     <div class = "bookingpage-container">
     <div class = "bookingpage-cover"></div>
