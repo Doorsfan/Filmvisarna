@@ -19,6 +19,9 @@ export default class TicketPage {
         this.reRender()
       );
     }
+    $('main').on('click', '.ticketPage.closeTakenSeatModal', (event) => {
+      $('.takenSeatModal').remove();
+    });
   }
 
   async reRender() {
