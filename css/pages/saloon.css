@@ -37,14 +37,15 @@
   padding: 5px;
   text-align: center;
   width: 25px;
-  height: 35px;
 }
 
 .saloon-container input[type='checkbox'] {
   z-index: 2;
   opacity: 0;
   width: 30px;
-  height: 25px;
+  height: 30px;
+
+  cursor: pointer;
 }
 
 .saloon-container input[type='checkbox'] + label {
@@ -52,7 +53,7 @@
   z-index: 1;
 }
 .saloon-container input[type='checkbox']:checked + label {
-  background-color: black;
+  background: black;
   color: white;
 }
 .saloon-container input[type='checkbox']:disabled + label {
@@ -64,7 +65,12 @@
   width: 10rem;
   padding: 0.5rem;
   margin-top: 0.5rem;
-  background-image: linear-gradient(147deg, #2d2d2d 0%, #6d6d6d 84%);
+  background-image: linear-gradient(
+    to top,
+    #2d2d2d 10%,
+    #6d6d6d 84%,
+    #2d2d2d 10%
+  );
   color: white;
   border: none;
   border-radius: 5px;

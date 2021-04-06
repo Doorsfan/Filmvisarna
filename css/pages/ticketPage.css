@@ -1,7 +1,8 @@
 .ticketpage-container {
   display: flex;
   flex-direction: row;
-  background-color: #8d8989;
+  background-color: #2d2d2d;
+
   box-shadow: rgba(255, 255, 255, 0.2) 0px 4px 5px,
     rgba(0, 0, 0, 1) 0px -12px 30px, rgba(0, 0, 0, 1) 0px 4px 6px,
     rgba(0, 0, 0, 1) 0px 12px 13px, rgba(0, 0, 0, 1) 0px -3px 5px;
@@ -29,11 +30,16 @@
 .ticketpage-container .booking-info-container {
   display: flex;
   flex-direction: column;
+  color: #eeeeee !important;
   width: fit-content;
 }
 
 .ticketpage-container .ticket-item {
-  width: fit-content;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-bottom: 3rem;
 }
 
 .ticket-booking:disabled {
@@ -52,7 +58,7 @@
 .ticketpage-container .info-buttons .ticket-booking:disabled {
   width: fit-content;
   padding: 0.5rem;
-  background-image: linear-gradient(147deg, #2d2d2d 0%, #6d6d6d 84%);
+  background-image: linear-gradient(360deg, #2d2d2d 0%, #6d6d6d 84%);
   color: white;
   border: none;
   border-radius: 5px;
@@ -64,6 +70,7 @@
   max-height: 169px;
   overflow-y: auto;
   margin-bottom: 3px;
+  color: #eeeeee !important;
 }
 
 .ticketpage-container .booking-info_container {
@@ -79,9 +86,35 @@
   background-image: linear-gradient(
     to right,
     rgba(0, 0, 0, 0),
-    rgba(0, 0, 0, 0.75),
+    rgba(255, 255, 255, 0.75),
     rgba(0, 0, 0, 0)
   );
+}
+
+.ticketpage-container .ticket-box {
+  margin-bottom: 0.8rem;
+}
+.ticketpage-container .ticket-box:last-child {
+  margin-bottom: 0;
+}
+
+.ticket-price {
+  height: 20px;
+  padding: 0 3px 0 3px;
+  background: #bebdbf;
+  border: 1px solid #9f9f9f;
+  cursor: pointer;
+  border-radius: 4px;
+  width: 50%;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url('data:image/svg+xml;utf8, <svg xmlns="http://www.w3.org/2000/svg" width="100" height="50"><polygon points="0,0 100,0 50,50" style="fill:%23626163;"/></svg>');
+  background-position: right 5px top 50%;
+  background-repeat: no-repeat;
+  background-size: 0.8rem;
+  padding-right: 1rem;
+  /* margin-top: 1rem; */
 }
 
 @media only screen and (max-width: 616px) {
