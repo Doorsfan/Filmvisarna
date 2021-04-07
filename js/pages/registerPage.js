@@ -7,12 +7,16 @@ export default class registerPage {
   }
 
   addCloseModalHandlers() {
-    $('main').on('click', '.registerPage.closeSuccessfulRegisterModal', (event) => {
-      window.location.href = '#loginPage';
-    })
+    $('main').on(
+      'click',
+      '.registerPage.closeSuccessfulRegisterModal',
+      (event) => {
+        window.location.href = '#loginPage';
+      }
+    );
     $('main').on('click', '.registerPage.closeFailedRegisterModal', (event) => {
       $('.registerModal').remove();
-    })
+    });
   }
   addEventHandlerForSubmitform() {
     $('main').on('submit', '.registerPage.inputForm', (event) => {
@@ -49,10 +53,12 @@ export default class registerPage {
   }
 
   render() {
-    return /*html*/ ` 
+    return /*html*/ `
+    
       <form class="registerPage inputForm">
-        <h1 class="registerPage registerTitle">Registrera Ny Användare</h1>
-        <input class="registerPage emailInput" type="email" placeholder="E-postadress" name="email" required autocomplete="email">
+      <div class="formContainer">
+        <img class="registerPage myImage" src="/images/register.jpg">
+        <input class="registerPage emailInput" type="email" placeholder="E-postadress" name="email" required>
         <div class="registerPage firstSeperator"></div>
         <input class="registerPage passwordInput" type="password" placeholder="Lösenord" name="password" required
         autocomplete="current-password">
@@ -60,7 +66,7 @@ export default class registerPage {
         <input class="registerPage secondPasswordInput" type="password" placeholder="Skriv lösenord igen" name="secondPassword" required autocomplete="new-password">
         <div class="registerPage thirdSeperator"></div>
         <button class="registerPage register_button" type="submit">Registrera Mig</button>
-        <div class="registerPage ellerText">ELLER</div>
+        <hr class="seperator"/>
         <button class="registerPage cancel_button">Avbryt</button>
         </div>
       </form>
