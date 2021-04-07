@@ -61,7 +61,11 @@ export default class Router {
   }
 
   loginPage() {
-    return loginPage.render();
+    if (sessionStorage.getItem('username') == null) {
+      return loginPage.render();
+    } else {
+      window.location.href = '#userPage';
+    }
   }
 
   MoviePage() {
@@ -73,7 +77,11 @@ export default class Router {
   }
 
   registerPage() {
-    return myRegisterPage.render();
+    if (sessionStorage.getItem('username') == null) {
+      return myRegisterPage.render();
+    } else {
+      window.location.href = '#userPage';
+    }
   }
 
   bookingPage() {
