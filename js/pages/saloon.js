@@ -121,7 +121,7 @@ export default class Saloon {
       $('.ticket-booking').prop('disabled', true);
     }
     $('.info-summation').append(
-      `<hr class="seperator"><p>Summma: ${priceSum} kr</p>`
+      `<hr class="seperator"><p>Summa: ${priceSum} kr</p>`
     );
   }
 
