@@ -24,11 +24,11 @@ export default class UserPage {
       this.userBookings.forEach((element) => {
         $('main').on(
           'click',
-          '.' + element.bookingNumber,
+          '.' + element.bookingNumber + 'Button',
           (cancelBookingButton) => {
             cancelBookingObject.cancelBookingById(
               this.userBookings,
-              cancelBookingButton.target.className
+              cancelBookingButton.target.className.substring(0,cancelBookingButton.target.className.length-6)
             );
             if (this.username != 'admin@admin.se') {
               readAndWriteUserObject.updateUserBookings(
@@ -37,9 +37,13 @@ export default class UserPage {
               );
             }
             readAndWriteUserObject.updateAdminBookings(
-              cancelBookingButton.target.className
+              cancelBookingButton.target.className.substring(
+                0,
+                cancelBookingButton.target.className.length - 6
+              )
             );
-            $('.' + cancelBookingButton.target.className).remove();
+            let targetHTML = cancelBookingButton.target.className.substring(0, cancelBookingButton.target.className.length-6);
+            $('.userpage-booking.' + targetHTML).remove();
             $('.bookingNrDisplay').each(function (index) {
               $(this).text('Bokning ' + (index + 1));
             });
@@ -79,7 +83,7 @@ export default class UserPage {
     this.userBookings.forEach((booking) => {
       let btn = '';
       if (booking.bookingNumber) {
-        btn = `<div class="booking-button"><p>Avboka</p><button class="${booking.bookingNumber}">X</button></div>`;
+        btn = `<div class="booking-button"><p>Avboka</p><button class="${booking.bookingNumber}Button">X</button></div>`;
       } else {
         btn = '';
       }
