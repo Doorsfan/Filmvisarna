@@ -75,8 +75,10 @@ export default class StartPage {
       timer = setTimeout(showSlides, 4000);
     };
 
-    $('main').load('load', showSlides);
-
+    //$('main').load('load', showSlides);
+    $(document).ready(function () {
+      showSlides();
+    });
     return `
       <div class="big-container">
         <div class="startpage-infobar">

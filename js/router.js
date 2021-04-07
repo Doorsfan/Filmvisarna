@@ -57,6 +57,7 @@ export default class Router {
   // Our pages (the method names matches the hashes with any slashes - removed)
 
   default() {
+    window.location.href = "#startPage";
     return startPage.render();
   }
 
