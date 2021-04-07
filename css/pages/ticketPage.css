@@ -1,119 +1,232 @@
 .ticketpage-container {
   display: flex;
   flex-direction: row;
-  /* margin: 2rem; */
-  height: 91vh;
+  background-color: #2d2d2d;
+  background: linear-gradient(
+      to bottom,
+      rgba(33, 33, 33, 0.1),
+      rgb(33, 33, 33, 1)
+    ),
+    url('/images/movieseats.png');
+
+  background-position: center;
+  object-fit: cover;
+  background-repeat: no-repeat;
+
+  box-shadow: rgba(255, 255, 255, 0.2) 0px 4px 5px,
+    rgba(0, 0, 0, 1) 0px -12px 30px, rgba(0, 0, 0, 1) 0px 4px 6px,
+    rgba(0, 0, 0, 1) 0px 12px 13px, rgba(0, 0, 0, 1) 0px -3px 5px;
+  min-height: 94vh;
+  max-width: 50rem;
+  margin-left: auto;
+  margin-right: auto;
   justify-content: center;
-  align-items: center;
+}
+
+.ticketpage-container .booking-info {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  padding-right: 3rem;
+  padding-left: 3rem;
+  margin-bottom: 5rem;
 }
 
 .ticketpage-content {
-  display: flex;
-  flex-direction: row;
+  width: 100%;
 }
 
-.booking-info {
+.ticketpage-container .booking-info-container {
   display: flex;
   flex-direction: column;
-  flex-basis: 100%;
-  align-self: stretch;
-  margin-left: 1rem;
-  min-width: 300px;
+  color: #eeeeee !important;
+  width: fit-content;
+  padding-bottom: 19rem;
 }
 
-.info-summation {
-  align-self: flex-end;
-  /* margin-left: 1rem; */
-}
-
-.ticket-box {
+.ticketpage-container .ticket-item {
+  width: 50%;
   display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
-  margin-bottom: 1rem;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
-.ticket-box p {
-  flex-grow: 2;
-  text-align: center;
-  margin-right: 2rem;
+.ticket-booking:disabled {
+  display: none;
+}
+.ticketpage-container .info-buttons .ticket-booking {
+  width: fit-content;
+  padding: 0.5rem;
+  background-image: linear-gradient(147deg, #990000 0%, #c20000 84%);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
-.ticket-item {
-  text-align: right;
-  width: 100%;
-  flex-grow: 5;
+.ticketpage-container .info-buttons .ticket-booking:disabled {
+  width: fit-content;
+  padding: 0.5rem;
+  background-image: linear-gradient(360deg, #2d2d2d 0%, #6d6d6d 84%);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.ticketpage-container .ticket-item {
   overflow-x: hidden;
-  overflow-y: scroll;
-  min-width: 320px;
+  max-height: 169px;
+  overflow-y: auto;
+  margin-bottom: 3rem;
+
+  color: #eeeeee !important;
+}
+
+.ticketpage-container .booking-info_container {
+  overflow-y: auto;
   max-height: 169px;
 }
 
-.booking-info_container {
-  display: flex;
-  flex-direction: row;
-  flex-grow: 1;
+.ticketpage-container .info-summation .seperator {
+  margin: 1rem 0;
+  border: 0;
+  height: 1px;
+  width: 100%;
+  background-image: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0),
+    rgba(255, 255, 255, 0.75),
+    rgba(0, 0, 0, 0)
+  );
 }
 
-.info-buttons {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  flex-grow: 2;
-  align-items: flex-end;
+.ticketpage-container .ticket-box {
+  margin-bottom: 0.8rem;
+}
+.ticketpage-container .ticket-box:last-child {
+  margin-bottom: 0;
+}
+.ticket-box,
+.info-summation {
+  font-size: 0.9rem;
 }
 
-.info-buttons button {
-  width: fit-content;
-  padding: 0.5rem;
-  margin-left: 3rem;
-  margin-top: 1rem;
+.ticket-price {
+  height: 20px;
+  padding: 0 3px 0 3px;
+  background: #bebdbf;
+  border: 1px solid #9f9f9f;
+  cursor: pointer;
+  border-radius: 4px;
+  width: 50%;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url('data:image/svg+xml;utf8, <svg xmlns="http://www.w3.org/2000/svg" width="100" height="50"><polygon points="0,0 100,0 50,50" style="fill:%23626163;"/></svg>');
+  background-position: right 5px top 50%;
+  background-repeat: no-repeat;
+  background-size: 0.8rem;
+  padding-right: 1rem;
+  /* margin-top: 1rem; */
 }
 
-.saloon-container {
-  border-right: 3px solid black;
-  padding-right: 2rem;
-  padding: 0rem 2rem 2rem 0;
+.screen {
+  height: 12px;
+  width: 70%;
+  border-radius: 3px;
+  background-color: #e3e3e3d3;
+  margin-bottom: 15px;
+  box-shadow: 10px 100px 200px 100px #eeeeeeae;
+
+  /* in order: x offset, y offset, blur size, spread size, color */
+  /* blur size and spread size are optional (they default to 0) */
+}
+
+@media only screen and (max-width: 616px) {
+  .Savannen {
+    zoom: 0.9;
+    -moz-transform: scale(0.9);
+  }
+  .ticket-box,
+  .info-summation {
+    font-size: 0.8rem;
+  }
+}
+@media only screen and (max-width: 590px) {
+  .Savannen {
+    zoom: 0.8;
+    -moz-transform: scale(0.8);
+  }
+  .ticketpage-container .booking-info {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+  }
+}
+@media only screen and (max-width: 540px) {
+  .Savannen {
+    zoom: 0.7;
+    -moz-transform: scale(0.7);
+  }
+  .ticketpage-container .booking-info {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+  }
+}
+@media only screen and (max-width: 500px) {
+  .Savannen {
+    zoom: 0.6;
+    -moz-transform: scale(0.6);
+  }
+  .ticketpage-container .booking-info {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+  }
 }
 
 .ticketPage.takenSeatModal {
-  position: fixed; 
-  z-index: 3; 
+  position: fixed;
+  z-index: 3;
   left: 0;
   top: 0;
-  width: 100%; 
-  height: 100%; 
-  overflow: auto; 
-  background-color: rgb(0,0,0); 
-  background-color: rgba(0,0,0,0.4);
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.4);
 }
 
 .ticketPage.modal-content {
   font-family: 'Montserrat', sans-serif;
   border: 2px solid black;
   background-color: grey;
-  text-align:center;
-  margin: 15% auto; 
+  text-align: center;
+  margin: 15% auto;
   padding: 20px;
   min-width: max-content;
   max-width: 40%;
-  border-radius:15px;
+  border-radius: 15px;
 }
 
 .ticketPage.closeTakenSeatModal {
   color: black;
   float: right;
   font-size: 26px;
-  font-weight:lighter;
-  position:relative;
-  bottom:5px;
+  font-weight: lighter;
+  position: relative;
+  bottom: 5px;
   background-color: grey;
   box-shadow: 0px 0px 12px -2px rgba(0, 0, 0, 0.5);
   text-align: center;
   display: inline;
   width: 2rem;
   height: 2rem;
-  padding-bottom:1rem;
+  padding-bottom: 1rem;
   border-radius: 100px;
   outline: none;
   border: none;

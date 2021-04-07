@@ -22,6 +22,11 @@ export default class TicketPage {
     $('main').on('click', '.ticketPage.closeTakenSeatModal', (event) => {
       $('.takenSeatModal').remove();
     });
+    $('main').on('change', '.saloon-container', () => {
+      $('input[type=checkbox]').is(':checked')
+        ? $('.btn').prop('disabled', false)
+        : $('.btn').prop('disabled', true);
+    });
   }
 
   async reRender() {
@@ -46,18 +51,21 @@ export default class TicketPage {
         if (wantedSeat == takenSeat) {
           tickets = this.removeWithSlice(tickets, tickets.indexOf(wantedSeat));
         }
-      })
-    })
+      });
+    });
     let selectedShow = JSON.parse(sessionStorage.getItem('selectedShow'));
     this.movieSchedule.forEach((movie) => {
       if (movie.film == selectedShow.film && movie.date == selectedShow.date) {
         overideSeat.forEach((takenSeat) => {
           if (selectedShow.seats.includes(takenSeat)) {
-            selectedShow.seats = this.removeWithSlice(selectedShow.seats, selectedShow.seats.indexOf(takenSeat));
+            selectedShow.seats = this.removeWithSlice(
+              selectedShow.seats,
+              selectedShow.seats.indexOf(takenSeat)
+            );
           }
         });
       }
-    })
+    });
 
     //Only render the Modal once, in case there isn't one already
     if ($('.takenSeatModal').length == 0 && overideSeat.length > 0) {
@@ -147,12 +155,11 @@ export default class TicketPage {
         <div class='booking-info'>
           <div class="ticket-item">
           </div>
-          <div class="booking-info_container">
+          <div class="booking-info-container">
             <div class="info-summation">
             </div>
             <div class="info-buttons">
-              <button>AVBRYT</button>
-              <button type='button' class="ticket-booking" disabled='true'>BOKA</button>
+              
             </div>
           </div>
         </div>
