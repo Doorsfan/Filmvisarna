@@ -14,7 +14,7 @@ export default class Footer {
         <div class="footer-column">
         <div></div>
           <p class="footer-title">Gäster</p>
-          <a href="#"class="footer-link">Boka film</a>
+          <a href="#bookingPage"class="footer-link">Boka film</a>
           <a href="#"class="footer-link">Frågor och svar</a>
           <a href="#"class="footer-link">Feedback</a>
           <a href="#"class="footer-link">Vårt mål</a>
@@ -22,8 +22,8 @@ export default class Footer {
         <div class="footer-column">
         <div></div>
           <p class="footer-title">Medlemmar</p>
-          <a href="#"class="footer-link">Logga in</a>
-          <a href="#"class="footer-link">Bli medlem</a>
+          <a href="#loginPage"class="footer-link">Logga in</a>
+          <a href="#registerPage"class="footer-link">Bli medlem</a>
           <a href="#"class="footer-link">Nyheter</a>
           <a href="#"class="footer-link">Frågor</a>
         </div>
