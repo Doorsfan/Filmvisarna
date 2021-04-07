@@ -28,7 +28,10 @@ export default class Saloon {
     await this.getBookedSeats();
 
     let seatsArray = this.saloon.seatsPerRow;
-    let html = $('<div class="saloon-container"></div>');
+    let html = $(
+      `<div class="saloon-container ${this.saloon.auditorium}"></div>
+      `
+    );
     this.seatNumber = 0;
     for (let i = 0; i < seatsArray.length; i++) {
       let row = $(`<div class="row row-${i + 1}"></div>`);
@@ -45,16 +48,19 @@ export default class Saloon {
       }
       html.append(row);
     }
-    return html.append('<button class="btn">Välj Platser</button>');
+
+    html.prepend('<div class="screen"></div>');
+    return html.append('<button class="btn" disabled="true">Fortsätt</button>');
   }
 
   eventHandler() {
     $('main').on('click', '.btn', () => {
-      if ($('input:checkbox[type=checkbox]:checked').length > 0) {
-        this.saveSelectedSeats();
-        $('.btn').addClass('regret');
-        $('.btn').html('Ångra');  
-      }
+      this.saveSelectedSeats();
+      $('.btn').addClass('regret');
+      $('.btn').html('Ångra');
+      $('.info-buttons').html(
+        `<button type='button' class="ticket-booking" disabled='true'>BOKA</button>`
+      );
     });
 
     $('main').on('click', '.regret', (e) => {
@@ -62,7 +68,7 @@ export default class Saloon {
       $('.info-summation').html('');
       $(e.target).removeClass('regret');
       $('.btn').html('Välj Platser');
-
+      $('.btn').prop('disabled', true);
       $('.seats').prop('checked', false);
     });
 
@@ -107,15 +113,16 @@ export default class Saloon {
         $('.info-summation').append(`
       <p class="seat-number${this.seatNumber}">Billjet typ: ${selectedTicketType[i]} á ${selectedTicketPrice[i]} kr</p>`);
       }
-      $('.info-summation').append(`<hr><p>Summa: ${priceSum} kr</p>`);
-    }
-    else {
+    } else {
       $('.ticket-item').html('');
       $('.info-summation').html('');
       $('.btn').removeClass('regret');
       $('.btn').html('Välj Platser');
       $('.ticket-booking').prop('disabled', true);
     }
+    $('.info-summation').append(
+      `<hr class="seperator"><p>Summa: ${priceSum} kr</p>`
+    );
   }
 
   saveSelectedSeats() {

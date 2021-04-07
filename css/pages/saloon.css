@@ -1,19 +1,25 @@
 .saloon-container {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  margin-top: 3rem;
+  margin-bottom: 2rem;
 }
 
-.row {
+.saloon-container .row {
   margin: 5px;
   display: flex;
   align-self: center;
 }
 
-.seats {
+.saloon-container .seats {
   display: flex;
 }
 
 .saloon-container label {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
   background: linear-gradient(
     to top,
     #761818,
@@ -32,14 +38,15 @@
   padding: 5px;
   text-align: center;
   width: 25px;
-  height: 35px;
 }
 
 .saloon-container input[type='checkbox'] {
   z-index: 2;
   opacity: 0;
   width: 30px;
-  height: 25px;
+  height: 30px;
+
+  cursor: pointer;
 }
 
 .saloon-container input[type='checkbox'] + label {
@@ -47,11 +54,38 @@
   z-index: 1;
 }
 .saloon-container input[type='checkbox']:checked + label {
-  background-color: black;
+  background: black;
   color: white;
 }
 .saloon-container input[type='checkbox']:disabled + label {
   background: darkgray;
   color: darkgray;
   border-color: transparent;
+}
+.saloon-container .btn:disabled {
+  width: 10rem;
+  padding: 0.5rem;
+  margin-top: 0.5rem;
+  background-image: linear-gradient(
+    to top,
+    #2d2d2d 10%,
+    #6d6d6d 84%,
+    #2d2d2d 10%
+  );
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+.saloon-container .btn {
+  width: 10rem;
+  padding: 0.5rem;
+  margin-top: 0.5rem;
+  background-image: linear-gradient(147deg, #990000 0%, #c20000 84%);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
 }

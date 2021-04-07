@@ -58,11 +58,12 @@ export default class registerPage {
       <form class="registerPage inputForm">
       <div class="formContainer">
         <img class="registerPage myImage" src="/images/register.jpg">
-        <input class="registerPage emailInput" type="email" placeholder="E-postadress" name="email" required>
+        <input class="registerPage emailInput" type="email" placeholder="E-postadress" name="email" required autocomplete="email">
         <div class="registerPage firstSeperator"></div>
-        <input class="registerPage passwordInput" type="password" placeholder="Lösenord" name="password" required>
+        <input class="registerPage passwordInput" type="password" placeholder="Lösenord" name="password" required
+        autocomplete="current-password">
         <div class="registerPage secondSeperator"></div>
-        <input class="registerPage secondPasswordInput" type="password" placeholder="Skriv lösenord igen" name="secondPassword" required>
+        <input class="registerPage secondPasswordInput" type="password" placeholder="Skriv lösenord igen" name="secondPassword" required autocomplete="new-password">
         <div class="registerPage thirdSeperator"></div>
         <button class="registerPage register_button" type="submit">Registrera Mig</button>
         <hr class="seperator"/>

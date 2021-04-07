@@ -35,9 +35,9 @@ export default class LoginPage {
        <div class="loginPage borderBox">
         <div class="loginPage formContainer">
           <img class="loginPage myImage" src="/images/login.jpg">
-          <input class="loginPage emailInput" type="email" placeholder="E-postadress" name="email" required>
+          <input class="loginPage emailInput" type="email" placeholder="E-postadress" name="email" required autocomplete="email">
           <div class="loginPage firstSeperator"></div>
-          <input class="loginPage passwordInput" type="password" placeholder="Lösenord" name="password" required>
+          <input class="loginPage passwordInput" type="password" placeholder="Lösenord" name="password" required autocomplete="current-password">
           <div class="loginPage secondSeperator"></div>
           <button class="loginPage log_in_button" type="submit" value="submit">Logga in</button>
           <hr class="seperator"/>
