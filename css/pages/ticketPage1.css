@@ -1,10 +1,14 @@
 .ticketpage-container {
   display: flex;
   flex-direction: row;
+  background: linear-gradient(
+      to bottom,
+      rgba(33, 33, 33, 0.7),
+      rgb(33, 33, 33, 0.8)
+    ),
+    url('/images/screen1.jpg') no-repeat center fixed;
 
-  background: url('/images/screen1.jpg') no-repeat center fixed;
   background-size: cover;
-  background-attachment: scroll;
 
   background-color: #8d8989;
   box-shadow: rgba(255, 255, 255, 0.2) 0px 4px 5px,

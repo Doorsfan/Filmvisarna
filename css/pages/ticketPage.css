@@ -2,7 +2,13 @@
   display: flex;
   flex-direction: row;
   background-color: #2d2d2d;
-  background-image: url('/images/movieseats.png');
+  background: linear-gradient(
+      to bottom,
+      rgba(33, 33, 33, 0.1),
+      rgb(33, 33, 33, 1)
+    ),
+    url('/images/movieseats.png');
+
   background-position: center;
   object-fit: cover;
   background-repeat: no-repeat;
