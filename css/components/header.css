@@ -1,14 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Train+One&display=swap');
+
 header {
   height: 3.5rem;
   width: 100%;
   background-color: #212121;
   z-index: 5;
-  /* box-shadow: rgba(194, 194, 194, 0.25) 0px 50px 100px -20px,
-    rgba(202, 202, 202, 0.3) 0px 30px 60px -30px,
-    rgba(211, 211, 211, 0.35) 0px -2px 6px 0px inset; */
-  /* background: radial-gradient(150px 5px at 260px bottom, #666, #222); */
-
-  /* background: red; */
   background-color: #a11e22;
   background-image: linear-gradient(147deg, #a11e22 0%, #6c0b0b 84%);
   border-bottom: 1px solid #121212;
@@ -39,21 +35,18 @@ header:active {
 
 .home-button {
   text-decoration: none;
-  /* color: red; */
   color: white;
   height: 100%;
   padding-top: 0.1em;
   margin-left: 3em;
   font-size: 2rem;
   font-weight: 300;
+  font-family: 'Train One', cursive;
+  letter-spacing: 0.1rem;
 }
 
 .userIcon-button {
   width: fit-content;
-  /* display: flex;
-  flex-direction: row;
-  justify-content: right;
-  align-items: flex-end; */
   text-align: right;
   width: fit-content;
   text-align: right;
@@ -68,9 +61,6 @@ header:active {
 .user-icon {
   height: 50px;
   width: 50px;
-
-  /* margin-left: auto; */
-  /* text-align: right; */
 }
 
 .user-icon:hover,
@@ -82,5 +72,12 @@ header:active {
 @media screen and (max-width: 415px) {
   .userIcon-button {
     display: none;
+  }
+}
+
+@media only screen and (max-width: 374px) {
+  .home-button {
+    font-size: 1.6rem;
+    padding-top: 0.8rem;
   }
 }

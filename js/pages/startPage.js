@@ -23,19 +23,23 @@ export default class StartPage {
 
     this.movies.forEach((data) => {
       blinkingPosts += /*html*/ `
-        <div class="start-poster ${data.id}">
-          <a href="#aboutPage/${data.id}"><img src="${data.images[0]}"></a>
-        </div>
+          <div class="start-poster ${data.id}">
+            <a href="#aboutPage/${data.id}">
+                <img src="${data.images[0]}">
+                <div class="start-poster--backdrop">Mer</div>
+            </a>
+          </div>
       `;
 
       allMovies += /*html*/ `
         <div class="slideshow-slide">
           <a href="#aboutPage/${data.id}">
-            <img src="${data.images[0]}" alt="nyckeln till frihet" />
+            <img class="slideshow-image" src="${data.images[0]}" alt="nyckeln till frihet" />
             <aside class="slide-aside">
               <p>${data.title}</p>
               <h3>SPELAS NU</h3>
               <p>${data.reviews[0].quote}<br> - ${data.reviews[0].source}</p>
+              <img class="smoke" src="../../images/smoke.png"/>
             </aside>
           </a>
         </div>
@@ -47,12 +51,14 @@ export default class StartPage {
            <a href="#aboutPage/${data.id}">
              <span class="bestof-span">${counter}.</span>
              <img class="bestof-img" src="${data.images[0]}"/>
-            </a>
+             <div class="start-poster--backdrop">Mer</div>
+             </a>
           </li>
         `;
         counter++;
       }
     });
+
     let timer = '';
 
     let showSlides = function () {
@@ -75,35 +81,126 @@ export default class StartPage {
       timer = setTimeout(showSlides, 4000);
     };
 
-    //$('main').load('load', showSlides);
+    $('main').on('input', '.slider', (el) => {
+      let width = document
+        .querySelector('.poster-container')
+        .getBoundingClientRect().width;
+      let ratio = 1270 - width;
+      ratio = ratio / 100;
+      if (el.target.value >= 100) {
+        $('.arrowAnim').css('display', 'none');
+      } else {
+        $('.arrowAnim').css('display', 'block');
+      }
+      $('.relic').css('marginLeft', `-${el.target.value * ratio}px`);
+    });
+
+    $('main').on('input', '.slider2', (el) => {
+      let width = document
+        .querySelector('.bestof-container')
+        .getBoundingClientRect().width;
+      let ratio = 1140 - width;
+      ratio = ratio / 100;
+      if (el.target.value >= 100) {
+        $('.arrowAnim').css('display', 'none');
+      } else {
+        $('.arrowAnim').css('display', 'block');
+      }
+      $('.bestof-ul').css('marginLeft', `-${el.target.value * ratio}px`);
+    });
+
+    let setupObserver = function () {
+      let posterContainer = document.querySelector('.poster-container');
+      let bestofContainer = document.querySelector('.bestof-container');
+      let videoContainer = document.querySelector('.video-container');
+
+      const obsOptions = {
+        root: null,
+        threshold: 0.15,
+      };
+
+      const obsCallBack = function (entries, observer) {
+        const [entry] = entries;
+
+        if (!entry.isIntersecting) return;
+
+        entry.target.classList.remove('element--hidden');
+        observer.unobserve(entry.target);
+      };
+
+      const observer = new IntersectionObserver(obsCallBack, obsOptions);
+      observer.observe(posterContainer);
+      observer.observe(bestofContainer);
+      observer.observe(videoContainer);
+    };
+
     $(document).ready(function () {
       showSlides();
     });
-    return `
+
+    setTimeout(setupObserver, 1000);
+
+    return /*html*/ `
       <div class="big-container">
-        <div class="startpage-infobar">
-          <p>Välkommen! <br> Filmvisarnas Biografer håller för tillfället öppet, trots nuvarande coronapandemi.</p>
-        </div>
         <div class="startpage-coverphoto"></div>
+        <img src="../../images/smoke2.png" class="smoke2"/>
         <div class="startpage-skew"></div>
-        <h1 class="h1-aktuellt">AKTUELLT</h1>
+        <div class="startpage-skew2"></div>
         <div class="slideshow-container">
           ${allMovies}
         </div>
-        <h2 class="ourmovies-title">VÅRA FILMER</h2>
-        <div class="poster-container">
-          ${blinkingPosts}
-        </div>
-        <h2 class="bestmovies-title">BÄST I BETYG</h2>
-        <div class="bestof-container">
-          <ul>
-          ${bestMovies}
-          </ul>
-        </div>
-        <div class="video-container">
-          <h3>FILMTRAILERS</h3>
-          ${ytSlider[0].outerHTML}
-        </div>
+        <section class="section-all_movies">
+          <h2 class="ourmovies-title">VÅRA FILMER<img src="../../images/popcorn2.png" class="popcorn" /></h2>
+          <div class="poster-container element--hidden">
+          <div class="arrowAnim">
+            <div class="arrowSliding">
+              <div class="arrow"></div>
+            </div>
+            <div class="arrowSliding delay1">
+              <div class="arrow"></div>
+            </div>
+            <div class="arrowSliding delay2">
+              <div class="arrow"></div>
+            </div>
+            <div class="arrowSliding delay3">
+              <div class="arrow"></div>
+            </div>
+          </div> 
+            ${blinkingPosts}
+            <div class="carousel-shadow"></div>
+          </div>
+          <input type="range" min="1" max="100" value="1" class="slider" id="myRange">
+        </section>
+        <section class="section-best_movies">
+          <h2 class="bestmovies-title">BÄST I BETYG<img src="../../images/trophy.png" class="popcorn" /></h2>
+          <div class="bestof-container element--hidden">
+          <div class="arrowAnim">
+            <div class="arrowSliding">
+              <div class="arrow"></div>
+            </div>
+            <div class="arrowSliding delay1">
+              <div class="arrow"></div>
+            </div>
+            <div class="arrowSliding delay2">
+              <div class="arrow"></div>
+            </div>
+            <div class="arrowSliding delay3">
+              <div class="arrow"></div>
+            </div>
+          </div> 
+            <ul class="bestof-ul">
+            ${bestMovies}
+            </ul>
+            <div class="carousel-shadow"></div>
+          </div>
+          <input type="range" min="1" max="100" value="1" class="slider2" id="myRange">
+        </section>
+          <div class="video-container element--hidden">
+            <h3>FILMTRAILERS<img src="../../images/movie.png" class="popcorn" /></h3>
+            ${ytSlider[0].outerHTML}
+          </div>
+          <div class="last-section"></div>
+         <img class="trailer-seats" src="../../images/movieseats.png"/>
       </div>
     `;
   }
