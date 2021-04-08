@@ -41,7 +41,7 @@ export default class Header {
         <img class="hamburger-icon" src="../images/hamburger_icon.png" alt="home" />
         
         <a class="home-button" href="#startPage">Filmvisarna</a>
-        <a class="userpage-button" href="#loginPage">
+        <a class="userIcon-button" href="#loginPage">
           <img class="user-icon" src="../images/user.png" alt="home"/>
         </a>
       </nav>

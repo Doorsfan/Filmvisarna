@@ -24,6 +24,8 @@ header:active {
   flex-direction: row;
   height: 100%;
   padding: 0 1rem 0 1rem;
+  width: 100%;
+  position: relative;
 }
 
 .hamburger-icon {
@@ -46,16 +48,29 @@ header:active {
   font-weight: 300;
 }
 
-.userpage-button {
-  width: 100%;
+.userIcon-button {
+  width: fit-content;
+  /* display: flex;
+  flex-direction: row;
+  justify-content: right;
+  align-items: flex-end; */
+  text-align: right;
+  width: fit-content;
+  text-align: right;
+  position: absolute;
+  right: 0;
+  align-self: flex-end;
+  align-items: flex-end;
+  justify-content: flex-end;
+  float: right;
 }
 
 .user-icon {
-  display: block;
-  position: relative;
-  right: 0;
-  height: 100%;
-  margin-left: auto;
+  height: 50px;
+  width: 50px;
+
+  /* margin-left: auto; */
+  /* text-align: right; */
 }
 
 .user-icon:hover,
@@ -64,5 +79,8 @@ header:active {
   cursor: pointer;
 }
 
-@media (max-width: 575.98px) {
+@media screen and (max-width: 415px) {
+  .userIcon-button {
+    display: none;
+  }
 }
