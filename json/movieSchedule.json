@@ -298,8 +298,7 @@
     "film": "Relic",
     "date": "2021-04-05",
     "time": "16.00",
-    "bookedSeats": [
-    ]
+    "bookedSeats": []
   },
   {
     "auditorium": "Lilla Paris",
@@ -363,7 +362,9 @@
     "date": "2021-04-08",
     "time": "16.00",
     "bookedSeats": [
-      90
+      90,
+      91,
+      88
     ]
   },
   {

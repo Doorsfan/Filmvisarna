@@ -1,0 +1,15 @@
+[
+  {
+    "auditorium": "Savannen",
+    "film": "Paterson",
+    "date": "2021-04-08",
+    "time": "16.00",
+    "emptySeats": 96,
+    "seats": [
+      88
+    ],
+    "price": 65,
+    "user": "robban@g",
+    "bookingNumber": "xwflzdvx2k"
+  }
+]

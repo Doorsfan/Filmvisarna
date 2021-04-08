@@ -11,5 +11,31 @@
     "price": 85,
     "user": "admin@admin.se",
     "bookingNumber": "8wy6f2xdpi"
+  },
+  {
+    "auditorium": "Savannen",
+    "film": "Paterson",
+    "date": "2021-04-08",
+    "time": "16.00",
+    "emptySeats": 97,
+    "seats": [
+      91
+    ],
+    "price": 85,
+    "user": "robban@g",
+    "bookingNumber": "3rh413fc75"
+  },
+  {
+    "auditorium": "Savannen",
+    "film": "Paterson",
+    "date": "2021-04-08",
+    "time": "16.00",
+    "emptySeats": 96,
+    "seats": [
+      88
+    ],
+    "price": 65,
+    "user": "robban@g",
+    "bookingNumber": "xwflzdvx2k"
   }
 ]
