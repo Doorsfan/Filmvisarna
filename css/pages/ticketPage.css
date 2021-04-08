@@ -41,7 +41,7 @@
 .ticketpage-container .booking-info-container {
   display: flex;
   flex-direction: column;
-  color: #eeeeee !important;
+  color: #eeeeee;
   width: 50%;
   padding-bottom: 19rem;
   max-height: 169px;
@@ -55,7 +55,7 @@
   max-height: 169px;
   overflow-y: auto;
   margin-bottom: 3rem;
-  color: #eeeeee !important;
+  color: #eeeeee;
 }
 
 .ticket-booking:disabled {
@@ -90,6 +90,7 @@
 
 .ticketpage-container .info-summation {
   align-self: flex-end;
+  line-height: 140%;
 }
 
 .ticketpage-container .info-summation .seperator {
@@ -111,12 +112,12 @@
 .ticketpage-container .ticket-box:last-child {
   margin-bottom: 0;
 }
-.ticket-box,
+.ticketpage-container .ticket-box,
 .info-summation {
   font-size: 0.9rem;
 }
 
-.ticket-price {
+.ticketpage-container .ticket-price {
   height: 20px;
   padding: 0 3px 0 3px;
   background: #bebdbf;
@@ -132,10 +133,9 @@
   background-repeat: no-repeat;
   background-size: 0.8rem;
   padding-right: 1rem;
-  /* margin-top: 1rem; */
 }
 
-.screen {
+.ticketpage-container .screen {
   height: 12px;
   width: 70%;
   border-radius: 3px;
@@ -148,11 +148,11 @@
 }
 
 @media only screen and (max-width: 616px) {
-  .Savannen {
+  .ticketpage-container .Savannen {
     zoom: 0.9;
     -moz-transform: scale(0.9);
   }
-  .ticket-box,
+  .ticketpage-container .ticket-box,
   .info-summation {
     font-size: 0.8rem;
   }
@@ -161,7 +161,7 @@
   }
 }
 @media only screen and (max-width: 590px) {
-  .Savannen {
+  .ticketpage-container .Savannen {
     zoom: 0.8;
     -moz-transform: scale(0.8);
   }
@@ -183,7 +183,7 @@
   }
 }
 @media only screen and (max-width: 540px) {
-  .Savannen {
+  .ticketpage-container .Savannen {
     zoom: 0.7;
     -moz-transform: scale(0.7);
   }
@@ -194,7 +194,7 @@
   }
 }
 @media only screen and (max-width: 500px) {
-  .Savannen {
+  .ticketpage-container .Savannen {
     zoom: 0.6;
     -moz-transform: scale(0.6);
   }
