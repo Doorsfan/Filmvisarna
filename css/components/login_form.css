@@ -30,9 +30,10 @@
   margin: 4rem 0;
   width: 90vw;
   max-width: 25rem;
-  height: 30rem;
   box-shadow: #4f4f4f 0px 0px 10px;
   border-radius: 30px;
+  min-height: 250px;
+  max-height:700px;
 }
 .loginPage.formContainer {
   display: flex;
@@ -54,6 +55,7 @@
   margin-bottom: 2rem;
   border-radius: 100px;
   opacity: 0.8;
+  min-height: 100px;
 }
 
 .loginPage.emailInput {
@@ -161,9 +163,12 @@ button.loginPage.cancel_button:hover {
   text-align: center;
   margin: 15% auto;
   padding: 20px;
-  min-width: max-content;
-  max-width: 40%;
+  min-width: 200px;
+  max-width:calc(100% - 600px);
+  max-height: max-content;
   border-radius: 15px;
+  margin-top:50vh;
+  font-size:1em;
 }
 
 .loginPage.closeSuccessfulLoginModal,
@@ -193,4 +198,51 @@ button.loginPage.cancel_button:hover {
   background-color: silver;
   text-decoration: none;
   cursor: pointer;
+}
+
+@media screen and (max-width: 210px){
+  .loginPage.modal-content{
+    font-size: 11px;
+    min-width: 150px;
+  }
+  .loginPage.closeSuccessfulLoginModal,
+  .loginPage.closeFailedLoginModal{
+    left: 10px;
+  }
+}
+
+@media screen and (max-height: 625px){
+  .loginPage.formContainer{
+    transform: scale(0.9);
+  }
+}
+
+@media screen and (max-height: 580px){
+  .loginPage.formContainer{
+    transform: scale(0.8);
+  }
+}
+
+@media screen and (max-height: 540px){
+  .loginPage.formContainer{
+    transform: scale(0.7);
+  }
+}
+
+@media screen and (max-height: 500px){
+  .loginPage.formContainer{
+    transform: scale(0.68);
+  }
+}
+
+@media screen and (max-height: 475px){
+  .loginPage.formContainer{
+    transform: scale(0.55);
+  }
+}
+
+@media screen and (max-height: 380px){
+  .loginPage.borderBox{
+    margin-top:10px;
+  }
 }
