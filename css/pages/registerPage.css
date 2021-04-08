@@ -32,9 +32,10 @@
   margin: 4rem 0;
   width: 90vw;
   max-width: 25rem;
-  height: 30rem;
   box-shadow: #4f4f4f 0px 0px 10px;
   border-radius: 30px;
+  min-height: 475px;
+  min-width: 240px;
 }
 
 .registerPage .myImage {
@@ -139,9 +140,9 @@
   padding: 20px;
   border: 2px solid black;
   text-align: center;
-  min-width: max-content;
-  max-width: 40%;
+  max-width: 490px;
   border-radius: 15px;
+  margin-top:45vh;
 }
 
 .registerPage.closeSuccessfulRegisterModal,
@@ -171,4 +172,84 @@
   background-color: silver;
   text-decoration: none;
   cursor: pointer;
+}
+
+/* RESPONSIVENESS ON WIDTH */
+@media screen and (max-width: 550px){
+  .registerPage.modal-content{
+    transform: scale(0.8);
+  }
+  .registerPage.closeSuccessfulRegisterModal,
+  .registerPage.closeFailedRegisterModal{
+    left: 10px;
+  }
+}
+
+@media screen and (max-width: 470px){
+  .registerPage.modal-content{
+    transform: scale(0.7);
+    margin-left: -10px;
+  }
+  .registerPage.closeSuccessfulRegisterModal,
+  .registerPage.closeFailedRegisterModal{
+    left: 10px;
+  }
+}
+
+@media screen and (max-width: 430px){
+  .registerPage.modal-content{
+    margin-left:auto;
+    margin-right:auto;
+    min-width: 350px;
+  }
+  .registerPage.closeSuccessfulRegisterModal,
+  .registerPage.closeFailedRegisterModal{
+    left: 10px;
+  }
+}
+
+@media screen and (max-width: 345px){
+  .registerPage.modal-content{
+    min-width: 250px;
+    margin-left:auto;
+    margin-right:auto;
+  }
+}
+
+
+
+/* RESPONSIVENESS ON HEIGHT */
+@media screen and (max-height: 625px){
+  .registerPage.formContainer{
+    transform: scale(0.9);
+    margin-top:0px;
+  }
+}
+
+@media screen and (max-height: 540px){
+  .registerPage.formContainer{
+    transform: scale(0.8);
+    margin-top:-20px;
+  }
+}
+
+@media screen and (max-height: 475px){
+  .registerPage.formContainer{
+    transform: scale(0.7);
+    margin-top:-40px;
+  }
+}
+
+@media screen and (max-height: 435px){
+  .registerPage.formContainer{
+    transform: scale(0.6);
+    margin-top:-60px;
+  }
+}
+
+@media screen and (max-height: 390px){
+  .registerPage.formContainer{
+    transform: scale(0.5);
+    margin-top:-90px;
+  }
 }

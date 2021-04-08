@@ -9,17 +9,6 @@ export default class readAndWriteUser {
     await JSON._save(`./bookings/users/${username}`, []);
   }
 
-  // async loadUser(username, password) {
-  //   try {
-  //     console.log('trying to load with username of: ' + username);
-  //     console.log('trying to load with pw of: ' + password);
-  //     this.user = await JSON._load(`./users/${username + password}.json`);
-  //     return this.user;
-  //   } catch (error) {
-  //     return;
-  //   }
-  // }
-
   async loadUser(username, password) {
     try {
       this.user = await JSON._load(`./users/${username + password}`);
@@ -69,7 +58,7 @@ export default class readAndWriteUser {
 
   async loadBooking(user) {
     this.allBooking = await JSON._load('bookings/adminbookings/bookings.json');
-    if (user !== 'none') {
+    if (user !== 'none' && user !== 'admin@admin.se') {
       this.userBooking = await JSON._load(`/bookings/users/${user}.json`);
     }
   }
@@ -103,8 +92,7 @@ export default class readAndWriteUser {
     this.allBooking.push(booking);
 
     await JSON._save('bookings/adminbookings/bookings.json', this.allBooking);
-
-    if (user !== 'none') {
+    if (user !== 'none' && user !== 'admin@admin.se') {
       delete booking.bookedSeats;
       this.allBooking.push(booking);
       this.userBooking.push(booking);

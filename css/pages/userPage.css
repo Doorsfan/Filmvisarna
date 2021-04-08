@@ -99,3 +99,23 @@
   margin-right: 1rem;
   flex-grow: 2;
 }
+
+@media only screen and (max-width: 540px) {
+  .userpage-container,
+  .booking-bottom h3 {
+    font-size: 0.7rem;
+  }
+
+  .userpage-title p {
+    font-size: 1rem;
+  }
+  .booking-bottom p,
+  .movieDate-container {
+    font-size: 0.6rem;
+  }
+
+  .userpage-container .booking-button {
+    zoom: 0.8;
+    -moz-transform: scale(0.8);
+  }
+}

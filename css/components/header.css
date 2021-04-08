@@ -5,12 +5,6 @@ header {
   width: 100%;
   background-color: #212121;
   z-index: 5;
-  /* box-shadow: rgba(194, 194, 194, 0.25) 0px 50px 100px -20px,
-    rgba(202, 202, 202, 0.3) 0px 30px 60px -30px,
-    rgba(211, 211, 211, 0.35) 0px -2px 6px 0px inset; */
-  /* background: radial-gradient(150px 5px at 260px bottom, #666, #222); */
-
-  /* background: red; */
   background-color: #a11e22;
   background-image: linear-gradient(147deg, #a11e22 0%, #6c0b0b 84%);
   border-bottom: 1px solid #121212;
@@ -26,6 +20,8 @@ header:active {
   flex-direction: row;
   height: 100%;
   padding: 0 1rem 0 1rem;
+  width: 100%;
+  position: relative;
 }
 
 .hamburger-icon {
@@ -39,7 +35,6 @@ header:active {
 
 .home-button {
   text-decoration: none;
-  /* color: red; */
   color: white;
   height: 100%;
   padding-top: 0.1em;
@@ -50,22 +45,34 @@ header:active {
   letter-spacing: 0.1rem;
 }
 
-.userpage-button {
-  width: 100%;
+.userIcon-button {
+  width: fit-content;
+  text-align: right;
+  width: fit-content;
+  text-align: right;
+  position: absolute;
+  right: 0;
+  align-self: flex-end;
+  align-items: flex-end;
+  justify-content: flex-end;
+  float: right;
 }
 
 .user-icon {
-  display: block;
-  position: relative;
-  right: 0;
-  height: 100%;
-  margin-left: auto;
+  height: 50px;
+  width: 50px;
 }
 
 .user-icon:hover,
 .user-icon:active {
   background-color: #eeeeee;
   cursor: pointer;
+}
+
+@media screen and (max-width: 415px) {
+  .userIcon-button {
+    display: none;
+  }
 }
 
 @media only screen and (max-width: 374px) {
