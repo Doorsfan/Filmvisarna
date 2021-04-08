@@ -11,5 +11,18 @@
     "price": 65,
     "user": "robban@g",
     "bookingNumber": "xwflzdvx2k"
+  },
+  {
+    "auditorium": "Savannen",
+    "film": "Relic",
+    "date": "2021-04-10",
+    "time": "20.00",
+    "emptySeats": 93,
+    "seats": [
+      50
+    ],
+    "price": 85,
+    "user": "robban@g",
+    "bookingNumber": "clhhws8t4a"
   }
 ]
