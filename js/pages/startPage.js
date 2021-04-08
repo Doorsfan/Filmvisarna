@@ -114,8 +114,6 @@ export default class StartPage {
       let bestofContainer = document.querySelector('.bestof-container');
       let videoContainer = document.querySelector('.video-container');
 
-      console.log(posterContainer);
-
       const obsOptions = {
         root: null,
         threshold: 0.15,
