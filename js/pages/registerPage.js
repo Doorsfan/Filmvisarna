@@ -56,7 +56,7 @@ export default class registerPage {
     return /*html*/ `
     
       <form class="registerPage inputForm">
-      <div class="formContainer">
+      <div class="registerPage formContainer">
         <img class="registerPage myImage" src="/images/register.jpg">
         <input class="registerPage emailInput" type="email" placeholder="E-postadress" name="email" required autocomplete="email">
         <div class="registerPage firstSeperator"></div>
