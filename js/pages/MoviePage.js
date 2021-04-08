@@ -165,7 +165,7 @@ export default class MoviePage {
       if (ageChoice === 'barntillåten') {
         ageChoice = 1;
       }
-      if (movie.ageRating <= ageChoice || isNaN(parseFloat(movie.ageRating))) {
+      if (movie.ageRating <= ageChoice) {
         movie.genre.forEach((data) => {
           if (!ageCategory.includes(data)) {
             ageCategory.push(data);
