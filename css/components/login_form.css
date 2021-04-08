@@ -164,7 +164,7 @@ button.loginPage.cancel_button:hover {
   margin: 15% auto;
   padding: 20px;
   min-width: 200px;
-  max-width:calc(100% - 600px);
+  max-width: min(400px, 35vw);
   max-height: max-content;
   border-radius: 15px;
   margin-top:50vh;
