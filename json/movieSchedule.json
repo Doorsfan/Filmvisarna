@@ -4,677 +4,671 @@
     "film": "Harry Potter and the Sorcerer's Stone",
     "date": "2021-03-22",
     "time": "16.00",
-    "bookedSeats": [1,5,7,10,11]
+    "bookedSeats": [1, 5, 7, 10, 11]
   },
   {
     "auditorium": "Lilla Paris",
     "film": "Relic",
     "date": "2021-03-22",
     "time": "18.00",
-    "bookedSeats": [1,5,7,10,11]
+    "bookedSeats": [1, 5, 7, 10, 11]
   },
   {
     "auditorium": "Savannen",
     "film": "Nyckeln till frihet",
     "date": "2021-03-22",
     "time": "20.00",
-    "bookedSeats": [1,5,7,10,11]
+    "bookedSeats": [1, 5, 7, 10, 11]
   },
   {
     "auditorium": "Savannen",
     "film": "Gudfadern",
     "date": "2021-03-23",
     "time": "16.00",
-    "bookedSeats": [1,5,7,10,11]
+    "bookedSeats": [1, 5, 7, 10, 11]
   },
   {
     "auditorium": "Lilla Paris",
     "film": "Paterson",
     "date": "2021-03-23",
     "time": "18.00",
-    "bookedSeats": [1,5,7,10,11]
+    "bookedSeats": [1, 5, 7, 10, 11]
   },
   {
     "auditorium": "Savannen",
     "film": "Min onkel",
     "date": "2021-03-23",
     "time": "20.00",
-    "bookedSeats": [1,5,7,10,11]
+    "bookedSeats": [1, 5, 7, 10, 11]
   },
   {
     "auditorium": "Savannen",
     "film": "Relic",
     "date": "2021-03-24",
     "time": "16.00",
-    "bookedSeats": [1,5,7,10,11]
+    "bookedSeats": [1, 5, 7, 10, 11]
   },
   {
     "auditorium": "Lilla Paris",
     "film": "Nyckeln till frihet",
     "date": "2021-03-24",
     "time": "18.00",
-    "bookedSeats": [1,5,7,10,11]
+    "bookedSeats": [1, 5, 7, 10, 11]
   },
   {
     "auditorium": "Savannen",
     "film": "Gudfadern",
     "date": "2021-03-24",
     "time": "20.00",
-    "bookedSeats": [1,5,7,10,11]
+    "bookedSeats": [1, 5, 7, 10, 11]
   },
   {
     "auditorium": "Savannen",
     "film": "Paterson",
     "date": "2021-03-25",
     "time": "16.00",
-    "bookedSeats": [1,5,7,10,11]
+    "bookedSeats": [1, 5, 7, 10, 11]
   },
   {
     "auditorium": "Lilla Paris",
     "film": "Min onkel",
     "date": "2021-03-25",
     "time": "18.00",
-    "bookedSeats": [1,5,7,10,11]
+    "bookedSeats": [1, 5, 7, 10, 11]
   },
   {
     "auditorium": "Savannen",
     "film": "Harry Potter and the Sorcerer's Stone",
     "date": "2021-03-25",
     "time": "20.00",
-    "bookedSeats": [1,5,7,10,11]
+    "bookedSeats": [1, 5, 7, 10, 11]
   },
   {
     "auditorium": "Savannen",
     "film": "Nyckeln till frihet",
     "date": "2021-03-26",
     "time": "16.00",
-    "bookedSeats": [1,5,7,10,11]
+    "bookedSeats": [1, 5, 7, 10, 11]
   },
   {
     "auditorium": "Lilla Paris",
     "film": "Gudfadern",
     "date": "2021-03-26",
     "time": "18.00",
-    "bookedSeats": [1,5,7,10,11]
+    "bookedSeats": [1, 5, 7, 10, 11]
   },
   {
     "auditorium": "Savannen",
     "film": "Paterson",
     "date": "2021-03-26",
     "time": "20.00",
-    "bookedSeats": [1,5,7,10,11]
+    "bookedSeats": [1, 5, 7, 10, 11]
   },
   {
     "auditorium": "Savannen",
     "film": "Min onkel",
     "date": "2021-03-27",
     "time": "16.00",
-    "bookedSeats": [1,5,7,10,11]
+    "bookedSeats": [1, 5, 7, 10, 11]
   },
   {
     "auditorium": "Lilla Paris",
     "film": "Harry Potter and the Sorcerer's Stone",
     "date": "2021-03-27",
     "time": "18.00",
-    "bookedSeats": [1,5,7,10,11]
+    "bookedSeats": [1, 5, 7, 10, 11]
   },
   {
     "auditorium": "Savannen",
     "film": "Relic",
     "date": "2021-03-27",
     "time": "20.00",
-    "bookedSeats": [1,5,7,10,11]
+    "bookedSeats": [1, 5, 7, 10, 11]
   },
   {
     "auditorium": "Savannen",
     "film": "Gudfadern",
     "date": "2021-03-28",
     "time": "16.00",
-    "bookedSeats": [1,5,7,10,11]
+    "bookedSeats": [1, 5, 7, 10, 11]
   },
   {
     "auditorium": "Lilla Paris",
     "film": "Paterson",
     "date": "2021-03-28",
     "time": "18.00",
-    "bookedSeats": [1,5,7,10,11]
+    "bookedSeats": [1, 5, 7, 10, 11]
   },
   {
     "auditorium": "Savannen",
     "film": "Min onkel",
     "date": "2021-03-28",
     "time": "20.00",
-    "bookedSeats": [1,5,7,10,11]
+    "bookedSeats": [1, 5, 7, 10, 11]
   },
   {
     "auditorium": "Savannen",
     "film": "Harry Potter and the Sorcerer's Stone",
     "date": "2021-03-29",
     "time": "16.00",
-    "bookedSeats": [1,5,7,10,11]
+    "bookedSeats": [1, 5, 7, 10, 11]
   },
   {
     "auditorium": "Lilla Paris",
     "film": "Relic",
     "date": "2021-03-29",
     "time": "18.00",
-    "bookedSeats": [1,5,7,10,11]
+    "bookedSeats": [1, 5, 7, 10, 11]
   },
   {
     "auditorium": "Savannen",
     "film": "Nyckeln till frihet",
     "date": "2021-03-29",
     "time": "20.00",
-    "bookedSeats": [1,5,7,10,11]
+    "bookedSeats": [1, 5, 7, 10, 11]
   },
   {
     "auditorium": "Savannen",
     "film": "Gudfadern",
     "date": "2021-03-30",
     "time": "16.00",
-    "bookedSeats": [1,5,7,10,11]
+    "bookedSeats": [1, 5, 7, 10, 11]
   },
   {
     "auditorium": "Lilla Paris",
     "film": "Paterson",
     "date": "2021-03-30",
     "time": "18.00",
-    "bookedSeats": [1,5,7,10,11]
+    "bookedSeats": [1, 5, 7, 10, 11]
   },
   {
     "auditorium": "Savannen",
     "film": "Min onkel",
     "date": "2021-03-30",
     "time": "20.00",
-    "bookedSeats": [1,5,7,10,11]
+    "bookedSeats": [1, 5, 7, 10, 11]
   },
   {
     "auditorium": "Savannen",
     "film": "Harry Potter and the Sorcerer's Stone",
     "date": "2021-03-31",
     "time": "16.00",
-    "bookedSeats": [1,5,7,10,11]
+    "bookedSeats": [1, 5, 7, 10, 11]
   },
   {
     "auditorium": "Lilla Paris",
     "film": "Relic",
     "date": "2021-03-31",
     "time": "18.00",
-    "bookedSeats": [1,5,7,10,11]
+    "bookedSeats": [1, 5, 7, 10, 11]
   },
   {
     "auditorium": "Savannen",
     "film": "Nyckeln till frihet",
     "date": "2021-03-31",
     "time": "20.00",
-    "bookedSeats": [1,5,7,10,11]
+    "bookedSeats": [1, 5, 7, 10, 11]
   },
   {
     "auditorium": "Savannen",
     "film": "Min onkel",
     "date": "2021-04-01",
     "time": "16.00",
-    "bookedSeats": [1,5,7,10,11]
+    "bookedSeats": [1, 5, 7, 10, 11]
   },
   {
     "auditorium": "Lilla Paris",
     "film": "Harry Potter and the Sorcerer's Stone",
     "date": "2021-04-01",
     "time": "18.00",
-    "bookedSeats": [1,5,7,10,11]
+    "bookedSeats": [1, 5, 7, 10, 11]
   },
   {
     "auditorium": "Savannen",
     "film": "Relic",
     "date": "2021-04-01",
     "time": "20.00",
-    "bookedSeats": [1,5,7,10,11]
+    "bookedSeats": [1, 5, 7, 10, 11]
   },
   {
     "auditorium": "Savannen",
     "film": "Nyckeln till frihet",
     "date": "2021-04-02",
     "time": "16.00",
-    "bookedSeats": [1,5,7,10,11]
+    "bookedSeats": [1, 5, 7, 10, 11]
   },
   {
     "auditorium": "Lilla Paris",
     "film": "Gudfadern",
     "date": "2021-04-02",
     "time": "18.00",
-    "bookedSeats": [1,5,7,10,11]
+    "bookedSeats": [1, 5, 7, 10, 11]
   },
   {
     "auditorium": "Savannen",
     "film": "Paterson",
     "date": "2021-04-02",
     "time": "20.00",
-    "bookedSeats": [1,5,7,10,11]
+    "bookedSeats": [1, 5, 7, 10, 11]
   },
   {
     "auditorium": "Savannen",
     "film": "Harry Potter and the Sorcerer's Stone",
     "date": "2021-04-03",
     "time": "16.00",
-    "bookedSeats": [1,5,7,10,11]
+    "bookedSeats": [1, 5, 7, 10, 11]
   },
   {
     "auditorium": "Lilla Paris",
     "film": "Relic",
     "date": "2021-04-03",
     "time": "18.00",
-    "bookedSeats": [1,5,7,10,11]
+    "bookedSeats": [1, 5, 7, 10, 11]
   },
   {
     "auditorium": "Savannen",
     "film": "Nyckeln till frihet",
     "date": "2021-04-03",
     "time": "20.00",
-    "bookedSeats": [1,5,7,10,11]
+    "bookedSeats": [1, 5, 7, 10, 11]
   },
   {
     "auditorium": "Savannen",
     "film": "Gudfadern",
     "date": "2021-04-04",
     "time": "16.00",
-    "bookedSeats": [1,5,7,10,11]
+    "bookedSeats": [1, 5, 7, 10, 11]
   },
   {
     "auditorium": "Lilla Paris",
     "film": "Paterson",
     "date": "2021-04-04",
     "time": "18.00",
-    "bookedSeats": [1,5,7,10,11]
+    "bookedSeats": [1, 5, 7, 10, 11]
   },
   {
     "auditorium": "Savannen",
     "film": "Min onkel",
     "date": "2021-04-04",
     "time": "20.00",
-    "bookedSeats": [1,5,7,10,11]
+    "bookedSeats": [1, 5, 7, 10, 11]
   },
   {
     "auditorium": "Savannen",
     "film": "Relic",
     "date": "2021-04-05",
     "time": "16.00",
-    "bookedSeats": [1,5,7,10,11]
+    "bookedSeats": [1, 5, 7, 10, 11]
   },
   {
     "auditorium": "Lilla Paris",
     "film": "Nyckeln till frihet",
     "date": "2021-04-05",
     "time": "18.00",
-    "bookedSeats": [1,5,7,10,11]
+    "bookedSeats": [1, 5, 7, 10, 11]
   },
   {
     "auditorium": "Savannen",
     "film": "Gudfadern",
     "date": "2021-04-05",
     "time": "20.00",
-    "bookedSeats": [1,5,7,10,11]
+    "bookedSeats": [1, 5, 7, 10, 11]
   },
   {
     "auditorium": "Savannen",
     "film": "Paterson",
     "date": "2021-04-06",
     "time": "16.00",
-    "bookedSeats": [1,5,7,10,11]
+    "bookedSeats": [1, 5, 7, 10, 11]
   },
   {
     "auditorium": "Lilla Paris",
     "film": "Min onkel",
     "date": "2021-04-06",
     "time": "18.00",
-    "bookedSeats": [1,5,7,10,11]
+    "bookedSeats": [1, 5, 7, 10, 11]
   },
   {
     "auditorium": "Savannen",
     "film": "Harry Potter and the Sorcerer's Stone",
     "date": "2021-04-06",
     "time": "20.00",
-    "bookedSeats": [1,5,7,10,11]
+    "bookedSeats": [1, 5, 7, 10, 11]
   },
   {
     "auditorium": "Savannen",
     "film": "Relic",
     "date": "2021-04-07",
     "time": "16.00",
-    "bookedSeats": [1,5,7,10,11]
+    "bookedSeats": [1, 5, 7, 10, 11]
   },
   {
     "auditorium": "Lilla Paris",
     "film": "Nyckeln till frihet",
     "date": "2021-04-07",
     "time": "18.00",
-    "bookedSeats": [1,5,7,10,11]
+    "bookedSeats": [1, 5, 7, 10, 11]
   },
   {
     "auditorium": "Savannen",
     "film": "Gudfadern",
     "date": "2021-04-07",
     "time": "20.00",
-    "bookedSeats": [1,5,7,10,11]
+    "bookedSeats": [1, 5, 7, 10, 11]
   },
   {
     "auditorium": "Savannen",
     "film": "Paterson",
     "date": "2021-04-08",
     "time": "16.00",
-    "bookedSeats": [1,5,7,10,11
-      90,
-      91,
-      88
-    ]
+    "bookedSeats": [1, 5, 7, 10, 11, 90, 91, 88]
   },
   {
     "auditorium": "Lilla Paris",
     "film": "Min onkel",
     "date": "2021-04-08",
     "time": "18.00",
-    "bookedSeats": [1,5,7,10,11]
+    "bookedSeats": [1, 5, 7, 10, 11]
   },
   {
     "auditorium": "Savannen",
     "film": "Harry Potter and the Sorcerer's Stone",
     "date": "2021-04-08",
     "time": "20.00",
-    "bookedSeats": [1,5,7,10,11]
+    "bookedSeats": [1, 5, 7, 10, 11]
   },
   {
     "auditorium": "Savannen",
     "film": "Nyckeln till frihet",
     "date": "2021-04-09",
     "time": "16.00",
-    "bookedSeats": [1,5,7,10,11
-      23
-    ]
+    "bookedSeats": [1, 5, 7, 10, 11, 23]
   },
   {
     "auditorium": "Lilla Paris",
     "film": "Gudfadern",
     "date": "2021-04-09",
     "time": "18.00",
-    "bookedSeats": [1,5,7,10,11]
+    "bookedSeats": [1, 5, 7, 10, 11]
   },
   {
     "auditorium": "Savannen",
     "film": "Paterson",
     "date": "2021-04-09",
     "time": "20.00",
-    "bookedSeats": [1,5,7,10,11]
+    "bookedSeats": [1, 5, 7, 10, 11]
   },
   {
     "auditorium": "Savannen",
     "film": "Min onkel",
     "date": "2021-04-10",
     "time": "16.00",
-    "bookedSeats": [1,5,7,10,11]
+    "bookedSeats": [1, 5, 7, 10, 11]
   },
   {
     "auditorium": "Lilla Paris",
     "film": "Harry Potter and the Sorcerer's Stone",
     "date": "2021-04-10",
     "time": "18.00",
-    "bookedSeats": [1,5,7,10,11]
+    "bookedSeats": [1, 5, 7, 10, 11]
   },
   {
     "auditorium": "Savannen",
     "film": "Relic",
     "date": "2021-04-10",
     "time": "20.00",
-    "bookedSeats": [1,5,7,10,11]
+    "bookedSeats": [1, 5, 7, 10, 11]
   },
   {
     "auditorium": "Savannen",
     "film": "Gudfadern",
     "date": "2021-04-11",
     "time": "16.00",
-    "bookedSeats": [1,5,7,10,11]
+    "bookedSeats": [1, 5, 7, 10, 11]
   },
   {
     "auditorium": "Lilla Paris",
     "film": "Paterson",
     "date": "2021-04-11",
     "time": "18.00",
-    "bookedSeats": [1,5,7,10,11]
+    "bookedSeats": [1, 5, 7, 10, 11]
   },
   {
     "auditorium": "Savannen",
     "film": "Min onkel",
     "date": "2021-04-11",
     "time": "20.00",
-    "bookedSeats": [1,5,7,10,11]
+    "bookedSeats": [1, 5, 7, 10, 11]
   },
   {
     "auditorium": "Savannen",
     "film": "Harry Potter and the Sorcerer's Stone",
     "date": "2021-04-12",
     "time": "16.00",
-    "bookedSeats": [1,5,7,10,11]
+    "bookedSeats": [1, 5, 7, 10, 11]
   },
   {
     "auditorium": "Lilla Paris",
     "film": "Relic",
     "date": "2021-04-12",
     "time": "18.00",
-    "bookedSeats": [1,5,7,10,11]
+    "bookedSeats": [1, 5, 7, 10, 11]
   },
   {
     "auditorium": "Savannen",
     "film": "Nyckeln till frihet",
     "date": "2021-04-12",
     "time": "20.00",
-    "bookedSeats": [1,5,7,10,11]
+    "bookedSeats": [1, 5, 7, 10, 11]
   },
   {
     "auditorium": "Savannen",
     "film": "Paterson",
     "date": "2021-04-13",
     "time": "16.00",
-    "bookedSeats": [1,5,7,10,11]
+    "bookedSeats": [1, 5, 7, 10, 11]
   },
   {
     "auditorium": "Lilla Paris",
     "film": "Min onkel",
     "date": "2021-04-13",
     "time": "18.00",
-    "bookedSeats": [1,5,7,10,11]
+    "bookedSeats": [1, 5, 7, 10, 11]
   },
   {
     "auditorium": "Savannen",
     "film": "Harry Potter and the Sorcerer's Stone",
     "date": "2021-04-13",
     "time": "20.00",
-    "bookedSeats": [1,5,7,10,11]
+    "bookedSeats": [1, 5, 7, 10, 11]
   },
   {
     "auditorium": "Savannen",
     "film": "Relic",
     "date": "2021-04-14",
     "time": "16.00",
-    "bookedSeats": [1,5,7,10,11]
+    "bookedSeats": [1, 5, 7, 10, 11]
   },
   {
     "auditorium": "Lilla Paris",
     "film": "Nyckeln till frihet",
     "date": "2021-04-14",
     "time": "18.00",
-    "bookedSeats": [1,5,7,10,11]
+    "bookedSeats": [1, 5, 7, 10, 11]
   },
   {
     "auditorium": "Savannen",
     "film": "Gudfadern",
     "date": "2021-04-14",
     "time": "20.00",
-    "bookedSeats": [1,5,7,10,11]
+    "bookedSeats": [1, 5, 7, 10, 11]
   },
   {
     "auditorium": "Savannen",
     "film": "Min onkel",
     "date": "2021-04-15",
     "time": "16.00",
-    "bookedSeats": [1,5,7,10,11]
+    "bookedSeats": [1, 5, 7, 10, 11]
   },
   {
     "auditorium": "Lilla Paris",
     "film": "Harry Potter and the Sorcerer's Stone",
     "date": "2021-04-15",
     "time": "18.00",
-    "bookedSeats": [1,5,7,10,11]
+    "bookedSeats": [1, 5, 7, 10, 11]
   },
   {
     "auditorium": "Savannen",
     "film": "Relic",
     "date": "2021-04-15",
     "time": "20.00",
-    "bookedSeats": [1,5,7,10,11]
+    "bookedSeats": [1, 5, 7, 10, 11]
   },
   {
     "auditorium": "Savannen",
     "film": "Nyckeln till frihet",
     "date": "2021-04-16",
     "time": "16.00",
-    "bookedSeats": [1,5,7,10,11]
+    "bookedSeats": [1, 5, 7, 10, 11]
   },
   {
     "auditorium": "Lilla Paris",
     "film": "Gudfadern",
     "date": "2021-04-16",
     "time": "18.00",
-    "bookedSeats": [1,5,7,10,11]
+    "bookedSeats": [1, 5, 7, 10, 11]
   },
   {
     "auditorium": "Savannen",
     "film": "Paterson",
     "date": "2021-04-16",
     "time": "20.00",
-    "bookedSeats": [1,5,7,10,11]
+    "bookedSeats": [1, 5, 7, 10, 11]
   },
   {
     "auditorium": "Savannen",
     "film": "Harry Potter and the Sorcerer's Stone",
     "date": "2021-04-17",
     "time": "16.00",
-    "bookedSeats": [1,5,7,10,11]
+    "bookedSeats": [1, 5, 7, 10, 11]
   },
   {
     "auditorium": "Lilla Paris",
     "film": "Relic",
     "date": "2021-04-17",
     "time": "18.00",
-    "bookedSeats": [1,5,7,10,11]
+    "bookedSeats": [1, 5, 7, 10, 11]
   },
   {
     "auditorium": "Savannen",
     "film": "Nyckeln till frihet",
     "date": "2021-04-17",
     "time": "20.00",
-    "bookedSeats": [1,5,7,10,11]
+    "bookedSeats": [1, 5, 7, 10, 11]
   },
   {
     "auditorium": "Savannen",
     "film": "Gudfadern",
     "date": "2021-04-18",
     "time": "16.00",
-    "bookedSeats": [1,5,7,10,11]
+    "bookedSeats": [1, 5, 7, 10, 11]
   },
   {
     "auditorium": "Lilla Paris",
     "film": "Paterson",
     "date": "2021-04-18",
     "time": "18.00",
-    "bookedSeats": [1,5,7,10,11]
+    "bookedSeats": [1, 5, 7, 10, 11]
   },
   {
     "auditorium": "Savannen",
     "film": "Min onkel",
     "date": "2021-04-18",
     "time": "20.00",
-    "bookedSeats": [1,5,7,10,11]
+    "bookedSeats": [1, 5, 7, 10, 11]
   },
   {
     "auditorium": "Savannen",
     "film": "Relic",
     "date": "2021-04-19",
     "time": "16.00",
-    "bookedSeats": [1,5,7,10,11]
+    "bookedSeats": [1, 5, 7, 10, 11]
   },
   {
     "auditorium": "Lilla Paris",
     "film": "Nyckeln till frihet",
     "date": "2021-04-19",
     "time": "18.00",
-    "bookedSeats": [1,5,7,10,11]
+    "bookedSeats": [1, 5, 7, 10, 11]
   },
   {
     "auditorium": "Savannen",
     "film": "Gudfadern",
     "date": "2021-04-19",
     "time": "20.00",
-    "bookedSeats": [1,5,7,10,11]
+    "bookedSeats": [1, 5, 7, 10, 11]
   },
   {
     "auditorium": "Savannen",
     "film": "Paterson",
     "date": "2021-04-20",
     "time": "16.00",
-    "bookedSeats": [1,5,7,10,11]
+    "bookedSeats": [1, 5, 7, 10, 11]
   },
   {
     "auditorium": "Lilla Paris",
     "film": "Min onkel",
     "date": "2021-04-20",
     "time": "18.00",
-    "bookedSeats": [1,5,7,10,11]
+    "bookedSeats": [1, 5, 7, 10, 11]
   },
   {
     "auditorium": "Savannen",
     "film": "Harry Potter and the Sorcerer's Stone",
     "date": "2021-04-20",
     "time": "20.00",
-    "bookedSeats": [1,5,7,10,11]
+    "bookedSeats": [1, 5, 7, 10, 11]
   },
   {
     "auditorium": "Savannen",
     "film": "Nyckeln till frihet",
     "date": "2021-04-21",
     "time": "16.00",
-    "bookedSeats": [1,5,7,10,11]
+    "bookedSeats": [1, 5, 7, 10, 11]
   },
   {
     "auditorium": "Lilla Paris",
     "film": "Gudfadern",
     "date": "2021-04-21",
     "time": "18.00",
-    "bookedSeats": [1,5,7,10,11]
+    "bookedSeats": [1, 5, 7, 10, 11]
   },
   {
     "auditorium": "Savannen",
     "film": "Paterson",
     "date": "2021-04-21",
     "time": "20.00",
-    "bookedSeats": [1,5,7,10,11]
+    "bookedSeats": [1, 5, 7, 10, 11]
   },
   {
     "auditorium": "Savannen",
     "film": "Min onkel",
     "date": "2021-04-22",
     "time": "16.00",
-    "bookedSeats": [1,5,7,10,11]
+    "bookedSeats": [1, 5, 7, 10, 11]
   },
   {
     "auditorium": "Lilla Paris",
     "film": "Harry Potter and the Sorcerer's Stone",
     "date": "2021-04-22",
     "time": "18.00",
-    "bookedSeats": [1,5,7,10,11]
+    "bookedSeats": [1, 5, 7, 10, 11]
   },
   {
     "auditorium": "Savannen",
     "film": "Relic",
     "date": "2021-04-22",
     "time": "20.00",
-    "bookedSeats": [1,5,7,10,11]
+    "bookedSeats": [1, 5, 7, 10, 11]
   }
 ]
