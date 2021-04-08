@@ -7,7 +7,7 @@
       rgba(33, 33, 33, 0.1),
       rgb(33, 33, 33, 1)
     ),
-    url('/images/movieseats.png');
+    url("/images/movieseats.png");
 
   background-position: center;
   object-fit: cover;
@@ -42,20 +42,33 @@
   display: flex;
   flex-direction: column;
   color: #eeeeee !important;
-  width: fit-content;
+  width: 50%;
   padding-bottom: 19rem;
+  overflow-y: auto;
+  max-height: 169px;
 }
 
 .ticketpage-container .ticket-item {
   width: 50%;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  overflow-x: hidden;
+  max-height: 169px;
+  overflow-y: auto;
+  margin-bottom: 3rem;
+  color: #eeeeee !important;
 }
 
 .ticket-booking:disabled {
   display: none;
 }
+
+.ticketpage-container .info-buttons {
+  align-self: center;
+  padding-top: 1rem;
+  margin-left: 4rem;
+}
+
 .ticketpage-container .info-buttons .ticket-booking {
   width: fit-content;
   padding: 0.5rem;
@@ -76,18 +89,8 @@
   cursor: pointer;
 }
 
-.ticketpage-container .ticket-item {
-  overflow-x: hidden;
-  max-height: 169px;
-  overflow-y: auto;
-  margin-bottom: 3rem;
-
-  color: #eeeeee !important;
-}
-
-.ticketpage-container .booking-info_container {
-  overflow-y: auto;
-  max-height: 169px;
+.ticketpage-container .info-summation {
+  align-self: flex-end;
 }
 
 .ticketpage-container .info-summation .seperator {
@@ -154,6 +157,9 @@
   .info-summation {
     font-size: 0.8rem;
   }
+  .ticketpage-container .info-buttons {
+    margin: 0;
+  }
 }
 @media only screen and (max-width: 590px) {
   .Savannen {
@@ -162,8 +168,19 @@
   }
   .ticketpage-container .booking-info {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     justify-content: center;
+  }
+  .ticketpage-container .booking-info-container {
+    width: auto;
+  }
+  .ticketpage-container .info-summation {
+    align-self: center;
+  }
+  .ticketpage-container .ticket-item {
+    align-items: center;
+    margin-bottom: 2rem;
+    width: auto;
   }
 }
 @media only screen and (max-width: 540px) {
@@ -173,7 +190,7 @@
   }
   .ticketpage-container .booking-info {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     justify-content: center;
   }
 }
@@ -184,7 +201,7 @@
   }
   .ticketpage-container .booking-info {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     justify-content: center;
   }
 }
@@ -202,7 +219,7 @@
 }
 
 .ticketPage.modal-content {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   border: 2px solid black;
   background-color: grey;
   text-align: center;
