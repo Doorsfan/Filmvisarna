@@ -68,5 +68,9 @@ header:active {
   cursor: pointer;
 }
 
-@media (max-width: 575.98px) {
+@media only screen and (max-width: 374px) {
+  .home-button {
+    font-size: 1.6rem;
+    padding-top: 0.8rem;
+  }
 }
