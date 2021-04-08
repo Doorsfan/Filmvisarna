@@ -58,6 +58,7 @@ export default class StartPage {
         counter++;
       }
     });
+
     let timer = '';
 
     let showSlides = function () {
@@ -86,6 +87,11 @@ export default class StartPage {
         .getBoundingClientRect().width;
       let ratio = 1270 - width;
       ratio = ratio / 100;
+      if (el.target.value >= 100) {
+        $('.arrowAnim').css('display', 'none');
+      } else {
+        $('.arrowAnim').css('display', 'block');
+      }
       $('.relic').css('marginLeft', `-${el.target.value * ratio}px`);
     });
 
@@ -95,6 +101,11 @@ export default class StartPage {
         .getBoundingClientRect().width;
       let ratio = 1140 - width;
       ratio = ratio / 100;
+      if (el.target.value >= 100) {
+        $('.arrowAnim').css('display', 'none');
+      } else {
+        $('.arrowAnim').css('display', 'block');
+      }
       $('.bestof-ul').css('marginLeft', `-${el.target.value * ratio}px`);
     });
 
@@ -112,7 +123,6 @@ export default class StartPage {
 
       const obsCallBack = function (entries, observer) {
         const [entry] = entries;
-        console.log(entry);
 
         if (!entry.isIntersecting) return;
 
@@ -139,15 +149,10 @@ export default class StartPage {
         <div class="slideshow-container">
           ${allMovies}
         </div>
-      <!--  <div class="content-container"> -->
-
-          
         <section class="section-all_movies">
-        
-          <h2 class="ourmovies-title">VÅRA FILMER<img src="../../images/popcorn.png" class="popcorn" /></h2>
+          <h2 class="ourmovies-title">VÅRA FILMER<img src="../../images/popcorn2.png" class="popcorn" /></h2>
           <div class="poster-container element--hidden">
-          
-                  <div id="arrowAnim">
+          <div class="arrowAnim">
             <div class="arrowSliding">
               <div class="arrow"></div>
             </div>
@@ -167,9 +172,9 @@ export default class StartPage {
           <input type="range" min="1" max="100" value="1" class="slider" id="myRange">
         </section>
         <section class="section-best_movies">
-          <h2 class="bestmovies-title">BÄST I BETYG<img src="../../images/critic.png" class="popcorn" /></h2>
+          <h2 class="bestmovies-title">BÄST I BETYG<img src="../../images/trophy.png" class="popcorn" /></h2>
           <div class="bestof-container element--hidden">
-                            <div id="arrowAnim">
+          <div class="arrowAnim">
             <div class="arrowSliding">
               <div class="arrow"></div>
             </div>
@@ -191,15 +196,11 @@ export default class StartPage {
           <input type="range" min="1" max="100" value="1" class="slider2" id="myRange">
         </section>
           <div class="video-container element--hidden">
-            <h3>FILMTRAILERS<img src="../../images/projector.png" class="popcorn" /></h3>
+            <h3>FILMTRAILERS<img src="../../images/movie.png" class="popcorn" /></h3>
             ${ytSlider[0].outerHTML}
           </div>
           <div class="last-section"></div>
-       <!--   </div> -->
-
          <img class="trailer-seats" src="../../images/movieseats.png"/>
-        <!--<div class="section-separator"></div> -->
-        
       </div>
     `;
   }

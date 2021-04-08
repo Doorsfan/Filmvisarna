@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Train+One&display=swap');
+
 header {
   height: 3.5rem;
   width: 100%;
@@ -44,6 +46,8 @@ header:active {
   margin-left: 3em;
   font-size: 2rem;
   font-weight: 300;
+  font-family: 'Train One', cursive;
+  letter-spacing: 0.1rem;
 }
 
 .userpage-button {
