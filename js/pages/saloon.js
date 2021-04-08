@@ -28,7 +28,10 @@ export default class Saloon {
     await this.getBookedSeats();
 
     let seatsArray = this.saloon.seatsPerRow;
-    let html = $('<div class="saloon-container"></div>');
+    let html = $(
+      `<div class="saloon-container ${this.saloon.auditorium}"></div>
+      `
+    );
     this.seatNumber = 0;
     for (let i = 0; i < seatsArray.length; i++) {
       let row = $(`<div class="row row-${i + 1}"></div>`);
@@ -45,7 +48,9 @@ export default class Saloon {
       }
       html.append(row);
     }
-    return html.append('<button class="btn">Välj Platser</button>');
+
+    html.prepend('<div class="screen"></div>');
+    return html.append('<button class="btn" disabled="true">Fortsätt</button>');
   }
 
   eventHandler() {
@@ -53,6 +58,9 @@ export default class Saloon {
       this.saveSelectedSeats();
       $('.btn').addClass('regret');
       $('.btn').html('Ångra');
+      $('.info-buttons').html(
+        `<button type='button' class="ticket-booking" disabled='true'>BOKA</button>`
+      );
     });
 
     $('main').on('click', '.regret', (e) => {
@@ -60,7 +68,7 @@ export default class Saloon {
       $('.info-summation').html('');
       $(e.target).removeClass('regret');
       $('.btn').html('Välj Platser');
-
+      $('.btn').prop('disabled', true);
       $('.seats').prop('checked', false);
     });
 
@@ -90,21 +98,31 @@ export default class Saloon {
       selectedTicketPrice,
       priceSum,
     };
-    let show = JSON.parse(sessionStorage.getItem('selectedShow'));
-    show.price = priceSum;
-    !selectedTicketType.includes('Inte vald')
-      ? $('.ticket-booking').prop('disabled', false)
-      : $('.ticket-booking').prop('disabled', true);
+    if (tickets.selectedTicketType.length > 0) {
+      let show = JSON.parse(sessionStorage.getItem('selectedShow'));
+      show.price = priceSum;
+      !selectedTicketType.includes('Inte vald')
+        ? $('.ticket-booking').prop('disabled', false)
+        : $('.ticket-booking').prop('disabled', true);
 
-    sessionStorage.setItem('selectedShow', JSON.stringify(show));
-    sessionStorage.setItem('tickets', JSON.stringify(tickets));
+      sessionStorage.setItem('selectedShow', JSON.stringify(show));
+      sessionStorage.setItem('tickets', JSON.stringify(tickets));
 
-    $('.info-summation').html('');
-    for (let i = 0; i < selectedTicketType.length; i++) {
-      $('.info-summation').append(`
+      $('.info-summation').html('');
+      for (let i = 0; i < selectedTicketType.length; i++) {
+        $('.info-summation').append(`
       <p class="seat-number${this.seatNumber}">Billjet typ: ${selectedTicketType[i]} á ${selectedTicketPrice[i]} kr</p>`);
+      }
+    } else {
+      $('.ticket-item').html('');
+      $('.info-summation').html('');
+      $('.btn').removeClass('regret');
+      $('.btn').html('Välj Platser');
+      $('.ticket-booking').prop('disabled', true);
     }
-    $('.info-summation').append(`<hr><p>Summma: ${priceSum} kr</p>`);
+    $('.info-summation').append(
+      `<hr class="seperator"><p>Summa: ${priceSum} kr</p>`
+    );
   }
 
   saveSelectedSeats() {

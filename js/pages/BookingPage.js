@@ -1,8 +1,10 @@
+import enrichScheduleWithEmptySeats from '../components/EmptySeats.js';
 export default class BookingPage {
-  showDate = new Date().toISOString().split('T')[0];
+
+  nowDate = new Date().toLocaleDateString('sv-SE');
+  showDate = this.nowDate;
 
   constructor() {
-    // Adding event handler for date input
     let that = this;
     $('body').on('change', '.datePicker', async function () {
       that.showDate = $(this).val();
@@ -12,16 +14,15 @@ export default class BookingPage {
   }
 
   async readShowsFromJson() {
-    this.shows = await $.getJSON('json/movieSchedule.json');
+    this.shows = await enrichScheduleWithEmptySeats(await $.getJSON('json/movieSchedule.json'));
     this.movies = await $.getJSON('json/movies.json');
   }
 
   async render() {
-    console.log(this.showDate);
     let html = `
     <div class = "bookingpage-container">
     <div class = "bookingpage-cover"></div>
-    <label class="datePickerLabel">Visningsdatum: <input class="datePicker" type="date" value="${this.showDate}"></label>
+    <label class="datePickerLabel">Visningsdatum: <input class="datePicker" type="date" min="${this.nowDate}" value="${this.showDate}"></label>
     `;
     if (!this.shows) {
       await this.readShowsFromJson();
@@ -33,15 +34,19 @@ export default class BookingPage {
         console.warn('unable to find movie with title', show.film);
         continue;
       }
+      
       let purgedName = movie.title.replaceAll(/\s/g, '');
       purgedName = purgedName.replaceAll("'", '');
+
       html += `
     <div class = "bookingpage-show">
-      <img src=${movie.images[0]}>
-      <h2>${show.film}</h2>
+      <a href="#aboutPage/${movie.id}"><img alt=${movie.title} src=${movie.images[0]}></a>
+      <h2><a href="#aboutPage/${movie.id}">${show.film}</a></h2>
       <p>${movie.genre.join ? movie.genre.join(', ') : movie.genre} | 
+      ${movie.ageRating === "barntillåten" ? "Barntillåten" : movie.ageRating + " år"} | 
       ${Math.floor(movie.length / 60)} tim ${movie.length % 60} min</p>
-      <h3>${show.date} | ${show.time} | ${show.auditorium}</h3>
+      <div class="show-info">${show.date} | ${show.time} | ${show.auditorium}</div>
+      <p>Lediga platser: ${show.emptySeats}</p>
       <a href="#ticketPage"><button class="bookingpage${purgedName} &${
         show.date
       } ${show.time}& ${show.auditorium} ${

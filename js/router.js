@@ -57,11 +57,16 @@ export default class Router {
   // Our pages (the method names matches the hashes with any slashes - removed)
 
   default() {
+    window.location.href = "#startPage";
     return startPage.render();
   }
 
   loginPage() {
-    return loginPage.render();
+    if (sessionStorage.getItem('username') == null) {
+      return loginPage.render();
+    } else {
+      window.location.href = '#userPage';
+    }
   }
 
   MoviePage() {
@@ -73,7 +78,11 @@ export default class Router {
   }
 
   registerPage() {
-    return myRegisterPage.render();
+    if (sessionStorage.getItem('username') == null) {
+      return myRegisterPage.render();
+    } else {
+      window.location.href = '#userPage';
+    }
   }
 
   bookingPage() {

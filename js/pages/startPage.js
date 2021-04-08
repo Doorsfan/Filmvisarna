@@ -136,9 +136,11 @@ export default class StartPage {
       observer.observe(videoContainer);
     };
 
-    $('main').load('load', showSlides);
+    $(document).ready(function () {
+      showSlides();
+    });
 
-    setTimeout(setupObserver, 3000);
+    setTimeout(setupObserver, 1000);
 
     return /*html*/ `
       <div class="big-container">

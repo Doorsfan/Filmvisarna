@@ -1,16 +1,5 @@
-/*
-Primär Färg:
-  #BEBDBF;
-Primär Färg - Variation:
-  #E1E0E2;
-Sekundär Färg:
-  #FFFFFF;
-Sekundär Färg - Variation:
-  #EEEEEE;
-Extra Färger: 
-  #434244;
-  #626163;
-*/
+@import url(https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css);
+
 .bookingpage-container {
   max-width: 60rem;
   margin-left: auto;
@@ -26,7 +15,7 @@ Extra Färger:
 
 .bookingpage-cover {
   height: 30vh;
-  background-image: url('/images/bookingpage_cover.jpg');
+  background-image: url("/images/bookingpage_cover.jpg");
   background-size: cover;
   background-position: center;
   margin-top: 1rem;
@@ -44,11 +33,10 @@ Extra Färger:
   position: relative;
   margin-bottom: 0.9rem;
   border-radius: 3px;
-  color: white;
 }
 
 .bookingpage-show:after {
-  content: '';
+  content: "";
   display: table;
   clear: both;
 }
@@ -83,32 +71,42 @@ Extra Färger:
 }
 
 .bookingpage-show h2 {
-  color: #a4a4a4;
-  margin-bottom: 1rem;
+  color: #eeeeee;
+  line-height: 140%;
 }
 
-.bookingpage-show h3 {
-  color: #9c9c9c;
-  font-weight: 700;
-  font-size: 1rem;
+.bookingpage-show a {
+  display: block;
+  color: #c6c6c6;
+  text-decoration: none;
+  line-height: 140%;
 }
 
 .bookingpage-show p {
-  color: rgb(117, 117, 117);
-  margin-bottom: 1rem;
+  color: #a9a9a9;
+  line-height: 140%;
+}
+
+.show-info {
+  font-size: 110%;
+  color: #c6c6c6;
+  font-weight: bold;
+  line-height: 150%;
+  padding-top: 10px;
+  padding-bottom: 4px;
 }
 
 .datePickerLabel {
   display: block;
   margin-bottom: 1rem;
   font-weight: bold;
-  font-size: 1.5rem;
-  color: #ffffff;
+  color: #c6c6c6;
+  font-size: 120%;
 }
 
 .datePicker {
   display: inline-block;
-  margin-left: 1rem;
+  padding: 0 12px;
   color: #626163;
   border-radius: 3px;
   border-color: #e1e0e2;
