@@ -9,17 +9,6 @@ export default class readAndWriteUser {
     await JSON._save(`./bookings/users/${username}`, []);
   }
 
-  // async loadUser(username, password) {
-  //   try {
-  //     console.log('trying to load with username of: ' + username);
-  //     console.log('trying to load with pw of: ' + password);
-  //     this.user = await JSON._load(`./users/${username + password}.json`);
-  //     return this.user;
-  //   } catch (error) {
-  //     return;
-  //   }
-  // }
-
   async loadUser(username, password) {
     try {
       this.user = await JSON._load(`./users/${username + password}`);

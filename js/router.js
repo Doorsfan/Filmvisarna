@@ -3,7 +3,6 @@ import ChangeListener from './ChangeListener.js';
 // Only create ONE change listener for the whole application
 
 // imported pages
-import Test from './pages/test.js';
 import StartPage from './pages/StartPage.js';
 import LoginPage from './pages/LoginPage.js';
 import MoviePage from './pages/MoviePage.js';
@@ -15,7 +14,6 @@ import registerPage from './pages/registerPage.js';
 // import PeoplePage from './pages/PeoplePage.js';
 
 // instanciate to reuse instances of pages
-const test = new Test();
 const startPage = new StartPage();
 const loginPage = new LoginPage();
 const moviePage = new MoviePage();
