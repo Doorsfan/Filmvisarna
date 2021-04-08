@@ -1,4 +1,3 @@
-import Test from '../pages/test.js';
 import enrichScheduleWithEmptySeats from './EmptySeats.js';
 export default class DisplaySpecificShow {
   constructor(movieID) {

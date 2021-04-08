@@ -5,11 +5,8 @@ export default class BookingModal {
   }
 
   render(props) {
-    console.log(props);
-
     this.seatInfo = '';
     props.seats.forEach((el) => {
-      console.log(el);
       this.seatInfo += `<tr><td class="booking-seat">Sittplats:</td><td class="modal-value"><span class="booking-value">${el['seat']}  Rad:  ${el['currentRow']}</td></></span></tr>`;
     });
 
