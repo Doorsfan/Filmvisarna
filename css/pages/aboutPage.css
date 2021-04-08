@@ -1,4 +1,5 @@
 .about-container {
+  overflow: hidden;
   margin: auto;
   max-width: 60rem;
   color: #eeeeee;
@@ -223,7 +224,7 @@
   justify-content: center;
 }
 
-a[href="#ticketPage"] {
+a[href='#ticketPage'] {
   display: block;
   text-align: center;
 }
