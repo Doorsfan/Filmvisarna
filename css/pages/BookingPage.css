@@ -50,8 +50,6 @@
 }
 
 .bookingpage-show button {
-  width: 10vw;
-  height: 5vh;
   background-color: #e50914d4;
   cursor: pointer;
   border: #434244;
@@ -60,10 +58,12 @@
   font-weight: 700;
   text-decoration: none;
   justify-content: center;
+  padding: 5px 8px;
   position: absolute;
   right: 1rem;
   bottom: 1rem;
 }
+
 .bookingpage-show button:hover,
 .bookingpage-show button:active {
   background: white;
@@ -99,6 +99,8 @@
 .datePickerLabel {
   display: block;
   margin-bottom: 1rem;
+  margin-left: 8px;
+  padding-right: 30px;
   font-weight: bold;
   color: #c6c6c6;
   font-size: 120%;
@@ -106,8 +108,97 @@
 
 .datePicker {
   display: inline-block;
-  padding: 0 12px;
-  color: #626163;
-  border-radius: 3px;
+  padding: 0 10px;
+  margin-left: 30px;
+  border-radius: 4px;
   border-color: #e1e0e2;
+  background-color: #c6c6c6;
+  color: #2d2d2d;
+  font-size: 80%;
+}
+
+@media screen and (max-width: 600px) {
+  .bookingpage-container {
+    max-width: 90vw;
+    padding: 1rem 1rem;
+  }
+
+  .bookingpage-show {
+    padding: 0.5rem;
+    position: relative;
+    margin-bottom: 0.5rem;
+    font-size: 80%;
+  }
+  .datePicker {
+    display: inline-block;
+    padding: 0 10px;
+    margin-left: 0;
+    border-radius: 4px;
+    border-color: #e1e0e2;
+    background-color: #c6c6c6;
+    color: #2d2d2d;
+    font-size: 80%;
+  }
+}
+@media screen and (max-width: 400px) {
+  .bookingpage-container {
+    max-width: 90vw;
+    padding: 0.5rem 0.5rem;
+  }
+
+  .bookingpage-show {
+    padding: 0.2rem 0;
+    position: relative;
+    margin-bottom: 0.2rem;
+  }
+
+  .bookingpage-show h2 {
+    font-size: 90%;
+  }
+
+  .bookingpage-show p {
+    font-size: 80%;
+  }
+
+  .bookingpage-show img {
+    float: none;
+    justify-self: center;
+    width: 100%;
+    height: 100%;
+    border-radius: 3px;
+    margin-right: 0.5rem;
+  }
+
+  .bookingpage-show .show-info {
+    font-size: 80%;
+  }
+
+  .datePickerLabel {
+    display: block;
+    margin-bottom: 0.5rem;
+    margin-left: 0;
+    padding-right: 0;
+    font-weight: bold;
+    color: #c6c6c6;
+  }
+
+  .datePicker {
+    display: inline-block;
+    padding: 0 4px;
+    margin: 0.5rem 0;
+    border-color: #e1e0e2;
+    background-color: #c6c6c6;
+    color: #2d2d2d;
+    font-size: 80%;
+  }
+
+  .bookingpage-show button {
+    font-size: 80%;
+    text-decoration: none;
+    justify-content: center;
+    padding: 2px 3px;
+    position: absolute;
+    right: 1rem;
+    bottom: 1rem;
+  }
 }

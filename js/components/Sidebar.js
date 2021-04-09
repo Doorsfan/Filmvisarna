@@ -19,7 +19,7 @@ export default class Sidebar {
     let user = this.store;
     let myPage = user //Dubbelt?
       ? `<a href='#userPage'>Mina sidor</a>`
-      : `<a href='#loginPage'>Login</a>`;
+      : `<a href='#loginPage'>Logga in</a>`;
     let logOut = user
       ? `<li class='navlist-item logout'>
           <a href='#'>Logga ut</a>
@@ -32,9 +32,8 @@ export default class Sidebar {
           <li class="navlist-item login">
               ${myPage}
             </li>
-            <hr />
             <li class="navlist-item">
-              <a href='#startPage'>Start Page</a>
+              <a href='#startPage'>Startsida</a>
             </li>
             <li class="navlist-item">
               <a href='#MoviePage'>Filmer</a>
