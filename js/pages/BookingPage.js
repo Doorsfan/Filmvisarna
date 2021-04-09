@@ -42,16 +42,12 @@ export default class BookingPage {
     <div class = "bookingpage-show">
       <a href="#aboutPage/${movie.id}"><img alt=${movie.title} src=${movie.images[0]}></a>
       <h2><a href="#aboutPage/${movie.id}">${show.film}</a></h2>
-      <p>${movie.genre.join ? movie.genre.join(', ') : movie.genre} | 
-      ${movie.ageRating === "barntillåten" ? "Barntillåten" : movie.ageRating + " år"} | 
+      <p>${movie.genre.join ? movie.genre.join(', ') : movie.genre}</p> 
+      <p>${movie.ageRating === "barntillåten" ? "Barntillåten" : movie.ageRating + " år"} | 
       ${Math.floor(movie.length / 60)} tim ${movie.length % 60} min</p>
       <div class="show-info">${show.date} | ${show.time} | ${show.auditorium}</div>
       <p>Lediga platser: ${show.emptySeats}</p>
-      <a href="#ticketPage"><button class="bookingpage${purgedName} &${
-        show.date
-      } ${show.time}& ${show.auditorium} ${
-        movie.title
-      }">Boka biljett</button></a>
+      <a href="#ticketPage"><button class="bookingpage"${purgedName} ${show.date} ${show.time} ${show.auditorium} ${movie.title}>Boka</button></a>
       </div>
       `;
     }
